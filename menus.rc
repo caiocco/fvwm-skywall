@@ -307,6 +307,7 @@ Test (x medic)		+ "Code Medic"			Exec medic
 Test (x meld)		+ "Meld"			Exec meld
 Test (x /opt/sublime_text_3/sublime_text)\
 			+ "Sublime Text"		Exec /opt/sublime_text_3/sublime_text
+Test (x retext)		+ "ReText"			Exec retext
 + ""		Nop
 Test (x /opt/aptana_studio_3/AptanaStudio3.sh)\
 			+ "Aptana Studio 3"		Exec /opt/aptana_studio_3/AptanaStudio3.sh
