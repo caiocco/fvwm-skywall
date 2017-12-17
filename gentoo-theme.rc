@@ -1,0 +1,167 @@
+#=====================================================================#
+echo gentoo-theme.rc: Processando tema Gentoo...
+
+#
+# Configurações Cosméticas
+# Tema Gentoo
+#
+# Criado por: Maciej Delmanowski <harnir@post.pl>
+# Baseado no original modificado por univac do FVWM Crystal 3.0.6
+# Página oficial: http://fvwm-crystal.berlios.de/
+# Licença: GPL
+#
+
+#
+# Colorsets
+# - Janela inativa
+Colorset 0 \
+Foreground "lightgray", Background "#777777", \
+Hilight "gray", Shadow "gray", \
+Tint "black" 20, RootTransparent
+# - Janela ativa
+Colorset 1 \
+Foreground "yellow2", Background "#777777", \
+Hilight "black", Shadow "black", \
+Tint "black" 40, RootTransparent
+# - Menus
+#Colorset 3 fg white, bg #6b8eb5, fgsh gray10, RootTransparent Buffer, Tint black 80
+Colorset 3 fg white, bg #6b8eb5, fgsh gray10, RootTransparent Buffer, Tint black 90
+# - FvwmButtons
+#Colorset 10 fg white, bg black, fgsh gray10, RootTransparent Buffer, Tint black 85
+Colorset 10 fg white, bg black, fgsh gray10, RootTransparent Buffer, Tint black 95
+# - Alguns aplicativos embutidos
+Colorset 11 fg white, bg black, fgsh gray10, RootTransparent Buffer, Tint black 85
+# - Pager
+#Colorset 14 fg gray60, bg #6b8eb5, fgsh gray10, RootTransparent Buffer, Tint black 70
+Colorset 14 fg gray60, bg #6b8eb5, fgsh gray10, RootTransparent Buffer, Tint black 100
+# - Outros
+Colorset 15 fg white, bg black, fgsh gray10, Plain, NoShape
+Colorset 16 fg lightgray, bg gray20, fgsh gray10, Plain, NoShape
+Colorset 17 fg white, bg black, fgsh black, RootTransparent
+Colorset 18 fg white, bg black, fgsh black, RootTransparent, Tint black 30
+Colorset 19 fg LightGray, bg #132E51
+Colorset 20 fg White, bg #2A5995
+Colorset 21 fg White, bg black
+Colorset 22 fg Yellow2, bg black
+
+#
+# Destruindo para (re)criar
+#
+DestroyDecor recreate "gentoo"
+
+#
+# Títulos e Bordas
+#
+AddToDecor "gentoo" TitleStyle InactiveUp Colorset 0
+AddToDecor "gentoo" TitleStyle InactiveDown Colorset 0
+AddToDecor "gentoo" TitleStyle ActiveUp Colorset 1
+AddToDecor "gentoo" TitleStyle ActiveDown Colorset 1
+AddToDecor "gentoo" TitleStyle Centered
+AddToDecor "gentoo" TitleStyle -- flat
+AddToDecor "gentoo" TitleStyle Height 22
+
+AddToDecor "gentoo" BorderStyle -- HiddenHandles
+AddToDecor "gentoo" BorderStyle -- Flat
+
+Style "gentoo" HandleWidth 2, BorderWidth 2
+Style "gentoo" Colorset 0, BorderColorset  0, HilightColorset 1, \
+	HilightBorderColorset 1
+
+#
+# Botões
+#
+AddToDecor "gentoo" ButtonStyle Reset
+AddToDecor "gentoo" ButtonStyle All Pixmap $[Sky_Dir]/imagens/empty.xpm
+AddToDecor "gentoo" ButtonStyle All -- flat UseTitleStyle
+AddToDecor "gentoo" ButtonStyle 1 - Clear MWMDecorMenu
+AddToDecor "gentoo" ButtonStyle 2 - Clear
+AddToDecor "gentoo" ButtonStyle 4 - Clear MWMDecorMax
+AddToDecor "gentoo" ButtonStyle 6 - Clear MWMDecorMin
+AddToDecor "gentoo" ButtonStyle 8 - Clear
+
+# - Menu
+AddToDecor "gentoo" AddButtonStyle 1 Inactive Pixmap $[Sky_Dir]/imagens/gentoo/button-gray.png
+AddToDecor "gentoo" AddButtonStyle 1 ActiveUp Pixmap $[Sky_Dir]/imagens/gentoo/button-white-icon.png
+AddToDecor "gentoo" AddButtonStyle 1 ActiveDown Pixmap $[Sky_Dir]/imagens/gentoo/button-white.png
+
+# - Lista de janelas
+AddToDecor "gentoo" AddButtonStyle 3 Inactive Pixmap $[Sky_Dir]/imagens/gentoo/button-gray.png
+AddToDecor "gentoo" AddButtonStyle 3 ActiveUp Pixmap $[Sky_Dir]/imagens/gentoo/button-blue-icon.png
+AddToDecor "gentoo" AddButtonStyle 3 ActiveDown Pixmap $[Sky_Dir]/imagens/gentoo/button-blue.png
+
+# - Fechar
+AddToDecor "gentoo" AddButtonStyle 2 Inactive Pixmap $[Sky_Dir]/imagens/gentoo/button-gray.png
+AddToDecor "gentoo" AddButtonStyle 2 ActiveUp Pixmap $[Sky_Dir]/imagens/gentoo/button-red-icon.png
+AddToDecor "gentoo" AddButtonStyle 2 ActiveDown Pixmap $[Sky_Dir]/imagens/gentoo/button-red.png
+
+# - Maximizar
+AddToDecor "gentoo" AddButtonStyle 4 Inactive Pixmap $[Sky_Dir]/imagens/gentoo/button-gray.png
+AddToDecor "gentoo" AddButtonStyle 4 ActiveUp Pixmap $[Sky_Dir]/imagens/gentoo/button-green-icon.png
+AddToDecor "gentoo" AddButtonStyle 4 ActiveDown Pixmap $[Sky_Dir]/imagens/gentoo/button-green.png
+
+# - Iconificar
+AddToDecor "gentoo" AddButtonStyle 6 Inactive Pixmap $[Sky_Dir]/imagens/gentoo/button-gray.png
+AddToDecor "gentoo" AddButtonStyle 6 ActiveUp Pixmap $[Sky_Dir]/imagens/gentoo/button-yellow-icon.png
+AddToDecor "gentoo" AddButtonStyle 6 ActiveDown Pixmap $[Sky_Dir]/imagens/gentoo/button-yellow.png
+
+# - Sombrear
+AddToDecor "gentoo" AddButtonStyle 8 Inactive Pixmap $[Sky_Dir]/imagens/gentoo/button-gray.png
+AddToDecor "gentoo" AddButtonStyle 8 ActiveUp Pixmap $[Sky_Dir]/imagens/gentoo/button-violet-icon.png
+AddToDecor "gentoo" AddButtonStyle 8 ActiveDown Pixmap $[Sky_Dir]/imagens/gentoo/button-violet.png
+
+#
+# Menus
+#
+MenuStyle * Font "Shadow=1 0 SE:xft:DejaVu Sans:Medium:size=9"
+MenuStyle * Hilight3DThick
+MenuStyle * Hilight3DThickness -1 -1
+MenuStyle * MenuColorset 3
+MenuStyle * !ActiveFore
+MenuStyle * !HilightBack
+MenuStyle * Animation
+MenuStyle * PopupOffset -4 100
+MenuStyle * TitleUnderlines2
+MenuStyle * SeparatorsLong
+MenuStyle * TrianglesRelief
+MenuStyle * PopupImmediately
+MenuStyle * PopdownDelayed
+MenuStyle * PopdownDelay 150
+MenuStyle * PopupAsSubmenu
+MenuStyle * HoldSubmenus
+MenuStyle * SubmenusRight
+MenuStyle * BorderWidth 2
+
+#
+# Ícones
+# 
+Style Gentoo IconTitle
+Style Gentoo IndexedIconName
+Style Gentoo IconBackgroundPadding 2
+Style Gentoo IconBackgroundRelief 2
+Style Gentoo IconTitleRelief 2
+Style Gentoo IconBackGroundColorset 21
+Style Gentoo IconTitleColorset 21, HilightIconTitleColorset 22, 
+# Opção de background transparente (atendendo a pedidos)
+# Opção 1
+#Style Gentoo IconTitle, IconTitleColorset 17, HilightIconTitleColorset 17, IconTitleRelief 0
+#Style Gentoo IndexedIconName, IconBackgroundPadding 2
+#Style Gentoo IconBackgroundRelief 0, IconBackGroundColorset 17
+# Opção 2
+#Style Gentoo IconTitle, IconTitleColorset 17, HilightIconTitleColorset 18, IconTitleRelief 1
+#Style Gentoo IndexedIconName, IconBackgroundPadding 2
+#Style Gentoo IconBackgroundRelief 1, IconBackGroundColorset 17
+
+#
+# Fontes
+#
+#Style "gentoo" Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=11:encoding=iso10646-1"
+Style "gentoo" Font "Shadow=1 0 SE:xft:DejaVu Sans:Bold:size=10:encoding=iso10646-1"
+
+#
+# Aplicando...
+#
+Style * UseStyle gentoo
+Style * UseDecor gentoo
+
+echo gentoo-theme.rc: Processamento terminado.
+#=====================================================================#

@@ -1,0 +1,57 @@
+#=====================================================================#
+echo start_restart_exit.syntmaster.rc: Processando funções de inicialização...
+
+#
+# Funções simples de inicialização/encerramento
+# Samsung SyncMaster T220, LCD, 1680x1050@60Hz
+#
+AddToFunc "StartFunction"
+#------ Aplicativos prioritários
++ I Test (Init) Test (Version <= 2.5.23) exec xmessage -bg red -fg yellow "Sua versão do FVWM está desatualizada!"
+#------ Módulos
++ I Test (Init) Module FvwmAnimate
++ I Test (Init) Module FvwmCommandS
++ I Test (Init) Module FvwmButtons -g 129x$[vp.height]+0+0 FvwmToolboxBig
++ I Test (Init) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-129))x28-0-0 FvwmBar"
++ I Test (Restart) Module FvwmAnimate
++ I Test (Restart) Module FvwmCommandS
++ I Test (Restart) KillModule FvwmPager
++ I Test (Restart) Module FvwmButtons -g 129x$[vp.height]+0+0 FvwmToolboxBig
++ I Test (Restart) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-129))x28-0-0 FvwmBar"
+#------ Indispensáveis
+#+ I Test (Init) Test (x scim) Exec exec scim -d
++ I Test (Init) Test (f $[HOME]/.Xdefaults) exec xrdb -load ~/.Xdefaults
++ I Test (Init) Test (f $[HOME]/.Xdefaults) exec xrdb -load ~/.Xresources
++ I Test (Restart) Test (f $[HOME]/.Xdefaults) exec xrdb -merge ~/.Xdefaults
++ I Test (Restart) Test (f $[HOME]/.Xdefaults) exec xrdb -merge ~/.Xresources
+#+ I Test (Init) exec xmodmap -e "clear Lock"		# DESATIVA CAPSLOCK
+#+ I Test (Init) exec xmodmap -e "clear Mod2"		# DESATIVA NUMLOCK
+#+ I Test (Init) exec xmodmap -e "clear Mod5"		# DESATIVA SCRLOCK
+#------ Ambientais
++ I Test (Init) Test (EnvMatch Sky_Theme skywall) exec xv -root -quit \
+	$[Sky_ImageDir]/Texturas/blgr050.gif
++ I Test (Init) Test (EnvMatch Sky_Theme ecs) exec xv -root -quit \
+	$[Sky_ImageDir]/Texturas/blue086b.gif
++ I Test (Init) Test (EnvMatch Sky_Theme water) exec xv -root -quit \
+	$[Sky_ImageDir]/Texturas/nebula.jpg
+#------ Aplicativos
++ I Test (Init) Test (x rox) exec rox -p=syncmaster
++ I Test (Init) Test (EnvMatch Sky_TwoMons Yes) Test (x Terminal) exec Terminal
++ I Test (Init) Test (EnvMatch Sky_TwoMons Yes) Test (x Terminal) Wait Terminal
++ I Test (Init) Test (EnvMatch Sky_TwoMons Yes) \
+	Test (x $[HOME]/.dropbox-dist/dropboxd) \
+	exec $[HOME]/.dropbox-dist/dropboxd
++ I Test (Init) Test (x parcellite) exec parcellite -n
+#------ Fora do lugar
++ I Test (Init) Style * IconBox 150 55 1500 -48, IconGrid 3 3, IconFill left bottom
++ I Test (Init) EwmhBaseStruts 131 0 0 28
++ I Test (Restart) Style * IconBox 150 55 1500 -48, IconGrid 3 3, IconFill left bottom
++ I Test (Restart) EwmhBaseStruts 131 0 0 28
+
+AddToFunc "ExitFunction"
++ I Test (Quit) KillModule FvwmAnimate
++ I Test (Exit) exec sync
++ I Test (Quit) exec killall fvwm
+
+echo start_restart_exit.syntmaster.rc: Processamento terminado.
+#=====================================================================#

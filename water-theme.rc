@@ -1,0 +1,101 @@
+#=====================================================================#
+echo water-theme.rc: Processando tema Water...
+
+#
+# Configurações Cosméticas
+# Tema Water
+#
+
+#
+# Colorsets
+#
+# - Absolutamente transparente, sem tinta
+Colorset 0 fg white, bg #6b8eb5, fgsh black, RootTransparent Buffer, Tint
+# - Brilhante, para a janela ativa
+Colorset 1 fg white, bg #6b8eb5, fgsh black, RootTransparent Buffer, Tint #6b8eb5 35
+# - Um pouco mais claro, para os menus
+Colorset 3 fg white, bg #6b8eb5, fgsh black, RootTransparent Buffer, Tint #6b8eb5 20
+# - Bem mais claro, também para menus
+Colorset 3 fg white, bg #6b8eb5, fgsh black, RootTransparent Buffer, Tint #6b8eb5 85
+# - FvwmButtons
+Colorset 10 bg gray fg back
+# - Alguns aplicativos embutidos
+Colorset 11 bg gray60 fg back
+# - Pager
+Colorset 14 fg white, bg #6b8eb5, fgsh black, RootTransparent Buffer, Tint black 70
+
+#
+# Bordas e Título
+#
+AddToDecor "water" BorderStyle Active Colorset 1
+AddToDecor "water" BorderStyle Inactive Colorset 0
+AddToDecor "water" BorderStyle -- NoInset HiddenHandles
+
+AddToDecor "water" TitleStyle Active Colorset 1
+AddToDecor "water" TitleStyle Inactive Colorset 0
+AddToDecor "water" TitleStyle -- flat
+
+AddToDecor "water" TitleStyle Centered
+AddToDecor "water" TitleStyle Height 24
+
+AddToDecor "water" ButtonStyle Reset
+AddToDecor "water" ButtonStyle All Pixmap $[Sky_Dir]/imagens/empty.xpm
+AddToDecor "water" ButtonStyle All -- flat UseTitleStyle
+
+AddToDecor "water" AddButtonStyle 1 Inactive pixmap $[Sky_Dir]/imagens/Aqua-drop.xpm
+AddToDecor "water" AddButtonStyle 1 Active pixmap $[Sky_Dir]/imagens/Aqua-Round.xpm
+AddToDecor "water" AddButtonStyle 2 Active pixmap $[Sky_Dir]/imagens/Aqua-Square.xpm
+AddToDecor "water" AddButtonStyle 3 Active pixmap $[Sky_Dir]/imagens/Aqua-X.xpm
+AddToDecor "water" AddButtonStyle 4 Active pixmap $[Sky_Dir]/imagens/Aqua-drop.xpm
+
+#
+# Menus
+#
+MenuStyle * Font "Shadow=1 0 SE:xft:Sans:Medium:size=9"
+MenuStyle * Hilight3DThick
+MenuStyle * Hilight3DThickness -2 -2
+MenuStyle * MenuColorset 3
+MenuStyle * !ActiveFore
+MenuStyle * !HilightBack
+MenuStyle * Animation
+MenuStyle * PopupOffset -4 100
+MenuStyle * TitleUnderlines2
+MenuStyle * SeparatorsLong
+MenuStyle * TrianglesRelief
+MenuStyle * PopupImmediately
+MenuStyle * PopdownDelayed
+MenuStyle * PopdownDelay 150
+MenuStyle * PopupAsSubmenu
+MenuStyle * HoldSubmenus
+MenuStyle * SubmenusRight
+MenuStyle * BorderWidth 2
+
+#
+# Outros
+#
+Style water IconTitleColorset 3
+Style water HilightIconTitleColorset 1
+Style water IconBackgroundColorset
+Style water !MwmButtons
+Style water Colorset 0
+Style water HilightColorset 1
+Style water BorderWidth 4
+Style water HandleWidth 6
+Style water FvwmBorder
+
+#
+# Fontes
+#
+#Style * Font "Shadow=1 0 C:-adobe-helvetica-bold-r-normal--14-140-75-75-p-82-iso8859-1"
+Style * Font "Shadow=1 0 C:xft:Helvetica:Bold:size=12"
+#IconFont "Shadow=1 0 C:-adobe-helvetica-medium-r-normal--10-100-75-75-p-56-iso8859-1"
+#*FvwmIconMan: 1 Font "Shadow=1 0 C:-adobe-helvetica-medium-r-normal--10-100-75-75-p-56-iso8859-1"
+
+#
+# Aplicando...
+#
+Style * UseStyle water
+Style * UseDecor water
+
+echo water-theme.rc: Processamento terminado.
+#=====================================================================#

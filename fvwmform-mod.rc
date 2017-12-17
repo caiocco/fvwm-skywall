@@ -1,0 +1,37 @@
+echo fvwmform-mod.rc: Configurando módulo de formulários...
+
+#------------------ FvwmForm
+*FvwmFormDefault: Font 10x20
+*FvwmFormDefault: InputFont 8x13bold
+*FvwmFormDefault: ButtonFont 10x20
+*FvwmFormDefault: TimeoutFont 10x20
+*FvwmFormDefault: Fore white
+*FvwmFormDefault: Back #020103
+*FvwmFormDefault: Colorset -1
+*FvwmFormDefault: ItemFore white
+*FvwmFormDefault: ItemBack gray40
+*FvwmFormDefault: ItemColorset -1
+*FvwmFormDefault: ButtonPointer hand2
+*FvwmFormDefault: ButtonInPointer star
+*FvwmFormDefault: InputPointer gumby
+*FvwmFormDefault: ButtonPointerFore blue
+*FvwmFormDefault: ButtonPointerBack gray
+*FvwmFormDefault: ButtonInPointerFore gray
+*FvwmFormDefault: ButtonInPointerBack blue
+*FvwmFormDefault: InputPointerFore
+*FvwmFormDefault: InputPointerBack
+
+#*FvwmForm-Bandeja: GrabServer
+#*FvwmForm-Bandeja: WarpPointer
+*FvwmForm-Bandeja: Command     Beep
+*FvwmForm-Bandeja: Line        center
+*FvwmForm-Bandeja: Text        "Iniciar aplicativos da bandeja?"
+*FvwmForm-Bandeja: Line        expand
+*FvwmForm-Bandeja: Button      quit "Sim" ^S
+*FvwmForm-Bandeja: Command     Exec $[HOME]/.fvwm/bandeja.sh
+*FvwmForm-Bandeja: Button      quit "Não" ^X
+*FvwmForm-Bandeja: Command     Nop
+*FvwmForm-Bandeja: Timeout     25 Quit "Em %% segundos os aplicativos serão iniciados."
+
+
+echo fvwmform-mod.rc: Processamento terminado.

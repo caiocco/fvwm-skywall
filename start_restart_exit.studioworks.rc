@@ -1,0 +1,52 @@
+#=====================================================================#
+echo start_restart_exit.studioworks.rc: Processando funções de inicialização...
+
+#
+# Funções simples de inicialização/encerramento
+# LG StudioWorks 563A, CRT, 1024x768
+#
+
+AddToFunc "StartFunction"
+#------ Aplicativos prioritários
++ I Test (Init) Test (Version <= 2.5.23) exec xmessage -bg red -fg yellow "Sua versão do FVWM está desatualizada!"
+#------ Módulos
++ I Test (Init) Module FvwmAnimate
++ I Test (Init) Module FvwmCommandS
++ I Test (Init) Module FvwmWinList
++ I Test (Restart) Module FvwmAnimate
++ I Test (Restart) Module FvwmCommandS
++ I Test (Restart) Module FvwmWinList
+#------ Indispensáveis
++ I Test (Init) Test (x scim) Exec exec scim -d
++ I Test (Init) Test (x stalonetray) Exec exec stalonetray \
+	--transparent \
+	--window-type dock \
+	--max-width 0 \
+	--grow-gravity W \
+	--icon-gravity NE \
+	--icon-size 24
++ I Test (Init) Test (f $[HOME]/.Xdefaults) exec xrdb -load ~/.Xdefaults
++ I Test (Init) Test (f $[HOME]/.Xdefaults) exec xrdb -load ~/.Xresources
++ I Test (Restart) Test (f $[HOME]/.Xdefaults) exec xrdb -merge ~/.Xdefaults
++ I Test (Restart) Test (f $[HOME]/.Xdefaults) exec xrdb -merge ~/.Xresources
+#+ I Test (Init) exec xmodmap -e "clear Lock"		# DESATIVA CAPSLOCK
+#+ I Test (Init) exec xmodmap -e "clear Mod2"		# DESATIVA NUMLOCK
+#+ I Test (Init) exec xmodmap -e "clear Mod5"		# DESATIVA SCRLOCK
+#------ Ambientais
++ I Test (Init) Test (EnvMatch Sky_Theme skywall) exec xv -root -quit \
+	$[Sky_ImageDir]/Texturas/blgr050.gif
++ I Test (Init) Test (EnvMatch Sky_Theme ecs) exec xv -root -quit \
+	$[Sky_ImageDir]/Texturas/blue086b.gif
++ I Test (Init) Test (EnvMatch Sky_Theme water) exec xv -root -quit \
+	$[Sky_ImageDir]/Texturas/nebula.jpg
+#------ Aplicativos
++ I Test (Init) Test (x rox) exec rox -p=studioworks
++ I Test (Init) Test (EnvMatch Sky_TwoMons Yes) Test (x pidgin) exec pidgin -n 
++ I Test (Init) Test (EnvMatch Sky_TwoMons Yes) Test (x osmo) exec osmo
+
+AddToFunc "ExitFunction"
++ I Test (Quit) KillModule FvwmAnimate
++ I Test (Exit) exec sync
+
+echo start_restart_exit.studioworks.rc: Processamento terminado.
+#=====================================================================#

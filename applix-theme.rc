@@ -1,0 +1,121 @@
+#=====================================================================#
+echo applix-theme.rc: Processando tema Skywall Motif for Applixware...
+
+#
+# Configurações cosméticas
+# Tema Skywall Motif for Applixware
+#
+DestroyDecor "Applix"
+DestroyMenuStyle Applix
+
+# Colorsets
+#
+# Título
+#
+# Cores para a janela inativa
+#
+Colorset 30 fg #CBCBCB, bg #6B8EB5
+Test (EnvMatch Sky_Theme_Diamond_Color Red) Colorset 30 fg #CBCBCB, bg #B5A8AB
+AddToDecor "Applix" TitleStyle Inactive Colorset 30
+# Cores para a janela ativa
+Colorset 31 fg #FFFFFF, bg #478A5C
+Test (EnvMatch Sky_Theme_Diamond_Color Red) Colorset 31 fg #FFFFFF, bg #802929
+AddToDecor "Applix" TitleStyle Active Colorset 31
+
+#
+# Bordas
+#
+AddToDecor "Applix" BorderStyle --  UseTitleStyle
+AddToDecor "Applix" BorderStyle Active Colorset 31
+AddToDecor "Applix" BorderStyle Inactive Colorset 30
+AddToDecor "Applix" BorderStyle -- NoInset
+Style Applix MwmBorder
+Style Applix Borders
+Style Applix Handles
+Style Applix DecorateTransient
+Style Applix StackTransientParent
+Style Applix BorderWidth 7, HandleWidth 7
+Style Applix ResizeOutline
+
+#
+# Botões das janelas
+#
+AddToDecor "Applix" ButtonStyle Reset
+AddToDecor "Applix" ButtonStyle All -- UseTitleStyle
+AddToDecor "Applix" ButtonStyle 6 Vector 5 \
+        25x75@0 45x75@0 45x55@0 25x55@1 25x75@1
+AddToDecor "Applix" ButtonStyle 2 Vector 17 \
+        20x20@1 30x20@1 50x40@1 70x20@1 \
+        80x20@1 80x30@0 60x50@0 80x70@1 \
+        80x80@0 70x80@0 50x60@0 30x80@0 \
+        20x80@0 20x70@0 40x50@1 20x30@0 20x20@1
+AddToDecor "Applix" ButtonStyle 2
+AddToDecor "Applix" ButtonStyle 4 Default 2, MwmDecorMax
+AddToDecor "Applix" ButtonStyle 8 Vector 4 \
+	50x25@1 85x75@0 15x75@0 50x25@1
+	
+Style Applix !MwmButtons
+
+Style Applix Font "Shadow=0 0 C:xft:Helvetica:Bold:size=12"
+
+#
+# Menus
+#
+MenuStyle Applix !HilightBack
+MenuStyle Applix Hilight3DThick
+MenuStyle Applix !ActiveFore
+MenuStyle Applix !Animation
+MenuStyle Applix MenuFace
+MenuStyle Applix PopupOffset -3 100
+MenuStyle Applix !TitleWarp
+MenuStyle Applix TitleUnderlines2
+MenuStyle Applix SeparatorsLong
+MenuStyle Applix TrianglesRelief
+MenuStyle Applix PopupImmediately
+MenuStyle Applix PopdownDelayed
+MenuStyle Applix PopdownDelay 150
+MenuStyle Applix PopupAsSubmenu
+MenuStyle Applix HoldSubmenus
+MenuStyle Applix SubmenusRight
+MenuStyle Applix !AutomaticHotkeys
+MenuStyle Applix PopupActiveArea 75
+
+#
+# Botões
+#
+AddToDecor "Applix" ButtonStyle All --  UseTitleStyle
+
+# Aplicando...
+Style applix UseStyle Applix
+Style applix UseDecor Applix
+#Style Drakon UseStyle Applix
+#Style Drakon UseDecor Applix
+#Style Leibnitz UseStyle Applix
+#Style Leibnitz UseDecor Applix
+#Style System\ G UseStyle Applix
+#Style System\ G UseDecor Applix
+#Style Code\ Medic UseStyle Applix
+#Style Code\ Medic UseDecor Applix
+#Style Code\ Crusader UseStyle Applix
+#Style Code\ Crusader UseDecor Applix
+#Style Glove UseStyle Applix
+#Style Glove UseDecor Applix
+Style Xpdf UseStyle Applix
+Style Xpdf UseDecor Applix
+Style gv UseStyle Applix
+Style gv UseDecor Applix
+Style xv UseStyle Applix
+Style xv UseDecor Applix
+Style xfig UseStyle Applix
+Style xfig UseDecor Applix
+Style Fig UseStyle Applix
+Style Fig UseDecor Applix
+Style Micropolis\ Controls UseStyle Applix
+Style Micropolis\ Controls UseDecor Applix
+Style nexs UseStyle Applix
+Style nexs UseDecor Applix
+Style Display UseStyle Applix
+Style Display UseDecor Applix
+
+echo applix-theme.rc: Processamento terminado...
+#=====================================================================#

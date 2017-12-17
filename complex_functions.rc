@@ -1,0 +1,127 @@
+#======================================================================#
+echo complex_functions.rc: Definindo funções complexas indispensáveis...
+
+#
+# Funções complexas praticamente essenciais
+#
+
+# Legenda: M = Mover; C = Clicar; D = Duplo-clicar
+
+#
+# 3.15  I don't like the gaps in my icon box when I de-iconify an
+# application.  Is there some kind of auto arrange function?
+# http://www.fvwm.org/documentation/faq/#3.15
+#
+DestroyFunc DeiconifyAndRearrange
+AddToFunc DeiconifyAndRearrange
++ C Iconify off
++ C All (CurrentPage, Iconic) PlaceAgain Icon
+
+# Esta aqui move e então "sobe" a janela se você arrastar o mouse,
+# só "sobe" a janela se você clicar, ou faz uma maximização total
+# se você duplo-clicar
+AddToFunc "Move-or-Raise" "M" Move
++                         "M" Raise
++                         "C" Raise
++                         "D" Maximize
+
+#
+# Esta aqui move e então "desce" a janela se você arrastar o mouse,
+# só "desce" a janela se você clicar, ou faz um RaiseLower se você
+# duplo clicar
+#
+AddToFunc "Move-or-Lower" "M" Move
++                         "M" Lower
++                         "C" Lower
++                         "D" RaiseLower
+
+#
+# A função abaixo move ou restaura uma janela minimizada
+#
+AddToFunc "Move-or-Iconify" "M" Move
+#+                           "D" Iconify
++                           "D" DeiconifyAndRearrange
+
+#
+# A função abaixo restaura um ícone ou janela conforme seu estado
+#
+DestroyFunc "DeIconify-or-UnMaximize"
+AddToFunc "DeIconify-or-UnMaximize"
++ C ThisWindow (Iconic) \
+	TestRc (Match) Iconify False
++ C ThisWindow (Maximized) \
+	TestRc (Match) Maximize False
+
+#
+# Esta aqui redimensiona e "sobe" a janela se você arrastar o mouse,
+# só "sobe" a janela se você clicar, ou faz um RaiseLower se você
+# duplo-clicar
+#
+AddToFunc "Resize-or-Raise" "M" Resize
++                           "M" Raise
++                           "C" Raise
++                           "D" RaiseLower
+
+#
+# As funções abaixo movem uma janela para outra página, ao passo que
+# também mudam a página, acompanhando a movimentação da janela.
+#
+DestroyFunc "MoveWindow_PageLeft"
+AddToFunc "MoveWindow_PageLeft"
++ I MoveToPage -1p -0p
++ I WarpToWindow 50-50w 50-50w
+
+DestroyFunc "MoveWindow_PageRight"
+AddToFunc "MoveWindow_PageRight"
++ I MoveToPage +1p +0p
++ I WarpToWindow 50-50w 50-50w
+
+DestroyFunc "MoveWindow_PageUp"
+AddToFunc "MoveWindow_PageUp"
++ I MoveToPage +0p -1p
++ I WarpToWindow 50-50w 50-50w
+
+DestroyFunc "MoveWindow_PageDown"
+AddToFunc "MoveWindow_PageDown"
++ I MoveToPage +0p +1p
++ I WarpToWindow 50-50w 50-50w
+
+#
+# cf9. Why do certain applications such as GAIM and XChat steal 
+# focus/switch pages/etc., at certain times?
+# http://www.starshine.org/xteddy/thomas/fvwm/fvwmchanfaq.html#cf9
+#
+DestroyFunc UrgencyFunc
+AddToFunc UrgencyFunc
++ I Test (x notify-send) \
+	exec notify-send \
+	-t 8000 \
+	-u normal "O aplicativo '$[w.class]' requer sua atenção."
+#+ I Iconify off
+#+ I FlipFocus
+#+ I Raise
+#+ I WarpToWindow 5p 5p
+
+# WC2. Switching focus between windows. (Alt-Tab)
+# http://www.xteddy.org/fvwm/fvwmcookbookfaq.html
+#
+# I don't like the default behaviour of FVWM's Alt-Tab key combination 
+# -- yes, the WindowList is useful, but it's not what I want to see
+# when I want to focus other windows --- I prefer (dare I say it) 
+# functionality similar to MS-Windows. I'd much rather be able to
+# cycle windows. There's some suggestions in the main FVWM FAQ about
+# how to do this, although that still didn't quite emulate what I was
+# after --- indeed, none of the solutions cycled back round to the
+# first window. So, here's my solution to it.
+#
+#DestroyFunc SwitchWindow
+#AddToFunc SwitchWindow
+#+ I $[DIR] (CurrentPage, !Iconic, !Sticky) FocusRaiseAndStuff
+#+ I Deschedule 134000
+#+ I PipeRead `[ "$[DIR]" == "Prev" ] && \
+#	echo 'SetEnv NDIR Next' || \
+#	echo 'SetEnv NDIR Prev'`
+#+ I Schedule 700 134000 SetEnv DIR $[NDIR]
+
+echo complex_functions.rc: Processamento terminado.
+#======================================================================#

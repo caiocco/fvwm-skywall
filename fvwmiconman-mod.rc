@@ -1,0 +1,143 @@
+echo fvwmiconman-mod.rc: Configurando módulo gerenciador de ícones...
+
+#------------------ FvwmIconMan
+# FvwmIconManager
+#
+# Configuração para integração ao FvwmBar
+# Adaptado do original de Tavis Ormady
+#
+#####
+# FvwmIconMan é um módulo altamente configurável para o gerenciamento de
+# tarefas em execução.
+# Este aqui está configurado para se parecer com uma barra de tarefas.
+#
+# Caso deseje mudar a informação escrita nos botões você pode declarar
+# a opção Format; dê uma olhada nas opções disponíveis na página de
+# manual do módulo FvwmIconMan.
+# 
+# É possível configurar Actions (ações) para os botões; sendcommand irá
+# executar um comando no contexto da janela. Observe também as opções 
+# de menu, onde o Popup aparece alinhado com o lado esquerdo do botão.
+#######
+
+*Alpha-FvwmIconMan: Background Gray
+*Alpha-FvwmIconMan: Foreground Black
+*Alpha-FvwmIconMan: ManagerGeometry 1x1+0+0
+*Alpha-FvwmIconMan: ButtonGeometry 200x23
+*Alpha-FvwmIconMan: FocusAndSelectButton down
+*Alpha-FvwmIconMan: FocusButton down Black Gray60
+*Alpha-FvwmIconMan: IconButton up
+*Alpha-FvwmIconMan: PlainButton up
+*Alpha-FvwmIconMan: SelectButton Down Black lightgray
+*Alpha-FvwmIconMan: ReliefThickness 1
+#*Alpha-FvwmIconMan: Font "xft:Helvetica:Medium:size=8"
+*Alpha-FvwmIconMan: Font "xft:DejaVu Sans:Medium:size=8"
+*Alpha-FvwmIconMan: Resolution Screen
+*Alpha-FvwmIconMan: DrawIcons False
+*Alpha-FvwmIconMan: FollowFocus True
+*Alpha-FvwmIconMan: UseWinList True
+*Alpha-FvwmIconMan: ShowOnlyIcons False
+*Alpha-FvwmIconMan: Title "FvwmIconMan"
+*Alpha-FvwmIconMan: Sort id
+*Alpha-FvwmIconMan: Action     Mouse     0 N sendcommand Nop
+*Alpha-FvwmIconMan: Action	 Mouse 	   1 N sendcommand "Iconify off", sendcommand RaiseLower, sendcommand FlipFocus
+*Alpha-FvwmIconMan: Action     Mouse     2 N sendcommand Iconify
+*Alpha-FvwmIconMan: Action     Mouse     3 N sendcommand "Menu Window-Ops2 mouse c -100m-9p"
+*Alpha-FvwmIconMan: DontShow class=FvwmButtons
+*Alpha-FvwmIconMan: NoIconAction	"SendToModule FvwmAnimate animate"
+Test (EnvMatch Sky_Theme tribal) *Alpha-FvwmIconMan: Colorset 10
+Test (EnvMatch Sky_Theme clearlooks) *Alpha-FvwmIconMan: Colorset 10
+Test (EnvMatch Sky_Theme gentoo) *Alpha-FvwmIconMan: Colorset 10
+Test (EnvMatch Sky_Theme gentoo) *Alpha-FvwmIconMan: Font "Shadow=1 0 SE:xft:DejaVu Sans:Medium:size=8"
+Test (EnvMatch Sky_Theme gentoo) *Alpha-FvwmIconMan: FocusAndSelectButton up
+Test (EnvMatch Sky_Theme gentoo) *Alpha-FvwmIconMan: FocusButton down Black Gray60
+Test (EnvMatch Sky_Theme gentoo) *Alpha-FvwmIconMan: IconButton flat
+Test (EnvMatch Sky_Theme gentoo) *Alpha-FvwmIconMan: PlainButton flat
+Test (EnvMatch Sky_Theme gentoo) *Alpha-FvwmIconMan: SelectButton down Black lightgray
+Test (EnvMatch Sky_Theme nimbos) *Alpha-FvwmIconMan: Colorset 10
+Test (EnvMatch Sky_Theme nimbos) *Alpha-FvwmIconMan: Font "Shadow=1 0 SE:xft:DejaVu Sans:Medium:size=8"
+Test (EnvMatch Sky_Theme nimbos) *Alpha-FvwmIconMan: FocusAndSelectButton up
+Test (EnvMatch Sky_Theme nimbos) *Alpha-FvwmIconMan: FocusButton down Black Gray60
+Test (EnvMatch Sky_Theme nimbos) *Alpha-FvwmIconMan: IconButton flat
+Test (EnvMatch Sky_Theme nimbos) *Alpha-FvwmIconMan: PlainButton flat
+Test (EnvMatch Sky_Theme nimbos) *Alpha-FvwmIconMan: SelectButton down Black lightgray
+Test (EnvMatch Sky_Theme diamond) *Alpha-FvwmIconMan: Colorset 10
+Test (EnvMatch Sky_Theme diamond) *Alpha-FvwmIconMan: Font "Shadow=0 0 SE:xft:DejaVu Sans:Medium:size=8"
+Test (EnvMatch Sky_Theme diamond) *Alpha-FvwmIconMan: FocusAndSelectButton up
+Test (EnvMatch Sky_Theme diamond) *Alpha-FvwmIconMan: FocusButton down Black Gray60
+Test (EnvMatch Sky_Theme diamond) *Alpha-FvwmIconMan: IconButton flat
+Test (EnvMatch Sky_Theme diamond) *Alpha-FvwmIconMan: PlainButton flat
+Test (EnvMatch Sky_Theme diamond) *Alpha-FvwmIconMan: SelectButton down Black lightgray
+Test (EnvMatch Sky_TwinView Yes) *Alpha-FvwmIconMan: NumManagers 1
+
+#------------------ FvwmIconMan
+# FvwmIconManager
+#
+# Configuração para integração ao FvwmBar2
+# Adaptado do original de Tavis Ormady
+#
+#####
+# FvwmIconMan é um módulo altamente configurável para o gerenciamento de
+# tarefas em execução.
+# Este aqui está configurado para se parecer com uma barra de tarefas.
+#
+# Caso deseje mudar a informação escrita nos botões você pode declarar
+# a opção Format; dê uma olhada nas opções disponíveis na página de
+# manual do módulo FvwmIconMan.
+# 
+# É possível configurar Actions (ações) para os botões; sendcommand irá
+# executar um comando no contexto da janela. Observe também as opções 
+# de menu, onde o Popup aparece alinhado com o lado esquerdo do botão.
+#######
+
+*Beta-FvwmIconMan: Background Gray
+*Beta-FvwmIconMan: Foreground Black
+*Beta-FvwmIconMan: ManagerGeometry 1x1+1680+0
+*Beta-FvwmIconMan: ButtonGeometry 200x23
+*Beta-FvwmIconMan: FocusAndSelectButton down
+*Beta-FvwmIconMan: FocusButton down Black Gray60
+*Beta-FvwmIconMan: IconButton up
+*Beta-FvwmIconMan: PlainButton up
+*Beta-FvwmIconMan: SelectButton Down Black lightgray
+*Beta-FvwmIconMan: ReliefThickness 1
+#*Beta-FvwmIconMan: Font "xft:Helvetica:Medium:size=8"
+*Beta-FvwmIconMan: Font "xft:DejaVu Sans:Medium:size=8"
+*Beta-FvwmIconMan: Resolution Screen
+*Beta-FvwmIconMan: DrawIcons False
+*Beta-FvwmIconMan: FollowFocus True
+*Beta-FvwmIconMan: UseWinList True
+*Beta-FvwmIconMan: ShowOnlyIcons False
+*Beta-FvwmIconMan: Title "FvwmIconMan"
+*Beta-FvwmIconMan: Sort id
+*Beta-FvwmIconMan: Action     Mouse     0 N sendcommand Nop
+*Beta-FvwmIconMan: Action	 Mouse 	   1 N sendcommand "Iconify off", sendcommand RaiseLower, sendcommand FlipFocus
+*Beta-FvwmIconMan: Action     Mouse     2 N sendcommand Iconify
+*Beta-FvwmIconMan: Action     Mouse     3 N sendcommand "Menu Window-Ops2 mouse c -100m-9p"
+*Beta-FvwmIconMan: DontShow class=FvwmButtons
+*Beta-FvwmIconMan: NoIconAction	"SendToModule FvwmAnimate animate"
+Test (EnvMatch Sky_Theme tribal) *Beta-FvwmIconMan: Colorset 10
+Test (EnvMatch Sky_Theme clearlooks) *Beta-FvwmIconMan: Colorset 10
+Test (EnvMatch Sky_Theme gentoo) *Beta-FvwmIconMan: Colorset 10
+Test (EnvMatch Sky_Theme gentoo) *Beta-FvwmIconMan: Font "Shadow=1 0 SE:xft:DejaVu Sans:Medium:size=8"
+Test (EnvMatch Sky_Theme gentoo) *Beta-FvwmIconMan: FocusAndSelectButton up
+Test (EnvMatch Sky_Theme gentoo) *Beta-FvwmIconMan: FocusButton down Black Gray60
+Test (EnvMatch Sky_Theme gentoo) *Beta-FvwmIconMan: IconButton flat
+Test (EnvMatch Sky_Theme gentoo) *Beta-FvwmIconMan: PlainButton flat
+Test (EnvMatch Sky_Theme gentoo) *Beta-FvwmIconMan: SelectButton down Black lightgray
+Test (EnvMatch Sky_Theme nimbos) *Beta-FvwmIconMan: Colorset 10
+Test (EnvMatch Sky_Theme nimbos) *Beta-FvwmIconMan: Font "Shadow=1 0 SE:xft:DejaVu Sans:Medium:size=8"
+Test (EnvMatch Sky_Theme nimbos) *Beta-FvwmIconMan: FocusAndSelectButton up
+Test (EnvMatch Sky_Theme nimbos) *Beta-FvwmIconMan: FocusButton down Black Gray60
+Test (EnvMatch Sky_Theme nimbos) *Beta-FvwmIconMan: IconButton flat
+Test (EnvMatch Sky_Theme nimbos) *Beta-FvwmIconMan: PlainButton flat
+Test (EnvMatch Sky_Theme nimbos) *Beta-FvwmIconMan: SelectButton down Black lightgray
+Test (EnvMatch Sky_Theme diamond) *Beta-FvwmIconMan: Colorset 10
+Test (EnvMatch Sky_Theme diamond) *Beta-FvwmIconMan: Font "Shadow=0 0 SE:xft:DejaVu Sans:Medium:size=8"
+Test (EnvMatch Sky_Theme diamond) *Beta-FvwmIconMan: FocusAndSelectButton up
+Test (EnvMatch Sky_Theme diamond) *Beta-FvwmIconMan: FocusButton down Black Gray60
+Test (EnvMatch Sky_Theme diamond) *Beta-FvwmIconMan: IconButton flat
+Test (EnvMatch Sky_Theme diamond) *Beta-FvwmIconMan: PlainButton flat
+Test (EnvMatch Sky_Theme diamond) *Beta-FvwmIconMan: SelectButton down Black lightgray
+Test (EnvMatch Sky_TwinView Yes) *Beta-FvwmIconMan: NumManagers 1
+
+echo fvwmiconman-mod.rc: Processamento terminado.

@@ -1,0 +1,10 @@
+#------------------ FvwmButtons
+# FvwmDeskCenter
+#
+DestroyModuleConfig FvwmDeskCenter: *
+
+Style FvwmDeskCenter !Title, !Handles, Sticky, WindowListSkip, BorderWidth 0, NeverFocus
+
+*FvwmDeskCenter: Font "xft:Helvetica:Medium:size=7"
+*FvwmDeskCenterBack Gray
+*FvwmDeskCenterFore Black

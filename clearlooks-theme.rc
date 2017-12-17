@@ -1,0 +1,139 @@
+#======================================================================#
+echo clearlooks-theme.rc: Processando tema Clearlooks...
+
+#
+# Configurações cosméticas
+# Tema Clearlooks
+# Baseado no tema GTK+2 original Clearlooks¹ e nas configurações e
+# bitmaps do projeto FVWM Crystal²
+#
+# ¹ http://clearlooks.sourceforge.net/
+# ² http://fvwm-crystal.org/
+DestroyDecor recreate "clearlooks"
+
+#
+# Colorsets
+#
+# - Janela inativa
+Colorset 0 Foreground "black", Background "#E4DDD7", Hilight "white", Shadow "#e0d9d2", Fgsh "#e0d9d2"
+# - Janela ativa
+Colorset 1 Foreground "white", Background "#69879C", Hilight "white", Shadow "gray", Fgsh "black"
+# - Borda da janela inativa
+Colorset 2 Background "#3d3a38"
+# - Borda da janela ativa
+Colorset 4 Background "#232527"
+# - FvwmButtons
+Colorset 10 bg #CFC6B9 fg back
+# - Alguns aplicativos embutidos
+Colorset 11 bg #B6A68C fg back
+# - Pager
+Colorset 14 fg white, bg #6b8eb5, fgsh black, RootTransparent Buffer, Tint black 70
+
+#
+# Bordas e Título
+#
+# Compilou com aquele maldito patch?
+Test (EnvMatch Sky_RoundedCorners Yes) Style "clearlooks" RoundedCorners
+
+AddToDecor "clearlooks" TitleStyle Inactive Colorset 0
+AddToDecor "clearlooks" TitleStyle Active Colorset 1
+
+AddToDecor "clearlooks" TitleStyle Inactive TiledPixmap $[Sky_Dir]/imagens/clearlooks/window-inactive-title.png
+AddToDecor "clearlooks" TitleStyle Active TiledPixmap $[Sky_Dir]/imagens/clearlooks/window-active-title.png
+AddToDecor "clearlooks" TitleStyle Centered
+AddToDecor "clearlooks" TitleStyle Height 24
+
+AddToDecor "clearlooks" BorderStyle -- HiddenHandles
+AddToDecor "clearlooks" BorderStyle -- Flat
+
+AddToDecor "clearlooks" TitleStyle \
+	InactiveDown (-- Flat) \
+	InactiveUp (-- Flat) \
+	ActiveUp (-- Flat) \
+	ActiveDown (-- Flat)
+
+#
+# Botões
+#
+# OBS: Cuidado com a ordem.
+#
+AddToDecor "clearlooks" ButtonStyle All -- flat UseTitleStyle
+AddToDecor "clearlooks" ButtonStyle 1 - Clear MWMDecorMenu
+AddToDecor "clearlooks" ButtonStyle 2 - Clear
+AddToDecor "clearlooks" ButtonStyle 4 - Clear MWMDecorMax
+AddToDecor "clearlooks" ButtonStyle 6 - Clear MWMDecorMin
+AddToDecor "clearlooks" ButtonStyle 8 - Clear
+
+AddToDecor "clearlooks" AddButtonStyle 1 InactiveDown Pixmap $[Sky_Dir]/imagens/clearlooks/window-inactive-empty-down.png
+AddToDecor "clearlooks" AddButtonStyle 1 InactiveUp Pixmap $[Sky_Dir]/imagens/clearlooks/window-inactive-empty.png
+AddToDecor "clearlooks" AddButtonStyle 1 ActiveUp Pixmap $[Sky_Dir]/imagens/clearlooks/window-active-empty.png
+AddToDecor "clearlooks" AddButtonStyle 1 ActiveDown Pixmap $[Sky_Dir]/imagens/clearlooks/window-active-empty-down.png
+AddToDecor "clearlooks" AddButtonStyle 1 MiniIcon
+
+AddToDecor "clearlooks" AddButtonStyle 2 InactiveDown Pixmap $[Sky_Dir]/imagens/clearlooks/window-inactive-close-down.png
+AddToDecor "clearlooks" AddButtonStyle 2 InactiveUp Pixmap $[Sky_Dir]/imagens/clearlooks/window-inactive-close.png
+AddToDecor "clearlooks" AddButtonStyle 2 ActiveUp Pixmap $[Sky_Dir]/imagens/clearlooks/window-active-close.png
+AddToDecor "clearlooks" AddButtonStyle 2 ActiveDown Pixmap $[Sky_Dir]/imagens/clearlooks/window-active-close-down.png
+
+AddToDecor "clearlooks" AddButtonStyle 3 InactiveDown Pixmap $[Sky_Dir]/imagens/clearlooks/window-inactive-arrows-down.png
+AddToDecor "clearlooks" AddButtonStyle 3 InactiveUp Pixmap $[Sky_Dir]/imagens/clearlooks/window-inactive-arrows.png
+AddToDecor "clearlooks" AddButtonStyle 3 ActiveUp Pixmap $[Sky_Dir]/imagens/clearlooks/window-active-arrows.png
+AddToDecor "clearlooks" AddButtonStyle 3 ActiveDown Pixmap $[Sky_Dir]/imagens/clearlooks/window-active-arrows-down.png
+
+AddToDecor "clearlooks" AddButtonStyle 4 InactiveDown Pixmap $[Sky_Dir]/imagens/clearlooks/window-inactive-maximize-down.png
+AddToDecor "clearlooks" AddButtonStyle 4 InactiveUp Pixmap $[Sky_Dir]/imagens/clearlooks/window-inactive-maximize.png
+AddToDecor "clearlooks" AddButtonStyle 4 ActiveUp Pixmap $[Sky_Dir]/imagens/clearlooks/window-active-maximize.png
+AddToDecor "clearlooks" AddButtonStyle 4 ActiveDown Pixmap $[Sky_Dir]/imagens/clearlooks/window-active-maximize-down.png
+
+AddToDecor "clearlooks" AddButtonStyle 6 InactiveDown Pixmap $[Sky_Dir]/imagens/clearlooks/window-inactive-iconify-down.png
+AddToDecor "clearlooks" AddButtonStyle 6 InactiveUp Pixmap $[Sky_Dir]/imagens/clearlooks/window-inactive-iconify.png
+AddToDecor "clearlooks" AddButtonStyle 6 ActiveUp Pixmap $[Sky_Dir]/imagens/clearlooks/window-active-iconify.png
+AddToDecor "clearlooks" AddButtonStyle 6 ActiveDown Pixmap $[Sky_Dir]/imagens/clearlooks/window-active-iconify-down.png
+
+AddToDecor "clearlooks" AddButtonStyle 8 InactiveDown Pixmap $[Sky_Dir]/imagens/clearlooks/window-inactive-options-down.png
+AddToDecor "clearlooks" AddButtonStyle 8 InactiveUp Pixmap $[Sky_Dir]/imagens/clearlooks/window-inactive-options.png
+AddToDecor "clearlooks" AddButtonStyle 8 ActiveUp Pixmap $[Sky_Dir]/imagens/clearlooks/window-active-options.png
+AddToDecor "clearlooks" AddButtonStyle 8 ActiveDown Pixmap $[Sky_Dir]/imagens/clearlooks/window-active-options-down.png
+
+#
+# Estilos
+#
+Style clearlooks BorderWidth 1, HandleWidth 1
+Style clearlooks Colorset 0
+Style clearlooks BorderColorset 1
+Style clearlooks HilightColorset 2
+Style clearlooks HilightBorderColorset 4
+
+#
+# Fontes
+#
+Style clearlooks Style * Font shadow="1 1":"xft:Verdana:pixelsize=12:Bold"
+
+#
+# Menus
+#
+MenuStyle * Font "Shadow=1 0 SE:xft:Sans:Medium:size=9"
+MenuStyle * Hilight3DThick
+MenuStyle * Hilight3DThickness -1 -1
+MenuStyle * MenuColorset 10
+MenuStyle * !ActiveFore
+MenuStyle * !HilightBack
+MenuStyle * Animation
+MenuStyle * PopupOffset -4 100
+MenuStyle * TitleUnderlines2
+MenuStyle * SeparatorsLong
+MenuStyle * TrianglesRelief
+MenuStyle * PopupImmediately
+MenuStyle * PopdownDelayed
+MenuStyle * PopdownDelay 150
+MenuStyle * PopupAsSubmenu
+MenuStyle * HoldSubmenus
+MenuStyle * SubmenusRight
+MenuStyle * BorderWidth 2
+
+# Aplicando...
+Style * UseStyle clearlooks
+Style * UseDecor clearlooks
+
+echo clearlooks-theme.rc: Processamento terminado.
+#=====================================================================#

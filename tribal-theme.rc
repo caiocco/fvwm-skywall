@@ -1,0 +1,198 @@
+#=====================================================================#
+echo tribal-theme.rc: Processando tema Tribal...
+
+#
+# Configurações cosméticas
+# Tema Tribal
+# Baseado no original "default" do FVWM-themes 0.7.0
+#
+DestroyDecor "tribal"
+
+#---------------------------------------------------------------------#
+
+# ----------------------
+# I.1. Default Colorsets
+# ----------------------
+
+# for feedback windows (like geometry window and NoteMessage) and 
+# FvwmScroll
+#
+Colorset 0 fg black, bg #70A0A0
+
+# -----------------------
+# I.2. Window Decorations
+# -----------------------
+
+# The following colors are used in FvwmPager for the window colors
+# and in a title bar of windows (shade/hilight colors, computed from
+# the bg color, but might be specified directly by sh and hi).
+# The title bar background is defined below using TitleStyle.
+
+# window title, inactive and active
+#
+Colorset 1 fg black, bg rgb:88/7C/66, Plain, NoShape
+Colorset 2 fg black, bg rgb:CC/BA/99, Plain, NoShape
+
+# window borders, inactive and active
+#
+Colorset 3 fg black, bg rgb:88/7C/66, Plain, NoShape
+Colorset 4 fg black, bg rgb:CC/BA/99, Plain, NoShape
+
+# background for window title, buttons and border
+#
+DestroyFunc FuncFvwmDecorBackground
+AddToFunc   FuncFvwmDecorBackground
++ I TitleStyle AllInactive Colorset 1 -- Raised
++ I TitleStyle AllActive   Colorset 2 -- Raised
+#
++ I ButtonStyle All Simple -- UseTitleStyle
+
+# -------------------
+# I.3. Menu Colorsets
+# -------------------
+
+# inactive menu item fg+bg and menu face if any
+#
+Colorset 5 fg black, bg rgb:80/98/B0, Plain, NoShape
+
+# active menu item fg+bg
+#
+Colorset 6 fg black, bg rgb:90/A9/C2, Plain, NoShape
+
+# greyed menu item fg
+#
+Colorset 7 fg grey48, bg grey48, Plain, NoShape
+
+# -------------------------------------------------
+# Colorsets 8 and 9 are reserved for the future use.
+
+# ======================================================================
+# II. Module Colorsets
+# ======================================================================
+
+# ----------------------
+# II.1. Common Colorsets
+# ----------------------
+
+# default for modules
+# For FvwmButtons, FvwmPager, can be also used for FvwmIconMan, FvwmIconBox.
+#
+Colorset 10 fg black, bg rgb:80/A0/A0, Plain, NoShape
+
+# default hilight for modules
+# For hilighting a part of a button bar (some swallowed apps for example).
+#
+Colorset 11 fg black, bg lightgray, Plain, NoShape
+
+# special or funny: a gradient or a pixmap
+# May be used in certain FvwmButtons, FvwmIconMan, FvwmIconBox.
+#
+Colorset 12 fg black, bg rgb:80/A0/A0, \
+	VGradient 20 rgb:80/A0/A0 rgb:C0/F0/F0, NoShape
+
+# swallowed window: the hilight and shadow colors should be defined
+# (-hd of xclock and -hl of xload use sh, and -hl of xclock uses hi)
+#
+Colorset 13 fg black, bg rgb:70/8C/8C, hi black, sh gray40, \
+	Plain, NoShape
+
+# default #2
+# FvwmPager or to get more colors in FvwmButtons, can be set to 10.
+#
+Colorset 14 fg black, bg rgb:80/A0/A0, Plain, NoShape
+
+# default hilight #2
+# FvwmPager or to get more colors in FvwmButtons, can be set to 11.
+#
+Colorset 15 fg black, bg rgb:C0/F0/F0, Plain, NoShape
+
+# tips/balloons (TaskBar and FvwmPager)
+#
+Colorset 16 fg black, bg rgb:F0/F0/C0, Plain, NoShape
+
+# ----------------------------------
+# II.2. Window List Module Colorsets
+# ----------------------------------
+
+# standard item
+Colorset 17 fg black, bg rgb:80/A0/A0, Plain, NoShape
+
+# active item
+Colorset 18 fg black, bg rgb:A0/C8/C8, Plain, NoShape
+
+# iconified item
+Colorset 19 fg white, bg rgb:60/78/78, Plain, NoShape
+
+# pointed item
+Colorset 20 fg black, bg rgb:88/AA/AA, Plain, NoShape
+
+#---------------------------------------------------------------------#
+
+Style "*" Button 1, Button 2, Button 4, Button 6
+Style "*" MWMButtons  # button relief follows the state
+
+AddtoDecor "tribal" ButtonStyle 1 Vector 5 25x40@1 25x60@1 75x60@0 \
+	75x40@0 25x40@1
+AddtoDecor "tribal" ButtonStyle 2 Vector 16 \
+	20x20@1 30x20@1 50x40@1 70x20@1 80x20@1 80x30@0 60x50@0 \
+	80x80@0 70x80@0 50x60@0 30x80@0 20x80@0 20x70@0 40x50@1 \
+	20x30@0 20x20@1
+AddtoDecor "tribal" ButtonStyle 4 Vector 4 50x25@1 75x75@0 25x75@0 \
+	50x25@1
+AddtoDecor "tribal" ButtonStyle 6 Vector 4 50x75@1 25x25@1 75x25@1 \
+	50x75@0
+
+AddtoDecor "tribal" ButtonStyle 1 - Clear MWMDecorMenu
+AddtoDecor "tribal" ButtonStyle 2 - Clear
+AddtoDecor "tribal" ButtonStyle 4 - Clear MWMDecorMax
+AddtoDecor "tribal" ButtonStyle 6 - Clear MWMDecorMin
+
+AddtoDecor "tribal" TitleStyle Height MinHeight 18
+
+#---------------------------------------------------------------------#
+
+DefaultColorset 0
+
+Style * Colorset 1
+Style * HilightColorset 2
+Style * BorderColorset 3
+Style * HilightBorderColorset 4
+
+#---------------------------------------------------------------------#
+
+MenuStyle * MenuFace, ActiveFore, HilightBack
+MenuStyle * MenuColorset 5, ActiveColorset 6, GreyedColorset 7
+MenuStyle * Font "Shadow=1 o SE:xft:Utopia:Bold-:Regular:size=9"
+#MenuStyle * Hilight3DThickness 1
+MenuStyle * Hilight3DThickness -1 -1
+MenuStyle * PopupDelayed, PopupDelay 150, PopdownDelayed, PopdownDelay 150
+MenuStyle * PopupOffset -15 100, TitleWarpOff
+MenuStyle * TitleUnderlines1, SeparatorsLong, TrianglesRelief
+MenuStyle * Animation, AutomaticHotkeysOff, DoubleClickTime
+MenuStyle * BorderWidth 2, SidePic, SideColor
+MenuStyle * PopupAsSubmenu, HoldSubmenus, SubmenusRight
+MenuStyle * ItemFormat "%.4s%.1|%.5i%.5l%.5l%.5r%.5i%2.3>%1|"
+MenuStyle * VerticalItemSpacing, VerticalTitleSpacing
+
+BusyCursor DynamicMenu True
+
+#---------------------------------------------------------------------#
+
+Style "*"	BorderWidth 5, HandleWidth 6
+Style "*"	FvwmBorder, FirmBorder
+
+AddtoDecor "tribal" BorderStyle Simple
+AddtoDecor "tribal" TitleStyle LeftJustified
+AddtoDecor "tribal" TitleStyle -- Raised
+AddtoDecor "tribal" ButtonStyle All -- Raised
+
+Style "tribal" Font "Shadow=1 0 SE:xft:Luxi Mono:Bold:Regular:size=10"
+Style "tribal" Iconfont  * -*-fixed-medium-r-semicondensed-*-13-*
+
+#---------------------------------------------------------------------#
+
+Style * UseStyle tribal
+Style * UseDecor tribal
+
+echo tribal-theme.rc: Processamento terminado.
+#======================================================================#

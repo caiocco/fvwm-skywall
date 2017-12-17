@@ -1,0 +1,118 @@
+#=====================================================================#
+echo nimbos-theme.rc: Processando tema Nimbos...
+
+#
+# Configurações cosméticas
+# Tema Nimbos
+#
+# Baseado no original Nimbus para o Metacity
+# Sun Microsystems Inc. 2006. Design original por Mike Stern, 
+# implementação original por Erwann Chenede
+#
+DestroyDecor "nimbos"
+
+#
+# Colorsets
+#
+# - Janela inativa
+Colorset 0 fg #818693, bg #ABAFB8
+# - Janela ativa
+Colorset 1 fg black, bg #AEB3BC
+# - FvwmButtons
+Colorset 10 fg black, bg #C3C7CE, fgsh gray40, RootTransparent Buffer, Tint #CAD1E1 85
+# - Alguns aplicativos embutidos
+Colorset 11 fg black, bg #C3C7CE, fgsh gray40, RootTransparent Buffer, Tint #CAD1E1 85
+# - Pager
+Colorset 14 fg gray20, bg #C6C9D0, fgsh black, RootTransparent Buffer, Tint #ACB0B9 70
+# - Outros
+Colorset 15 fg black, bg #C3C7CE, fgsh gray40, Plain, NoShape
+Colorset 16 fg lightgray, bg gray20, fgsh gray10, Plain, NoShape
+# - Menus
+Colorset 3 fg black, bg #EFF0F2, sh rgb:ac/a8/99, hi rgb:f0/e8/e0, \
+	IconAlpha 95, IconTint yellow 8, Plain, NoShape
+# - Menus, ítem de menu ativo, fg+bg
+Colorset 5 fg white, bg #39698A, IconAlpha 95, IconTint cyan 8, \
+	Plain, NoShape
+# - Menus, ítem de menu desativado, fg
+Colorset 6 fg grey, bg grey, Plain, NoShape
+
+#
+# Bordas e Título
+#
+DestroyDecor nimbos
+AddToDecor nimbos
++ BorderStyle Simple -- HiddenHandles NoInset  
++ TitleStyle Centered Height 22 -- flat
++ AddButtonStyle 1 MiniIcon
++ AddTitleStyle Active MultiPixmap Main TiledPixmap $[Sky_Dir]/imagens/nimbos/title-1-active.xpm
++ AddTitleStyle Inactive MultiPixmap Main TiledPixmap $[Sky_Dir]/imagens/nimbos/title-1-inactive.xpm
+
+#
+# Botões
+#
+AddToDecor "nimbos" ButtonStyle Reset
+AddToDecor "nimbos" ButtonStyle All Pixmap $[Sky_Dir]/imagens/empty.xpm
+AddToDecor "nimbos" ButtonStyle All -- flat UseTitleStyle
+AddToDecor "nimbos" ButtonStyle 1 - Clear MWMDecorMenu
+AddToDecor "nimbos" ButtonStyle 2 - Clear
+AddToDecor "nimbos" ButtonStyle 4 - Clear MWMDecorMax
+AddToDecor "nimbos" ButtonStyle 6 - Clear MWMDecorMin
+
+# - Menu
+AddToDecor "nimbos" AddButtonStyle 1 Inactive Pixmap $[Sky_Dir]/imagens/nimbos/button-menu-icon-unfocused.png
+AddToDecor "nimbos" AddButtonStyle 1 ActiveUp Pixmap $[Sky_Dir]/imagens/nimbos/button-menu-icon-pressed.png
+AddToDecor "nimbos" AddButtonStyle 1 ActiveDown Pixmap $[Sky_Dir]/imagens/nimbos/button-menu-icon.png
+
+# - Fechar
+AddToDecor "nimbos" AddButtonStyle 2 Inactive Pixmap $[Sky_Dir]/imagens/nimbos/button-close-icon-unfocused.png
+AddToDecor "nimbos" AddButtonStyle 2 ActiveUp Pixmap $[Sky_Dir]/imagens/nimbos/button-close-icon-pressed.png
+AddToDecor "nimbos" AddButtonStyle 2 ActiveDown Pixmap $[Sky_Dir]/imagens/nimbos/button-close-icon.png
+
+# - Maximizar
+AddToDecor "nimbos" AddButtonStyle 4 Inactive Pixmap $[Sky_Dir]/imagens/nimbos/button-max-icon-unfocused.png
+AddToDecor "nimbos" AddButtonStyle 4 ActiveUp Pixmap $[Sky_Dir]/imagens/nimbos/button-max-icon-pressed.png
+AddToDecor "nimbos" AddButtonStyle 4 ActiveDown Pixmap $[Sky_Dir]/imagens/nimbos/button-max-icon.png
+
+# - Minimizar
+AddToDecor "nimbos" AddButtonStyle 6 Inactive Pixmap $[Sky_Dir]/imagens/nimbos/button-min-icon-unfocused.png
+AddToDecor "nimbos" AddButtonStyle 6 ActiveUp Pixmap $[Sky_Dir]/imagens/nimbos/button-min-icon-pressed.png
+AddToDecor "nimbos" AddButtonStyle 6 ActiveDown Pixmap $[Sky_Dir]/imagens/nimbos/button-min-icon.png
+
+#
+# Estilos
+#
+Style * IconTitleColorset 3
+Style * HilightIconTitleColorset 1
+Style * IconBackgroundColorset
+
+Style nimbos Colorset 0
+Style nimbos HilightColorset 1
+Style nimbos BorderWidth 4, HandleWidth 4, FvwmBorder, !MwmButtons
+
+#
+# Fontes
+#
+Style nimbos Font "Shadow=0 1 C:xft:Luxi Sans:Bold:size=11"
+
+#
+# Menus
+#
+MenuStyle * Win
+MenuStyle * MenuColorset 3, ActiveColorset 5, GreyedColorset 6
+MenuStyle * Hilight3DThickness 0
+MenuStyle * Hilight3DOff, HilightBack
+MenuStyle * PopupDelayed, PopupDelay 150, PopdownDelayed, PopdownDelay 150
+MenuStyle * PopupOffset -5 100, TitleWarpOff
+MenuStyle * TitleUnderlines1, SeparatorsLong, TrianglesSolid
+MenuStyle * TrianglesUseFore
+MenuStyle * AnimationOff, AutomaticHotkeysOff, DoubleClickTime
+MenuStyle * BorderWidth 2, SidePic, SideColor
+MenuStyle * PopupAsSubmenu, RemoveSubmenus, SubmenusRight
+MenuStyle * Font "Shadow=0 0 SE:xft:Sans:Medium:size=9"
+
+# Aplicando...
+Style * UseStyle nimbos
+Style * UseDecor nimbos
+
+echo nimbos-theme.rc: Processamento terminado.
+#=====================================================================#

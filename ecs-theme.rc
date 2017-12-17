@@ -1,0 +1,82 @@
+#=====================================================================#
+echo ecs-theme.rc: Processando tema eComStation...
+
+#
+# Configurações cosméticas
+# Tema eComStation
+#
+DestroyDecor "eCS"
+
+# Colorsets
+Colorset 17 fg black, bg gray, sh gray40
+
+# Menus
+MenuStyle * Font "Shadow=1 0 SE:xft:Sans:Medium:size=9"
+MenuStyle * MenuFace DGradient \
+	128 2 lightgray 50 lightgray 50 lightgray"
+MenuStyle * Hilight3DThick
+MenuStyle * Hilight3DThickness -2 -2
+MenuStyle * ActiveFore darkred
+MenuStyle * HilightBack gray80
+MenuStyle * Animation
+MenuStyle * PopupOffset -4 100
+MenuStyle * TitleUnderlines2
+MenuStyle * SeparatorsLong
+MenuStyle * TrianglesRelief
+MenuStyle * PopupImmediately
+MenuStyle * PopdownDelayed
+MenuStyle * PopdownDelay 150
+MenuStyle * PopupAsSubmenu
+MenuStyle * HoldSubmenus
+MenuStyle * SubmenusRight
+MenuStyle * BorderWidth 2
+MenuStyle * Foreground black
+
+# Titulo
+Style "*" ForeColor gray94
+Style "*" BackColor Gray
+Style "*" HilightFore White
+Style "*" HilightBack Gray
+AddToDecor "eCS" TitleStyle Centered
+AddToDecor "eCS" TitleStyle Height 23
+AddToDecor "eCS" TitleStyle \
+	ActiveUp (-- Sunk) \
+	ActiveDown (-- Sunk) \
+	InactiveUp (-- Sunk) \
+	InactiveDown (-- Sunk)
+AddToDecor "eCS" TitleStyle ActiveUp HGradient 80 red yellow2
+AddToDecor "eCS" TitleStyle ActiveDown BGradient 80 red3 yellow4 (-- Flat)
+AddToDecor "eCS" TitleStyle ActiveUp (-- Sunk)
+AddToDecor "eCS" TitleStyle Inactive HGradient 40 gray80 gray65
+AddToDecor "eCS" TitleStyle InactiveUp (-- Sunk)
+
+# Bordas
+Style eCS \
+	MwmBorder, !MwmButtons, BorderWidth 2, HandleWidth 5
+AddToDecor "eCS" BorderStyle Active Solid Gray
+AddToDecor "eCS" BorderStyle Inactive Solid Gray
+AddToDecor "eCS" BorderStyle Simple
+AddToDecor "eCS" BorderStyle -- !NoInset
+AddToDecor "eCS" BorderStyle -- HiddenHandles
+AddToDecor "eCS" BorderStyle -- Raised
+
+# Botões
+AddToDecor "eCS" ButtonStyle Reset
+AddToDecor "eCS" ButtonStyle All Pixmap empty.xpm
+AddToDecor "eCS" ButtonStyle All Active ( Colorset 17 -- Flat )
+AddToDecor "eCS" ButtonStyle All Inactive ( Colorset 17 -- Flat )
+AddToDecor "eCS" AddButtonStyle 1 Active Pixmap $[Sky_Dir]/imagens/ecs_menu.png
+AddToDecor "eCS" AddButtonStyle 1 Inactive Pixmap $[Sky_Dir]/imagens/ecs_menu.png
+AddToDecor "eCS" AddButtonStyle 2 Active Pixmap $[Sky_Dir]/imagens/ecs_zoom.png
+AddToDecor "eCS" AddButtonStyle 2 Inactive Pixmap $[Sky_Dir]/imagens/ecs_zoom.png
+AddToDecor "eCS" AddButtonStyle 6 Active Pixmap $[Sky_Dir]/imagens/ecs_close.png
+AddToDecor "eCS" AddButtonStyle 6 Inactive Pixmap $[Sky_Dir]/imagens/ecs_close.png
+AddToDecor "eCS" AddButtonStyle 4 Active Pixmap $[Sky_Dir]/imagens/ecs_iconify.png
+AddToDecor "eCS" AddButtonStyle 4 Inactive Pixmap $[Sky_Dir]/imagens/ecs_iconify.png
+
+# Aplicando...
+Style * UseStyle eCS
+Style * UseDecor eCS
+
+echo ecs-theme.rc: Processamento terminado.
+#=====================================================================#

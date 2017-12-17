@@ -1,0 +1,166 @@
+#=====================================================================#
+echo start_restart_exit.rc: Processando funções de inicialização...
+
+#
+# Funções simples de inicialização/encerramento
+#
+
+AddToFunc "StartFunction"
+#
+#
+#------ Aplicativos prioritários
++ I Test (Init) Test (Version < 2.6.6) exec xmessage -center -bg red -fg yellow "Sua versao do FVWM esta' desatualizada!"
+#+ I Test (Init) Test (x scim) Exec exec scim -d
+#+ I Test (Init) Test (x xrandr) Exec exec xrandr --output VGA1 --off
++ I Test (Init) Test (x xrandr) Test (x $[HOME]/.fvwm/xrandr.sh) Exec ~/.fvwm/xrandr.sh
++ I Test (Init) Test (x xset) Exec exec xset m 0 0
++ I Test (Init) Test (x xsetroot) Exec exec xsetroot -solid black
++ I Test (Init) Test (EnvMatch Sky_Comp Yes) exec xcompmgr -c -d :0.0
++ I Test (Init) Test (EnvMatch Sky_TwoMons Yes) \
+	Test (EnvMatch Sky_TwoMons_Type 1) \
+	Test (EnvMatch Sky_Comp Yes) exec xcompmgr -c -d :0.1
+#
+#
+#------ Módulos
+#+ I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Module FvwmButtons -g 129x$[vp.height]-0+0 FvwmShelf
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView No) Module FvwmButtons -g 145x$[vp.height]-0+0 FvwmShelf
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g 145x$[vp.height]+$$(($[vp.width]-145))+0 FvwmShelf"
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 1.5) Module FvwmButtons -g 145x$[vp.height]-0+0 FvwmShelf
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 1.5) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g 145x$[vp.height]+$$(($[vp.width]-145))+0 FvwmShelf"
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 1.6) Module FvwmButtons -g 145x$[vp.height]-0+0 FvwmShelf
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 1.6) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g 145x$[vp.height]+$$(($[vp.width]-145))+0 FvwmShelf"
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView No) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145))x28+0-0 FvwmBar"
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145-1775))x28+0+0 FvwmBar"
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145-1536))x28+$$(($[vp.width]-1920))+0 FvwmBar2"
+#+ I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) Wait FvwmShelf
+#+ I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) Wait FvwmPager
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) Module FvwmButtons FvwmButtons-Pager3
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 1.5) Test (EnvMatch Sky_TwinView No) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145))x55+0-0 FvwmBar"
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 1.5) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145))x55+0+0 FvwmBar"
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 1.6) Test (EnvMatch Sky_TwinView No) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145))x55+0-0 FvwmBar"
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 1.6) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145))x55+0+0 FvwmBar"
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 1.6) Module FvwmButtons FvwmButtons-Pager2
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 2) Module FvwmButtons -g 1680x28-0-0 FvwmBar
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 2) Module FvwmButtons FvwmToolbox
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 2) Module FvwmButtons FvwmButtons-Pager
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 2) Module FvwmButtons FvwmButtons-Pager
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 3) Module FvwmButtons FvwmButtons-Pager
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 4) Module FvwmButtons FvwmBotbox
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 4) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-0))x55+0-0 FvwmBar"
++ I Test (Init) Test (EnvMatch Sky_CDE_Painel Yes) Module FvwmButtons FvwmCDE-PainelPrincipal
++ I Test (Init) Module FvwmAnimate
++ I Test (Init) Module FvwmCommandS
++ I Test (Init) Module FvwmBanner
+#+ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Module FvwmButtons -g 129x$[vp.height]-0+0 FvwmShelf
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView No) Module FvwmButtons -g 145x$[vp.height]-0+0 FvwmShelf
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g 145x$[vp.height]+$$(($[vp.width]-145))+0 FvwmShelf"
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1.5) Module FvwmButtons -g 145x$[vp.height]-0+0 FvwmShelf
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1.5) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g 145x$[vp.height]+$$(($[vp.width]-145))+0 FvwmShelf"
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1.6) Module FvwmButtons -g 145x$[vp.height]-0+0 FvwmShelf
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1.6) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g 145x$[vp.height]+$$(($[vp.width]-145))+0 FvwmShelf"
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView No) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145))x28+0-0 FvwmBar"
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145-1775))x28+0+0 FvwmBar"
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145-1536))x28+$$(($[vp.width]-1920))+0 FvwmBar2"
+#+ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) Wait FvwmShelf
+#+ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) Wait FvwmPager
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) Module FvwmButtons FvwmButtons-Pager3
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1.5) Test (EnvMatch Sky_TwinView No) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145))x55+0-0 FvwmBar"
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1.5) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145))x55+0+0 FvwmBar"
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1.6) Test (EnvMatch Sky_TwinView No) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145))x55+0-0 FvwmBar"
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1.6) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145))x55+0+0 FvwmBar"
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1.6) Module FvwmButtons FvwmButtons-Pager2
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 2) Module FvwmButtons -g 1680x28-0-0 FvwmBar
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 2) Module FvwmButtons FvwmToolbox
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 2) Module FvwmButtons FvwmButtons-Pager
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 2) Module FvwmButtons -g 1680x28-0-0 FvwmBar
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 3) Module FvwmButtons FvwmButtons-Pager
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 4) Module FvwmButtons FvwmBotbox
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 4) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-0))x55+0-0 FvwmBar"
++ I Test (Restart) Test (EnvMatch Sky_CDE_Painel Yes) Module FvwmButtons FvwmCDE-PainelPrincipal
++ I Test (Restart) Test (EnvMatch Sky_TwinView Yes) Recapture
++ I Test (Restart) Module FvwmAnimate
++ I Test (Restart) Module FvwmCommandS
++ I Test (Restart) Module FvwmBanner
+#
+#
+#------ Indispensáveis
++ I Test (Init) Test (x xscreensaver) Exec exec xscreensaver
++ I Test (Init) Test (f $[HOME]/.Xdefaults) exec xrdb -load ~/.Xdefaults
++ I Test (Init) Test (f $[HOME]/.Xresources) exec xrdb -load ~/.Xresources
++ I Test (Restart) Test (f $[HOME]/.Xdefaults) exec xrdb -merge ~/.Xdefaults
++ I Test (Restart) Test (f $[HOME]/.Xresources) exec xrdb -merge ~/.Xresources
++ I Test (Init) Test (f $[HOME]/.Xmodmap) exec xmodmap ~/.Xmodmap
++ I Test (Restart) Test (f $[HOME]/.Xmodmap) exec xmodmap ~/.Xmodmap
++ I Test (Init) Test (x /usr/lib/polkit-gnome-authentication-agent-1) \
+	/usr/lib/polkit-gnome-authentication-agent-1
+#+ I Test (Init) Test (x pk-update-icon) exec pk-update-icon
++ I Test (Init) Test (x redshift) exec redshift
++ I Test (Init) Test (x thunar) exec thunar --daemon
+#+ I Test (Init) exec xmodmap -e "clear Lock"	# DESATIVA CAPSLOCK
+#+ I Test (Init) exec xmodmap -e "clear Mod2"	# DESATIVA NUMLOCK
+#+ I Test (Init) exec xmodmap -e "clear Mod5"	# DESATIVA SCRLOCK
+#
+#
+#------ Ambientais
+#+ I Test (Init) Test (EnvMatch Sky_Theme skywall) Test (x xv) \
+#	exec xv -root -quit $[Sky_ImageDir]/Texturas/blgr050.gif
+#+ I Test (Init) Test (EnvMatch Sky_Theme ecs) Test (x xv) \
+#	exec xv -root -quit $[Sky_ImageDir]/Texturas/blue086b.gif
+#+ I Test (Init) Test (EnvMatch Sky_Theme water) Test (x xv) \
+#	exec xv -root -quit $[Sky_ImageDir]/Texturas/nebula.jpg
+#
+#
+#------ Aplicativos
++ I Test (Init) Test (x gkrellm) exec gkrellm
++ I Test (Init) Test (!EnvMatch Sky_Panels_Type 4) Test (x rox) exec rox -p=fvwm2
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 4) Test (x rox) exec rox -p=fvwm2a1
++ I Test (Init) Recapture
++ I Test (Init) Restart
+#
+# 
+#------ Monitor secundário
++ I Test (Init) Test (EnvMatch Sky_TwoMons Yes) \
+	Test (EnvMatch Sky_TwoMons_Type 1) exec xsetroot -display :0.1 -solid black
++ I Test (Init) Test (EnvMatch Sky_TwoMons Yes) \
+	Test (EnvMatch Sky_TwoMons_Type 3) exec xsetroot -display :0.0 -solid black
++ I Test (Init) Test (EnvMatch Sky_TwoMons Yes) Test (EnvMatch Sky_Myth No) \
+	Test (EnvMatch Sky_MonTwoIsBig No) \
+	Test (EnvMatch Sky_TwoMons_Type 1) \
+	Test (x fvwm) exec fvwm -d :0.1 -f $HOME/.fvwm/config-studioworks
++ I Test (Init) Test (EnvMatch Sky_TwoMons Yes) Test (EnvMatch Sky_Myth No) \
+	Test (EnvMatch Sky_MonTwoIsBig Yes) \
+	Test (EnvMatch Sky_TwoMons_Type 1) \
+	Test (x fvwm) exec fvwm -d :0.1 -f $HOME/.fvwm/config-syncmaster
++ I Test (Init) Test (EnvMatch Sky_TwoMons Yes) Test (EnvMatch Sky_Myth Yes) \
+	Test (EnvMatch Sky_TwoMons_Type 1) \
+	Test (x xv) exec xv -display :0.1 -root -quit \
+	$[Sky_ImageDir]/Vlad/vladstudio_airlines2_1600x1200.jpg
++ I Test (Init) Test (EnvMatch Sky_TwoMons Yes) Test (EnvMatch Sky_Myth Yes) \
+	Test (EnvMatch Sky_TwoMons_Type 1) \
+	Test (x mythfrontend) exec mythfrontend -display :0.1
++ I Test (Init) Test (EnvMatch Sky_TwoMons Yes) Test (EnvMatch Sky_Myth No) \
+	Test (EnvMatch Sky_TwoMons_Type 2) \
+	Test (x windowmaker) exec DISPLAY=:0.0 /usr/bin/windowmaker
++ I Test (Init) Test (EnvMatch Sky_TwoMons Yes) Test (EnvMatch Sky_Myth No) \
+	Test (EnvMatch Sky_TwoMons_Type 3) \
+	Test (x fvwm) \
+	exec DISPLAY=:0.0 fvwm -d :0.0 -f $HOME/.fvwm/config-syncmaster
+#
+#
+#------ Miscelânia
++ I Test (Init) Test (f /usr/share/sounds/KDE_Beep_Connect.ogg) \
+	exec play /usr/share/sounds/KDE_Beep_Connect.ogg
+
+#------
+#
+#
+AddToFunc "ExitFunction"
++ I Test (ToRestart) Test (f /usr/share/sounds/KDE_Beep.ogg) \
+	exec play /usr/share/sounds/KDE_Beep.ogg
++ I Test (Quit) KillModule FvwmAnimate
++ I Test (Exit) Test (x dropbox) exec dropbox stop
++ I Test (Exit) Test (f $[HOME]/.config/gtk-3.0/gtk.css) exec mv ~/.config/gtk-3.0/gtk.css ~/.config/gtk-3.0/gtk.css.fvwm
++ I Test (Exit) exec sync
+
+echo start_restart_exit.rc: Processamento terminado.
+#=====================================================================#

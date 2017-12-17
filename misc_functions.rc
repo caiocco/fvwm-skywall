@@ -1,0 +1,138 @@
+#=====================================================================#
+echo misc_functions.rc: Definindo funções diversas...
+
+#
+# Outras funções
+# 
+
+# Dizer a uma janela que já está se movendo para fazer um AnimatedMove
+# não é uma boa idéia!
+# Esta função certifica-se que o usuário não pegará uma janela duas 
+# vezes, através da definição de um dos estados da janela enquanto ela
+# está sendo movida.
+#
+# Cada janela tem cerca de 30 estados definidos pelo usuário, quais
+# você pode testar em funções; os estados podem ser utilizados para
+# qualquer propósito.
+#
+DestroyFunc LockingSlide
+AddToFunc LockingSlide
++ I Test (!State 2) Break
++ I State 2 False
++ I AnimatedMove $0 $1
++ I State 2 True
++ I Refresh
+
+# Nome:     WheelToggleShade
+# Assoc.:   Botões do trackball/mouse 4 e 5 (roda para cima e para 
+#           baixo nas Barras-de-título
+# Propós.:  Enrolar ou desenrolar uma janela quando a roda do mouse é 
+#           rolado para cima ou para baixo na barra-de-título. Rolando
+#           para cima invoca a função com o argumento "True" e rolando
+#           para baixo invoca a função com o argumento "False", então
+#           rolar para baixo quando a janela não está sombreada não
+#           tem efeito, o que eu gosto. :-)
+#
+DestroyFunc WheelToggleShade
+AddToFunc WheelToggleShade D WindowShade $0
+
+# O Fvwm usa essa função quando selecionando janelas através do comando
+# WindowList. Você pode fazer o uso dessa função como bem entender, ela
+# é executada no contexto da janela selecionada
+#
+DestroyFunc WindowListFunc
+AddToFunc WindowListFunc
++ I WindowShade False
++ I Iconify off
++ I Raise
++ I FlipFocus
+
+#=====================================================================#
+
+# Mais uma função complexa - ela não foi definida antes, pois a mesma
+# depende dos menus em cascata/pop-ups.
+#
+# OBS: Se mover o ponto onde esse arquivo será lido, tenha certeza de
+# que o mesmo será lido após o "menus.rc", ou poderá ter problemas.
+#
+AddToFunc "window_ops_func" "C" PopUp Window-Ops2
++              "M" PopUp Window-Ops2
++              "D" Delete  
+
+#=====================================================================#
+
+# ------------------- FuncAppAudacious - FuncAppAudtool
+# Duas funções que são necessárias para detectar se o sistema utiliza
+# o Audacious ou o Audacious 2
+DestroyFunc FuncAppAudacious
+AddToFunc FuncAppAudacious
++ I Test (x audacious) Exec exec audacious
++ I TestRc (Match) break
++ I Test (x audacious2) Exec exec audacious2
++ I TestRc (Match) break
+
+DestroyFunc FuncAppAudtool
+AddToFunc FuncAppAudtool
++ I Test (x audtool) Exec exec audtool $*
++ I TestRc (Match) break
++ I Test (x audtool2) Exec exec audtool2 $*
++ I TestRc (Match) break
+
+# ------------------- FuncAppEMail
+DestroyFunc FuncAppEMail
+AddToFunc FuncAppEmail
++ I Test (x kontact) Exec exec kontact
++ I TestRc (Match) break
++ I Test (x thunderbird) Exec exec thunderbird
++ I TestRc (Match) break
++ I Test (x evolution) Exec exec evolution
++ I TestRc (Match) break
++ I Test (x sylpheed) Exec exec sylpheed
++ I TestRc (Match) break
++ I Test (x claws-mail) Exec exec claws-mail
++ I TestRc (Match) break
+
+# ------------------- FuncAppWWWBrowser
+DestroyFunc FuncAppWWWBrowser
+AddToFunc FuncAppWWWBrowser
++ I Test (x seamonkey) Exec GDK_NATIVE_WINDOWS=1 seamonkey
++ I TestRc (Match) break
++ I Test (x firefox) Exec GDK_NATIVE_WINDOWS=1 firefox
++ I TestRc (Match) break
++ I Test (x opera) Exec exec opera
++ I TestRc (Match) break
++ I Test (x konqueror) Exec exec konqueror
++ I TestRc (Match) break
++ I Test (x kazehakase) Exec exec kazehakase
++ I TestRc (Match) break
+
+# ------------------- FuncAppCalc
+DestroyFunc FuncAppCalc
+AddToFunc FuncAppCalc
++ I Test (x galculator) Exec exec galculator
++ I TestRc (Match) break
++ I Test (x gcalctool) Exec exec gcalctool
++ I TestRc (Match) break
++ I Test (x kcalc) Exec exec kcalc
++ I TestRc (Match) break
++ I Test (x xcalc) Exec exec xcalc
++ I TestRc (Match) break
+
+# ------------------- FuncSysSuspend
+DestroyFunc FuncSysSuspend
+AddToFunc FuncSysSuspend
++ I Test (x xscreensaver-command) Exec xscreensaver-command --lock
+#+ I Test (x dbus-send) Exec dbus-send --system --print-reply \
+#				--dest="org.freedesktop.UPower" \
+#				/org/freedesktop/UPower \
+#				org.freedesktop.UPower.Suspend
++ I Exec systemctl suspend
+
+# ------------------- FuncSysHibernate
+DestroyFunc FuncSysHibernate
+AddToFunc FuncSysHibernate
++ I Test (x xscreensaver-command) Exec xscreensaver-command --lock
++ I Exec systemctl hibernate
+
+echo misc_functions.rc: Processamento terminado.
+#=====================================================================#

@@ -1,0 +1,205 @@
+#=====================================================================#
+echo skywall-theme.rc: Processando tema Skywall Motif...
+
+#
+# Configurações cosméticas
+# Tema Skywall Motif
+#
+DestroyDecor "Skywall"
+SetEnv Sky_Theme skywall
+
+# Variáveis
+# 1. Escolha do subtema (declare Yes para apenas uma das opções)
+SetEnv Sky_Theme_Skywall_Gradient No	# Dégradé Azul (Suave)
+SetEnv Sky_Theme_Skywall_Gradient2 No	# Dégradé Cinza/Cinza Escuro
+SetEnv Sky_Theme_Skywall_Gradient3 No   # Dégradé Ciano/Cinza Escuro
+SetEnv Sky_Theme_Skywall_SkyBY No	# Azul e Amarelo
+SetEnv Sky_Theme_Skywall_Orange No	# Laranja Claro (Opaco)
+SetEnv Sky_Theme_Skywall_SkyB1 No	# Azul Turquesa Leve
+SetEnv Sky_Theme_Skywall_SkyB2 No	# Azul Turquesa Violeta
+SetEnv Sky_Theme_Skywall_SkyB3 No	# Azul Turquesa Violeta Escuro
+SetEnv Sky_Theme_Skywall_SkyB4 No	# Azul Turquesa Violeta Claro
+SetEnv Sky_Theme_Skywall_SkyB5 No	# Azul Turquesa Opaco
+SetEnv Sky_Theme_Skywall_SkyB6 Yes	# Azul Turquesa Escuro
+SetEnv Sky_Theme_Skywall_Sky93 No	# Padrão FVWM/Motif. Cinza
+SetEnv Sky_Theme_Skywall_Sky93B No	# Padrão FVWM/Motif. Cinza 2
+# 2. Deseja botão fechar?
+SetEnv Sky_Theme_Skywall_Close Yes
+
+# Colorsets (ainda em implementação)
+# 10. Paineis
+Test (EnvMatch Sky_Theme_Skywall_Gradient Yes) \
+	Colorset 10 fg black, bg gray, VGradient \
+	20 gray gray66b8eb50, NoShape
+Test (EnvMatch Sky_Theme_Skywall_Gradient2 Yes) \
+	Colorset 10 fg black, bg gray, VGradient \
+	20 gray gray66b8eb50, NoShape
+Test (EnvMatch Sky_Theme_Skywall_Gradient3 Yes) \
+	Colorset 10 fg black, bg gray, VGradient \
+	20 gray gray66b8eb50, NoShape
+#Colorset 10 bg gray fg back
+Colorset 10 bg gray fg back
+# 11. Alguns outros embutidos
+Colorset 11 bg gray60 fg back
+# 13. Embutidos
+Colorset 13 fg black, bg gray, hi black, sh gray60, \
+	Plain, NoShape
+# 14. Pager
+Colorset 14 fg white, bg gray40, fgsh black
+	
+#
+# Título
+#
+# Dégradés
+Test (EnvMatch Sky_Theme_Skywall_Gradient Yes) \
+	AddToDecor "Skywall" TitleStyle ActiveUp VGradient 60 #C0C0FF blue3
+Test (EnvMatch Sky_Theme_Skywall_Gradient Yes) \
+	AddToDecor "Skywall" TitleStyle ActiveDown VGradient 80 blue3 #C0C0FF (-- flat)
+Test (EnvMatch Sky_Theme_Skywall_Gradient Yes)\
+	AddToDecor "Skywall" TitleStyle ActiveUp (-- Flat) (-- Raised)
+Test (EnvMatch Sky_Theme_Skywall_Gradient Yes) \
+	AddToDecor "Skywall" TitleStyle Inactive VGradient 40 gray90 gray70
+	
+Test (EnvMatch Sky_Theme_Skywall_Gradient2 Yes) \
+	AddToDecor "Skywall" TitleStyle ActiveUp VGradient 40 gray90 gray70
+Test (EnvMatch Sky_Theme_Skywall_Gradient2 Yes) \
+	AddToDecor "Skywall" TitleStyle ActiveDown VGradient 40 gray70 gray90 (-- flat)
+Test (EnvMatch Sky_Theme_Skywall_Gradient2 Yes)\
+	AddToDecor "Skywall" TitleStyle ActiveUp (-- Flat) (-- Raised)
+Test (EnvMatch Sky_Theme_Skywall_Gradient2 Yes) \
+	AddToDecor "Skywall" TitleStyle Inactive VGradient 40 gray70 gray50
+
+Test (EnvMatch Sky_Theme_Skywall_Gradient3 Yes) \
+	AddToDecor "Skywall" TitleStyle ActiveUp VGradient 60 cyan4 cyan3
+Test (EnvMatch Sky_Theme_Skywall_Gradient3 Yes) \
+	AddToDecor "Skywall" TitleStyle ActiveDown VGradient 80 cyan4 cyan3 (-- flat)
+Test (EnvMatch Sky_Theme_Skywall_Gradient3 Yes)\
+	AddToDecor "Skywall" TitleStyle ActiveUp (-- Flat) (-- Raised)
+Test (EnvMatch Sky_Theme_Skywall_Gradient3 Yes) \
+	AddToDecor "Skywall" TitleStyle Inactive VGradient 40 gray90 gray70
+#
+# Cores para a janela inativa
+Test (EnvMatch Sky_Theme_Skywall_Gradient Yes) Style * ForeColor gray96
+Test (EnvMatch Sky_Theme_Skywall_Gradient No) Style * ForeColor gray94
+Test (EnvMatch Sky_Theme_Skywall_Gradient Yes) Style "*" BackColor gray80
+Test (EnvMatch Sky_Theme_Skywall_Gradient No) Style * BackColor #999999
+Test (EnvMatch Sky_Theme_Skywall_Gradient3 Yes) Style "*" BackColor gray80
+Test (EnvMatch Sky_Theme_Skywall_Gradient3 No) Style * BackColor #999999
+Test (EnvMatch Sky_Theme_Skywall_Sky93B Yes) Style * BackColor Gray40
+Test (EnvMatch Sky_Theme_Skywall_Sky93B Yes) Style * ForeColor Gray
+#
+# Cores para a janela ativa
+Test (EnvMatch Sky_Theme_Skywall_SkyBY No) Style * HilightFore white
+Test (EnvMatch Sky_Theme_Skywall_Gradient Yes) Style * HilightBack #4E4EE1
+Test (EnvMatch Sky_Theme_Skywall_Gradient2 Yes) Style * HilightBack gray
+Test (EnvMatch Sky_Theme_Skywall_Gradient2 Yes) Style * HilightFore gray10
+Test (EnvMatch Sky_Theme_Skywall_Gradient3 Yes) Style * HilightBack cyan4
+Test (EnvMatch Sky_Theme_Skywall_Gradient3 Yes) Style * HilightFore white
+Test (EnvMatch Sky_Theme_Skywall_SkyBY Yes) Style * HilightFore yellow
+Test (EnvMatch Sky_Theme_Skywall_SkyBY Yes) Style * HilightBack skyblue3 
+Test (EnvMatch Sky_Theme_Skywall_Orange Yes) Style * HilightBack #EDA870
+Test (EnvMatch Sky_Theme_Skywall_SkyB1 Yes) Style * HilightBack #2C95BB
+Test (EnvMatch Sky_Theme_Skywall_SkyB2 Yes) Style * HilightBack #2D76B2
+Test (EnvMatch Sky_Theme_Skywall_SkyB3 Yes) Style * HilightBack #476178
+Test (EnvMatch Sky_Theme_Skywall_SkyB4 Yes) Style * HilightBack #6289AB
+Test (EnvMatch Sky_Theme_Skywall_SkyB5 Yes) Style * HilightBack #3978BB
+Test (EnvMatch Sky_Theme_Skywall_SkyB6 Yes) Style * HilightBack #34699F
+Test (EnvMatch Sky_Theme_Skywall_Sky93 Yes) Style * HilightBack #BEBEBE
+Test (EnvMatch Sky_Theme_Skywall_Sky93 Yes) Style * HilightFore Black
+Test (EnvMatch Sky_Theme_Skywall_Sky93B Yes) Style * HilightBack Gray
+Test (EnvMatch Sky_Theme_Skywall_Sky93B Yes) Style * HilightFore Black
+
+#
+# Bordas
+#
+Test (EnvMatch Sky_Theme_Skywall_Sky93 Yes) Style Skywall BorderWidth 5, HandleWidth 5
+Test (EnvMatch Sky_Theme_Skywall_Sky93 No) Style Skywall BorderWidth 7, HandleWidth 7
+Test (EnvMatch Sky_Theme_Skywall_Sky93B Yes) Style Skywall BorderWidth 8, HandleWidth 8
+Test (EnvMatch Sky_Theme_Skywall_Sky93B No) Style Skywall BorderWidth 7, HandleWidth 7
+Test (EnvMatch Sky_Theme_Skywall_Orange No) Style Skywall !MwmBorder
+Test (EnvMatch Sky_Theme_Skywall_Orange Yes) Style Skywall MwmBorder
+Test (EnvMatch Sky_Theme_Skywall_SkyB1 Yes) Style Skywall MwmBorder
+Test (EnvMatch Sky_Theme_Skywall_SkyB2 Yes) Style Skywall MwmBorder
+Test (EnvMatch Sky_Theme_Skywall_SkyB3 Yes) Style Skywall MwmBorder
+Test (EnvMatch Sky_Theme_Skywall_SkyB4 Yes) Style Skywall MwmBorder
+Test (EnvMatch Sky_Theme_Skywall_SkyB5 Yes) Style Skywall MwmBorder
+Test (EnvMatch Sky_Theme_Skywall_SkyB6 Yes) Style Skywall MwmBorder
+Test (EnvMatch Sky_Theme_Skywall_Sky93 Yes) Style Skywall !MwmBorder
+Test (EnvMatch Sky_Theme_Skywall_Sky93B Yes) Style Skywall !MwmBorder
+AddToDecor "Skywall" BorderStyle --  UseTitleStyle
+
+#
+# Menus
+#
+#MenuStyle * Font "Shadow=1 0 SE:xft:Helvetica:Medium:size=10"
+Test (EnvMatch Sky_Theme_Skywall_Sky93 No) \
+	MenuStyle * Font "Shadow=1 0 SE:xft:Liberation Sans:Medium:size=9"
+Test (EnvMatch Sky_Theme_Skywall_Sky93 Yes) \
+	MenuStyle * Font "Shadow=0 0 SE:xft::Medium:size=9"
+Test (EnvMatch Sky_Theme_Skywall_Gradient Yes) \
+	MenuStyle * MenuFace DGradient 128 2 gray80 50 darkgray 50 gray
+Test (EnvMatch Sky_Theme_Skywall_Gradient No) MenuStyle * ActiveFore darkblue
+Test (EnvMatch Sky_Theme_Skywall_Gradient No) MenuStyle * HilightBack gray80
+Test (EnvMatch Sky_Theme_Skywall_Gradient No) MenuStyle * Foreground black
+Test (EnvMatch Sky_Theme_Skywall_Gradient Yes) MenuStyle * Foreground black
+MenuStyle * Hilight3DThick
+MenuStyle * Hilight3DThickness -2 -2
+MenuStyle * Animation
+MenuStyle * PopupOffset -4 100
+MenuStyle * TitleUnderlines2
+MenuStyle * SeparatorsLong
+MenuStyle * TrianglesRelief
+MenuStyle * PopupImmediately
+MenuStyle * PopdownDelayed
+MenuStyle * PopdownDelay 150
+MenuStyle * PopupAsSubmenu
+MenuStyle * HoldSubmenus
+MenuStyle * SubmenusRight
+MenuStyle * BorderWidth 2
+
+#
+# Botões das janelas
+#
+AddToDecor "Skywall" ButtonStyle Reset
+AddToDecor "Skywall" ButtonStyle All -- UseTitleStyle
+Test (EnvMatch Sky_Theme_Skywall_Orange Yes) \
+	AddToDecor "Skywall" ButtonStyle 4 Vector 5 \
+        25x75@0 45x75@0 45x55@0 25x55@1 25x75@1
+Test (EnvMatch Sky_Theme_Skywall_Close Yes) \
+	AddToDecor "Skywall" ButtonStyle 3 Vector 17 \
+        20x20@1 30x20@1 50x40@1 70x20@1 \
+        80x20@1 80x30@0 60x50@0 80x70@1 \
+        80x80@0 70x80@0 50x60@0 30x80@0 \
+        20x80@0 20x70@0 40x50@1 20x30@0 20x20@1
+Style Skywall MwmButtons
+Test (EnvMatch Sky_Theme_Skywall_Gradient Yes) Style Skywall !MwmButtons
+Test (EnvMatch Sky_Theme_Skywall_Close No) \
+	Test (EnvMatch Sky_Theme_Skywall_Sky93 Yes) \
+		AddToDecor "Skywall" ButtonStyle Reset
+
+#
+# Botões
+#
+AddToDecor "Skywall" ButtonStyle All --  UseTitleStyle
+
+#
+# Ícones
+#
+Style Skywall IconTitle, IconTitleColorset 11, HilightIconTitleColorset 11
+Style Skywall IndexedIconName, IconBackgroundPadding 2
+Style Skywall IconBackgroundRelief 2, IconBackGroundColorset 11
+
+#
+# Fontes
+#
+Test (EnvMatch Sky_Theme_Skywall_Sky93 Yes) \
+	Style Skywall Font "Shadow=0 0 C:xft:DejaVu Sans:Bold:size=9,5"
+Test (EnvMatch Sky_Theme_Skywall_Sky93B Yes) \
+	Style Skywall Font "Shadow=0 0 C:xft:DejaVu Sans:Bold:size=9,5"
+
+# Aplicando...
+Style * UseStyle Skywall
+Style * UseDecor Skywall
+
+echo skywall-theme.rc: Processamento terminado...
+#=====================================================================#

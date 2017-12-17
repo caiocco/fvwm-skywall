@@ -1,0 +1,208 @@
+echo use_mode_settings.rc: Configurando modos de utilização...
+
+#
+# Configurar modos de utilização importantes
+#
+
+#
+# Modos de utilização:
+#
+# Emular Motif Window Manager (MWM).
+Style * MWMFunctions
+Style * MWMDecor
+
+#
+# Ignorar "hints" informados por clientes X:
+#
+# Caso a opção HintOverride esteja definida globalmente abaixo, o 
+# FVWM não se importará com pedidos para, por exemplo, retirar botões 
+# de janelas, definir diálogos como janelas de vida curta etc.
+#
+#Style * HintOverride
+
+#
+# Política de foco:
+#
+# ClickToFocus ---> Windows e Mac OS like
+# SloppyFocus  ---> UNIX like
+#
+Style * ClickToFocus
+
+#
+# Política para prevenção de roubo de foco:
+#
+# Para maiores detalhes, veja a sessão "Focus policy" da página de
+# manual "fvwm".
+#
+#Style * !FPFocusByProgram, !FPGrabFocus
+
+#
+# A criação de uma ou mais caixas de ícones é feita definindo um
+# estilo com o atributo IconBox.
+#
+# Lembrete de sintaxe:
+#
+# IconBox [screen scr-spec] l t r b
+#
+#Style * IconBox 20 20 100 -15, IconGrid 3 3, IconFill left top
+#Test (EnvMatch Sky_CDE_Painel No) Style * IconBox 10 10 1500 -40, IconGrid 3 3, IconFill left bottom
+Test (EnvMatch Sky_CDE_Painel No) Style * IconBox Screen 1 82 10 1500 -40, IconGrid 3 3, IconFill left bottom
+Test (EnvMatch Sky_TwinView Yes) Style * IconBox Screen 1 20 20 1500 -40, IconGrid 3 3, IconFill left bottom, \
+	IconBox Screen 2 82 10 1500 -40, IconGrid 3 3, IconFill left bottom
+Test (EnvMatch Sky_Panels_Type 4) Style * IconBox 10 55 1500 -63, IconGrid 3 3, IconFill left bottom
+# Test (EnvMatch Sky_Panels_Type 1.5) Style * IconBox 10 55 1500 -66, IconGrid 3 3, IconFill left bottom
+Test (EnvMatch Sky_Panels_Type 1.5) Style * IconBox 93 55 1500 -66, IconGrid 3 3, IconFill left bottom
+Test (EnvMatch Sky_Panels_Type 1.6) Style * IconBox 93 55 1500 -66, IconGrid 3 3, IconFill left bottom
+
+#
+# DecorateTransient fará com que diálogos que ficam pouco tempo na 
+# tela tenham decoração. Essencial.
+#
+Style * DecorateTransient
+
+#
+# O estilo abaixo inibe que todas as janelas que não são 
+# redimensionáveis possam ser maximizadas.
+#
+Style * !AllowMaximizeFixedSize
+
+#
+# Utilize ResizeOutline para exibir apenas linhas de contorno ao fazer
+# o redimensionamento de uma janela ou ResizeOpaque para redimensionar
+# a janela exibindo seu conteúdo (meu padrão).
+#
+Style * ResizeOpaque
+
+#
+# !UsePPosition instrui o FVWM a ignorar o campo PPosition nas hints 
+# de geometry da janela. Emacs irritantemente costumava definir 
+# PPosition para (0,0).
+#
+# !UsePPosition instrui o FVWM a ignorar a posição especificada pelo
+# programa quando houver a necessidade de adicionar uma nova janela.
+# Usar PPosition é exigido por alguns programas, contudo, se você não
+# possui um programa assim, pode ser uma verdadeira dor de cabeça.
+# Muitos programas definem PPosition para coisas como 0,0 (canto
+# superior esquerdo).
+#
+Style * !UsePPosition
+
+#
+# Os estilos declarados abaixo definem as cores dos clientes X cujo
+# as janelas foram iconificadas. O primeiro estilo define as cores para
+# os ícones na janela de root que não estão com foco, o segundo estilo
+# define as cores para o ícone na janela de root que está com foco.
+#
+Style * IconBackgroundColorset 10
+Style * IconTitleColorset 10
+Style * HilightIconTitleColorset 14
+
+#
+# DefaultIcon especifica o ícone padrão para os programas de 
+# aplicativos iconificados que não possuem um.
+#
+DefaultIcon $[Gtk_Icon_Theme]/48x48/apps/gnome-unknown.png
+
+#
+# WindowShadeSteps controla o número de "passos" que serão dados pela
+# animação de sombreamento de uma janela. Se a máquina carece de poder
+# de processamento e/ou carece de aceleração de vídeo, o valor deve ser
+# 0 (zero). O meu padrão é 100.
+#
+Style * WindowShadeSteps 0
+
+#
+# OpaqueMoveSize permite que você impeça janelas grandes de serem
+# movidas opacamente.
+# Eu gosto do efeito, e minha máquina não é lenta, logo, todas as
+# janelas podem usar o efeito.
+#
+OpaqueMoveSize -1
+
+#
+# SnapAttraction faz com que  que janelas próximas se juntem quando 
+# quando suas bordas estão próximas. O resultado é um ambiente cujas
+# janelas são mais fáceis de serem alinhadas. O padrão é off e se o
+# integral tiver um valor muito grande, o efeito será infernalmente
+# irritante. Meu padrão é 3.
+#
+Style * SnapAttraction 3 SameType
+
+#
+# Você pode automaticamente mover o viewport em páginas adjacentes
+# quando o ponteiro atingir a borda da tela, mas eu odeio esse
+# comportamento.
+#
+# EdgeThickness desabilita a rolagem de cantos (edge scrolling);
+# EdgeScroll, define como o edge scrolling vai se comportar;
+# EdgeResistance, é a resistência do cursor perante as bordas, para
+# que o viewport se mova.
+#
+EdgeResistance 500
+EdgeThickness 1
+EdgeScroll 0 0
+Style * EdgeMoveDelay 500
+Style * EdgeMoveResistance 40
+
+#
+# Impedir que programas cubram as barras de botões tão facilmente ao 
+# serem posicionados pelo FVWM.
+#
+# Se você quiser que algumas janelas ignorem esta config. quando sendo 
+# posicionadas ou maximizadas você pode definir nas opções de estilo
+# de acordo com suas necessidades:
+# EWMHPlacementIgnoreWorkingArea
+# EWMHMaximizeIgnoreWorkingArea
+#
+#EwmhBaseStruts 0 129 0 29
+EwmhBaseStruts 0 145 0 28
+Test (EnvMatch Sky_Theme clearlooks) EwmhBaseStruts 0 129 0 28
+Test (EnvMatch Sky_Theme diamond) EwmhBaseStruts 0 145 0 28
+Test (EnvMatch Sky_Theme gentoo) EwmhBaseStruts 0 145 0 29
+Test (EnvMatch Sky_Theme nimbos) EwmhBaseStruts 0 145 0 29
+Test (EnvMatch Sky_Panels_Type 4) EwmhBaseStruts 0 0 0 55
+Test (EnvMatch Sky_Panels_Type 1.5) EwmhBaseStruts 0 145 0 55
+Test (EnvMatch Sky_Panels_Type 1.6) EwmhBaseStruts 0 145 0 55
+Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) \
+	EwmhBaseStruts 0 145 28 0
+
+#
+# Política de posicionamento de janelas:
+#
+# RandomPlacement ---> Posicionamento de forma arbitrária
+# MinOverlapPlacement ---> Posicionamento com sobreposição ao mínimo
+#
+Style * MinOverlapPlacement
+
+#=====================================================================#
+
+# Defina o tamanho do desktop em unidades de tamanho físico da tela.
+#
+# 9 páginas por desktop, dispostas em um quadrado (é o meu padrão):
+#
+#   +-----+-----+-----+
+#   |     |     |     |
+#   +-----+-----+-----+
+#   |     |     |     |
+#   +-----+-----+-----+
+#   |     |     |     |
+#   +-----+-----+-----+
+#
+DeskTopSize 3x3
+#
+# 4 páginas por desktop, dispostas em um quadrado (utilizado em alguns
+# temas ou com alguns conjuntos de painéis):
+#
+#   +-----+-----+
+#   |     |     |
+#   +-----+-----+
+#   |     |     |
+#   +-----+-----+
+#
+Test (EnvMatch Sky_Theme tribal) DeskTopSize 2x2
+Test (EnvMatch Sky_Theme diamond) DeskTopSize 2x2
+Test (EnvMatch Sky_Panels_Type 2) DeskTopSize 2x2
+Test (EnvMatch Sky_Panels_Type 1) DeskTopSize 3x3
+Test (EnvMatch Sky_Panels_Type 4) DeskTopSize 2x2
+
+echo use_mode_settings.rc: Processamento terminado.

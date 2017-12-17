@@ -1,0 +1,178 @@
+echo fvwmbuttons.fvwmbar-mod.rc: Configurando FvwmButtons-FvwmBar...
+
+#------------------ FvwmButtons
+# FvwmBar
+# Configuração de barra de tarefas similar a do QNX Photon MicroGUI
+# para o módulo FvwmButtons
+#
+# Adaptado do original de Tavis Ormandy
+#
+
+# Deseja animações?
+SetEnv Sky_Ani_Bar No
+
+# Deseja menu inicial?
+# Apenas para os conjuntos de painéis 1.5, 1.6 e 4. Não tem efeito com
+# outros conjuntos.
+SetEnv Sky_Bar_MenuVisible No
+
+# Ajustar a barra para que esta possa ser posicionada no topo da tela?
+# Apenas para configurações com TwinView.
+SetEnv Sky_Bar_TopPosition Yes
+
+# A declaração do estilo abaixo assegura consistência na integração do
+# módulo com o ambiente
+Style FvwmBar	  !Title, !Handles, Sticky, WindowListSkip, BorderWidth 0, NeverFocus, CirculateSkip
+
+# Aplicou aquele patch maldito e o está usando?
+Test (EnvMatch Sky_RoundedCorners Yes) Style FvwmBar !RoundedCorners
+
+# Configurando comportamento e aparência do módulo
+DestroyModuleConfig FvwmBar: *
+*FvwmBar: Font "xft:Luxi Mono:Bold:size=9"
+Test (EnvMatch Sky_Theme tribal) *FvwmBar: Font "Shadow=1 1 SE:xft:Luxi Mono:Bold:size=9"
+Test (EnvMatch Sky_Theme gentoo) *FvwmBar: Font "Shadow=1 0 SE:xft:Luxi Mono:Bold:size=9"
+Test (EnvMatch Sky_TwinView No) *FvwmBar: Columns 71
+Test (EnvMatch Sky_TwinView Yes) *FvwmBar: Columns 71
+Test (EnvMatch Sky_Theme tribal) *FvwmBar: Colorset 10
+Test (EnvMatch Sky_Theme clearlooks) *FvwmBar: Colorset 11
+*FvwmBar: Colorset 10
+*FvwmBar: Frame 1
+*FvwmBar: Padding 2 2
+*FvwmBar: Rows 23
+
+# Detectando a distro em execução para tematizar o botão em conformidade
+# Repare nas opções do Menu para fazê-lo aparecer com um offset bonito
+# e consistente ao botão. Legal, né? =]
+Test (f /etc/slackware-version) \
+	Test (EnvMatch Sky_Panels_Type 1.5) \
+	Test (EnvMatch Sky_Bar_MenuVisible Yes) \
+	*FvwmBar: (4x23, Title(Center) "", Center, Icon $[Fvwm_Icon_Theme]/slackware55px.png, Action(Mouse 1) `Menu Utilities Rectangle +$left+$top 0 -100m`)
+Test (f /etc/SuSE-release) \
+	Test (EnvMatch Sky_Panels_Type 1.5) \
+	Test (EnvMatch Sky_Bar_MenuVisible Yes) \
+	*FvwmBar: (4x23, Title(Center) "", Center, Icon $[Fvwm_Icon_Theme]/suse55px.png, Action(Mouse 1) `Menu Utilities Rectangle +$left+$top 0 -100m`)
+
+Test (f /etc/slackware-version) \
+	Test (EnvMatch Sky_Panels_Type 1.6) \
+	Test (EnvMatch Sky_Bar_MenuVisible Yes) \
+	*FvwmBar: (4x23, Title(Center) "", Center, Icon $[Fvwm_Icon_Theme]/slackware55px.png, Action(Mouse 1) `Menu Utilities Rectangle +$left+$top 0 -100m`)
+Test (f /etc/SuSE-release) \
+	Test (EnvMatch Sky_Panels_Type 1.6) \
+	Test (EnvMatch Sky_Bar_MenuVisible Yes) \
+	*FvwmBar: (4x23, Title(Center) "", Center, Icon $[Fvwm_Icon_Theme]/suse55px.png, Action(Mouse 1) `Menu Utilities Rectangle +$left+$top 0 -100m`)
+
+Test (f /etc/slackware-version) \
+	Test (EnvMatch Sky_Panels_Type 4) *FvwmBar: (4x23, Title(Center) "", Center, Icon $[Fvwm_Icon_Theme]/slackware55px.png, Action(Mouse 1) `Menu Utilities Rectangle +$left+$top 0 -100m`)
+Test (f /etc/SuSE-release) \
+	Test (EnvMatch Sky_Panels_Type 4) *FvwmBar: (4x23, Title(Center) "", Center, Icon $[Fvwm_Icon_Theme]/slackware55px.png, Action(Mouse 1) `Menu Utilities Rectangle +$left+$top 0 -100m`)
+
+# A configuração tipo 4 de painéis utiliza o Stalonetray, a declaração
+# segue abaixo
+Test (EnvMatch Sky_Panels_Type 4) \
+	*FvwmBar: (7x23, Swallow stalonetray `Exec stalonetray --geometry 120x48 -i 24 --ignore-icon-resize true --no-shrink true -bg $$[bg.cs10]`)
+
+Test (EnvMatch Sky_TwinView Yes) Test (EnvMatch Sky_Bar_TopPosition Yes) \
+	*FvwmBar: (71x20, Left, Swallow "Alpha-FvwmIconMan" `FvwmIconMan Alpha-FvwmIconMan`)
+Test (!EnvMatch Sky_Panels_Type 4) \
+	Test (EnvMatch Sky_TwinView No) Test (EnvMatch Sky_Ani_Bar Yes) \
+	*FvwmBar: (71x3, Padding 0 0, Action(Mouse 1) `Next (CirculateHit, FvwmBar) PipeRead 'echo LockingSlide keep $$(test $$(($[w.y]+$[w.height])) -le $[vp.height] && echo w$$(($[w.height]-$height))p || echo w-$$(($[w.height]-$height))p)'`)
+Test (!EnvMatch Sky_Panels_Type 4) \
+	Test (EnvMatch Sky_Ani_Bar No) \
+	*FvwmBar: (71x3, Padding 0 0, Action(Mouse 1) Nop)
+Test (EnvMatch Sky_Panels_Type 4) \
+	*FvwmBar: (71x3, Padding 0 0, Action(Mouse 1) Nop)
+	
+Test (EnvMatch Sky_TwinView No) Test (EnvMatch Sky_Bar_TopPosition No) \
+	*FvwmBar: (71x20, Swallow "Alpha-FvwmIconMan" `FvwmIconMan Alpha-FvwmIconMan`)
+Test (EnvMatch Sky_TwinView No) Test (EnvMatch Sky_Bar_TopPosition Yes) \
+	*FvwmBar: (64x20, Swallow "Alpha-FvwmIconMan" `FvwmIconMan Alpha-FvwmIconMan`)
+
+#------------------ FvwmButtons
+# FvwmBar2
+# Configuração de barra de tarefas similar a do QNX Photon MicroGUI
+# para o módulo FvwmButtons voltada ao segundo monitor
+#
+# Adaptado do original de Tavis Ormandy
+#
+
+# Deseja animações?
+SetEnv Sky_Ani_Bar No
+
+# Deseja menu inicial?
+# Apenas para os conjuntos de painéis 1.5, 1.6 e 4. Não tem efeito com
+# outros conjuntos.
+SetEnv Sky_Bar_MenuVisible No
+
+# Ajustar a barra para que esta possa ser posicionada no topo da tela?
+# Apenas para configurações com TwinView.
+SetEnv Sky_Bar_TopPosition Yes
+
+# A declaração do estilo abaixo assegura consistência na integração do
+# módulo com o ambiente
+Style FvwmBar2	  !Title, !Handles, Sticky, WindowListSkip, BorderWidth 0, NeverFocus, CirculateSkip
+
+# Aplicou aquele patch maldito e o está usando?
+Test (EnvMatch Sky_RoundedCorners Yes) Style FvwmBar2 !RoundedCorners
+
+# Uma barra de tarefas
+# Perceba as opções do Menu para fazê-lo aparecer com um offset bonito
+# e consistente ao botão. Legal, né? :-)
+DestroyModuleConfig FvwmBar2: *
+*FvwmBar2: Font "xft:Luxi Mono:Bold:size=9"
+Test (EnvMatch Sky_Theme tribal) *FvwmBar2: Font "Shadow=1 1 SE:xft:Luxi Mono:Bold:size=9"
+Test (EnvMatch Sky_Theme gentoo) *FvwmBar2: Font "Shadow=1 0 SE:xft:Luxi Mono:Bold:size=9"
+*FvwmBar2: Colorset 10
+*FvwmBar2: Frame 1
+*FvwmBar2: Padding 2 2
+*FvwmBar2: Rows 23
+Test (EnvMatch Sky_TwinView No) *FvwmBar2: Columns 71
+Test (EnvMatch Sky_TwinView Yes) *FvwmBar2: Columns 71
+
+# Detectando a distro em execução para tematizar o botão em conformidade
+Test (f /etc/slackware-version) \
+	Test (EnvMatch Sky_Panels_Type 1.5) \
+	Test (EnvMatch Sky_Bar_MenuVisible Yes) \
+	*FvwmBar2: (4x23, Title(Center) "", Center, Icon $[Fvwm_Icon_Theme]/slackware55px.png, Action(Mouse 1) `Menu Utilities Rectangle +$left+$top 0 -100m`)
+Test (f /etc/SuSE-release) \
+	Test (EnvMatch Sky_Panels_Type 1.5) \
+	Test (EnvMatch Sky_Bar_MenuVisible Yes) \
+	*FvwmBar2: (4x23, Title(Center) "", Center, Icon $[Fvwm_Icon_Theme]/suse55px.png, Action(Mouse 1) `Menu Utilities Rectangle +$left+$top 0 -100m`)
+
+Test (f /etc/slackware-version) \
+	Test (EnvMatch Sky_Panels_Type 1.6) \
+	Test (EnvMatch Sky_Bar_MenuVisible Yes) \
+	*FvwmBar2: (4x23, Title(Center) "", Center, Icon $[Fvwm_Icon_Theme]/slackware55px.png, Action(Mouse 1) `Menu Utilities Rectangle +$left+$top 0 -100m`)
+Test (f /etc/SuSE-release) \
+	Test (EnvMatch Sky_Panels_Type 1.6) \
+	Test (EnvMatch Sky_Bar_MenuVisible Yes) \
+	*FvwmBar2: (4x23, Title(Center) "", Center, Icon $[Fvwm_Icon_Theme]/suse55px.png, Action(Mouse 1) `Menu Utilities Rectangle +$left+$top 0 -100m`)
+
+Test (f /etc/slackware-version) \
+	Test (EnvMatch Sky_Panels_Type 4) *FvwmBar2: (4x23, Title(Center) "", Center, Icon $[Fvwm_Icon_Theme]/slackware55px.png, Action(Mouse 1) `Menu Utilities Rectangle +$left+$top 0 -100m`)
+Test (f /etc/SuSE-release) \
+	Test (EnvMatch Sky_Panels_Type 4) *FvwmBar2: (4x23, Title(Center) "", Center, Icon $[Fvwm_Icon_Theme]/slackware55px.png, Action(Mouse 1) `Menu Utilities Rectangle +$left+$top 0 -100m`)
+
+# A configuração tipo 4 de painéis utiliza o Stalonetray
+Test (EnvMatch Sky_Panels_Type 4) \
+	*FvwmBar2: (7x23, Swallow stalonetray `Exec stalonetray --geometry 120x48 -i 24 --ignore-icon-resize true --no-shrink true -bg $$[bg.cs10]`)
+
+Test (EnvMatch Sky_TwinView Yes) Test (EnvMatch Sky_Bar_TopPosition Yes) \
+	*FvwmBar2: (71x20, Left, Swallow "Beta-FvwmIconMan" `FvwmIconMan Beta-FvwmIconMan`)
+Test (!EnvMatch Sky_Panels_Type 4) \
+	Test (EnvMatch Sky_TwinView No) Test (EnvMatch Sky_Ani_Bar Yes) \
+	*FvwmBar2: (71x3, Padding 0 0, Action(Mouse 1) `Next (CirculateHit, FvwmBar2) PipeRead 'echo LockingSlide keep $$(test $$(($[w.y]+$[w.height])) -le $[vp.height] && echo w$$(($[w.height]-$height))p || echo w-$$(($[w.height]-$height))p)'`)
+Test (!EnvMatch Sky_Panels_Type 4) \
+	Test (EnvMatch Sky_Ani_Bar No) \
+	*FvwmBar2: (71x3, Padding 0 0, Action(Mouse 1) Nop)
+Test (EnvMatch Sky_Panels_Type 4) \
+	*FvwmBar2: (71x3, Padding 0 0, Action(Mouse 1) Nop)
+	
+Test (EnvMatch Sky_TwinView No) Test (EnvMatch Sky_Bar_TopPosition No) \
+	*FvwmBar2: (71x20, Swallow "Beta-FvwmIconMan" `FvwmIconMan Beta-FvwmIconMan`)
+#Test (!EnvMatch Sky_Bar_TopPosition No) *FvwmBar2: (64x20, Swallow "FvwmIconMan" `FvwmIconMan2`)
+Test (EnvMatch Sky_Theme tribal) *FvwmBar2: Colorset 10
+Test (EnvMatch Sky_Theme clearlooks) *FvwmBar2: Colorset 11
+
+
+echo fvwmbuttons.fvwmbar-mod.rc: Processamento terminado.

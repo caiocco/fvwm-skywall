@@ -1,0 +1,51 @@
+echo fvwmbuttons.fvwmbotbox-mod.rc: Configurando FvwmButtons-FvwmBotbox...
+
+#------------------ FvwmButtons
+# FvwmBotbox
+# Configuração de barra superior para o módulo FvwmButtons
+#
+DestroyModuleConfig FvwmBotbox: *
+
+# A declaração do estilo abaixo assegura consistência na integração do
+# módulo com o ambiente
+Style FvwmBotbox !Title, !Handles, Sticky, WindowListSkip, BorderWidth 1, NeverFocus
+
+# Aplicou aquele patch maldito e o está usando?
+Test (EnvMatch Sky_RoundedCorners Yes) Style FvwmBotbox !RoundedCorners
+
+#*FvwmBotbox: Font "xft:DejaVu Sans:Medium:size=7"
+*FvwmBotbox: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=9"
+#*FvwmBotbox: Font "Shadow=1 1 SE:xft:DejaVu Sans Mono:style=Roman:size=8"
+*FvwmBotbox: Colorset 10
+*FvwmBotbox: Geometry 1523x121-0+0
+*FvwmBotbox: Columns 2
+*FvwmBotbox: Rows 1
+*FvwmBotbox: BoxSize Smart
+*FvwmBotbox: Padding 2 2
+*FvwmBotbox: (Swallow "FvwmPager" "FvwmPager FvwmPager 0 3")
+*FvwmBotbox: (Padding 0 0, Container(Padding 0 0, Frame 1, Columns 3, Rows 5))
+*FvwmBotbox: (Title(Side) " Terminal", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-terminal.png, Action(Mouse 1) `Exec "Terminal" exec Terminal`)
+*FvwmBotbox: (Title(Side) " ROX-Filer", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-home.png, Action(Mouse 1) `Exec "ROX-Filer" exec rox`)
+*FvwmBotbox: (Title(Side) " Thunar", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/file-manager.png, Action(Mouse 1) `Exec "Thunar" exec thunar`)
+*FvwmBotbox: (Title(Side) " Geany", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/accessories-text-editor.png, Action(Mouse 1) `Exec "geany" exec geany`)
+*FvwmBotbox: (Title(Side) " SeaMonkey", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/mozilla.png, Action(Mouse 1) `Exec "SeaMonkey" exec seamonkey`)
+*FvwmBotbox: (Title(Side) " Sylpheed", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/email.png, Action(Mouse 1) `Function FuncAppEMail`)
+*FvwmBotbox: (Title(Side) " Audacious", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/xmms.png, Action(Mouse 1) `Function FuncAppAudacious`)
+*FvwmBotbox: (Title(Side) " XChat", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/xchat.png, Action(Mouse 1) `Exec "xchat" exec xchat`)
+*FvwmBotbox: (Title(Side) " GIMP", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-gimp.png, Action(Mouse 1) `Exec "gimp" exec gimp`)
+*FvwmBotbox: (Title(Side) " Calculadora", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-calculator.png, Action(Mouse 1) `Exec "galculator" exec galculator`)
+*FvwmBotbox: (Title(Side) " Lente de Aumento", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-searchtool.png, Action(Mouse 1) `Exec "xmag" exec xmag`)
+*FvwmBotbox: (Title(Side) " Executar...", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/actions/exec.png, Action(Mouse 1) `Exec "gmrun" exec gmrun`)
+*FvwmBotbox: (Title(Side) " Mixer de Áudio", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-mixer.png, Action(Mouse 1) `Exec "aumix" exec aumix`)
+*FvwmBotbox: (Title(Side) " Bloquear Sessão", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-lockscreen.png, Action(Mouse 1) `Exec exec xscreensaver-command --lock`)
+*FvwmBotbox: (Title(Side) " Exibir Desktop", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-show-desktop.png, Action(Mouse 1) `All (AcceptsFocus, CurrentPage, !Iconic, !Shaded) Iconify`)
+*FvwmBotbox: (Title(Side) " Anotações", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/actions/edit.png, Action(Mouse 1) `Exec "xpad" exec xpad`)
+*FvwmBotbox: (End)
+
+#*FvwmBotbox: (200x278, Padding 0 0, Container(Padding 0 0, Frame 1, Columns 1, Rows 3))
+#*FvwmBotbox: (1x2, Frame 0, Padding 0 0, Center, Swallow "FvwmClockApplet" `Module FvwmScript $[Sky_Dir]/fvwmscript.clockapplet-mod.rc`)
+#*FvwmBotbox: (1x4, Frame 0, Center, Swallow stalonetray `Exec exec stalonetray -bg $$[bg.cs10]`)
+#*FvwmBotbox: (3x7+4+2, Frame 0, Padding 0 0, Center, Swallow FvwmApplet-CDEDayLarge 'FvwmScript $[Sky_Dir]/fvwmscript.cde-mod.rc 10')
+#*FvwmBotbox: (End)
+
+echo fvwmbuttons.fvwmbotbox-mod.rc: Processamento terminado.

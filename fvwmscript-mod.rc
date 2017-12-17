@@ -1,0 +1,26 @@
+echo fvwmscript-mod.rc: Configurando módulos de roteiro e formulário...
+
+#------------------ FvwmScript
+*FvwmScript: DefaultFont "xft:Helvetica:Regular:size=12"
+*FvwmScript: DefaultFore black
+*FvwmScript: DefaultBack gray
+*FvwmScript: DefaultHilight yellow
+
+#------------------ FvwmForm
+DestroyModuleConfig FvwmForm-Restart: *
+*FvwmForm-Restart: WarpPointer
+*FvwmForm-Restart: Line	left
+*FvwmForm-Restart: Text	"Comando do Gerenciador de Janelas:"
+*FvwmForm-Restart: Line	expand
+*FvwmForm-Restart: Input	command 30 ""  # was "fvwm-themes-start"
+*FvwmForm-Restart: Line	expand
+*FvwmForm-Restart: Line	expand
+*FvwmForm-Restart: Button	quit "Reiniciar"
+*FvwmForm-Restart: Command	Restart $(command)
+*FvwmForm-Restart: Button	quit "Encerrar"
+*FvwmForm-Restart: Command	exit
+*FvwmForm-Restart: Button	quit "Cancelar" ^[
+*FvwmForm-Restart: Command	Nop
+
+
+echo fvwmscript-mod.rc: Processamento terminado.

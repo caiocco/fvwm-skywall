@@ -1,0 +1,210 @@
+#=====================================================================#
+echo xp-theme.rc: Processando tema XP...
+
+#
+# Configurações Cosméticas
+# Tema XP
+#
+# Criado por Mikhael Goikhman
+# Baseado na modificação de Shawn Anderson do FVWM Themes 0.7.0
+# Licença: GPL
+#
+
+#
+# Colorsets
+#
+# I.   FVWM Colorsets
+# II.  Module Colorsets
+# III. Application Colorsets
+# IV.  Start/Stop Functions
+
+# ---------------------------------------------------------------------
+# I. FVWM Colorsets
+
+# ----------------
+# Default colorset
+
+Colorset 0 fg black, bg rgb:98/B0/C8, Plain, NoShape
+
+# ------------------
+# Window decorations
+
+# window title, inactive and active
+Colorset 1 fg rgb:e8/f5/f5, bg rgb:3d/60/90, fgsh rgb:22/48/7a, Plain, NoShape
+#Colorset 2 fg rgb:df/ff/ff, bg rgb:03/56/cc, fgsh rgb:22/48/7a, Plain, NoShape
+Colorset 2 fg white, bg rgb:03/56/cc, fgsh rgb:22/48/7a, Plain, NoShape
+
+# window borders, inactive and active
+Colorset 3 bg rgb:45/61/9e, sh rgb:4a/5e/7d, hi rgb:4c/6f/af, Plain, NoShape
+Colorset 4 bg rgb:07/49/de, sh rgb:25/56/a3, hi rgb:06/5b/f6, Plain, NoShape
+
+# --------------
+# Menu Colorsets
+
+# inactive menu item fg+bg and menu face
+#Colorset 5 fg rgb:d0/f8/ff, bg rgb:14/58/bc, fgsh rgb:40/30/a8, NoShape, \
+#	BGradient 300 3 rgb:14/58/bc 1 rgb:10/60/d0 6 rgb:20/50/a8 1 rgb:14/58/bc
+Colorset 5 fg black, bg white, sh rgb:ac/a8/99, hi rgb:f0/e8/e0, \
+	IconAlpha 95, IconTint yellow 8, Plain, NoShape
+
+# active menu item fg+bg
+#Colorset 6 fg rgb:e8/f5/f5, bg rgb:34/88/de, fgsh rgb:10/28/40, Plain, NoShape
+Colorset 6 fg white, bg rgb:31/6a/c5, IconAlpha 95, IconTint cyan 8, \
+	Plain, NoShape
+
+# greyed menu item fg
+Colorset 7 fg grey, bg grey, Plain, NoShape
+
+# ---------------------------------------------------------------------
+# II. Module Colorsets
+
+# ----------------
+# Common Colorsets
+
+# default for modules
+Colorset 10 fg white, bg average, \
+	VGradient 300 3 rgb:14/6f/ea 2 rgb:00/3f/aa 6 rgb:14/6f/ea 1 rgb:00/3f/aa, NoShape
+
+# default hilight
+Colorset 11 fg white, bg average, \
+	VGradient 300 3 rgb:06/3d/c6 2 rgb:00/0d/86 6 rgb:06/3d/c6 1 rgb:00/0d/86, NoShape
+
+# special
+Colorset 12 fg rgb:d0/f8/ff, bg rgb:14/58/bc, fgsh rgb:40/30/a8, \
+	VGradient 300 rgb:a0/e0/f0 rgb:30/70/a8, NoShape
+
+# swallowed window
+Colorset 13 fg black, bg rgb:98/B0/C8, hi black, sh blue, \
+	Plain, NoShape
+
+# default2 (FvwmPager or to get more colors in Buttons)
+Colorset 14 fg rgb:ff/ff/f0, bg average, fgsh rgb:22/48/7a, NoShape, \
+	VGradient 250 7 rgb:6e/ac/f5 1 rgb:34/5c/9a 3 rgb:11/62/cd 3 rgb:0e/60/cc 3 rgb:0f/62/ce 9 rgb:1e/70/d6 9 rgb:3a/89/e6 6 rgb:46/92/f0
+
+# default hilight2: (FvwmPager or to get more colors in a Buttons)
+Colorset 15 fg rgb:ff/ff/f0, bg average, fgsh rgb:22/48/7a, NoShape, \
+	Tint cyan 38, bgTint cyan 38, \
+	VGradient 250 7 rgb:6e/ac/f5 1 rgb:34/5c/9a 3 rgb:11/62/cd 3 rgb:0e/60/cc 3 rgb:0f/62/ce 9 rgb:1e/70/d6 9 rgb:3a/89/e6 6 rgb:46/92/f0
+
+# tips/balloons
+Colorset 16 fg rgb:ff/ff/b0, bg rgb:14/58/bc, Plain, NoShape
+
+# ----------------------------
+# Window List Module Colorsets
+
+# standard item
+Colorset 17 fg contrast, bg average, \
+	VGradient 300 3 rgb:14/6f/ea 2 rgb:00/3f/aa 6 rgb:14/6f/ea 1 rgb:00/3f/aa, NoShape
+
+# active item
+Colorset 18 fg contrast, bg average, \
+	VGradient 300 3 rgb:06/3d/c6 2 rgb:00/0d/86 6 rgb:06/3d/c6 1 rgb:00/0d/86, NoShape
+
+# iconified item
+Colorset 19 fg white, bg rgb:18/70/d0, Plain, NoShape
+
+# pointed item
+Colorset 20 fg white, bg rgb:34/88/de, Plain, NoShape
+
+# ---------------------------------------------------------------------
+# IV. Start/Stop Functions
+
+DestroyFunc FuncFvwmStartColors
+AddToFunc   FuncFvwmStartColors
+
+DestroyFunc FuncFvwmStopColors
+AddToFunc   FuncFvwmStopColors
+# temporarily until we have Colorset Clear
++ I Colorset  5 IconAlpha, IconTint
++ I Colorset  6 IconAlpha, IconTint
++ I Colorset 15 Tint, bgTint
+
+Style "XP" DefaultColorset 0
+Style "XP" Colorset 1
+Style "XP" HilightColorset 2
+Style "XP" BorderColorset 3
+Style "XP" HilightBorderColorset 4
+
+#
+# Bordas e Título
+#
+AddToDecor "XP" TitleStyle Inactive Colorset 0
+AddToDecor "XP" TitleStyle Active Colorset 1
+
+AddToDecor "XP" TitleStyle Inactive TiledPixmap $[Sky_Dir]/imagens/xp/title-inactive.xpm
+AddToDecor "XP" TitleStyle Active TiledPixmap $[Sky_Dir]/imagens/xp/title-active.xpm
+
+AddToDecor "XP" ButtonStyle All Simple -- UseTitleStyle
+
+#Style "XP" Font "-*-lucida-bold-r-*-*-12-*"
+Style "XP" Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:pixelsize=15"
+#Style "XP" Font "-microsoft-trebuchet ms-bold-r-*-*-13-*"
+
+#Style "XP" IconFont "-*-lucida-medium-r-*-*-10-*"
+Style "XP" IconFont "Shadow=1 0 SE:xft:Luxi Sans:Medium:pixelsize=11:minspace=true"
+#Style "XP" IconFont "-microsoft-tahoma-medium-r-*-*-11-*"
+
+Style "XP" BorderWidth 4, HandleWidth 4
+Style "XP" FvwmBorder, FirmBorder
+
+AddToDecor "XP"	BorderStyle Simple -- HiddenHandles NoInset Raised
+AddToDecor "XP"	TitleStyle LeftJustified
+AddToDecor "XP"	TitleStyle -- Flat
+AddToDecor "XP"	ButtonStyle All -- Flat
+
+#
+# Botões
+#
+Style "XP" Button 1, Button 2, Button 4, Button 6
+Style "XP" MwmButtons
+
+AddToDecor "XP"	ButtonStyle All - Clear
+#AddToDecor "XP"	ButtonStyle 1 - MwmDecorMenu
+#AddToDecor "XP"	ButtonStyle 6 - MwmDecorMin
+#AddToDecor "XP"	ButtonStyle 4 - MwmDecorMax
+
+AddToDecor "XP"	AddButtonStyle 1 MiniIcon
+Style "XP" MiniIcon /usr/share/icons/Bluecurve/16x16/apps/redhat-icon-panel-menu.png
+
+AddToDecor "XP"	AddButtonStyle 2 Inactive   Pixmap $[Sky_Dir]/imagens/xp/close-inactive.png
+AddToDecor "XP"	AddButtonStyle 2 ActiveUp   Pixmap $[Sky_Dir]/imagens/xp/close-activeup.png
+AddToDecor "XP"	AddButtonStyle 2 ActiveDown Pixmap $[Sky_Dir]/imagens/xp/close-activedown.png
+
+AddToDecor "XP"	AddButtonStyle 4 Inactive   Pixmap $[Sky_Dir]/imagens/xp/maximize-inactive.png
+AddToDecor "XP"	AddButtonStyle 4 ActiveUp   Pixmap $[Sky_Dir]/imagens/xp/maximize-activeup.png
+AddToDecor "XP"	AddButtonStyle 4 ActiveDown Pixmap $[Sky_Dir]/imagens/xp/maximize-activedown.png
+
+AddToDecor "XP"	AddButtonStyle 6 Inactive   Pixmap $[Sky_Dir]/imagens/xp/iconify-inactive.png
+AddToDecor "XP"	AddButtonStyle 6 ActiveUp   Pixmap $[Sky_Dir]/imagens/xp/iconify-activeup.png
+AddToDecor "XP"	AddButtonStyle 6 ActiveDown Pixmap $[Sky_Dir]/imagens/xp/iconify-activedown.png
+
+AddToDecor "XP"	TitleStyle Height 27
+
+#
+# Menus
+#
+MenuStyle * Win
+MenuStyle * MenuColorset 5, ActiveColorset 6, GreyedColorset 7
+MenuStyle * Hilight3DThickness 0
+MenuStyle * Hilight3DOff, HilightBack
+MenuStyle * PopupDelayed, PopupDelay 150, PopdownDelayed, PopdownDelay 150
+MenuStyle * PopupOffset -5 100, TitleWarpOff
+MenuStyle * TitleUnderlines1, SeparatorsLong, TrianglesSolid
+MenuStyle * TrianglesUseFore
+MenuStyle * AnimationOff, AutomaticHotkeysOff, DoubleClickTime
+MenuStyle * BorderWidth 2, SidePic, SideColor
+MenuStyle * PopupAsSubmenu, RemoveSubmenus, SubmenusRight
+MenuStyle * ItemFormat "%.4s%.1|%.5i%.5l%.5l%.5r%.5i%2.3>%1|"
+MenuStyle * VerticalItemSpacing 2 5, VerticalTitleSpacing 2 3
+#MenuStyle * Font "-microsoft-tahoma-medium-r-*-*-11-*"
+#MenuStyle * Font "-adobe-helvetica-medium-r-*-*-11-*"
+MenuStyle * Font "Shadow=1 0 SE:xft:Luxi Sans:Medium:size=10:minspace=true"
+
+BusyCursor DynamicMenu True
+
+# Aplicando...
+Style * UseStyle "XP"
+Style * UseDecor "XP"
+
+echo xp-theme.rc: Processamento terminado.
+#=====================================================================#

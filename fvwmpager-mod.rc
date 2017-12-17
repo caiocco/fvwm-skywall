@@ -1,0 +1,511 @@
+echo fvwmpager-mod.rc: Configurando módulo pager...
+
+#------------------ Pager
+# * Geometria
+*FvwmPager: Geometry -3-27
+
+# * Cores
+*FvwmPager: Back grey60
+*FvwmPager: Fore black
+*FvwmPager: Hilight #c3c3c3
+
+# * Fontes
+*FvwmPager: Font "xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+# SmallFont: Comente fora ou defina esta opção para nomes de janelas 
+#            em janelas de pager.
+#            Tambem consulte sobre "WindowLabelFormat".
+#            Valor padrão: none
+#            Valor geralmente usado em caso de troca: 5x8
+*FvwmPager: SmallFont none
+Test (EnvMatch Sky_Panels_Type 4) *FvwmPager: SmallFont "xft:Luxi Sans:size=7:encoding=ISO10646-1"
+
+# * Balões
+*FvwmPager: Balloons All
+*FvwmPager: BalloonBack lightyellow
+*FvwmPager: BalloonFont "xft:Bitstream Vera Sans:style=Roman:size=7:antialias=True:encoding=ISO10646-1"
+*FvwmPager: BalloonYOffset +2
+*FvwmPager: BalloonBorderWidth 1
+
+# * Redefinindo e/ou definindo opções para determinados temas
+# - Diamond
+Test (EnvMatch Sky_Theme diamond) *FvwmPager: WindowColors black #6B8EB5 black #69819B
+Test (EnvMatch Sky_Theme diamond) *FvwmPager: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme diamond) *FvwmPager: Hilight white
+Test (EnvMatch Sky_Theme diamond) *FvwmPager: Balloons Pager
+Test (EnvMatch Sky_Theme diamond) *FvwmPager: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme diamond) *FvwmPager: Colorset * 14
+Test (EnvMatch Sky_Theme diamond) *FvwmPager: HilightColorset * 15
+Test (EnvMatch Sky_Theme diamond) *FvwmPager: BalloonColorset * 16
+# - Tribal
+#Test (EnvMatch Sky_Theme tribal) *FvwmPager: Geometry 319x69+5000+5000
+Test (EnvMatch Sky_Theme tribal) *FvwmPager: Colorset * 14
+Test (EnvMatch Sky_Theme tribal) *FvwmPager: HilightColorset * 15
+Test (EnvMatch Sky_Theme tribal) *FvwmPager: BalloonColorset * 16
+Test (EnvMatch Sky_Theme tribal) *FvwmPager: WindowColorsets 1 2
+Test (EnvMatch Sky_Theme tribal) *FvwmPager: Hilight white
+# - Clearlooks
+Test (EnvMatch Sky_Theme clearlooks) *FvwmPager: Back #B6A68C
+Test (EnvMatch Sky_Theme clearlooks) *FvwmPager: Hilight #CFC6B9
+# - Gentoo
+Test (EnvMatch Sky_Theme gentoo) *FvwmPager: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme gentoo) *FvwmPager: Hilight white
+Test (EnvMatch Sky_Theme gentoo) *FvwmPager: Balloons Pager
+Test (EnvMatch Sky_Theme gentoo) *FvwmPager: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme gentoo) *FvwmPager: Colorset * 14
+Test (EnvMatch Sky_Theme gentoo) *FvwmPager: HilightColorset * 15
+Test (EnvMatch Sky_Theme gentoo) *FvwmPager: BalloonColorset * 16
+# - Nimbos
+Test (EnvMatch Sky_Theme nimbos) *FvwmPager: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme nimbos) *FvwmPager: Balloons Pager
+Test (EnvMatch Sky_Theme nimbos) *FvwmPager: Colorset * 14
+Test (EnvMatch Sky_Theme nimbos) *FvwmPager: HilightColorset * 15
+Test (EnvMatch Sky_Theme nimbos) *FvwmPager: BalloonColorset * 16
+Test (EnvMatch Sky_Theme nimbos) *FvwmPager: WindowColors lightgray #818693 White #C6C9D0
+Test (EnvMatch Sky_Theme nimbos) *FvwmPager: Hilight white
+Test (EnvMatch Sky_Theme nimbos) *FvwmPager: Balloons Pager
+# - SGI
+Test (EnvMatch Sky_Theme sgi) *FvwmPager: Colorset * 10
+Test (EnvMatch Sky_Theme sgi) *FvwmPager: WindowColorsets 2 10
+Test (EnvMatch Sky_Theme sgi) *FvwmPager: Window3DBorders
+Test (EnvMatch Sky_Theme sgi) *FvwmPager: SmallFont none
+Test (EnvMatch Sky_Theme sgi) *FvwmPager: Hilight  #a59f80
+Test (EnvMatch Sky_Theme sgi) *FvwmPager: DeskHilight
+Test (EnvMatch Sky_Theme sgi) *FvwmPager: SolidSeparators
+Test (EnvMatch Sky_Theme sgi) *FvwmPager: BalloonFont "-*-helvetica-bold-*-*-*-14-*-*-*-*-*-*-*"
+Test (EnvMatch Sky_Theme sgi) *FvwmPager: Balloons All
+Test (EnvMatch Sky_Theme sgi) *FvwmPager: BalloonYOffset +2
+Test (EnvMatch Sky_Theme sgi) *FvwmPager: BalloonBorderWidth 1
+Test (EnvMatch Sky_Theme sgi) *FvwmPager: UseSkipList
+Test (EnvMatch Sky_Theme sgi) *FvwmPager: MoveThreshold 3
+Test (EnvMatch Sky_Theme sgi) *FvwmPager: BalloonStringFormat %c
+Test (EnvMatch Sky_Theme sgi) *FvwmPager: WindowBorderWidth 2
+Test (EnvMatch Sky_Theme sgi) *FvwmPager: NoMiniIcons
+
+# * Etiquetas
+DesktopName 0 Visão Mundial
+DesktopName 1 Visão Mundial (2)
+DesktopName 2 Visão Mundial (3)
+DesktopName 3 Visão Mundial (4)
+DesktopName 4 Visão Mundial (5)
+Test (EnvMatch Sky_Panels_Type 4) DesktopName 0 Navegação
+Test (EnvMatch Sky_Panels_Type 4) DesktopName 1 Estudos
+Test (EnvMatch Sky_Panels_Type 4) DesktopName 2 Desenvolvimento
+Test (EnvMatch Sky_Panels_Type 4) DesktopName 3 Diversos
+Test (EnvMatch Sky_Panels_Type 2) DesktopName 0 Principal
+Test (EnvMatch Sky_Panels_Type 2) DesktopName 1 Internet
+Test (EnvMatch Sky_Panels_Type 2) DesktopName 2 VMware
+Test (EnvMatch Sky_Panels_Type 2) DesktopName 3 Diversos
+
+#--- Shelf
+DestroyModuleConfig Shelf-FvwmPager: *
+
+# * Geometria
+*Shelf-FvwmPager: Geometry -3-27
+
+# * Cores
+*Shelf-FvwmPager: Back grey60
+*Shelf-FvwmPager: Fore black
+*Shelf-FvwmPager: Hilight #c3c3c3
+
+# * Fontes
+*Shelf-FvwmPager: Font "xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+# SmallFont: Comente fora ou defina esta opção para nomes de janelas 
+#            em janelas de pager.
+#            Tambem consulte sobre "WindowLabelFormat".
+#            Valor padrão: none
+#            Valor geralmente usado em caso de troca: 5x8
+*Shelf-FvwmPager: SmallFont none
+Test (EnvMatch Sky_Panels_Type 4) *Shelf-FvwmPager: SmallFont "xft:Luxi Sans:size=7:encoding=ISO10646-1"
+
+# * Balões
+*Shelf-FvwmPager: Balloons All
+*Shelf-FvwmPager: BalloonBack lightyellow
+*Shelf-FvwmPager: BalloonFont "xft:Bitstream Vera Sans:style=Roman:size=7:antialias=True:encoding=ISO10646-1"
+*Shelf-FvwmPager: BalloonYOffset +2
+*Shelf-FvwmPager: BalloonBorderWidth 1
+
+# * Janelas
+*Shelf-FvwmPager: UseSkipList
+
+# * Redefinindo e/ou definindo opções para determinados temas
+# - Diamond
+Test (EnvMatch Sky_Theme diamond) *Shelf-FvwmPager: WindowColors black #6B8EB5 black #69819B
+Test (EnvMatch Sky_Theme diamond) *Shelf-FvwmPager: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme diamond) *Shelf-FvwmPager: Hilight white
+Test (EnvMatch Sky_Theme diamond) *Shelf-FvwmPager: Balloons Pager
+Test (EnvMatch Sky_Theme diamond) *Shelf-FvwmPager: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme diamond) *Shelf-FvwmPager: Colorset * 14
+Test (EnvMatch Sky_Theme diamond) *Shelf-FvwmPager: HilightColorset * 15
+Test (EnvMatch Sky_Theme diamond) *Shelf-FvwmPager: BalloonColorset * 16
+# - Tribal
+#Test (EnvMatch Sky_Theme tribal) *Shelf-FvwmPager: Geometry 319x69+5000+5000
+Test (EnvMatch Sky_Theme tribal) *Shelf-FvwmPager: Colorset * 14
+Test (EnvMatch Sky_Theme tribal) *Shelf-FvwmPager: HilightColorset * 15
+Test (EnvMatch Sky_Theme tribal) *Shelf-FvwmPager: BalloonColorset * 16
+Test (EnvMatch Sky_Theme tribal) *Shelf-FvwmPager: WindowColorsets 1 2
+Test (EnvMatch Sky_Theme tribal) *Shelf-FvwmPager: Hilight white
+# - Clearlooks
+Test (EnvMatch Sky_Theme clearlooks) *Shelf-FvwmPager: Back #B6A68C
+Test (EnvMatch Sky_Theme clearlooks) *Shelf-FvwmPager: Hilight #CFC6B9
+# - Gentoo
+Test (EnvMatch Sky_Theme gentoo) *Shelf-FvwmPager: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme gentoo) *Shelf-FvwmPager: Hilight white
+Test (EnvMatch Sky_Theme gentoo) *Shelf-FvwmPager: Balloons Pager
+Test (EnvMatch Sky_Theme gentoo) *Shelf-FvwmPager: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme gentoo) *Shelf-FvwmPager: Colorset * 14
+Test (EnvMatch Sky_Theme gentoo) *Shelf-FvwmPager: HilightColorset * 15
+Test (EnvMatch Sky_Theme gentoo) *Shelf-FvwmPager: BalloonColorset * 16
+# - Nimbos
+Test (EnvMatch Sky_Theme nimbos) *Shelf-FvwmPager: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme nimbos) *Shelf-FvwmPager: Balloons Pager
+Test (EnvMatch Sky_Theme nimbos) *Shelf-FvwmPager: Colorset * 14
+Test (EnvMatch Sky_Theme nimbos) *Shelf-FvwmPager: HilightColorset * 15
+Test (EnvMatch Sky_Theme nimbos) *Shelf-FvwmPager: BalloonColorset * 16
+Test (EnvMatch Sky_Theme nimbos) *Shelf-FvwmPager: WindowColors lightgray #818693 White #C6C9D0
+Test (EnvMatch Sky_Theme nimbos) *Shelf-FvwmPager: Hilight white
+Test (EnvMatch Sky_Theme nimbos) *Shelf-FvwmPager: Balloons Pager
+# - SGI
+Test (EnvMatch Sky_Theme sgi) *Shelf-FvwmPager: Colorset * 10
+Test (EnvMatch Sky_Theme sgi) *Shelf-FvwmPager: WindowColorsets 2 10
+Test (EnvMatch Sky_Theme sgi) *Shelf-FvwmPager: Window3DBorders
+Test (EnvMatch Sky_Theme sgi) *Shelf-FvwmPager: SmallFont none
+Test (EnvMatch Sky_Theme sgi) *Shelf-FvwmPager: Hilight  #a59f80
+Test (EnvMatch Sky_Theme sgi) *Shelf-FvwmPager: DeskHilight
+Test (EnvMatch Sky_Theme sgi) *Shelf-FvwmPager: SolidSeparators
+Test (EnvMatch Sky_Theme sgi) *Shelf-FvwmPager: BalloonFont "-*-helvetica-bold-*-*-*-14-*-*-*-*-*-*-*"
+Test (EnvMatch Sky_Theme sgi) *Shelf-FvwmPager: Balloons All
+Test (EnvMatch Sky_Theme sgi) *Shelf-FvwmPager: BalloonYOffset +2
+Test (EnvMatch Sky_Theme sgi) *Shelf-FvwmPager: BalloonBorderWidth 1
+Test (EnvMatch Sky_Theme sgi) *Shelf-FvwmPager: UseSkipList
+Test (EnvMatch Sky_Theme sgi) *Shelf-FvwmPager: MoveThreshold 3
+Test (EnvMatch Sky_Theme sgi) *Shelf-FvwmPager: BalloonStringFormat %c
+Test (EnvMatch Sky_Theme sgi) *Shelf-FvwmPager: WindowBorderWidth 2
+Test (EnvMatch Sky_Theme sgi) *Shelf-FvwmPager: NoMiniIcons
+
+#--- Desker
+DestroyModuleConfig Desker-FvwmPager: *
+
+Style FvwmPager-Desker !Title, !Handles, Sticky, WindowListSkip, \
+	BorderWidth 0, NeverFocus, CirculateSkip
+
+*Desker-FvwmPager: Colorset * 14
+*Desker-FvwmPager: HilightColorset * 15
+*Desker-FvwmPager: BalloonColorset * 16
+*Desker-FvwmPager: WindowColorsets 1 2
+*Desker-FvwmPager: Font "xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+*Desker-FvwmPager: Geometry 319x79+5000+5000
+*Desker-FvwmPager: Balloons Pager
+
+#--- Desker 2
+DestroyModuleConfig Desker2-FvwmPager: *
+
+Style Desker2-FvwmPager !Title, !Handles, Sticky, WindowListSkip, \
+	BorderWidth 0, NeverFocus, CirculateSkip
+
+*Desker2-FvwmPager: Colorset * 14
+*Desker2-FvwmPager: HilightColorset * 15
+*Desker2-FvwmPager: BalloonColorset * 16
+*Desker2-FvwmPager: WindowColorsets 1 2
+*Desker2-FvwmPager: Rows 1
+*Desker2-FvwmPager: Columns 4
+*Desker2-FvwmPager: Font "xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+*Desker2-FvwmPager: Geometry 600x154+5000+5000
+*Desker2-FvwmPager: Balloons Pager
+Test (EnvMatch Sky_Theme gentoo) *Desker2-FvwmPager: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme gentoo) *Desker2-FvwmPager: Hilight white
+Test (EnvMatch Sky_Theme gentoo) *Desker2-FvwmPager: Balloons Pager
+Test (EnvMatch Sky_Theme gentoo) *Desker2-FvwmPager: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme gentoo) *Desker2-FvwmPager: Colorset * 14
+Test (EnvMatch Sky_Theme gentoo) *Desker2-FvwmPager: HilightColorset * 15
+Test (EnvMatch Sky_Theme gentoo) *Desker2-FvwmPager: BalloonColorset * 16
+Test (EnvMatch Sky_Theme diamond) *Desker2-FvwmPager: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme diamond) *Desker2-FvwmPager: Hilight white
+Test (EnvMatch Sky_Theme diamond) *Desker2-FvwmPager: Balloons Pager
+Test (EnvMatch Sky_Theme diamond) *Desker2-FvwmPager: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme diamond) *Desker2-FvwmPager: Colorset * 14
+Test (EnvMatch Sky_Theme diamond) *Desker2-FvwmPager: HilightColorset * 15
+Test (EnvMatch Sky_Theme diamond) *Desker2-FvwmPager: BalloonColorset * 16
+
+#--- Desker 3
+DestroyModuleConfig Desker3-FvwmPager: *
+
+Style Desker3-FvwmPager !Title, !Handles, Sticky, WindowListSkip, \
+	BorderWidth 0, NeverFocus, CirculateSkip
+
+*Desker3-FvwmPager: Colorset * 14
+*Desker3-FvwmPager: HilightColorset * 15
+*Desker3-FvwmPager: BalloonColorset * 16
+*Desker3-FvwmPager: WindowColorsets 1 2
+*Desker3-FvwmPager: Rows 1
+*Desker3-FvwmPager: Columns 4
+*Desker3-FvwmPager: Font "xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+*Desker3-FvwmPager: Geometry 900x130+5000+5000
+*Desker3-FvwmPager: Balloons Pager
+*Desker3-FvwmPager: BalloonFont "xft:Bitstream Vera Sans:style=Roman:size=7:antialias=True"
+Test (EnvMatch Sky_Theme gentoo) *Desker3-FvwmPager: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme gentoo) *Desker3-FvwmPager: Hilight white
+Test (EnvMatch Sky_Theme gentoo) *Desker3-FvwmPager: Balloons Pager
+Test (EnvMatch Sky_Theme gentoo) *Desker3-FvwmPager: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme gentoo) *Desker3-FvwmPager: Colorset * 14
+Test (EnvMatch Sky_Theme gentoo) *Desker3-FvwmPager: HilightColorset * 15
+Test (EnvMatch Sky_Theme gentoo) *Desker3-FvwmPager: BalloonColorset * 16
+Test (EnvMatch Sky_Theme diamond) *Desker3-FvwmPager: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme diamond) *Desker3-FvwmPager: Hilight white
+Test (EnvMatch Sky_Theme diamond) *Desker3-FvwmPager: Balloons Pager
+Test (EnvMatch Sky_Theme diamond) *Desker3-FvwmPager: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme diamond) *Desker3-FvwmPager: Colorset * 14
+Test (EnvMatch Sky_Theme diamond) *Desker3-FvwmPager: HilightColorset * 15
+Test (EnvMatch Sky_Theme diamond) *Desker3-FvwmPager: BalloonColorset * 16
+
+#--- SyncMaster
+*Alpha: Geometry -3-27
+*Alpha: Back grey60
+*Alpha: Fore black
+*Alpha: Hilight #c3c3c3
+*Alpha: Font "xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+*Alpha: SmallFont none
+*Alpha: Balloons All
+*Alpha: BalloonBack lightyellow
+*Alpha: BalloonFont "xft:Bitstream Vera Sans:style=Roman:size=7:antialias=True"
+*Alpha: BalloonYOffset +2
+*Alpha: BalloonBorderWidth 1
+
+*Bravo: Geometry -3-27
+*Bravo: Back grey60
+*Bravo: Fore black
+*Bravo: Hilight #c3c3c3
+*Bravo: Font "xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+*Bravo: SmallFont none
+*Bravo: Balloons All
+*Bravo: BalloonBack lightyellow
+*Bravo: BalloonFont "xft:Bitstream Vera Sans:style=Roman:size=7:antialias=True"
+*Bravo: BalloonYOffset +2
+*Bravo: BalloonBorderWidth 1
+
+*Charlie: Geometry -3-27
+*Charlie: Back grey60
+*Charlie: Fore black
+*Charlie: Hilight #c3c3c3
+*Charlie: Font "xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+*Charlie: SmallFont none
+*Charlie: Balloons All
+*Charlie: BalloonBack lightyellow
+*Charlie: BalloonFont "xft:Bitstream Vera Sans:style=Roman:size=7:antialias=True"
+*Charlie: BalloonYOffset +2
+*Charlie: BalloonBorderWidth 1
+
+*Delta: Geometry -3-27
+*Delta: Back grey60
+*Delta: Fore black
+*Delta: Hilight #c3c3c3
+*Delta: Font "xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+*Delta: SmallFont none
+*Delta: Balloons All
+*Delta: BalloonBack lightyellow
+*Delta: BalloonFont "xft:Bitstream Vera Sans:style=Roman:size=7:antialias=True"
+*Delta: BalloonYOffset +2
+*Delta: BalloonBorderWidth 1
+
+*Echo: Geometry -3-27
+*Echo: Back grey60
+*Echo: Fore black
+*Echo: Hilight #c3c3c3
+*Echo: Font "xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+*Echo: SmallFont none
+*Echo: Balloons All
+*Echo: BalloonBack lightyellow
+*Echo: BalloonFont "xft:Bitstream Vera Sans:style=Roman:size=7:antialias=True"
+*Echo: BalloonYOffset +2
+*Echo: BalloonBorderWidth 1
+
+# * Redefinindo e/ou definindo opções para determinados temas
+# - Diamond
+Test (EnvMatch Sky_Theme diamond) *Alpha: WindowColors black #6B8EB5 black #69819B
+Test (EnvMatch Sky_Theme diamond) *Alpha: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme diamond) *Alpha: Hilight white
+Test (EnvMatch Sky_Theme diamond) *Alpha: Balloons Pager
+Test (EnvMatch Sky_Theme diamond) *Alpha: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme diamond) *Alpha: Colorset * 14
+Test (EnvMatch Sky_Theme diamond) *Alpha: HilightColorset * 15
+Test (EnvMatch Sky_Theme diamond) *Alpha: BalloonColorset * 16
+# - Tribal
+#Test (EnvMatch Sky_Theme tribal) *Alpha: Geometry 319x69+5000+5000
+Test (EnvMatch Sky_Theme tribal) *Alpha: Colorset * 14
+Test (EnvMatch Sky_Theme tribal) *Alpha: HilightColorset * 15
+Test (EnvMatch Sky_Theme tribal) *Alpha: BalloonColorset * 16
+Test (EnvMatch Sky_Theme tribal) *Alpha: WindowColorsets 1 2
+Test (EnvMatch Sky_Theme tribal) *Alpha: Hilight white
+# - Clearlooks
+Test (EnvMatch Sky_Theme clearlooks) *Alpha: Back #B6A68C
+Test (EnvMatch Sky_Theme clearlooks) *Alpha: Hilight #CFC6B9
+# - Gentoo
+Test (EnvMatch Sky_Theme gentoo) *Alpha: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme gentoo) *Alpha: Hilight white
+Test (EnvMatch Sky_Theme gentoo) *Alpha: Balloons Pager
+Test (EnvMatch Sky_Theme gentoo) *Alpha: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme gentoo) *Alpha: Colorset * 14
+Test (EnvMatch Sky_Theme gentoo) *Alpha: HilightColorset * 15
+Test (EnvMatch Sky_Theme gentoo) *Alpha: BalloonColorset * 16
+# - Nimbos
+Test (EnvMatch Sky_Theme nimbos) *Alpha: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme nimbos) *Alpha: Balloons Pager
+Test (EnvMatch Sky_Theme nimbos) *Alpha: Colorset * 14
+Test (EnvMatch Sky_Theme nimbos) *Alpha: HilightColorset * 15
+Test (EnvMatch Sky_Theme nimbos) *Alpha: BalloonColorset * 16
+Test (EnvMatch Sky_Theme nimbos) *Alpha: WindowColors lightgray #818693 White #C6C9D0
+Test (EnvMatch Sky_Theme nimbos) *Alpha: Hilight white
+Test (EnvMatch Sky_Theme nimbos) *Alpha: Balloons Pager
+
+# * Redefinindo e/ou definindo opções para determinados temas
+# - Diamond
+Test (EnvMatch Sky_Theme diamond) *Bravo: WindowColors black #6B8EB5 black #69819B
+Test (EnvMatch Sky_Theme diamond) *Bravo: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme diamond) *Bravo: Hilight white
+Test (EnvMatch Sky_Theme diamond) *Bravo: Balloons Pager
+Test (EnvMatch Sky_Theme diamond) *Bravo: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme diamond) *Bravo: Colorset * 14
+Test (EnvMatch Sky_Theme diamond) *Bravo: HilightColorset * 15
+Test (EnvMatch Sky_Theme diamond) *Bravo: BalloonColorset * 16
+# - Tribal
+#Test (EnvMatch Sky_Theme tribal) *Bravo: Geometry 319x69+5000+5000
+Test (EnvMatch Sky_Theme tribal) *Bravo: Colorset * 14
+Test (EnvMatch Sky_Theme tribal) *Bravo: HilightColorset * 15
+Test (EnvMatch Sky_Theme tribal) *Bravo: BalloonColorset * 16
+Test (EnvMatch Sky_Theme tribal) *Bravo: WindowColorsets 1 2
+Test (EnvMatch Sky_Theme tribal) *Bravo: Hilight white
+# - Clearlooks
+Test (EnvMatch Sky_Theme clearlooks) *Bravo: Back #B6A68C
+Test (EnvMatch Sky_Theme clearlooks) *Bravo: Hilight #CFC6B9
+# - Gentoo
+Test (EnvMatch Sky_Theme gentoo) *Bravo: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme gentoo) *Bravo: Hilight white
+Test (EnvMatch Sky_Theme gentoo) *Bravo: Balloons Pager
+Test (EnvMatch Sky_Theme gentoo) *Bravo: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme gentoo) *Bravo: Colorset * 14
+Test (EnvMatch Sky_Theme gentoo) *Bravo: HilightColorset * 15
+Test (EnvMatch Sky_Theme gentoo) *Bravo: BalloonColorset * 16
+# - Nimbos
+Test (EnvMatch Sky_Theme nimbos) *Bravo: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme nimbos) *Bravo: Balloons Pager
+Test (EnvMatch Sky_Theme nimbos) *Bravo: Colorset * 14
+Test (EnvMatch Sky_Theme nimbos) *Bravo: HilightColorset * 15
+Test (EnvMatch Sky_Theme nimbos) *Bravo: BalloonColorset * 16
+Test (EnvMatch Sky_Theme nimbos) *Bravo: WindowColors lightgray #818693 White #C6C9D0
+Test (EnvMatch Sky_Theme nimbos) *Bravo: Hilight white
+Test (EnvMatch Sky_Theme nimbos) *Bravo: Balloons Pager
+
+# * Redefinindo e/ou definindo opções para determinados temas
+# - Diamond
+Test (EnvMatch Sky_Theme diamond) *Charlie: WindowColors black #6B8EB5 black #69819B
+Test (EnvMatch Sky_Theme diamond) *Charlie: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme diamond) *Charlie: Hilight white
+Test (EnvMatch Sky_Theme diamond) *Charlie: Balloons Pager
+Test (EnvMatch Sky_Theme diamond) *Charlie: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme diamond) *Charlie: Colorset * 14
+Test (EnvMatch Sky_Theme diamond) *Charlie: HilightColorset * 15
+Test (EnvMatch Sky_Theme diamond) *Charlie: BalloonColorset * 16
+# - Tribal
+#Test (EnvMatch Sky_Theme tribal) *Charlie: Geometry 319x69+5000+5000
+Test (EnvMatch Sky_Theme tribal) *Charlie: Colorset * 14
+Test (EnvMatch Sky_Theme tribal) *Charlie: HilightColorset * 15
+Test (EnvMatch Sky_Theme tribal) *Charlie: BalloonColorset * 16
+Test (EnvMatch Sky_Theme tribal) *Charlie: WindowColorsets 1 2
+Test (EnvMatch Sky_Theme tribal) *Charlie: Hilight white
+# - Clearlooks
+Test (EnvMatch Sky_Theme clearlooks) *Charlie: Back #B6A68C
+Test (EnvMatch Sky_Theme clearlooks) *Charlie: Hilight #CFC6B9
+# - Gentoo
+Test (EnvMatch Sky_Theme gentoo) *Charlie: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme gentoo) *Charlie: Hilight white
+Test (EnvMatch Sky_Theme gentoo) *Charlie: Balloons Pager
+Test (EnvMatch Sky_Theme gentoo) *Charlie: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme gentoo) *Charlie: Colorset * 14
+Test (EnvMatch Sky_Theme gentoo) *Charlie: HilightColorset * 15
+Test (EnvMatch Sky_Theme gentoo) *Charlie: BalloonColorset * 16
+# - Nimbos
+Test (EnvMatch Sky_Theme nimbos) *Charlie: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme nimbos) *Charlie: Balloons Pager
+Test (EnvMatch Sky_Theme nimbos) *Charlie: Colorset * 14
+Test (EnvMatch Sky_Theme nimbos) *Charlie: HilightColorset * 15
+Test (EnvMatch Sky_Theme nimbos) *Charlie: BalloonColorset * 16
+Test (EnvMatch Sky_Theme nimbos) *Charlie: WindowColors lightgray #818693 White #C6C9D0
+Test (EnvMatch Sky_Theme nimbos) *Charlie: Hilight white
+Test (EnvMatch Sky_Theme nimbos) *Charlie: Balloons Pager
+
+# * Redefinindo e/ou definindo opções para determinados temas
+# - Diamond
+Test (EnvMatch Sky_Theme diamond) *Delta: WindowColors black #6B8EB5 black #69819B
+Test (EnvMatch Sky_Theme diamond) *Delta: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme diamond) *Delta: Hilight white
+Test (EnvMatch Sky_Theme diamond) *Delta: Balloons Pager
+Test (EnvMatch Sky_Theme diamond) *Delta: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme diamond) *Delta: Colorset * 14
+Test (EnvMatch Sky_Theme diamond) *Delta: HilightColorset * 15
+Test (EnvMatch Sky_Theme diamond) *Delta: BalloonColorset * 16
+# - Tribal
+#Test (EnvMatch Sky_Theme tribal) *Delta: Geometry 319x69+5000+5000
+Test (EnvMatch Sky_Theme tribal) *Delta: Colorset * 14
+Test (EnvMatch Sky_Theme tribal) *Delta: HilightColorset * 15
+Test (EnvMatch Sky_Theme tribal) *Delta: BalloonColorset * 16
+Test (EnvMatch Sky_Theme tribal) *Delta: WindowColorsets 1 2
+Test (EnvMatch Sky_Theme tribal) *Delta: Hilight white
+# - Clearlooks
+Test (EnvMatch Sky_Theme clearlooks) *Delta: Back #B6A68C
+Test (EnvMatch Sky_Theme clearlooks) *Delta: Hilight #CFC6B9
+# - Gentoo
+Test (EnvMatch Sky_Theme gentoo) *Delta: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme gentoo) *Delta: Hilight white
+Test (EnvMatch Sky_Theme gentoo) *Delta: Balloons Pager
+Test (EnvMatch Sky_Theme gentoo) *Delta: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme gentoo) *Delta: Colorset * 14
+Test (EnvMatch Sky_Theme gentoo) *Delta: HilightColorset * 15
+Test (EnvMatch Sky_Theme gentoo) *Delta: BalloonColorset * 16
+# - Nimbos
+Test (EnvMatch Sky_Theme nimbos) *Delta: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme nimbos) *Delta: Balloons Pager
+Test (EnvMatch Sky_Theme nimbos) *Delta: Colorset * 14
+Test (EnvMatch Sky_Theme nimbos) *Delta: HilightColorset * 15
+Test (EnvMatch Sky_Theme nimbos) *Delta: BalloonColorset * 16
+Test (EnvMatch Sky_Theme nimbos) *Delta: WindowColors lightgray #818693 White #C6C9D0
+Test (EnvMatch Sky_Theme nimbos) *Delta: Hilight white
+Test (EnvMatch Sky_Theme nimbos) *Delta: Balloons Pager
+
+# * Redefinindo e/ou definindo opções para determinados temas
+# - Diamond
+Test (EnvMatch Sky_Theme diamond) *Echo: WindowColors black #6B8EB5 black #69819B
+Test (EnvMatch Sky_Theme diamond) *Echo: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme diamond) *Echo: Hilight white
+Test (EnvMatch Sky_Theme diamond) *Echo: Balloons Pager
+Test (EnvMatch Sky_Theme diamond) *Echo: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme diamond) *Echo: Colorset * 14
+Test (EnvMatch Sky_Theme diamond) *Echo: HilightColorset * 15
+Test (EnvMatch Sky_Theme diamond) *Echo: BalloonColorset * 16
+# - Tribal
+#Test (EnvMatch Sky_Theme tribal) *Echo: Geometry 319x69+5000+5000
+Test (EnvMatch Sky_Theme tribal) *Echo: Colorset * 14
+Test (EnvMatch Sky_Theme tribal) *Echo: HilightColorset * 15
+Test (EnvMatch Sky_Theme tribal) *Echo: BalloonColorset * 16
+Test (EnvMatch Sky_Theme tribal) *Echo: WindowColorsets 1 2
+Test (EnvMatch Sky_Theme tribal) *Echo: Hilight white
+# - Clearlooks
+Test (EnvMatch Sky_Theme clearlooks) *Echo: Back #B6A68C
+Test (EnvMatch Sky_Theme clearlooks) *Echo: Hilight #CFC6B9
+# - Gentoo
+Test (EnvMatch Sky_Theme gentoo) *Echo: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme gentoo) *Echo: Hilight white
+Test (EnvMatch Sky_Theme gentoo) *Echo: Balloons Pager
+Test (EnvMatch Sky_Theme gentoo) *Echo: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme gentoo) *Echo: Colorset * 14
+Test (EnvMatch Sky_Theme gentoo) *Echo: HilightColorset * 15
+Test (EnvMatch Sky_Theme gentoo) *Echo: BalloonColorset * 16
+# - Nimbos
+Test (EnvMatch Sky_Theme nimbos) *Echo: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme nimbos) *Echo: Balloons Pager
+Test (EnvMatch Sky_Theme nimbos) *Echo: Colorset * 14
+Test (EnvMatch Sky_Theme nimbos) *Echo: HilightColorset * 15
+Test (EnvMatch Sky_Theme nimbos) *Echo: BalloonColorset * 16
+Test (EnvMatch Sky_Theme nimbos) *Echo: WindowColors lightgray #818693 White #C6C9D0
+Test (EnvMatch Sky_Theme nimbos) *Echo: Hilight white
+Test (EnvMatch Sky_Theme nimbos) *Echo: Balloons Pager
+
+echo fvwmpager-mod.rc: Processamento terminado.

@@ -1,0 +1,15 @@
+echo fvwmanimate-mod.rc: Configurando animações do ambiente...
+
+#------------------ FvwmAnimate
+# Certas animações são controladas por esse módulo (iconificação).
+# Além do efeito "Flip", podem ser usados Frame, Lines, Turn, Twist, 
+# Zoom3D, Random e None.
+DestroyModuleConfig FvwmAnimate: *
+*FvwmAnimate: Effect None
+*FvwmAnimate: Delay 0
+*FvwmAnimate: Iterations 99
+*FvwmAnimate: Twist 1
+*FvwmAnimate: Width 10
+
+
+echo fvwmanimate-mod.rc: Processamento terminado.

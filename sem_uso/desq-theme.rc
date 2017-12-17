@@ -1,0 +1,80 @@
+#======================================================================#
+
+#
+# Configurações cosméticas
+# Tema DESQ
+# Idealizado com base no DESQview
+#
+DestroyDecor "desq"
+
+#
+# Colorsets
+#
+# - Janela invativa
+Colorset 0 fg white, bg #6b8eb5, fgsh black, RootTransparent Buffer, Tint black 50
+# - Janela ativa
+Colorset 1 fg white, bg #6b8eb5, fgsh black, RootTransparent Buffer, Tint black 65
+# - Menus
+Colorset 3 fg white, bg #6b8eb5, fgsh black, RootTransparent Buffer, Tint black 70
+# - FvwmButtons
+Colorset 10 fg white, bg #6b8eb5, fgsh black, RootTransparent Buffer, Tint white 70
+# - Pager
+Colorset 14 fg white, bg #6b8eb5, fgsh black, RootTransparent Buffer, Tint blue 70
+
+#
+# Bordas e Título
+#
+AddToDecor "desq" BorderStyle Active Colorset 1
+AddToDecor "desq" BorderStyle Inactive Colorset 0
+AddToDecor "desq" BorderStyle -- NoInset HiddenHandles
+
+AddToDecor "desq" TitleStyle Active Colorset 1
+AddToDecor "desq" TitleStyle Inactive Colorset 0
+AddToDecor "desq" TitleStyle -- flat
+AddToDecor "desq" TitleStyle Centered
+AddToDecor "desq" TitleStyle Height 21
+
+#
+# Estilos
+#
+Style * IconTitleColorset 3
+Style * HilightIconTitleColorset 1
+Style * IconBackgroundColorset
+
+Style desq Colorset 0
+Style desq HilightColorset 1
+Style desq BorderWidth 10, HandleWidth 10, FvwmBorder, !MwmButtons
+Style desq notitle
+
+#
+# Fontes
+#
+Style desq Font "Shadow=1 0 C:xft:Luxi Sans:Bold:size=11"
+
+#
+# Menus
+#
+MenuStyle * Font "Shadow=1 0 SE:xft:Sans:Medium:size=9"
+MenuStyle * Hilight3DThick
+MenuStyle * Hilight3DThickness -1 -1
+MenuStyle * MenuColorset 3
+MenuStyle * !ActiveFore
+MenuStyle * !HilightBack
+MenuStyle * Animation
+MenuStyle * PopupOffset -4 100
+MenuStyle * TitleUnderlines2
+MenuStyle * SeparatorsLong
+MenuStyle * TrianglesRelief
+MenuStyle * PopupImmediately
+MenuStyle * PopdownDelayed
+MenuStyle * PopdownDelay 150
+MenuStyle * PopupAsSubmenu
+MenuStyle * HoldSubmenus
+MenuStyle * SubmenusRight
+MenuStyle * BorderWidth 2
+
+# Aplicando...
+Style * UseStyle desq
+Style * UseDecor desq
+
+#=====================================================================#

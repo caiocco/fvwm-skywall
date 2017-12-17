@@ -1,0 +1,156 @@
+#=====================================================================#
+echo mouse_bind.rc: Processando ações de mouse...
+
+#
+# Ações de mouse
+#
+
+# Primeiramente, configuremos o mouse na janela de root:
+# - Botão 1 traz o menu principal (Utilities);
+# - Botão 2 (central) traz o menu de operações com janelas (Window Ops);
+# - Botão 3 traz uma útil lista de janelas.
+# Eu uso a opção AnyModifier (A) para o campo dos modificadores, então
+# você pode segurar qualquer shift-control-qualquer_coisa que você
+# queira.
+#
+# OBS: os comentários com descrições referentes ao posicionamento dos
+# botões fisicamente leva em conta a configuração padrão do X Window,
+# caso você seja canhoto ou utilize configurações diferenciadas, poderá
+# notar sensíveis diferenças
+
+# Lembrete de sintaxe:
+# Mouse - Botão - Contexto - Modificadores - Funcão
+Mouse 1		R   	A      	Menu "Utilities" Nop
+Mouse 2		R    	A      	Menu "Window Ops" Nop
+Mouse 3 	R       A      	WindowList
+#Mouse 3	R    	A	Module "winlist" FvwmWinList transient
+
+# Agora, os botões da barra de título
+#
+# OBS: Note o uso de "Mouse 0" para AnyButton.
+#
+# Lembrete de sintaxe:
+# Mouse - Botão - Contexto - Modificadores - Função
+Test (EnvMatch Sky_Theme skywall) Mouse 1 1 A Function "window_ops_func"
+Test (EnvMatch Sky_Theme_Skywall_Close Yes) \
+	Test (EnvMatch Sky_Theme skywall) Mouse 1 3 A Close
+Test (EnvMatch Sky_Theme skywall) Mouse 1 2 A Maximize
+Test (EnvMatch Sky_Theme skywall) Mouse 1 4 A Iconify
+Test (EnvMatch Sky_Theme water) Mouse 1 1 A Function "window_ops_func"
+Test (EnvMatch Sky_Theme water) Mouse 1 3 A Close
+Test (EnvMatch Sky_Theme water) Mouse 1 2 A Maximize
+Test (EnvMatch Sky_Theme water) Mouse 1 4 A Iconify
+Test (EnvMatch Sky_Theme ecs) Mouse 1 1 A Function "window_ops_func"
+Test (EnvMatch Sky_Theme ecs) Mouse 1 6 A Close
+Test (EnvMatch Sky_Theme ecs) Mouse 1 2 A Maximize
+Test (EnvMatch Sky_Theme ecs) Mouse 1 4 A Iconify
+Test (EnvMatch Sky_Theme tribal) Mouse 1 1 A Function "window_ops_func"
+Test (EnvMatch Sky_Theme tribal) Mouse 1 2 A Close
+Test (EnvMatch Sky_Theme tribal) Mouse 1 4 A Maximize
+Test (EnvMatch Sky_Theme tribal) Mouse 1 6 A Iconify
+Test (EnvMatch Sky_Theme diamond) Mouse 1 1 A Function "window_ops_func"
+Test (EnvMatch Sky_Theme diamond) Mouse 2 1 A Stick
+Test (EnvMatch Sky_Theme diamond) Mouse 1 2 A Close
+Test (EnvMatch Sky_Theme diamond) Mouse 1 3 A WindowList NoGeometry \
+	NoDeskNum, NoLayer, NoCurrentDeskTitle, CurrentDesk, NoHotkeys	
+Test (EnvMatch Sky_Theme diamond) Mouse 1 4 A Maximize
+Test (EnvMatch Sky_Theme diamond) Mouse 1 6 A Iconify
+Test (EnvMatch Sky_Theme diamond) Mouse 1 8 A WindowShade
+Test (EnvMatch Sky_Theme clearlooks) Mouse 1 1 A Function "window_ops_func"
+Test (EnvMatch Sky_Theme clearlooks) Mouse 2 1 A Stick
+Test (EnvMatch Sky_Theme clearlooks) Mouse 1 2 A Close
+Test (EnvMatch Sky_Theme clearlooks) Mouse 1 3 A WindowList NoGeometry \
+	NoDeskNum, NoLayer, NoCurrentDeskTitle, CurrentDesk, NoHotkeys	
+Test (EnvMatch Sky_Theme clearlooks) Mouse 1 4 A Maximize
+Test (EnvMatch Sky_Theme clearlooks) Mouse 1 6 A Iconify
+Test (EnvMatch Sky_Theme clearlooks) Mouse 1 8 A WindowShade
+Test (EnvMatch Sky_Theme gentoo) Mouse 1 1 A Function "window_ops_func"
+Test (EnvMatch Sky_Theme gentoo) Mouse 2 1 A Stick
+Test (EnvMatch Sky_Theme gentoo) Mouse 1 2 A Close
+Test (EnvMatch Sky_Theme gentoo) Mouse 1 3 A WindowList NoGeometry \
+	NoDeskNum, NoLayer, NoCurrentDeskTitle, CurrentDesk, NoHotkeys	
+Test (EnvMatch Sky_Theme gentoo) Mouse 1 4 A Maximize
+Test (EnvMatch Sky_Theme gentoo) Mouse 1 6 A Iconify
+Test (EnvMatch Sky_Theme gentoo) Mouse 1 8 A WindowShade
+Test (EnvMatch Sky_Theme xp) Mouse 1 1 A Function "window_ops_func"
+Test (EnvMatch Sky_Theme xp) Mouse 1 2 A Close
+Test (EnvMatch Sky_Theme xp) Mouse 1 4 A Maximize
+Test (EnvMatch Sky_Theme xp) Mouse 1 6 A Iconify
+Test (EnvMatch Sky_Theme nimbos) Mouse 1 1 A Function "window_ops_func"
+Test (EnvMatch Sky_Theme nimbos) Mouse 1 2 A Close
+Test (EnvMatch Sky_Theme nimbos) Mouse 1 4 A Maximize
+Test (EnvMatch Sky_Theme nimbos) Mouse 1 6 A Iconify
+Test (EnvMatch Sky_Theme sgi) Mouse 1 1 A Function "window_ops_func"
+Test (EnvMatch Sky_Theme sgi) Mouse 1 2 A Maximize
+Test (EnvMatch Sky_Theme sgi) Mouse 1 4 A Iconify
+
+#
+# Agora o resto do quadro
+#
+# Invocar funções complexas para Move-or-lower, Move-or-raise, e 
+# Resize-or-Raise. 
+#
+# Lembrete de sintaxe:
+# Mouse - Botão - Contexto - Modificadores - Funcão
+#
+# Botão 1 nos cantos das janelas, com qualquer modificadora, resulta em
+# resize (redimensionar) ou raise (levantar)
+Mouse 1		F	A	Function "Resize-or-Raise"
+# Botão 1 no título, lados, ou ícone, com qualquer modificadora, resulta
+# em move (mover) ou raise (levantar)
+Mouse 1		TS	A	Function "Move-or-Raise"
+
+# Botão 1 em ícones resulta em mover no caso de arrasto, desiconificação
+# (ou restauração de janela minimizada/iconificada) no caso de duplo-
+# clique e nada faz no caso de simples-clique
+Mouse 1		I	A	Function "Move-or-Iconify"
+# Botão 2 (central), em um ícone, com qualquer modificadora, restaura
+Mouse 2		I	A	Iconify
+# Botão 3 (direito), em um ícone, aciona o menu reduzido de operações 
+# com janelas (Window-Ops2)
+Mouse 3	    	I	A	Menu "Window-Ops2"
+
+# Botão 3 (direito) nos cantos, bordas ou barra de título aciona o menu
+# de operações convencionais com janelas (Window-Ops)
+Mouse 3		FST	A	Function "window_ops_func"
+
+# Botão 2 (central) nas bordas e cantos move a janela no caso de arrasto
+# ou a levanta para o primeiro plano no caso de simples-clique
+Mouse 2		FS	A	Function "Move-or-Raise"
+
+# Botão 3 (direito) em qualquer lugar da decoração, exceto nos botões da
+# barra de títulos realiza um raise-lower (levantar/baixar, colocando a 
+# janela em segundo ou primeiro plano de acordo com o estado atual da 
+# mesma
+#Mouse 3		TSIF	A	RaiseLower
+
+# Botão 3 (direito) na janela, com a tecla Modificadora-1 (geralmente
+# Alt/Meta ou Diamond) aciona um Raise-Lower. Antigamente, era utilizado
+# Control aqui, mas isso interferia com o XTerm
+Mouse 3         W       M       RaiseLower
+
+# Funções complexas da configuração atual
+Mouse 1 	FS      A	Resize-or-Raise
+Mouse 1 	T       A	Move-or-Raise
+Mouse 1 	I       A	Move-or-Iconify
+Mouse 2 	I       A	Iconify
+Mouse 2 	W       C	Resize-or-Raise
+
+# Mover janela com botão 1 + ALT/Mouse dentro da janela/Clique dentro da
+# janela
+Mouse 1 	W       M	Move-or-Raise
+
+# Mover janela com botão 1 + ALT/Mouse e Clique nas laterais ou no
+# rodapé
+Mouse 1 	FS	M	Move-or-Raise
+
+# "Rodinha" do mouse na barra de título sombreia/desombreia
+Mouse 4 	T       N	WheelToggleShade True
+Mouse 5 	T       N	WheelToggleShade False
+
+# Usando um touchpad e tendo problemas com isso?
+# http://forums.gentoo.org/viewtopic.php?p=1050159&highlight=#1050159
+#Mouse 0 2       A   DestroyOnHold
+
+echo mouse_bind.rc: Processamento terminado.
+#=====================================================================#

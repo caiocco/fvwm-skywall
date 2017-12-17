@@ -1,0 +1,24 @@
+echo fvwmbanner-mod.rc: Configurando banner do ambiente...
+
+#------------------ FvwmBanner
+# O módulo FvwmBanner pode ser configurado para exibir outro tipo de
+# imagem quando invocado. Se utiliza o FVWM comercialmente, pode ser
+# interessante utilizar um splash customizado com o logotipo da
+# empresa.
+
+# Destruir para poder criar.
+DestroyModuleConfig FvwmBanner
+
+# Parâmetros gerais do módulo. São só dois.
+*FvwmBanner: NoDecor
+*FvwmBanner: Timeout 3
+
+# Imagem. O módulo tem um bug (detectado no FVWM 2.6.4) em que não é
+# possível sobrescrever o parâmetro Pixmap. Apesar do emprego de
+# DestroyModuleConfig acima, testes mostraram que ele não tem efeito,
+# de maneira que recarregar o arquivo via Read não funcionará. Caso
+# altere o banner, reinicie o FVWM para testar.
+#*FvwmBanner: Pixmap $[Sky_Dir]/imagens/skywall2.png
+*FvwmBanner: Pixmap $[Sky_Dir]/imagens/suse_banner.png
+
+echo fvwmbanner-mod.rc: Processamento terminado.

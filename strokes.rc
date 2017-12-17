@@ -1,0 +1,84 @@
+#=====================================================================#
+echo strokes.rc: Processando gestos de mouse...
+
+#
+# Gestos de mouse
+#
+
+# Syntax reminder:
+#
+#   1   2   3
+#
+#   4   5   6
+#
+#   7   8   9
+#
+# Stroke Sequence Button Context Modifiers Function
+#
+# I use mouse gestures in Opera and Mozilla, so I've duplicated some
+# common ones here.
+#
+# To try these out, hold down the Left mouse button and trace the
+# pattern on the Root # Window, the sequence is a pattern on the grid 
+# above, so 14789 would be down then Right.
+####
+
+####
+# First, define a StrokeFunc.
+#
+# Without this, you would have to execute all of your gestures entirely
+# on the Root Window, This lets you change the Context and have a few 
+# other Neat Features, such as DrawMotion, which will draw a line as 
+# you make your Gesture (Neat!).
+#
+# There is also EchoSequence, Feedback and NotStayPressed.
+#
+# Note: EchoSequence prints sequences to STDERR.
+#################
+#Mouse 3 R A     StrokeFunc DrawMotion FeedBack StrokeWidth 1
+Mouse 2 A CS     StrokeFunc DrawMotion FeedBack StrokeWidth 10
+#Stroke 0 0 R N     Menu MenuFvwmRoot
+
+# Down, Then Up.
+Stroke 25852 0 R N  Refresh
+
+# Directions...
+Stroke 456 0 R N    GotoPage +1p 0p
+Stroke 654 0 R N    GotoPage -1p 0p
+Stroke 852 0 R N    GotoPage 0p -1p
+Stroke 258 0 R N    GotoPage 0p +1p
+
+# Diagonal...
+Stroke 159 0 R N    GotoPage +1p +1p
+Stroke 951 0 R N    GotoPage -1p -1p
+Stroke 357 0 R N    GotoPage -1p +1p
+Stroke 753 0 R N    GotoPage +1p -1p
+
+#####
+# Quit
+#
+# Down, Then Right.
+#
+# Dont worry about running this gesture by accident,
+# you will be asked to confirm
+#################
+Stroke 14789 0 R N  Module FvwmForm FvwmForm-QuitVerify
+
+####
+# Up, Then Down: Close a window.
+#
+# Note that you can also enter the sequence as it appears on your
+# Numeric Keypad, by preceding the sequence with an `N`.
+#
+# The FVWM developers think of everything :)
+#################
+Stroke N25852 0 R N Pick Close
+
+# Start a Web Browser
+Stroke N1478963 0 R N Exec exec opera -newpage -bigicon
+
+# Make a new Sticky Note
+Stroke N1598753 0 R N Exec exec xpad
+
+echo strokes.rc: Processamento terminado.
+#=====================================================================#

@@ -1,0 +1,28 @@
+echo fvwmiconbox-mod.rc: Configurando módulo caixa de ícones...
+
+#------------------ FvwmIconBox
+# FvwmIconBox
+#
+# Configuração para integração ao FvwmBotbox
+#
+
+DestroyModuleConfig FvwmIconBox: *
+
+*FvwmIconBox: Back Gray
+*FvwmIconBox: IconBack Gray
+*FvwmIconBox: IconHiBack Cyan4
+*FvwmIconBox: UseSkipList
+*FvwmIconBox: FrameWidth 4 2
+#*FvwmIconBox: IconifiedTitleInvertedRelief
+#*FvwmIconBox: NoIconifiedParentheses
+*FvwmIconBox: Font "Shadow=0 0 SE:xft:Kedagei:Regular:size=8:encoding=iso10646-1"
+*FvwmIconBox: Lines 1
+*FvwmIconBox: Placement Top Left
+*FvwmIconBox: HideSC Vertical
+*FvwmIconBox: Sort id
+*FvwmIconBox: Mouse 0 Click Nop
+*FvwmIconBox: Mouse 1 Click Iconify off
+*FvwmIconBox: Mouse 2 Click Iconify
+*FvwmIconBox: Mouse 3 Click Menu Window-Ops2
+
+echo fvwmiconbox-mod.rc: Processamento terminado.

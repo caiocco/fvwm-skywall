@@ -1,0 +1,187 @@
+#=====================================================================#
+echo key_bind.rc: Processando atalhos de teclado...
+
+#
+# Atalhos de teclado
+#
+
+# Parâmetros
+#
+# 5.5  Why do NumLock, CapsLock and ScrollLock interfere with
+#      ClickToFocus and/or my mouse bindings?
+# http://www.fvwm.org/documentation/faq/#5.5
+# Legenda: L = Capitals Lock; 2 = Number Lock; 5 = Scrolling Lock
+IgnoreModifiers L25
+
+# Associações/Bindings
+#
+# Síntaxe para definição dos bindings de teclado:
+# Key <tecla> <contexto> <modificadores> <função/comando/etc>
+# * Contextos: A (qualquer), R (janela de root), W (janela em foco);
+# * Modificadores podem variar, sendo os mais comuns: C (Control),
+# M (Meta ou Alt) e S (Shift)
+
+# Trocar de página. Control + Meta + Teclas Direcionais
+Key Left	A	CM	GoToPage -1p -0p
+Key Right	A	CM	GoToPage +1p +0p
+Key Up		A	CM	GoToPage +0p -1p
+Key Down	A	CM	GoToPage +0p +1p
+
+# Trocar de página e mover conjuntamente a janela que possui o foco.
+# Control + Meta + Shift + Teclas Direcionais
+Key Left	A	CMS	Function "MoveWindow_PageLeft"
+Key Right	A	CMS	Function "MoveWindow_PageRight"
+Key Up		A	CMS	Function "MoveWindow_PageUp"
+Key Down	A	CMS	Function "MoveWindow_PageDown"
+
+# Troca de área de trabalho. Super + Teclas de Função
+Key F1		A	4	GotoDeskAndPage 0 0 0
+Key F2		A	4	GotoDeskAndPage 1 0 0
+Key F3		A	4	GotoDeskAndPage 2 0 0
+Key F4		A	4	GotoDeskAndPage 3 0 0
+
+# Aceleradores de teclado para as teclas de funções
+Key F1		A	M	Popup "Utilities"
+Key F1		R	N	Nop
+Test (x xfce4-appfinder) \
+	Key F2		A	M	Exec xfce4-appfinder -c --disable-server
+Test (x gmrun) \
+	Key F2		A	M	Exec gmrun
+
+# Aceleradores de teclado para operações com janelas (padrão Motif)
+Key F3		W	M	Popup "Window-Ops2" window +0 +0
+Key F4		W	M	Close
+Key F5		I	M	Function "DeIconify-or-UnMaximize"
+Key F5		W	M	Maximize False
+Key F6		W	M	Stick
+Key F7		W	M	Move
+Key F8		W	M	Resize
+Key F9		A	M	Iconify
+Key F10		W	M	Maximize True
+
+# Lançadores de aplicativos com teclas de funções
+Key F1		A	S4	Exec xfce4-terminal
+Key F2		A	S4	Exec geany
+Key F3		A	S4	Exec galculator
+Key F4		A	S4	Exec audacious
+Key F5		A	S4	Exec leafpad
+Key F6		A	S4	Exec xterm -bg black -fg lightgray -e screen
+Key F7		A	S4	Exec geeqie
+Key F8		A	S4	Exec gimp
+Key F9		A	S4	Exec cherrytree
+Key F10		A	S4	Exec dosbox
+Key F11		A	S4	Exec VirtualBox
+Key F12		A	S4	Exec loffice
+
+# Lançadores de aplicativos com teclas especiais
+SetEnv PrintKeySound /mnt/diversos/arquivos_comuns/Sons/camera.wav
+Key Print	A	N	Exec play "$[PrintKeySound]" > /dev/null ; shutterbug
+
+# Aceleradores de teclado para as teclas especiais do HP Compaq dv6210br
+SetEnv KeySound /usr/share/sounds/KDE_Click.wav
+
+#Key XF86AudioMute		A	N	Exec rexima vol 0
+#Key XF86AudioMute		A	M	Exec rexima vol 90
+#Key XF86AudioMute		A	C	Exec play "$[KeySound]" > /dev/null ; aumix
+#Key XF86AudioLowerVolume	A	N	Exec rexima vol -8
+#Key XF86AudioRaiseVolume	A	N	Exec rexima vol +8
+
+Test (x aumix) \
+	Key XF86AudioMute		A	N	Exec aumix -v -100
+Test (x aumix) \
+	Key XF86AudioMute		A	M	Exec aumix -v +100
+Test (x amixer) \
+	Key XF86AudioMute		A	N	Exec amixer set Master toggle
+Key XF86AudioMute		A	C	Exec play "$[KeySound]" > /dev/null ; xfce4-mixer
+Test (x aumix) \
+	Key XF86AudioLowerVolume	A	N	Exec aumix -v -8
+Test (x aumix) \
+	Key XF86AudioRaiseVolume	A	N	Exec aumix -v +8
+Test (x amixer) \
+	Key XF86AudioLowerVolume	A	N	Exec amixer set Master 4%-
+Test (x amixer) \
+	Key XF86AudioRaiseVolume	A	N	Exec amixer set Master 4%+
+
+# Aceleradores de teclado para as teclas especiais do teclado Philco 
+# NetVision/BTC 9019URF
+SetEnv KeySound /usr/share/sounds/KDE_Click_1.ogg
+SetEnv KeySound2 /usr/share/sounds/KDE_Keyboard_Key_1.ogg 
+
+Key XF86HomePage		A	N	Exec play "$[KeySound]" > /dev/null ; rox ~
+Key XF86HomePage		A	4	Exec play "$[KeySound]" > /dev/null ; DISPLAY=:0.1 rox ~
+Key XF86HomePage		A	M	Exec play "$[KeySound]" > /dev/null ; xfe
+Key XF86HomePage		A	C	Exec play "$[KeySound]" > /dev/null ; Terminal
+Key XF86HomePage		A	4C	Exec play "$[KeySound]" > /dev/null ; DISPLAY=:0.1 xterm
+Key XF86Favorites		A	N	Exec play "$[KeySound]" > /dev/null ; firefox
+Key XF86Favorites		A	M	Exec play "$[KeySound]" > /dev/null ; seamonkey
+Key XF86Favorites		A	C	Exec play "$[KeySound]" > /dev/null ; xterm -bg black -fg lightgray -font 7x14 -geometry 130x40 -e elinks
+Key XF86Search			A	N	Exec play "$[KeySound]" > /dev/null ; xfce4-appfinder
+Key XF86Search			A	M	Exec play "$[KeySound]" > /dev/null ; catfish
+Key XF86Mail			A	N	Exec play "$[KeySound]" > /dev/null ; sylpheed
+Key XF86Mail			A	M	Exec play "$[KeySound]" > /dev/null ; xchat
+Key XF86Mail			A	C	Exec play "$[KeySound]" > /dev/null ; pidgin
+Key XF86Mail			A	4	Exec play "$[KeySound]" > /dev/null ; claws-mail
+Key XF86AudioPrev		A	N	Function FuncAppAudtool --playlist-reverse
+Key XF86AudioPlay		A	N	Function FuncAppAudtool --playback-playpause
+Key XF86AudioPlay		A	C	Function FuncAppAudtool --playback-stop
+Key XF86AudioStop		A	N	Function FuncAppAudtool --playback-stop
+Key XF86AudioNext		A	N	Function FuncAppAudtool --playlist-advance
+Key XF86Eject			A	N	Exec play "$[KeySound]" > /dev/null ; eject
+Key XF86Standby			A	N	Popup Utilities
+Key XF86Standby			A	M	Exec play "$[KeySound2]" > /dev/null ; ~/.fvwm/keyb.sh us
+Key XF86Standby			A	C	Exec play "$[KeySound2]" > /dev/null ; ~/.fvwm/keyb.sh br
+Key XF86Standby			A	CM	Exec play "$[KeySound2]" > /dev/null ; ~/.fvwm/keyb.sh usnoint
+Key XF86Standby			A	4	Exec play "$[KeySound2]" > /dev/null ; ~/.fvwm/keyb.sh ru
+Key XF86Standby			A	S	Popup Keyboard
+Key Delete			A	CM	Exec xscreensaver-command --lock
+
+# Aceleradores de teclas especiais para o teclado ThinkPad X200
+Key XF86Launch1			A	N	Exec /usr/bin/xdg-su -c '/sbin/yast2 --qt'
+Key XF86ScreenSaver		A	N	Exec xscreensaver-command --lock
+Key XF86Battery			A	N	Exec xfce4-power-manager-settings
+Key XF86TouchpadToggle		A	N	Exec ~/.fvwm/trackpoint.sh
+Key XF86WLAN			A	N	Exec ~/.fvwm/wifi.sh
+
+# Aceleradores de teclas especiais para o teclado Microsoft Confort
+# Curve 2000
+Key XF86Calculator		A	N	Popup Utilities
+Key XF86Calculator		A	M	Exec play "$[KeySound2]" > /dev/null ; ~/.fvwm/keyb.sh us
+Key XF86Calculator		A	C	Exec play "$[KeySound2]" > /dev/null ; ~/.fvwm/keyb.sh br
+Key XF86Calculator		A	CM	Exec play "$[KeySound2]" > /dev/null ; ~/.fvwm/keyb.sh usnoint
+Key XF86Calculator		A	4	Exec play "$[KeySound2]" > /dev/null ; ~/.fvwm/keyb.sh ru
+Key XF86Calculator		A	CMS	Exec play "$[KeySound]" > /dev/null ; killall -9 at-spi-registryd bonobo-activation-server ; gconftool-2 --shutdown
+Key XF86Calculator		A	S	Popup Keyboard
+Key K				A	CMS	Popup Keyboard
+Key XF86Back			A	4	Function FuncAppAudtool --playlist-reverse
+Key XF86Forward			A	4	Function FuncAppAudtool --playlist-advance
+
+# As teclas Page Up/Down keys são usadas para rolar as páginas do
+# desktop uma-a-uma, em qualquer contexto, pressione 
+# Page Up/Down + Control, no contexto da janela de root, pressionar
+# apenas Page Up/Down funcionará.
+# 
+# Eu prefiro a rolagem do tipo non-wrapping.
+# Isso está aqui apenas para propósitos demonstrativos.
+#Key Next	A       C       Scroll 100000 0
+#Key Next	R       N       Scroll 100000 0  
+#Key Prior	A       C       Scroll -100000 0
+#Key Prior	R       N       Scroll -100000 0
+
+Key Escape      A       M       Prev Focus
+Key Escape      A       MS      Next Focus
+#Key Escape      A       M       Function SwitchWindow
+# A combinação abaixo invoca a lista de janelas para a combinação 
+# Alt + Tab. A opção CurrentAtEnd suprime um Tab extra na alternação
+# entre duas janelas, lembrando um certo ambiente gráfico.
+Key Tab         A       M       WindowList Root c c NoHotKeys, Icons, NoGeometryWithInfo, CurrentAtEnd
+Key Tab         A       MS      WindowList Root c c NoHotKeys, Icons, NoGeometryWithInfo, CurrentAtEnd, ReverseOrder
+
+Key Escape      A       C       Exec xterm -bg black -fg lightgray -geometry 165x55+0+0 -T Gerenciador\ de\ Processos -e htop
+Key Escape      A       CM      Exec xkill
+Key Escape	A	4	Exec play "$[KeySound]" > /dev/null ; pkill -USR1 redshift
+
+# Notas:
+# O modificador "4" (Mod4), equivale a tecla Super
+
+echo key_bind.rc: Processamento terminado.
+#=====================================================================#

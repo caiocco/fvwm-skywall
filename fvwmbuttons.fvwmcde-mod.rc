@@ -1,0 +1,102 @@
+echo fvwmbuttons.fvwmcde-mod.rc: Configurando FvwmButtons-FvwmCDE...
+
+#------------------ FvwmButtons
+# FvwmCDE
+# Configuração de barra inferior multifunção similar ao painel do CDE
+# para o módulo FvwmButtons
+#
+
+# A declaração do estilo abaixo assegura consistência na integração do
+# módulo com o ambiente
+Style FvwmCDE-PainelPager !Title, !Handles, Sticky, BorderWidth 1, NeverFocus
+
+# Aplicou aquele patch maldito e o está usando?
+Test (EnvMatch Sky_RoundedCorners Yes) Style FvwmCDE-PainelPrincipal !RoundedCorners
+
+DestroyModuleConfig FvwmCDE-PainelPager: *
+*FvwmCDE-PainelPager: Colorset 11
+*FvwmCDE-PainelPager: Rows 2
+*FvwmCDE-PainelPager: Columns 2
+*FvwmCDE-PainelPager: Font "xft:DejaVu Sans:Medium:size=9"
+*FvwmCDE-PainelPager: (Title(Center) " Um", Center, Action(Mouse 1) `GotoDeskAndPage 0 0 0`)
+*FvwmCDE-PainelPager: (Title(Center) " Dois", Center, Action(Mouse 1) `GotoDeskAndPage 1 0 0`)
+*FvwmCDE-PainelPager: (Title(Center) " Três", Center, Action(Mouse 1) `GotoDeskAndPage 2 0 0`)
+*FvwmCDE-PainelPager: (Title(Center) " Quatro", Center, Action(Mouse 1) `GotoDeskAndPage 3 0 0`)
+
+DestroyModuleConfig FvwmCDE-PainelPager2: *
+*FvwmCDE-PainelPager2: Colorset 11
+*FvwmCDE-PainelPager2: Rows 2
+*FvwmCDE-PainelPager2: Columns 2
+*FvwmCDE-PainelPager2: Font "Shadow=1 0 SE:xft:DejaVu Sans:Medium:size=9"
+*FvwmCDE-PainelPager2: (Title(Center) "Um", Center, Action(Mouse 1) `GotoDeskAndPage 0 0 0`)
+*FvwmCDE-PainelPager2: (Title(Center) "Dois", Center, Action(Mouse 1) `GotoDeskAndPage 1 0 0`)
+*FvwmCDE-PainelPager2: (Title(Center) "Três", Center, Action(Mouse 1) `GotoDeskAndPage 2 0 0`)
+*FvwmCDE-PainelPager2: (Title(Center) "Quatro", Center, Action(Mouse 1) `GotoDeskAndPage 3 0 0`)
+
+DestroyModuleConfig FvwmCDE-PainelCentral: *
+
+*FvwmCDE-PainelCentral: Colorset 10
+*FvwmCDE-PainelCentral: Rows 12
+*FvwmCDE-PainelCentral: Columns 16
+*FvwmCDE-PainelCentral: BoxSize fixed
+*FvwmCDE-PainelCentral: (12x10+2+1, Frame 1, \
+	Swallow "FvwmCDE-PainelPager" "Module FvwmButtons FvwmCDE-PainelPager")
+*FvwmCDE-PainelCentral: (2x6+0+0, Frame 0, \
+	Icon $[Sky_Dir]/imagens/cde/panel-lock.xpm, \
+	Action (Mouse 1) `Exec exec xscreensaver-command --lock`)
+*FvwmCDE-PainelCentral: (2x6+0-0, Frame 0, \
+	Icon $[Sky_Dir]/imagens/cde/panel-arrow.xpm, \
+	Action Module FvwmPager -transient FvwmPager 0 3)
+*FvwmCDE-PainelCentral: (2x6-0+0, Frame 0, \
+	Icon $[Sky_Dir]/imagens/cde/panel-lite.xpm, \
+	Action (Mouse 1) `Exec gmrun`)
+*FvwmCDE-PainelCentral: (2x6-0-0, Frame 0, \
+	Icon $[Sky_Dir]/imagens/cde/panel-exit.xpm, \
+	Action (Mouse 1) `Menu Quit-Verify rectangle $widthx$height+$left+$top o+0 -100m`)
+	
+Style FvwmCDE-PainelPrincipal !Title, !Handles, Sticky, BorderWidth -1, \
+	NeverFocus, !WindowListSkip, CirculateSkip, FixedPosition, \
+	FixedSize, !Maximizable, ClickToFocusRaises, GrabFocusOff, \
+	StaysOnBottom, !FPSortWindowlistByFocus
+
+DestroyModuleConfig FvwmCDE-PainelPrincipal: *
+
+Test (!EnvMatch Sky_Panels_Type 4) PipeRead 'echo "*FvwmCDE-PainelPrincipal: Geometry 860x77+"`expr "(" $[vp.width] - 860 ")" / 2`"-28"'
+Test (EnvMatch Sky_Panels_Type 4) PipeRead 'echo "*FvwmCDE-PainelPrincipal: Geometry 860x77+"`expr "(" $[vp.width] - 860 ")" / 2`"-28"'
+Test (EnvMatch Sky_Panels_Type 1.5) PipeRead 'echo "*FvwmCDE-PainelPrincipal: Geometry 860x77+"`expr "(" $[vp.width] - 860 ")" / 2`"-55"'
+Test (EnvMatch Sky_Panels_Type 1.6) PipeRead 'echo "*FvwmCDE-PainelPrincipal: Geometry 860x77+"`expr "(" $[vp.width] - 860 ")" / 2`"-55"'
+*FvwmCDE-PainelPrincipal: Colorset 10
+*FvwmCDE-PainelPrincipal: Rows 9 
+*FvwmCDE-PainelPrincipal: Columns 43
+*FvwmCDE-PainelPrincipal: BoxSize fixed
+
+*FvwmCDE-PainelPrincipal: (15x9+14+0, Frame 1, Swallow "FvwmCDE-PainelCentral" "Module FvwmButtons FvwmCDE-PainelCentral")
+*FvwmCDE-PainelPrincipal: (1x2+13+0, Frame 1, Colorset 11)
+*FvwmCDE-PainelPrincipal: (1x2+29+0, Frame 1, Colorset 11)
+*FvwmCDE-PainelPrincipal: (1x2+0+0, Frame 1, Icon $[Sky_Dir]/imagens/cde/panel-menu.xpm, \
+	Padding 0 0, Colorset 11, Action 'Next (FvwmCDE-PainelPrincipal, CirculateHit) Menu Window-Ops2 rectangle $widthx$height+$left+$top o+0 -100m')
+*FvwmCDE-PainelPrincipal: (1x7+0+2, Frame 1, Icon $[Sky_Dir]/imagens/cde/panel-handle.xpm, \
+	Padding 0 0, Colorset 11, Action 'Next (FvwmCDE-PainelPrincipal, CirculateHit) Move')
+*FvwmCDE-PainelPrincipal: (1x2-0+0, Frame 1, Icon $[Sky_Dir]/imagens/cde/panel-iconify.xpm, \
+	Padding 0 0, Colorset 11, Action 'Next (FvwmCDE-PainelPrincipal, CirculateHit) Iconify')
+*FvwmCDE-PainelPrincipal: (1x7-0+2, Frame 1, Icon $[Sky_Dir]/imagens/cde/panel-handle.xpm, \
+	Padding 0 0, Colorset 11, Action 'Next (FvwmCDE-PainelPrincipal, CirculateHit) Move')
+*FvwmCDE-PainelPrincipal: (3x2+1+0, Frame 1, Colorset 11)
+*FvwmCDE-PainelPrincipal: (3x7+1+2, Frame 0, Padding 0 0, Swallow xclockcde `Exec xclock -name xclockcde -xrm "*customization: " -update 1 -padding 5 -geometry +5000+5000 -bg $$[bg.cs10] -fg $$[fg.cs10] -hd $$[shadow.cs13] -hl $$[hilight.cs13]`)
+*FvwmCDE-PainelPrincipal: (3x2+4+0, Frame 1, Colorset 11)
+*FvwmCDE-PainelPrincipal: (3x7+4+2, Frame 0, Padding 0 0, Swallow FvwmApplet-CDEDayLarge 'FvwmScript $[Sky_Dir]/fvwmscript.cde-mod.rc 10')
+*FvwmCDE-PainelPrincipal: (3x2+7+0, Frame 1, Icon $[Sky_Dir]/imagens/cde/panel-arrow.xpm, Padding 1 1, Colorset 11, Action 'Menu Shells rectangle $widthx$height+$left+$top o+50 -100m')
+*FvwmCDE-PainelPrincipal: (3x7+7+2, Frame 0, Icon $[Sky_Dir]/imagens/cde/terminal.xpm, Padding 0 0, Action `Exec exec Terminal`)
+*FvwmCDE-PainelPrincipal: (3x2+10+0, Frame 1, Icon $[Sky_Dir]/imagens/cde/panel-arrow.xpm, Padding 1 1, Colorset 11, Action 'Menu Applications rectangle $widthx$height+$left+$top o+50 -100m')
+*FvwmCDE-PainelPrincipal: (3x7+10+2, Frame 0, Icon $[Sky_Dir]/imagens/cde/panel-dtapps.xpm, Padding 0 0, Action `Exec exec xfce4-appfinder`)
+*FvwmCDE-PainelPrincipal: (3x2+30+0, Frame 1, Icon $[Sky_Dir]/imagens/cde/panel-arrow.xpm, Padding 1 1, Colorset 11, Action 'Menu Module-Popup rectangle $widthx$height+$left+$top o+50 -100m', Action (Mouse 2) 'Menu MenuFvwmConfiguration rectangle $widthx$height+$left+$top o+50 -100m')
+*FvwmCDE-PainelPrincipal: (3x7+30+2, Frame 0, Icon $[Sky_Dir]/imagens/cde/configuration.xpm, Padding 0 0, Action `Exec exec lxappearance`)
+*FvwmCDE-PainelPrincipal: (3x2+33+0, Frame 1, Icon $[Sky_Dir]/imagens/cde/panel-arrow.xpm, Padding 1 1, Colorset 11, Action 'Menu Filemanagers rectangle $widthx$height+$left+$top o+50 -100m')
+*FvwmCDE-PainelPrincipal: (3x7+33+2, Frame 0, Icon $[Sky_Dir]/imagens/cde/folders.xpm, Padding 0 0, Action `Exec exec rox`)
+*FvwmCDE-PainelPrincipal: (3x2+36+0, Frame 1, Icon $[Sky_Dir]/imagens/cde/panel-arrow.xpm, Padding 1 1, Colorset 11, Action 'Menu Comm rectangle $widthx$height+$left+$top o+50 -100m', Action (Mouse 2) 'Menu MenuFvwmConfiguration rectangle $widthx$height+$left+$top o+50 -100m')
+*FvwmCDE-PainelPrincipal: (3x7+36+2, Frame 0, Icon $[Sky_Dir]/imagens/cde/mail.xpm, Padding 0 0, Action `Exec exec sylpheed`)
+*FvwmCDE-PainelPrincipal: (3x2+39+0, Frame 1, Colorset 11)
+*FvwmCDE-PainelPrincipal: (3x7+39+2, Frame 0, Icon $[Sky_Dir]/imagens/cde/help.xpm, Padding 0 0, Action Exec xman)
+
+
+echo fvwmbuttons.fvwmcde-mod.rc: Processamento terminado.

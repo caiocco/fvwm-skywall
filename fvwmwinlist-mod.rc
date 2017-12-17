@@ -1,0 +1,17 @@
+echo fvwmwinlist-mod.rc: Configurando módulo de lista de janelas...
+
+#------------------ FvwmWinList
+*FvwmWinListBack Gray
+*FvwmWinListFore Black
+*FvwmWinList: FocusBack DarkGray
+*FvwmWinListFont "xft:Helvetica:bold:size=9"
+*FvwmWinListAction Click1 Iconify -1, RaiseLower, FlipFocus
+*FvwmWinListAction Click2 Iconify
+*FvwmWinListAction Click3 Popup "Window-Ops2"
+*FvwmWinListUseSkipList
+*FvwmWinList: Geometry +350+0
+*FvwmWinList: ShowCurrentDesk
+*FvwmWinList: NoIconAction SendToModule FvwmAnimate animate
+
+
+echo fvwmwinlist-mod.rc: Processamento terminado.

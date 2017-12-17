@@ -1,0 +1,11 @@
+echo fvwmidentify-mod.rc: Configurando módulo identificador de clientes...
+
+#------------------ Identify
+#*FvwmIdentBack #000080
+#*FvwmIdentFore Yellow
+*FvwmIdent: Back Black
+*FvwmIdent: Fore Yellow
+*FvwmIdent: Font "xft:Courier:Bold:size=9"
+
+
+echo fvwmidentify-mod.rc: Processamento terminado.

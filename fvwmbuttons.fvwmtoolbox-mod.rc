@@ -1,0 +1,157 @@
+echo fvwmbuttons.fvwmtoolbox-mod.rc: Configurando FvwmButtons-FvwmToolbox...
+
+#------------------ FvwmButtons
+# FvwmToolbox
+# Configuração de barra flutuante para o módulo FvwmButtons
+#
+DestroyModuleConfig FvwmToolbox: *
+
+Style FvwmToolbox !Title, !Handles, Sticky, WindowListSkip, BorderWidth 1, NeverFocus
+
+# Aplicou aquele patch maldito e o está usando?
+Test (EnvMatch Sky_RoundedCorners Yes) Style FvwmToolbox !RoundedCorners
+
+*FvwmToolbox: Font "xft:DejaVu Sans:Medium:size=7"
+*FvwmToolbox: Font "Shadow=1 1 SE:xft:DejaVu Sans Mono:style=Roman:size=8"
+*FvwmToolbox: Colorset 10
+#*FvwmToolbox: Geometry 127x440-5-64
+*FvwmToolbox: Geometry 135x420-0-250
+*FvwmToolbox: Columns 2
+*FvwmToolbox: Padding 2 2
+*FvwmToolbox: (Title Xfe), Icon $[Gtk_Icon_Theme]/48x48/apps/file-manager.png, Action(Mouse 1) 'Exec "xferc" exec xfe')
+*FvwmToolbox: (Title Terminal), Icon $[Gtk_Icon_Theme]/48x48/apps/gnome-terminal.png, Action(Mouse 1) 'Exec "Terminal" exec Terminal')
+*FvwmToolbox: (Title Leafpad), Icon $[Gtk_Icon_Theme]/48x48/apps/xedit.png, Action(Mouse 1) 'Exec "leafpad" exec leafpad')
+*FvwmToolbox: (Title GQView), Icon $[Gtk_Icon_Theme]/48x48/apps/gnome-graphics.png, Action(Mouse 1) 'Exec "gqview" exec gqview')
+*FvwmToolbox: (Title GIMP), Icon $[Gtk_Icon_Theme]/48x48/apps/gimp.png, Action(Mouse 1) 'Exec "GIMP" exec gimp')
+*FvwmToolbox: (Title Firefox), Icon $[Gtk_Icon_Theme]/48x48/apps/mozilla.png, Action(Mouse 1) 'Exec "Firefox" exec firefox')
+*FvwmToolbox: (Padding 0 0, Container(Padding 0 0, Frame 2, Columns 3))
+*FvwmToolbox: (Icon $[Gtk_Icon_Theme]/16x16/actions/edit-redo.png, Action Move)
+*FvwmToolbox: (Icon $[Gtk_Icon_Theme]/16x16/actions/edit-undo.png, Action Resize)
+*FvwmToolbox: (Icon $[Gtk_Icon_Theme]/16x16/actions/down.png, Action Iconify)
+*FvwmToolbox: (Icon $[Gtk_Icon_Theme]/16x16/actions/up.png, Action FuncFvwmMaximize)
+*FvwmToolbox: (Icon $[Gtk_Icon_Theme]/16x16/actions/bottom.png, Action WindowShade)
+*FvwmToolbox: (Icon $[Gtk_Icon_Theme]/16x16/actions/stop.png, Action Stick)
+*FvwmToolbox: (Icon $[Gtk_Icon_Theme]/16x16/actions/exit.png, Action Delete)
+*FvwmToolbox: (Icon $[Gtk_Icon_Theme]/16x16/actions/button_cancel.png, Action Destroy)
+*FvwmToolbox: (Icon $[Gtk_Icon_Theme]/16x16/actions/filenew.png, Action Module FvwmIdent)
+*FvwmToolbox: (End)
+*FvwmToolbox: (1x1, Title "xload", \
+	Swallow "xload" "Exec exec nice -16 xload -nolabel -update 1 \
+		-fg $$[fg.cs13] -bg $$[bg.cs10] -hl $$[shadow.cs13] \
+		-geometry -1500-1500")
+*FvwmToolbox: (1x1, Title "xclock", \
+	Swallow "xclock" "Exec exec xclock -fg $$[fg.cs10] -bg $$[bg.cs10] \
+		-hd black -hl black -update 1 -xrm "*customization: -mono" \
+		-padding 0 -geometry -1500-1500")
+*FvwmToolbox: (1x1, \
+	Swallow stalonetray `Exec exec stalonetray -bg gray \
+	--geometry 70x85 -bg $$[bg.cs10] --xsync`)
+
+DestroyModuleConfig FvwmButtons-Pager: *
+
+*FvwmButtons-Pager: Colorset 10
+*FvwmButtons-Pager: Geometry 12x78
+*FvwmButtons-Pager: Rows 1
+*FvwmButtons-Pager: Frame 1
+*FvwmButtons-Pager: Padding 0 0
+*FvwmButtons-Pager: (Panel(right, steps 12, delay 0, position top, indicator10) \
+	"Desker-FvwmPager" 'Module FvwmPager Desker-FvwmPager 0 3')
+
+
+#------------------ FvwmButtons
+# FvwmButtons-Pager
+# Configuração de barra flutuante e retrátil com Pager para o módulo 
+# FvwmButtons
+DestroyModuleConfig FvwmButtons-Pager: *
+
+Style FvwmButtons-Pager !Title, !Handles, Sticky, WindowListSkip, \
+	BorderWidth 0, NeverFocus, CirculateSkip
+
+*FvwmButtons-Pager: Colorset 10
+*FvwmButtons-Pager: Geometry 12x78
+*FvwmButtons-Pager: Rows 1
+*FvwmButtons-Pager: Frame 1
+*FvwmButtons-Pager: Padding 0 0
+*FvwmButtons-Pager: (Panel(right, steps 12, delay 0, position top, indicator10) \
+	"Desker-FvwmPager" 'Module FvwmPager Desker-FvwmPager 0 3')
+
+
+#------------------ FvwmButtons
+# FvwmButtons-Pager
+# Configuração de barra flutuante e retrátil com Pager para o módulo 
+# FvwmButtons
+DestroyModuleConfig FvwmButtons-Pager2: *
+
+Style FvwmButtons-Pager2 !Title, !Handles, Sticky, WindowListSkip, \
+	BorderWidth 0, NeverFocus, CirculateSkip, StaysOnTop, \
+	FixedPosition
+
+*FvwmButtons-Pager2: Colorset 10
+*FvwmButtons-Pager2: Geometry 12x154
+*FvwmButtons-Pager2: Rows 1
+*FvwmButtons-Pager2: Frame 1
+*FvwmButtons-Pager2: Padding 0 0
+*FvwmButtons-Pager2: (Panel(right, steps 0, delay 0, position top, indicator10) \
+	"Desker2-FvwmPager" 'Module FvwmPager Desker2-FvwmPager 0 3')
+
+#------------------ FvwmButtons
+# FvwmButtons-Pager
+# Configuração de barra flutuante e retrátil com Pager para o módulo 
+# FvwmButtons
+DestroyModuleConfig FvwmButtons-Pager3: *
+
+Style FvwmButtons-Pager3 !Title, !Handles, Sticky, WindowListSkip, \
+	BorderWidth 0, NeverFocus, CirculateSkip, StaysOnTop, \
+	FixedPosition
+
+*FvwmButtons-Pager3: Colorset 10
+*FvwmButtons-Pager3: Geometry 12x130+0+40
+*FvwmButtons-Pager3: Rows 1
+*FvwmButtons-Pager3: Frame 1
+*FvwmButtons-Pager3: Padding 0 0
+*FvwmButtons-Pager3: (Panel(right, steps 0, delay 0, position top, indicator10) \
+	"Desker3-FvwmPager" 'Module FvwmPager Desker3-FvwmPager 0 3')
+
+#------------------ FvwmButtons
+# FvwmToolboxBig
+# Configuração de barra flutuante para o módulo FvwmButtons
+# Versão para monitores grandes (1680x1050)
+#
+DestroyModuleConfig FvwmToolboxBig: *
+
+Style FvwmToolboxBig !Title, !Handles, Sticky, WindowListSkip, \
+	BorderWidth 1, NeverFocus, FixedSize
+
+# Aplicou aquele patch maldito e o está usando?
+Test (EnvMatch Sky_RoundedCorners Yes) Style FvwmToolbox !RoundedCorners
+
+*FvwmToolboxBig: Font "xft:DejaVu Sans:Medium:size=7"
+*FvwmToolboxBig: Colorset 10
+*FvwmToolboxBig: Columns 1
+*FvwmToolboxBig: Rows 100
+*FvwmToolboxBig: Padding 0 0
+#*FvwmToolboxBig: (1x2, Padding 34 1, Swallow "xclock" "Exec exec xclock -digital \
+#		-fg $$[fg.cs10] -bg $$[bg.cs10] -hd black -hl black \
+#		-brief -update 1 -xrm "*customization: -mono" \
+#		-padding 0 -face helvetica -geometry -1500-1500")
+*FvwmToolboxBig: (1x2, Frame 2, Padding 70 1, Center, Swallow "FvwmClockApplet" `Module FvwmScript $[Sky_Dir]/fvwmscript.clockapplet-mod.rc`)
+*FvwmToolboxBig: (1x3, Swallow stalonetray `Exec exec stalonetray \
+		-bg gray --geometry 110x35 -bg $$[bg.cs10] --xsync`)
+*FvwmToolboxBig: (1x15, Padding 0 0, Container(Padding 2 2, Frame 2, Columns 2))
+*FvwmToolboxBig: (1x10, Title Calc.), Icon $[Fvwm_Icon_Theme]/48x48/apps/gcalctool.png, Action(Mouse 1) 'Exec "galculator" exec galculator')
+*FvwmToolboxBig: (1x10, Title NoteCase), Icon $[Fvwm_Icon_Theme]/48x48/apps/accessories-dictionary.png, Action(Mouse 1) 'Exec "notecase" exec notecase')
+*FvwmToolboxBig: (1x10, Title Leafpad), Icon $[Fvwm_Icon_Theme]/48x48/apps/xedit.png, Action(Mouse 1) 'Exec "leafpad" exec leafpad')
+*FvwmToolboxBig: (1x10, Title VirtualBox), Icon $[Fvwm_Icon_Theme]/48x48/apps/computer.png, Action(Mouse 1) 'Exec "VirtualBox" exec VirtualBox')
+*FvwmToolboxBig: (1x10, Title BrOffice), Icon $[Fvwm_Icon_Theme]/48x48/apps/applications-office.png, Action(Mouse 1) 'Exec "VCLSalFrame.DocumentWindow" exec soffice')
+*FvwmToolboxBig: (1x10, Title Applixware), Icon $[Fvwm_Icon_Theme]/48x48/apps/applications-office.png, Action(Mouse 1) 'Exec "Applixware" exec /opt/applixware-6-homeuser/applix')
+*FvwmToolboxBig: (1x10, Title Opera), Icon $[Fvwm_Icon_Theme]/48x48/apps/opera.png, Action(Mouse 1) 'Exec "Opera" exec opera')
+*FvwmToolboxBig: (1x10, Title Chrome), Icon $[Fvwm_Icon_Theme]/48x48/apps/google-chrome.png, Action(Mouse 1) 'Exec "google-chrome" exec google-chrome')
+*FvwmToolboxBig: (End)
+*FvwmToolboxBig: (1x8, Swallow "Alpha" "Module FvwmPager Alpha 0")
+*FvwmToolboxBig: (1x8, Swallow "Bravo" "Module FvwmPager Bravo 1")
+*FvwmToolboxBig: (1x8, Swallow "Charlie" "Module FvwmPager Charlie 2")
+*FvwmToolboxBig: (1x8, Swallow "Delta" "Module FvwmPager Delta 3")
+*FvwmToolboxBig: (1x8, Swallow "Echo" "Module FvwmPager Echo 4")
+
+
+echo fvwmbuttons.fvwmtoolbox-mod.rc: Processamento terminado.

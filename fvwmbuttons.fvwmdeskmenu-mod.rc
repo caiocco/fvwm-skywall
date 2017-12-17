@@ -1,0 +1,53 @@
+echo fvwmbuttons.fvwmdeskmenu-mod.rc: Configurando FvwmButtons-FvwmDeskMenu...
+
+#------------------ FvwmButtons
+# FvwmDeskMenu
+# Configuração experimental de menu 2D para o módulo FvwmButtons
+#
+DestroyModuleConfig FvwmDeskMenu: *
+
+# A declaração do estilo abaixo assegura consistência na integração do
+# módulo com o ambiente
+DestroyStyle FvwmDeskMenu
+Style FvwmDeskMenu Title, !Handles, Sticky, WindowListSkip, \
+	BorderWidth 3, NeverFocus, !Maximizable, \
+	!Iconifiable, SmartPlacement
+
+*FvwmDeskMenu: Font "xft:DejaVu Sans:Medium:size=10"
+Test (EnvMatch Sky_Theme nimbos) *FvwmDeskMenu: Font "Shadow=1 0 SE:xft:DejaVu Sans:Medium:size=10"
+*FvwmDeskMenu: Colorset 10
+*FvwmDeskMenu: Frame 1
+*FvwmDeskMenu: Padding 2 2
+*FvwmDeskMenu: Rows 3
+*FvwmDeskMenu: Columns 3
+*FvwmDeskMenu: (Title(Center), Title "Removíveis", ActiveTitle "CD, DVD e pen drive", PressTitle "Executando...", Center, Icon $[Gtk_Icon_Theme]/64x64/actions/cd.png, Action(Mouse 1) `Exec "ROX-Filer" exec rox /media`)
+*FvwmDeskMenu: (Title(Center), Title "Impressoras", ActiveTitle "Configurar impressoras...", PressTitle "Executando...", Center, Icon $[Gtk_Icon_Theme]/64x64/actions/fileprint.png, Action(Mouse 1) `Exec "Kcmshell" exec kcmshell printers`)
+*FvwmDeskMenu: (Title(Center), Title "Janelas®", ActiveTitle "CrossOver, VirtualBox etc", PressTitle "Executando...", Center, Icon $[Fvwm_Icon_Theme]/windows.png, Action(Mouse 1) `Exec "ROX-Filer" exec  rox $[HOME]/Arquivos/CxOffice/fvwm`)
+*FvwmDeskMenu: (Title(Center), Title "Mídia", ActiveTitle "Música e vídeo", PressTitle "Executando...", Center, Icon $[Gtk_Icon_Theme]/64x64/stock/panel-multimedia.png), Action(Mouse 1) `Module FvwmButtons -transient FvwmDeskMenu-Media`)
+*FvwmDeskMenu: (Title(Center), Title "Estudos", ActiveTitle "Livros e apostilas", PressTitle "Executando...", Center, Icon $[Gtk_Icon_Theme]/64x64/stock/stock-book.png, Action(Mouse 1) `Exec "Kcmshell" exec kcmshell printers`)
+*FvwmDeskMenu: (Title(Center), Title "Anotações", ActiveTitle "Anotações diversas", PressTitle "Executando...", Center, Icon $[Gtk_Icon_Theme]/64x64/stock/stock-edit.png, Action(Mouse 1) `Exec "ROX-Filer" exec  rox $[HOME]/Arquivos/CxOffice/fvwm`)
+*FvwmDeskMenu: (Title(Center), Title "Compartilhado", ActiveTitle "Mídia compartilhada", PressTitle "Executando...", Center, Icon $[Gtk_Icon_Theme]/64x64/stock/epiphany-download.png, Action(Mouse 1) `Exec "ROX-Filer" exec rox /media`)
+*FvwmDeskMenu: (Title(Center), Title "Nuvem/Social", ActiveTitle "Comunidades e Fóruns", PressTitle "Executando...", Center, Icon $[Gtk_Icon_Theme]/64x64/stock/panel-internet.png, Action(Mouse 1) `Exec "Kcmshell" exec kcmshell printers`)
+*FvwmDeskMenu: (Title(Center), Title "", ActiveTitle "", PressTitle "Executando...", Center, Icon $[Gtk_Icon_Theme]/64x64/stock/gtk-add.png, Action(Mouse 1) `Exec "Kcmshell" exec kcmshell printers`)
+
+# DeskMenu => Mídia
+DestroyModuleConfig FvwmDeskMenu-Media: *
+DestroyStyle FvwmDeskMenu-Media
+Style FvwmDeskMenu-Media Title, !Handles, Sticky, WindowListSkip, \
+	BorderWidth 3, NeverFocus, !Maximizable, \
+	!Iconifiable, SmartPlacement
+*FvwmDeskMenu-Media: Font "xft:DejaVu Sans:Medium:size=10"
+Test (EnvMatch Sky_Theme nimbos) *FvwmDeskMenu-Media: Font "Shadow=1 0 SE:xft:DejaVu Sans:Medium:size=10"
+*FvwmDeskMenu-Media: Colorset 10
+*FvwmDeskMenu-Media: Frame 1
+*FvwmDeskMenu-Media: Columns 1
+*FvwmDeskMenu-Media: Padding 2 4
+*FvwmDeskMenu-Media: (1x1, Title(Center), Title "Músicas", Icon $[Gtk_Icon_Theme]/32x32/actions/about_kde.png, Action(Mouse 1) `Exec "ROX-Filer" exec rox $[HOME]/Arquivos/Musicas`)
+*FvwmDeskMenu-Media: (1x1, Title(Center), Title "Vídeos", Icon $[Gtk_Icon_Theme]/32x32/actions/about_kde.png, Action(Mouse 1) `Exec "ROX-Filer" exec rox $[HOME]/Arquivos/Videos`)
+*FvwmDeskMenu-Media: (1x1, Title(Center), Title "Animes", Icon $[Gtk_Icon_Theme]/32x32/actions/about_kde.png, Action(Mouse 1) `Exec "ROX-Filer" exec rox $[HOME]/Arquivos/Animes`)
+*FvwmDeskMenu-Media: (1x1, Title(Center), Title "Podcasts", Icon $[Gtk_Icon_Theme]/32x32/actions/about_kde.png, Action(Mouse 1) `Exec "ROX-Filer" exec rox $[HOME]/Arquivos/Podcasts`)
+*FvwmDeskMenu-Media: (1x1, Title(Center), Title "Screencasts", Icon $[Gtk_Icon_Theme]/32x32/actions/about_kde.png, Action(Mouse 1) `Exec "ROX-Filer" exec rox $[HOME]/Arquivos/Screencasts`)
+*FvwmDeskMenu-Media: (1x1, Title(Center), Title "Screenshots", Icon $[Gtk_Icon_Theme]/32x32/actions/about_kde.png, Action(Mouse 1) `Exec "ROX-Filer" exec rox $[HOME]/Arquivos/Screenshots`)
+
+
+echo fvwmbuttons.fvwmdeskmenu-mod.rc: Processamento terminado.

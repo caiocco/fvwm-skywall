@@ -1,0 +1,63 @@
+# FVWM-Crystal version
+
+# Setup colorsets
+Read $./Colorsets
+
+DestroyDecor recreate WindowDecoration
+AddToDecor WindowDecoration
+
++ TitleStyle Active TiledPixmap $[Sky_Dir]/imagens/clearlookswindow-active-title.png
++ TitleStyle Inactive TiledPixmap $[Sky_Dir]/imagens/clearlookswindow-inactive-title.png
++ TitleStyle Centered Height 24 -- flat
+
++ BorderStyle -- HiddenHandles
++ BorderStyle -- Flat
+
++ ButtonStyle 1 \
+	ActiveUp (Pixmap $[Sky_Dir]/imagens/clearlookswindow-active-close.png) \
+	ActiveDown (Pixmap $[Sky_Dir]/imagens/clearlookswindow-active-close-down.png) \
+	InactiveUp (Pixmap $[Sky_Dir]/imagens/clearlookswindow-inactive-close.png) \
+	InactiveDown (Pixmap $[Sky_Dir]/imagens/clearlookswindow-inactive-close-down.png)
+
++ ButtonStyle 2 \
+	ActiveUp (Pixmap $[Sky_Dir]/imagens/clearlookswindow-active-close.png) \
+	ActiveDown (Pixmap $[Sky_Dir]/imagens/clearlookswindow-active-close-down.png) \
+	InactiveUp (Pixmap $[Sky_Dir]/imagens/clearlookswindow-inactive-close.png) \
+	InactiveDown (Pixmap $[Sky_Dir]/imagens/clearlookswindow-inactive-close-down.png)
+
++ ButtonStyle 3 MiniIcon
+
++ ButtonStyle 4 \
+	ActiveUp (Pixmap $[Sky_Dir]/imagens/clearlookswindow-active-maximize.png) \
+	ActiveDown (Pixmap $[Sky_Dir]/imagens/clearlookswindow-active-maximize-down.png) \
+	InactiveUp (Pixmap $[Sky_Dir]/imagens/clearlookswindow-inactive-maximize.png) \
+	InactiveDown (Pixmap $[Sky_Dir]/imagens/clearlookswindow-inactive-maximize-down.png)
+
++ ButtonStyle 6 \
+	ActiveUp (Pixmap $[Sky_Dir]/imagens/clearlookswindow-active-options.png) \
+	ActiveDown (Pixmap $[Sky_Dir]/imagens/clearlookswindow-active-options-down.png) \
+	InactiveUp (Pixmap $[Sky_Dir]/imagens/clearlookswindow-inactive-options.png) \
+	InactiveDown (Pixmap $[Sky_Dir]/imagens/clearlookswindow-inactive-options-down.png)
+
++ ButtonStyle 8 \
+	ActiveUp (Pixmap $[Sky_Dir]/imagens/clearlookswindow-active-arrows.png) \
+	ActiveDown (Pixmap $[Sky_Dir]/imagens/clearlookswindow-active-arrows-down.png) \
+	InactiveUp (Pixmap $[Sky_Dir]/imagens/clearlookswindow-inactive-arrows.png) \
+	InactiveDown (Pixmap $[Sky_Dir]/imagens/clearlookswindow-inactive-arrows-down.png)
+
++ ButtonStyle All -- UseTitleStyle
++ ButtonStyle All -- flat
+
+Style * HandleWidth 1, BorderWidth 1
+Style * Colorset                $[cs_window_inactive], \
+        BorderColorset          $[cs_window_inactiveborder], \
+        HilightColorset         $[cs_window_active], \
+        HilightBorderColorset   $[cs_window_activeborder]
+
+Style * Font shadow="1 1":"xft:Verdana:pixelsize=12:Bold"
+
+Style * UseDecor WindowDecoration
+
+# Setup button functions
+Include components/decorations/Buttons-fvwm-crystal-MiniIcon
+

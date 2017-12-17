@@ -1,0 +1,19 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Comment[pt_BR]=
+Comment=
+Exec=FvwmCommand 'Module FvwmForm FvwmForm-Bandeja'
+Icon=/home/caio/.fvwm/fvwm-skywall/icones/48x48/apps/tray.png
+MimeType=
+Name[pt_BR]=Preparar bandeja
+Name=Prepare systray
+Path=
+StartupNotify=false
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

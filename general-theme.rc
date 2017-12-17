@@ -1,0 +1,29 @@
+#=====================================================================#
+echo general-theme.rc: Processando configurações cosméticas gerais...
+
+#
+# Configurações cosméticas
+# Declarações gerais
+#
+
+#
+# Fontes
+#
+#Style * Font "Shadow=1 0 SE:xft:Helvetica:Bold:size=12:encoding=ISO10646-1"
+Style * Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=12:encoding=ISO10646-1"
+#Style * IconFont "Shadow=1 0 SE:xft:文泉驛正黑:Bold:size=8:encoding=ISO10646-1"
+Style * IconFont "Shadow=1 0 SE:xft:Kedagei:Regular:size=8:encoding=ISO10646-1"
+
+#
+# Cursores
+#
+# Usar um cursor mais "normal" ao invés daquele "X" medonho.
+CursorStyle root left_ptr
+# Usar seta comum de lado oposto em menus (padrão SGI e outros sistemas
+# UNIX). Muitos vão querer desativar, mas eu gosto.
+CursorStyle menu right_ptr
+# Usar um lápis como cursor para gestos com o mouse.
+CursorStyle stroke hand2
+
+echo general-theme.rc: Processamento terminado.
+#=====================================================================#

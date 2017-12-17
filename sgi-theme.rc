@@ -1,0 +1,126 @@
+#=====================================================================#
+echo sgi-theme.rc: Processando tema SGI...
+
+#
+# Configurações cosméticas
+# Tema SGI Indigo Magic Desktop
+#
+# Baseado no trabalho no 4fvm Version 1.0 por Yaxkukmo
+#
+DestroyDecor SGI
+
+#
+# Colorsets
+#
+#Colorset 1 fg black, bg black, SGradient 4 1 red 5 grey, dither
+Colorset 8 fg black, bg #a0a0a0
+Colorset 13 fg black, bg black
+Colorset 10 fg black, bg #808080
+Colorset 11 fg black, bg #b0b0b0
+# - Janelas Inativas
+Colorset 15 fg black, bg  #808080, sh #292929
+Colorset 3 fg black, bg  #808080
+# - Janelas Ativas
+Colorset 16 fg black, bg  #a59f80
+#Colorset 4 fg black, bg  #a59f80
+Colorset 17 fg black, bg #808080, pixmap unknown.xpm
+
+# Outras declarações
+SetEnv fvwm_icon_size 93
+
+#
+# Bordas e Título
+#
+DefaultFont "-*-helvetica-bold-*-*-*-14-*-*-*-*-*-*-*"
+# Se desejar texto justificado à esquerda, utilize LeftJustified
+#AddToDecor SGI TitleStyle CenterJustified
+AddToDecor SGI TitleStyle Height 25
+AddToDecor SGI BorderStyle -- !NoInset
+Style SGI ForeColor gray94
+Style SGI BackColor Gray
+Style SGI HilightFore White
+Style SGI HilightBack Gray
+Style SGI BorderWidth 7, HandleWidth 7
+Style SGI NoDecorHint
+Style SGI GNOMEIgnoreHints
+Style SGI MouseFocusClickRaises
+Style SGI Colorset 15
+Style SGI HilightColorset 16
+Style SGI !MWMBorders
+Style SGI !MWMFunctions
+Style SGI MWMDecor
+Style SGI HintOverride
+
+#
+# Ícones
+#
+Style * Icon yax_default.xpm
+Style * IconBackgroundColorset 17 
+Style * IconBackgroundRelief 2 
+Style * IconBackgroundPadding 2
+Style * IconSize 95 75 -1 -1
+Style * IconTitle, IndexedWindowName
+Style * WindowShadeSteps 0
+Style * IconFont "Shadow=1 0 SE:xft:Sans:Regular:size=10"
+
+#
+# Declarações
+#
+Style SGI SnapAttraction 4 SameType
+Style SGI SnapGrid 1 1
+OpaqueMoveSize -1
+MoveThreshold 3
+BugOpts FlickeringMoveWorkAround On
+
+#
+# Botões
+#
+Style SGI Button 1, Button 2, Button 4
+
+AddToDecor SGI AddButtonStyle 2	\
+	Vector 9 0+5px100-6p@3 100-7px100-6p@3 \
+	100-7px-0+4p@3 0+5px0+4p@3 0+5px100-5p@3 \
+	0+7px100-5p@2 \
+	0+8px100-5p@3 100-6px100-5p@3 100-6px-0+6p@3
+AddToDecor SGI AddButtonStyle 4 \
+ 	Vector 9 50-2px50+1p@3 50+2px50+1p@3 50+2px50-3p@3 50-2px50-3p@3 50-2px50+2p@3 \
+	50-0px50+2p@2 \
+	50-0px50+2p@3 50+3px50+2p@3 50+3px50-1p@3
+AddToDecor SGI AddButtonStyle 1	\
+	Vector 9 0+4px50+1p@3 100-6px50+1p@3 100-6px50-2p@3 0+4px50-2p@3 0+4px50+2@3 \
+	0+5px50+2p@2 \
+	0+6px50+2p@2 100-5px50+2p@3 100-5px50@3
+
+#
+# Menus
+#
+MenuStyle * Font "Shadow=1 0 SE:xft:Sans:Italic:size=10"
+MenuStyle * PopupOffset -5 -1
+MenuStyle * HilightBack #a3a3a3
+MenuStyle * MenuColorset 11
+MenuStyle * Hilight3DThick
+MenuStyle * !SeparatorsLong
+MenuStyle * BorderWidth 2
+
+#
+# Eventos
+#
+DestroyModuleConfig FvwmEvent: *
+*FvwmEvent: Cmd "Exec exec play "
+*FvwmEvent: StartDelay 3
+*FvwmEvent: Delay 1
+*FvwmEvent: startup          "$[Sky_Dir]/sons/O2start.wav"
+*FvwmEvent: add_window       "$[Sky_Dir]/sons/start-app.wav"
+*FvwmEvent: destroy_window   "$[Sky_Dir]/sons/critical.wav"
+*FvwmEvent: iconify          "$[Sky_Dir]/sons/open-win.wav"
+*FvwmEvent: deiconify        "$[Sky_Dir]/sons/attention.wav"
+*FvwmEvent: windowshade      "$[Sky_Dir]/sons/start-app.wav"
+*FvwmEvent: dewindowshade    "$[Sky_Dir]/sons/attention.wav"
+
+
+# Aplicando...
+Style * UseStyle SGI
+Style * UseDecor SGI
+
+echo sgi-theme.rc: Processamento terminado.
+#=====================================================================#
