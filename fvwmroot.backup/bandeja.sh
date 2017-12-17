@@ -1,0 +1,79 @@
+#!/bin/sh
+function launch {
+
+if pgrep -x "osmo" > /dev/null
+then
+	killall osmo
+else
+	osmo &
+fi
+
+if pgrep -x "pasystray" > /dev/null
+then
+	killall pasystray
+else
+	pasystray &
+fi
+
+if pgrep -x "guake" > /dev/null
+then
+	guake --quit &
+else
+	guake &
+fi
+
+if pgrep -x "nm-applet" > /dev/null
+then
+	killall nm-applet
+else
+	nm-applet &
+fi
+
+if pgrep -x "blueberry-tray" > /dev/null
+then
+	killall blueberry-tray
+else
+	blueberry-tray &
+fi
+
+if pgrep -x "parcellite" > /dev/null
+then
+	killall parcellite
+else
+	parcellite &
+fi
+
+if pgrep -x "cellwriter" > /dev/null
+then
+	killall cellwriter
+else
+	cellwriter &
+fi
+
+if pgrep -x "hp-systray" > /dev/null
+then
+	killall hp-systray
+else
+	hp-systray -x &
+fi
+
+if pgrep -x "xfce4-power-manager" > /dev/null
+then
+	killall xfce4-power-manager
+else
+	xfce4-power-manager &
+fi
+
+if pgrep -x "dropbox" > /dev/null
+then
+	dropbox stop
+#else
+#	dropbox start &
+fi
+#
+
+FvwmCommand Refresh
+
+}
+
+launch

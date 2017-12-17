@@ -1,0 +1,215 @@
+#######################################################################
+################## Recurso de configuração do FVWM 2 ##################
+#######################################################################
+# Caio César, 2007-2017
+#
+# Algumas partes do conjunto de configurações são derivadas ou 
+# inspiradas no trabalho de outros grupos, pessoas e/ou empresas.
+#
+# O presente arquivo de configuração tem utilização pretendida nas
+# seguintes distribuições Linux: openSUSE e Slackware.
+#
+# $ fvwm -version
+# fvwm 2.6.6
+# with support for: ReadLine, Stroke, XPM, PNG, SVG, Shape, XShm, SM, 
+# Bidi text, Xinerama, XRender, XCursor, XFT, NLS
+#
+# fvwm comes with NO WARRANTY, to the extent permitted by law. You may
+# redistribute copies of fvwm under the terms of the GNU General Public 
+# License.
+# For more information about these matters, see the file named COPYING.
+#
+#=====================================================================#
+
+#
+# Declarações
+#
+# OBS: nunca se esqueça de que o FVWM é case-sensitive com as 
+#      declarações: "Yes" não é "yes".
+# 
+SetEnv Sky_ImageDir /home/caio/Arquivos/Imagens
+SetEnv Sky_TwoMons No		# usará dois monitores em Xinerama?
+SetEnv Sky_TwinView No		# usará dois monitores em TwinView?
+				# geralmente relevante apenas quando
+				# as resoluções são diferentes
+SetEnv Sky_MonTwoIsBig Yes	# o segundo monitor é grande?
+				# em caso afirmativo, assumiremos
+				# mínimo de 1680x1050
+SetEnv Sky_TwoMons_Type 3	# configuração a ser empregada para
+				# uso em dois monitores
+SetEnv Sky_Comp No		# usará composite?
+SetEnv Sky_Myth No		# usará MythTV no segundo monitor?
+SetEnv Sky_Panels_Type 1	# 1 = padrão; 2 = alt 1; 3 = alt 2
+				# 4 = barra inferior e barra superior
+				# 1.5 = padrão, sem taskbar
+				# 1.6 = 1.5 alt, taskbar com 2 linhas
+SetEnv Sky_Theme diamond	# skywall, ecs, water, tribal, diamond
+				# clearlooks, gentoo, xp, nimbos, sgi
+SetEnv Sky_CDE_Painel No	# barra CDE-like?
+SetEnv Sky_RoundedCorners No	# caso possua o patch, declare Yes aqui
+SetEnv Sky_MiniIconSize	16x16	# tamanho dos mini-ícones
+
+#
+# Caminhos
+#
+ImagePath /usr/X11R6/include/X11/pixmaps:/usr/share/icons:/usr/share/pixmaps:$HOME/.icons:
+SetEnv Sky_Dir $[HOME]/.fvwm/fvwm-skywall
+SetEnv Fvwm_Icon_Theme $[HOME]/.fvwm/fvwm-skywall/icones
+SetEnv Gtk_Icon_Theme /usr/share/icons/Faenza
+
+#
+# Identificação da localização do arquivo de configuração definindo 
+# temas, ícones etc relacionados ao toolkit GTK+ 2.0
+#
+Test (f /etc/slackware-version) \
+	SetEnv GTK2_RC_FILES $[Sky_Dir]/gtk/murrina-gtkrc-2.0
+Test (f /etc/SuSE-release) \
+	SetEnv GTK2_RC_FILES $[Sky_Dir]/gtk/numix-gtkrc-2.0
+Test (EnvMatch Sky_Theme tribal) \
+	SetEnv GTK2_RC_FILES $[Sky_Dir]/gtk/bluecurve-gtkrc-2.0
+Test (EnvMatch Sky_Theme skywall) \
+	Test (EnvMatch Sky_Theme_Skywall_Sky93B Yes) \
+	SetEnv GTK2_RC_FILES $[Sky_Dir]/gtk/bluecurve-gtkrc-2.0
+Test (EnvMatch Sky_Theme clearlooks) \
+	SetEnv GTK2_RC_FILES $[Sky_Dir]/gtk/clearlooks-gtkrc-2.0
+	
+#
+# Para facilitar a utilização de software que não prevê o uso de
+# gerenciadores de janelas simples. Exige componentes do Xfce.
+# 
+Test (x exo-open) SetEnv BROWSER exo-open
+
+#=====================================================================#
+
+#
+# Configurações cosméticas
+#
+
+Read $[Sky_Dir]/general-theme.rc
+
+Read $[Sky_Dir]/$[Sky_Theme]-theme.rc
+
+#=====================================================================#
+
+#
+# Configurar modos de utilização importantes
+#
+
+Read $[Sky_Dir]/use_mode_settings.rc
+
+#=====================================================================#
+
+#
+# Estilos para clientes X
+#
+
+Read $[Sky_Dir]/styles.rc
+
+#=====================================================================#
+
+#
+# Funções simples de inicialização/encerramento
+#
+
+Read $[Sky_Dir]/start_restart_exit.rc
+
+#=====================================================================#
+
+#
+# Funções complexas
+#
+
+Read $[Sky_Dir]/complex_functions.rc
+
+#=====================================================================#
+
+#
+# Menus em cascata/pop-up
+#
+
+Read $[Sky_Dir]/menus.rc
+
+#=====================================================================#
+
+#
+# Outras funções diversas
+#
+
+Read $[Sky_Dir]/misc_functions.rc
+
+#=====================================================================#
+
+#
+# Associações para teclas e ações do mouse
+#
+
+Read $[Sky_Dir]/mouse_bind.rc
+
+Read $[Sky_Dir]/key_bind.rc
+
+Read $[Sky_Dir]/strokes.rc
+
+#=====================================================================#
+
+#
+# Definições usadas pelos módulos
+#
+
+#------------------ Pager
+Read $[Sky_Dir]/fvwmpager-mod.rc
+
+#------------------ Identify
+Read $[Sky_Dir]/fvwmidentify-mod.rc
+
+#------------------ FvwmForm
+Read $[Sky_Dir]/fvwmform-mod.rc
+
+#------------------ WindowList
+Read $[Sky_Dir]/fvwmwinlist-mod.rc
+
+#------------------ IconManager
+Read $[Sky_Dir]/fvwmiconman-mod.rc
+
+#------------------ IconBox
+Read $[Sky_Dir]/fvwmiconbox-mod.rc
+
+#------------------ FvwmButtons: FvwmShelf
+Read $[Sky_Dir]/fvwmbuttons.fvwmshelf-mod.rc
+
+#------------------ FvwmButtons: FvwmBar
+Read $[Sky_Dir]/fvwmbuttons.fvwmbar-mod.rc
+
+#------------------ FvwmButtons: FvwmToolbox
+Read $[Sky_Dir]/fvwmbuttons.fvwmtoolbox-mod.rc
+
+#------------------ FvwmButtons: FvwmBotbox
+Read $[Sky_Dir]/fvwmbuttons.fvwmbotbox-mod.rc
+
+#------------------ FvwmButtons: FvwmDeskMenu
+Read $[Sky_Dir]/fvwmbuttons.fvwmdeskmenu-mod.rc
+
+#------------------ FvwmButtons: FvwmCDE
+Read $[Sky_Dir]/fvwmbuttons.fvwmcde-mod.rc
+
+#------------------ FvwmAnimate
+Read $[Sky_Dir]/fvwmanimate-mod.rc
+
+#------------------ FvwmScript
+Read $[Sky_Dir]/fvwmscript-mod.rc
+
+#------------------ FvwmBanner
+Read $[Sky_Dir]/fvwmbanner-mod.rc
+
+#=====================================================================#
+
+echo  .=======================.
+echo  | ____ _  _ _    _      |
+echo  |(  __X \/ X \/\/ )\/\  |
+echo  | ) _) \  / \    /    \ |
+echo  |(__) * \/ * \/\(_/\/\_)|
+echo  |                       |
+echo  `=======================´
+echo             ~~
+echo    FVWM em funcionamento
+
+#=EOF=============================================================EOF=#
