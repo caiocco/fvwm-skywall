@@ -599,28 +599,13 @@ Test (x lynx)		+ "Lynx"			Exec xterm -bg black -fg lightgray -font 7x14 \
 DestroyMenu "Comm-Hosts"
 AddToMenu "Comm-Hosts"
 + "" TearMenuOff
-Test (x telnet)		+ "Deathrow Manson (Telnet)"	Exec xterm -bg black -fg lightyellow -font 10x20 \
-							-e telnet manson.vistech.net
-Test (x ssh)		+ "Deathrow Manson (SSH)"	Exec xterm -bg black -fg lightyellow -font 10x20 \
-							-e ssh caiocco@manson.vistech.net
-Test (x telnet)		+ "Deathrow Dahmer (Telnet)"	Exec xterm -bg black -fg yellow -font 10x20 \
-							-e telnet dahmer.vistech.net
-Test (x ssh)		+ "Deathrow Dahmer (SSH)"	Exec xterm -bg black -fg yellow -font 10x20 \
-							-e ssh caiocco@dahmer.vistech.net
-Test (x telnet)		+ "Deathrow Gein (Telnet)"	Exec xterm -bg black -fg peachpuff -font 10x20 \
-							-e telnet gein.vistech.net
-Test (x ssh)		+ "Deathrow Gein (SSH)"		Exec xterm -bg black -fg peachpuff -font 10x20 \
-							-e ssh caiocco@gein.vistech.net
-Test (x elinks)		+ "Deathrow Cluster Site"	Exec xterm -bg black -fg lightgray -font 7x14 \
-							-geometry 130x40 -e elinks http://deathrow.vistech.net
-+ ""		Nop
-Test (x telnet)		+ "SDF Public Access"		Exec xterm -bg black -fg lightgray -font 10x20 \
-							-e telnet sdf.lonestar.org
-Test (x links)		+ "SDF Web Site"		Exec links -g http://sdf.lonestar.org/index.cgi
+Test (x ssh)		+ "SDF Public Access"		Exec xterm -bg black -fg lightgray -font 10x20 \
+							-T SDF -e ssh caiocco@sdf.lonestar.org
+Test (x links)	+ "SDF Web Site"		Exec links -g https://sdf.org
 + ""		Nop
 Test (x telnet)		+ "Uncensored BBS (Telnet)"	Exec xterm -bg black -fg lightgray -font 10x20 \
-							-e telnet uncensored.citadel.org
-Test (x links)		+ "Uncensored BBS (Web)"	Exec links -g http://uncensored.citadel.org:8080/
+							-T Uncensored -e telnet uncensored.citadel.org
+Test (x seamonkey)	+ "Uncensored BBS (Web)"	Exec seamonkey http://uncensored.citadel.org
 
 # Jogos
 #
