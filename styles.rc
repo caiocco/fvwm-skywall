@@ -245,6 +245,8 @@ Style Display \
 	EWMHIgnoreStackingOrderHints, \
 	EWMHIgnoreStrutHints, \
 	Borders
+Style esets_gui \
+	PositionPlacement Center
 	
 Style Comix \
 	IconOverride, \
