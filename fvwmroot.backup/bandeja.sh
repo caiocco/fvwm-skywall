@@ -64,6 +64,13 @@ else
 	xfce4-power-manager &
 fi
 
+if pgrep -x "esets_gui" > /dev/null
+then
+	killall esets_gui
+else
+	/opt/eset/esets/bin/esets_gui --autostart &
+fi
+
 if pgrep -x "dropbox" > /dev/null
 then
 	dropbox stop
