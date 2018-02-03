@@ -305,6 +305,8 @@ Test (x git)		+ "Git Gui"			Exec git gui
 Test (x code_crusader)	+ "Code Crusader"		Exec code_crusader
 Test (x medic)		+ "Code Medic"			Exec medic
 Test (x meld)		+ "Meld"			Exec meld
+Test (x /opt/smartgit/bin/smartgit.sh) \
+					+ "SmartGit"		Exec opt/smartgit/bin/smartgit.sh
 Test (x /opt/sublime_text_3/sublime_text)\
 			+ "Sublime Text"		Exec /opt/sublime_text_3/sublime_text
 Test (x retext)		+ "ReText"			Exec retext
