@@ -940,6 +940,7 @@ Test (x rox-mime-editor)\
 Test (x emelfm2)	+ "Emelfm 2"			Exec emelfm2
 Test (x thunar)		+ "Thunar"	   	 	Exec thunar
 Test (x nautilus)	+ "Nautilus"	   	 	Exec nautilus --no-desktop
+Test (x caja)		+ "Caja"	   	 	Exec caja --no-desktop
 Test (x pcmanfm)	+ "PCMan F. M."	   		Exec pcmanfm
 Test (x gnome-commander) \
 			+ "GNOME Commander"   		Exec gnome-commander
@@ -977,6 +978,7 @@ DestroyMenu "Shells"
 AddToMenu "Shells"
 Test (x xfce4-terminal)	+ "Terminal"			Exec xfce4-terminal
 Test (x gnome-terminal)	+ "Terminal do GNOME"		Exec gnome-terminal
+Test (x mate-terminal)	+ "Terminal do MATE"		Exec mate-terminal
 Test (x konsole)	+ "Konsole"			Exec konsole
 Test (x mrxvt)		+ "MRxvt"			Exec mrxvt +sb -fn 10x20 -pixmap \
 							$[Sky_ImageDir]/Texturas/nebula.jpg -fg lightgray -bg black \
