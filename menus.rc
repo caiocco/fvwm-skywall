@@ -306,7 +306,7 @@ Test (x code_crusader)	+ "Code Crusader"		Exec code_crusader
 Test (x medic)		+ "Code Medic"			Exec medic
 Test (x meld)		+ "Meld"			Exec meld
 Test (x /opt/smartgit/bin/smartgit.sh) \
-					+ "SmartGit"		Exec /opt/smartgit/bin/smartgit.sh
+			+ "SmartGit"		Exec /opt/smartgit/bin/smartgit.sh
 Test (x /opt/sublime_text_3/sublime_text)\
 			+ "Sublime Text"		Exec /opt/sublime_text_3/sublime_text
 Test (x retext)		+ "ReText"			Exec retext
@@ -328,9 +328,9 @@ Test (x cervisia)	+ "Cervisia"			Exec cervisia
 Test (x umbrello)	+ "Umbrello"			Exec umbrello
 + ""		Nop
 Test (x sqlitestudio)\
-					+ "SQLiteStudio"			Exec sqlitestudio
+			+ "SQLiteStudio"		Exec sqlitestudio
 Test (x mysql-workbench)\
-			+ "MySQL Workbench"			Exec mysql-workbench
+			+ "MySQL Workbench"		Exec mysql-workbench
 + ""		Nop
 Test (x idle)		+ "IDLE"			Exec idle
 Test (x /opt/pycharm-community/bin/pycharm.sh)\
@@ -341,7 +341,7 @@ Test (x glade-2)	+ "Glade 2"			Exec glade-2
 Test (x glade-3)	+ "Glade 3"			Exec glade-3
 Test (x gambas2)	+ "Gambas 2"			Exec gambas2
 Test (x lazarus)	+ "Lazarus"			Exec lazarus
-Test (x squeak.sh)  + "Squeak"			Exec squeak.sh
+Test (x squeak.sh) 	+ "Squeak"			Exec squeak.sh
 Test (x /opt/portugol/run.sh)\
 			+ "Portugol"			Exec /opt/portugol/run.sh
 Test (x eclipse)	+ "Eclipse"			Exec eclipse
@@ -365,12 +365,13 @@ Test (x gnuplot)	+ "Gnuplot"                     Exec xterm -T "Gnuplot" -name G
 Test (x gretl)		+ "Gretl"                     	Exec gretl
 Test (x psppire)	+ "PSPP"                     	Exec psppire
 Test (x orange-canvas)\
-					+ "Orange"                     	Exec orange-canvas
+			+ "Orange"                     	Exec orange-canvas
 Test (x xmaxima)	+ "Maxima"                     	Exec xmaxima
 Test (x wxmaxima)	+ "wxMaxima"                    Exec wxmaxima
 Test (x /opt/scilab/bin/scilab)\
 			+ "Scilab"                    	Exec GTK2_RC_FILES=$[FVWM_USERDIR]/fvwm-skywall/gtk/aurora-gtkrc-2.0 /opt/scilab/bin/scilab
 Test (x qgis)		+ "QGIS"                    	Exec qgis
+Test (x saga_gui)	+ "SAGA GIS"                   	Exec saga_gui
 
 
 # Produtividade
@@ -525,7 +526,7 @@ Test (x /opt/spicebird-beta/spicebird)\
 Test (x /opt/eudora/eudora)\
 			+ "Eudora"			Exec /opt/eudora/eudora
 Test (x xchat)		+ "XChat"                 	Exec xchat
-Test (x hexchat)		+ "HexChat"                 	Exec hexchat
+Test (x hexchat)	+ "HexChat"                 	Exec hexchat
 Test (x gwibber)	+ "Gwibber"                 	Exec gwibber
 Test (x transmission-gtk)\
 			+ "Transmission (GTK)"		Exec transmission-gtk
@@ -952,8 +953,7 @@ Test (x /opt/tuxcmd-0.5.103-bin/tuxcmd)\
 			+ "Tux Commander"		Exec /opt/tuxcmd-0.5.103-bin/tuxcmd
 Test (x /opt/muCommander/mucommander.sh)\
 			+ "muCommander"			Exec /opt/muCommander/mucommander.sh
-Test (x doublecmd)	+ "Double Commander"\
-										Exec doublecmd
+Test (x doublecmd)	+ "Double Commander"		Exec doublecmd
 Test (x gentoo)		+ "Gentoo"			Exec gentoo
 Test (x worker)		+ "Worker"			Exec worker
 + "" 		Nop
