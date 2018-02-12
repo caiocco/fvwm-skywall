@@ -246,7 +246,10 @@ Style Display \
 	EWMHIgnoreStrutHints, \
 	Borders
 Style esets_gui \
-	PositionPlacement Center
+	PositionPlacement Center, \
+	EWMHDontDonateIcon, \
+	IconOverride, \
+	Icon /opt/eset/esets/share/menu/app_icon_128.png
 	
 Style Comix \
 	IconOverride, \
