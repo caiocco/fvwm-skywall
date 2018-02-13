@@ -250,7 +250,13 @@ Style esets_gui \
 	EWMHDontDonateIcon, \
 	IconOverride, \
 	Icon /opt/eset/esets/share/menu/app_icon_128.png
-	
+Style "Notificação - ESET NOD32 Antivirus" \
+	StaysOnTop, \
+	Sticky, \
+	StartsRaised, \
+	NeverFocus, \
+	EWMHIgnoreStateHints
+
 Style Comix \
 	IconOverride, \
 	Icon /usr/share/comix/images/comix.svg
@@ -657,7 +663,8 @@ Test (EnvMatch Sky_Theme skywall) \
 Style SheepShaver \
 	BorderWidth 7, \
 	!Button 2, \
-	!Handles
+	!Handles, \
+	Icon $[Fvwm_Icon_Theme]/48x48/apps/sheepshaver.png
 Test (EnvMatch Sky_Theme skywall) \
 	 Style SheepShaver \
 	 Font "Shadow=1 0 SE:xft:Helvetica:Bold:size=12"
@@ -665,7 +672,8 @@ Style BasiliskII \
 	BorderWidth 7, \
 	PositionPlacement Center, \
 	!Button 2, \
-	!Handles
+	!Handles, \
+	Icon $[Fvwm_Icon_Theme]/48x48/apps/basilisk.png
 Test (EnvMatch Sky_Theme skywall) \
 	Style BasiliskII \
 	Font "Shadow=1 0 SE:xft:Helvetica:Bold:size=12"
