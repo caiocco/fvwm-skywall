@@ -147,70 +147,70 @@ Test (x /opt/cxoffice/bin/cxrun)\
 #
 DestroyMenu "Accessories"
 AddToMenu "Accessories"
-Test (x xedit)		+ "X Editor"			Exec xedit
-Test (x xcalc)		+ "X Calculator (TI-30)"	Exec xcalc
-Test (x xcalc)		+ "X Calculator (HP-10C)"	Exec xcalc -rpn
-Test (x calculator)	+ "FOX Calculator"		Exec calculator
-Test (x galculator)	+ "Galculator"			Exec galculator
-Test (x gcalctool)	+ "GNOME Calculator"		Exec gcalctool
-Test (x speedcrunch)	+ "SpeedCrunch"			Exec speedcrunch
-Test (x kcalc)		+ "KCalc"			Exec kcalc
-Test (x kedit)		+ "KEdit"			Exec kedit
-Test (x kwrite)		+ "KWrite"			Exec kwrite
-Test (x kregexpeditor)	+ "KRegExpEditor"		Exec kregexpeditor
-Test (x leafpad)	+ "Leafpad"			Exec leafpad
-Test (x mousepad)	+ "Mousepad"			Exec mousepad
-Test (x gedit)		+ "GNOME Editor"		Exec gedit
-Test (x txt2tags)	+ "txt2tags"			Exec txt2tags --gui
-Test (x shutterbug)	+ "Shutterbug"			Exec shutterbug
-Test (x FBReader)	+ "FBReader"			Exec FBReader
-Test (x parcellite)	+ "Parcellite"			Exec parcellite
-Test (x cellwriter)	+ "CellWriter"			Exec cellwriter
-Test (x xvkbd)		+ "Virtual Keyboard"		Exec xvkbd
-Test (x gucharmap)	+ "Mapa de Caracteres"		Exec gucharmap
+Test (x xedit)			+ "X Editor"				Exec xedit
+Test (x xcalc)			+ "X Calculator (TI-30)"	Exec xcalc
+Test (x xcalc)			+ "X Calculator (HP-10C)"	Exec xcalc -rpn
+Test (x calculator)		+ "FOX Calculator"			Exec calculator
+Test (x galculator)		+ "Galculator"				Exec galculator
+Test (x gcalctool)		+ "GNOME Calculator"		Exec gcalctool
+Test (x speedcrunch)	+ "SpeedCrunch"				Exec speedcrunch
+Test (x kcalc)			+ "KCalc"					Exec kcalc
+Test (x kedit)			+ "KEdit"					Exec kedit
+Test (x kwrite)			+ "KWrite"					Exec kwrite
+Test (x kregexpeditor)	+ "KRegExpEditor"			Exec kregexpeditor
+Test (x leafpad)		+ "Leafpad"					Exec leafpad
+Test (x mousepad)		+ "Mousepad"				Exec mousepad
+Test (x gedit)			+ "GNOME Editor"			Exec gedit
+Test (x txt2tags)		+ "txt2tags"				Exec txt2tags --gui
+Test (x shutterbug)		+ "Shutterbug"				Exec shutterbug
+Test (x FBReader)		+ "FBReader"				Exec FBReader
+Test (x parcellite)		+ "Parcellite"				Exec parcellite
+Test (x cellwriter)		+ "CellWriter"				Exec cellwriter
+Test (x xvkbd)			+ "Virtual Keyboard"		Exec xvkbd
+Test (x gucharmap)		+ "Mapa de Caracteres"		Exec gucharmap
 Test (x kcharselect)	+ "Seletor de caracteres"	Exec kcharselect
-Test (x kworldclock)	+ "KWorldClock"			Exec kworldclock
-Test (x gpa)		+ "GNU Privacy Assistant"	Exec gpa
-Test (x kgpg)		+ "KGpg"			Exec kgpg
-Test (x ktimer)		+ "KTimer"			Exec ktimer
+Test (x kworldclock)	+ "KWorldClock"				Exec kworldclock
+Test (x gpa)			+ "GNU Privacy Assistant"	Exec gpa
+Test (x kgpg)			+ "KGpg"					Exec kgpg
+Test (x ktimer)			+ "KTimer"					Exec ktimer
 Test (x kcolorchooser)	+ "KSeletor de Cores"		Exec kcolorchooser
-Test (x gcolor2)	+ "gcolor2"			Exec gcolor2
-Test (x clamtk)		+ "ClamTk Verificador de vírus" Exec clamtk
-Test (x bdgui)		+ "BitDefender for Unices" 	Exec bdgui
+Test (x gcolor2)		+ "gcolor2"					Exec gcolor2
+Test (x clamtk)			+ "ClamTk Anti-vírus" 		Exec clamtk
+Test (x bdgui)			+ "BitDefender for Unices" 	Exec bdgui
 Test (x fortune) Test (x xmessage)\
-			+ "Fortune" 			Exec xmessage "`fortune`"
-Test (x hot-babe)	+ "Hot-babe"			Exec hot-babe
+						+ "Fortune" 				Exec xmessage "`fortune`"
+Test (x hot-babe)		+ "Hot-babe"				Exec hot-babe
 + ""		Nop
 Test (x fwbuilder)	+ "Firewall Builder"		Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" fwbuilder
 + ""		Nop
 Test (x gtklp)		+ "GtkLP - Imprimir (Local)"	Exec gtklp "Remova-me da lista e adicione os arquivos desejados"
 Test (x gtklp)		+ "GtkLP - Imprimir (Esther)"	Exec gtklp -P canon -S esther "Remova-me da lista e adicione os arquivos desejados"
-Test (x gtklpq)		+ "GtkLP - Fila (Local)"	Exec gtklpq
-Test (x gtklpq)		+ "GtkLP - Fila (Esther)"	Exec gtklpq -P canon -S esther
+Test (x gtklpq)		+ "GtkLP - Fila (Local)"		Exec gtklpq
+Test (x gtklpq)		+ "GtkLP - Fila (Esther)"		Exec gtklpq -P canon -S esther
 Test (x system-config-printer)\
-			+ "Gerenciador de Impressão"	Exec system-config-printer
-Test (x hp-toolbox)	+ "Ferramentas da HP"		Exec hp-toolbox
+			+ "Gerenciador de Impressão"			Exec system-config-printer
+Test (x hp-toolbox)	+ "Ferramentas da HP"			Exec hp-toolbox
 Test (x dillo) Test (f /usr/sbin/cupsd)\
-			+ "Administrador CUPS"		Exec dillo -g 1024x768 -f http://localhost:631
+			+ "Administrador CUPS"					Exec dillo -g 1024x768 -f http://localhost:631
 Test (x qink)		+ "QInk (Tível de tinta)"	Exec qink
 + ""		Nop
-Test (x parcellite)	+ "Ligar clipboard"		Exec parcellite
-Test (x parcellite)	+ "Desligar clipboard"		Exec killall parcellite
-Test (x parcellite)	+ ""				Nop
-Test (x k3b)		+ "K3B"				Exec k3b
-Test (x graveman)	+ "Graveman"			Exec graveman
-Test (x brasero)	+ "Brasero"			Exec brasero
-Test (x xfburn)		+ "Xfburn"			Exec xfburn
-Test (x xcdroast)	+ "XCDRoast"			Exec xcdroast
+Test (x parcellite)	+ "Ligar clipboard"				Exec parcellite
+Test (x parcellite)	+ "Desligar clipboard"			Exec killall parcellite
+Test (x parcellite)	+ ""							Nop
+Test (x k3b)		+ "K3B"							Exec k3b
+Test (x graveman)	+ "Graveman"					Exec graveman
+Test (x brasero)	+ "Brasero"						Exec brasero
+Test (x xfburn)		+ "Xfburn"						Exec xfburn
+Test (x xcdroast)	+ "XCDRoast"					Exec xcdroast
 + ""		Nop
-Test (x lxappearance)	+ "LXAppearance"		Exec lxappearance
+Test (x lxappearance)	+ "LXAppearance"			Exec lxappearance
 Test (x gtk-chtheme)	+ "GTK Change Theme"		Exec gtk-chtheme
 + ""		Nop
 Test (x hardinfo)	+ "Informações do Hardware" 	Exec hardinfo
-Test (x xmessage)	+ "Informações da Janela" 	Exec xmessage "`xwininfo`"
-Test (x treesize)	+ "Informações de Espaço"	Exec treesize
+Test (x xmessage)	+ "Informações da Janela" 		Exec xmessage "`xwininfo`"
+Test (x treesize)	+ "Informações de Espaço"		Exec treesize
 Test (x gsmartcontrol-root)\
-			+ "Informações do SMART"	Exec gsmartcontrol-root
+			+ "Informações do SMART"		Exec gsmartcontrol-root
 Test (x gksu)\
 	Test (x gnome-system-log)\
 			+ "Visualizador de registros"	Exec gksu gnome-system-log
@@ -513,12 +513,14 @@ Test (x kazehakase)	+ "Kazehakase"			Exec kazehakase
 Test (x midori)		+ "Midori"			Exec midori
 Test (x opera)		+ "Opera"                    	Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" opera
 Test (x chromium)	+ "Chromium"			Exec chromium
-Test (x google-chrome)	+ "Google Chrome"		Exec google-chrome
+Test (x google-chrome)\
+			+ "Google Chrome"		Exec google-chrome
 Test (x konqueror)	+ "Konqueror"			Exec konqueror
 Test (x epiphany)	+ "Epiphany"                  	Exec epiphany
 Test (x evolution)	+ "Evolution"                  	Exec evolution
 Test (x dillo)		+ "Dillo"                  	Exec dillo
 Test (x gftp)		+ "gFTP"                	Exec gftp
+Test (x vinagre)	+ "Vinagre"                	Exec vinagre
 Test (x sylpheed)	+ "Sylpheed"                 	Exec sylpheed
 Test (x claws-mail)	+ "Claws Mail"                 	Exec claws-mail
 Test (x /opt/spicebird-beta/spicebird)\
@@ -558,6 +560,7 @@ Test (x nicotine)	+ "Nicotine+"			Exec nicotine
 Test (x vuze)		+ "Vuze"			Exec vuze
 Test (x columba)	+ "Columba"			Exec columba
 Test (x google-earth)	+ "Google Earth"		Exec LC_NUMERIC=en_US.UTF-8 google-earth -style plastique
+Test (x google-earth-pro)	+ "Google Earth Pro"		Exec LC_NUMERIC=en_US.UTF-8 google-earth-pro -style plastique
 Test (x wireshark) Test (x gksu)\
 			+ "Wireshark"			Exec gksu wireshark
 Test (x firestarter) Test (x gksu)\
@@ -624,12 +627,11 @@ Test (x foobillard)	+ "Foo Billard" 		Exec foobillard
 Test (x pysol)		+ "PySol" 			Exec pysol
 Test (x zsnes)		+ "ZSNES"       		Exec zsnes
 Test (x snes9x-gtk)	+ "Snes9x"			Exec snes9x-gtk
+Test (x snes9express)	+ "Snes9express"		Exec snes9express
 Test (x qmc2-sdlmame)	+ "QMC2"			Exec qmc2-sdlmame
 Test (x scummvm)	+ "ScummVM"			Exec scummvm
 Test (x pcsx)		+ "PCSX" 	      		Exec pcsx
 Test (x pcsxr)		+ "PCSX-Reloaded" 	      	Exec pcsxr
-Test (x snes9x-gtk)	+ "Snes9x"			Exec snes9x-gtk
-Test (x snes9express)	+ "Snes9express"		Exec snes9express
 Test (x fs-uae-launcher)\
 			+ "FS-UAE Launcher"		Exec fs-uae-launcher
 Test (x sdlmame)	+ "SDL Mame"			Exec sdlmame
