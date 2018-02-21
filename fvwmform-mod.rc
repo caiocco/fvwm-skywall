@@ -31,7 +31,5 @@ echo fvwmform-mod.rc: Configurando módulo de formulários...
 *FvwmForm-Bandeja: Command     Exec $[HOME]/.fvwm/bandeja.sh
 *FvwmForm-Bandeja: Button      quit "Não" ^X
 *FvwmForm-Bandeja: Command     Nop
-*FvwmForm-Bandeja: Timeout     25 Quit "Em %% segundos os aplicativos serão iniciados."
-
 
 echo fvwmform-mod.rc: Processamento terminado.
