@@ -621,6 +621,7 @@ Style darktable \
 	EWMHDontDonateIcon, \
 	IconOverride, \
 	Icon /usr/share/icons/hicolor/48x48/apps/darktable.png
+Style xeyes !Title
 
 # * Centrais de configuração
 Style Y2controlcenter \
