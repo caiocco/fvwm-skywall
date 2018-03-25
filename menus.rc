@@ -662,7 +662,7 @@ Test (x blobwars)	+ "Metal Blob Solid"		Exec blobwars
 Test (x opentyrian)	+ "OpenTyrian"			Exec opentyrian
 Test (x /opt/PokerTH/pokerth.sh)\
 			+ "PokerTH"			Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" /opt/PokerTH/pokerth.sh
-Test (x prboom)		+ "prBoom"			Popup Games-prboom
+Test (x gzdoom)		+ "GZDOOM"				Exec gzdoom
 Test (x alephone)	+ "Aleph One"			Popup Games-alephone
 Test (x mednafen)	+ "Mednafen"			Popup Games-mednafen
 Test (x xbill)		+ "XBill"			Exec xbill
@@ -706,55 +706,6 @@ AddToFunc MakeMednafenHelpMenu
 
 AddToMenu Games-mednafen-help
 + DynamicPopupAction Function MakeMednafenHelpMenu
-
-# Jogos => prBoom
-#
-DestroyMenu "Games-prboom"
-AddToMenu "Games-prboom"
-Test (x prboom)		+ "DOOM 1.9 - 800x600 OpenGL"		Exec prboom -save ~/.prboom/doom19 -width 800 -height 600 \
-							-window -vidmode gl -iwad $[HOME]/.prboom/IWAD/ultimate_doom.wad
-Test (x prboom)		+ "DOOM II - 800x600 OpenGL"		Exec prboom -width 800 -height 600 -window -vidmode gl \
-							-iwad $[HOME]/Arquivos/Virtualizacao/dos/Jogos/Doom2/doom2.wad
-Test (x prboom)		+ "DOOM TNT - 800x600 OpenGL"		Exec prboom -save ~/.prboom/tnt -width 800 -height 600 -window \
-							-vidmode gl -iwad $[HOME]/Arquivos/Virtualizacao/dos/Jogos/Doom2/TNT.WAD
-Test (x prboom)		+ "DOOM Plutonia - 800x600 OpenGL"	Exec prboom -save ~/.prboom/plutonia -width 800 -height 600 \
-							-window -vidmode gl -iwad $[HOME]/Arquivos/Virtualizacao/dos/Jogos/Doom2/PLUTONIA.WAD
-+ "" 		Nop
-Test (x prboom)		+ "DOOM 1.9 - 800x600 Normal"		Exec prboom -save ~/.prboom/doom19 -width 800 -height 600 \
-							-window -iwad $[HOME]/.prboom/IWAD/ultimate_doom.wad
-Test (x prboom)		+ "DOOM II - 800x600 Normal"		Exec prboom -width 800 -height 600 -window \
-							-iwad $[HOME]/Arquivos/Virtualizacao/dos/Jogos/Doom2/doom2.wad
-Test (x prboom)		+ "DOOM TNT - 800x600 Normal"		Exec prboom -save ~/.prboom/tnt -width 800 -height 600 -window \
-							-iwad $[HOME]/Arquivos/Virtualizacao/dos/Jogos/Doom2/TNT.WAD
-Test (x prboom)		+ "DOOM Plutonia - 800x600 Normal"	Exec prboom -save ~/.prboom/plutonia -width 800 -height 600 \
-							-window -iwad $[HOME]/Arquivos/Virtualizacao/dos/Jogos/Doom2/PLUTONIA.WAD
-+ "" 		Nop
-Test (x prboom)		+ "DOOM 1.9 - full screen"	Exec prboom -save ~/.prboom/doom19 -width 800 -height 600 \
-							-nowindow -vidmode gl -iwad $[HOME]/.prboom/IWAD/ultimate_doom.wad
-Test (x prboom)		+ "DOOM II - full screen"	Exec prboom -width 800 -height 600 -nowindow -vidmode gl \
-							-iwad $[HOME]/Arquivos/Virtualizacao/dos/Jogos/Doom2/DOOM2.WAD
-Test (x prboom)		+ "DOOM TNT - full screen"	Exec prboom -save ~/.prboom/tnt -width 800 -height 600 \
-							-nowindow -vidmode gl -iwad $[HOME]/Arquivos/Virtualizacao/dos/Jogos/Doom2/TNT.WAD
-Test (x prboom)		+ "DOOM Plutonia - full screen"	Exec prboom -save ~/.prboom/plutonia -width 800 -height 600 \
-							-nowindow -vidmode gl -iwad $[HOME]/Arquivos/Virtualizacao/dos/Jogos/Doom2/PLUTONIA.WAD
-+ ""		Nop
-Test (x doomsday)	+ "Doomsday - DOOM 1.9"		Exec doomsday -game jdoom -file \
-							$[HOME]/.prboom/IWAD/ultimate_doom.wad -userdir ~/.doomsday/jdoom/
-Test (x doomsday)	+ "Doomsday - DOOM II"		Exec doomsday -game jdoom -file \
-							$[HOME]/Arquivos/Virtualizacao/dos/Jogos/Doom2/DOOM.WAD \
-							-userdir ~/.doomsday/jdoom/
-Test (x doomsday)	+ "Doomsday - DOOM TNT"		Exec doomsday -game jdoom -file \
-							$[HOME]/Arquivos/Virtualizacao/dos/Jogos/Doom2/TNT.WAD \
-							-userdir ~/.doomsday/jdoom/
-Test (x doomsday)	+ "Doomsday - DOOM Plutonia"	Exec doomsday -game jdoom -file \
-							$[HOME]/Arquivos/Virtualizacao/dos/Jogos/Doom2/PLUTONIA.WAD \
-							-userdir ~/.doomsday/jdoom/
-Test (x doomsday)	+ "Doomsday - Heretic"		Exec doomsday -game jheretic -file \
-							$[HOME]/Arquivos/Virtualizacao/dos/Jogos/Heretic/HERETIC.WAD \
-							-userdir ~/.doomsday/jheretic/
-Test (x doomsday)	+ "Doomsday - Hexen"		Exec doomsday -game jhexen -file \
-							$[HOME]/Arquivos/Virtualizacao/dos/Jogos/Hexen/HEXEN.WAD \
-							-userdir ~/.doomsday/jhexen/
 
 # Jogos => Aleph One
 #
