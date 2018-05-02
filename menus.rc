@@ -625,6 +625,7 @@ Test (x supertuxkart)	+ "SuperTuxKart"   	 	Exec supertuxkart
 Test (x frozen-bubble)	+ "Frozen Bubble"  	 	Exec frozen-bubble
 Test (x foobillard)	+ "Foo Billard" 		Exec foobillard
 Test (x pysol)		+ "PySol" 			Exec pysol
+Test (x pysol.py)	+ "PySol FCE" 		Exec pysol.py
 Test (x zsnes)		+ "ZSNES"       		Exec zsnes
 Test (x snes9x-gtk)	+ "Snes9x"			Exec snes9x-gtk
 Test (x snes9express)	+ "Snes9express"		Exec snes9express
@@ -850,7 +851,7 @@ Test (x easytag)	+ "EasyTAG"			Exec easytag
 Test (x avidemux2_gtk)	+ "Avidemux (Gtk)"		Exec avidemux2_gtk
 Test (x avidemux2_qt4)	+ "Avidemux (Qt)"		Exec avidemux2_qt4
 Test (x pitivi)		+ "Pitivi"			Exec pitivi
-Test (x openshot)	+ "OpenShot"			Exec openshot
+Test (x openshot-qt)	+ "OpenShot"			Exec openshot-qt
 Test (x lightworks)	+ "Lightworks"			Exec lightworks
 Test (x cinelerra)	+ "Cinelerra"			Exec cinelerra
 Test (x lives)		+ "LiVES"			Exec lives
