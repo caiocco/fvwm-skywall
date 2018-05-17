@@ -625,7 +625,7 @@ Test (x supertuxkart)	+ "SuperTuxKart"   	 	Exec supertuxkart
 Test (x frozen-bubble)	+ "Frozen Bubble"  	 	Exec frozen-bubble
 Test (x foobillard)	+ "Foo Billard" 		Exec foobillard
 Test (x pysol)		+ "PySol" 			Exec pysol
-Test (x pysol.py)	+ "PySol FCE" 		Exec pysol.py
+Test (x pysol.py)	+ "PySol FCE" 			Exec pysol.py
 Test (x zsnes)		+ "ZSNES"       		Exec zsnes
 Test (x snes9x-gtk)	+ "Snes9x"			Exec snes9x-gtk
 Test (x snes9express)	+ "Snes9express"		Exec snes9express
@@ -663,7 +663,7 @@ Test (x blobwars)	+ "Metal Blob Solid"		Exec blobwars
 Test (x opentyrian)	+ "OpenTyrian"			Exec opentyrian
 Test (x /opt/PokerTH/pokerth.sh)\
 			+ "PokerTH"			Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" /opt/PokerTH/pokerth.sh
-Test (x gzdoom)		+ "GZDOOM"				Exec gzdoom
+Test (x gzdoom)		+ "GZDOOM"			Exec gzdoom
 Test (x alephone)	+ "Aleph One"			Popup Games-alephone
 Test (x mednafen)	+ "Mednafen"			Popup Games-mednafen
 Test (x xbill)		+ "XBill"			Exec xbill
@@ -675,9 +675,8 @@ Test (x xboard)		+ "Xboard"       		Exec xboard
 Test (x xlander)	+ "Xlander"   			Exec xlander
 + ""		Nop
 Test (x steam)		+ "Steam"   			Exec steam
-Test (x desura)		+ "Desura"   			Exec desura
 + ""		Nop
-Test (x /opt/crayon/crayon)\
+Test (x /opt/fez/FEZ)\
 			+ "Humble Indie Bundle"		Popup Games-humble
 Test (x kpat)		+ "Jogos do KDE"  		Popup "KDE Games"
 
@@ -740,7 +739,8 @@ Test (x "/opt/Joe Danger 2 The Movie/BIN/JD2Launcher")\
 Test (x /opt/Bastion/Bastion.bin.x86_64)\
 			+ "Bastion" 			Exec cd /opt/Bastion ; /opt/Bastion/Bastion.bin.x86_64
 Test (x /opt/CaveStoryPlus/CaveStory+_64)\
-			+ "Cave Story+" 			Exec cd /opt/CaveStoryPlus ; /opt/CaveStoryPlus/CaveStory+_64
+			+ "Cave Story+" 		Exec cd /opt/CaveStoryPlus ; /opt/CaveStoryPlus/CaveStory+_64
+Test (x /opt/fez/FEZ)	+ "FEZ" 			Exec cd /opt/fez ; /opt/fez/FEZ
 
 
 # Jogos => Jogos do KDE
