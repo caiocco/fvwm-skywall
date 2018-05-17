@@ -93,7 +93,7 @@ Test (x executor)	+ "Executor"			Exec executor
 Test (x pose)		+ "Palm OS Emulator"		Exec pose
 Test (x bochs)		+ "Bochs"			Exec xterm -e bochs
 Test (x eaglemode)	+ "Eagle Mode"			Exec eaglemode
-Test (x x48)		+ "x48 (HP 48GX)"		Exec x48
+Test (x x48)		+ "x48 (HP 48GX)"		Exec x48 -terminal -serial
 Test (x sqlitebrowser)	+ "SQL Lite Browser"		Exec sqlitebrowser
 Test (x ksysguard)	+ "KSysGuard"			Exec ksysguard
 Test (x drakon)		+ "Drakon Process Manager"	Exec drakon
