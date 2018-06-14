@@ -523,20 +523,18 @@ Test (x gftp)		+ "gFTP"                	Exec gftp
 Test (x vinagre)	+ "Vinagre"                	Exec vinagre
 Test (x sylpheed)	+ "Sylpheed"                 	Exec sylpheed
 Test (x claws-mail)	+ "Claws Mail"                 	Exec claws-mail
-Test (x /opt/spicebird-beta/spicebird)\
-			+ "Spicebird"			Exec /opt/spicebird-beta/spicebird
 Test (x /opt/eudora/eudora)\
 			+ "Eudora"			Exec /opt/eudora/eudora
-Test (x xchat)		+ "XChat"                 	Exec xchat
 Test (x hexchat)	+ "HexChat"                 	Exec hexchat
 Test (x gwibber)	+ "Gwibber"                 	Exec gwibber
+Test (x /opt/soulseek/soulseek)\
+			+ "Soulseek"                 	Exec /opt/soulseek/soulseek
 Test (x transmission-gtk)\
 			+ "Transmission (GTK)"		Exec transmission-gtk
 Test (x transmission-qt) \
 			+ "Transmission (Qt)"		Exec transmission-qt
 Test (x deluge)		+ "Deluge"			Exec deluge
 Test (x liferea)	+ "Liferea"			Exec liferea
-Test (x amsn)		+ "aMSN"                 	Exec amsn
 Test (x gyachi)		+ "GYachE Improved"            	Exec gyachi
 Test (x skype)		+ "Skype"			Exec XIM_PROGRAM="" GTK_IM_MODULE="" QT_IM_MODULE="" XMODIFIERS="" skype
 Test (x /opt/skype)	+ "Skype (/opt)"		Exec XIM_PROGRAM="" GTK_IM_MODULE="" QT_IM_MODULE="" XMODIFIERS="" /opt/skype/skype
@@ -546,12 +544,8 @@ Test (x kopete)		+ "Kopete"                 	Exec kopete
 Test (x instantbird)	+ "InstantBird"                	Exec instantbird
 Test (x /opt/Telegram/Telegram)\
 			+ "Telegram"                 	Exec /opt/Telegram/Telegram
-Test (x qq)		+ "Tensent QQ"                 	Exec qq
-Test (x /opt/mercury/startup/startup_linux.sh)\
-			+ "Mercury"			Exec /opt/mercury/startup/startup_linux.sh
 Test (x /opt/rssowl/RSSOwl)\
 			+ "RSS Owl"			Exec /opt/rssowl/RSSOwl
-Test (x emesene)	+ "Emesene"			Exec emesene
 Test (x /opt/jsms/launch.sh)\
 			+ "jSMS"			Exec /opt/jsms/launch.sh
 Test (x /opt/jUploadr-1.1.2-linuxGTK-i386/jUploadr)\
