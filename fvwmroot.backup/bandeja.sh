@@ -1,6 +1,10 @@
 #!/bin/sh
 function launch {
 
+if [ -b /dev/disk/by-label/ALSTOM ]; then
+	udisksctl power-off -b /dev/disk/by-label/ALSTOM
+fi
+
 if pgrep -x "osmo" > /dev/null
 then
 	killall osmo
