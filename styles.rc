@@ -622,6 +622,7 @@ Style darktable \
 	IconOverride, \
 	Icon /usr/share/icons/hicolor/48x48/apps/darktable.png
 Style xeyes !Title
+Style Firefox NoPPosition
 
 # * Centrais de configuração
 Style Y2controlcenter \
