@@ -66,7 +66,9 @@ Test (EnvMatch Sky_Theme xp) \
 ### ícones de múltiplos tamamnhos na hora de restaurar as ###
 ### janelas minimizadas, então a seguinte declaração será ###
 ### muito apreciada e agora é um default para mim ###
-Style * IconSize 48 48
+###
+### Sintaxe: IconSize [ width height [ maxwidth maxheight ] ] ###
+Style * IconSize 48 48 48 48
 
 ### Estilos para diversos aplicativos ###
 
@@ -364,9 +366,13 @@ Style schismtracker \
 	ResizeOutline
 Style milkytracker \
 	FixedSize, \
-    EWMHDontDonateIcon, \
-    IconOverride, \
+	EWMHDontDonateIcon, \
+	IconOverride, \
 	Icon /usr/share/pixmaps/milkytracker.png
+Style snes9x-gtk \
+	EWMHDontDonateIcon, \
+	IconOverride, \
+	Icon /usr/share/pixmaps/snes9x.png
 Style zsnes \
 	Icon /usr/share/icons/hicolor/48x48/apps/zsnes.png
 Style zsnes \
