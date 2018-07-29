@@ -4,6 +4,8 @@ echo key_bind.rc: Processando atalhos de teclado...
 #
 # Atalhos de teclado
 #
+# Notas:
+# O modificador "4" (Mod4), equivale a tecla Super
 
 # Parâmetros
 #
@@ -167,21 +169,61 @@ Key XF86Forward			A	4	Function FuncAppAudtool --playlist-advance
 #Key Prior	A       C       Scroll -100000 0
 #Key Prior	R       N       Scroll -100000 0
 
+# Alt + Esc para alternar entre janelas ao estilo Motif/Windows (3.0 e
+# versões anteriores)
 Key Escape      A       M       Prev Focus
 Key Escape      A       MS      Next Focus
 #Key Escape      A       M       Function SwitchWindow
-# A combinação abaixo invoca a lista de janelas para a combinação 
-# Alt + Tab. A opção CurrentAtEnd suprime um Tab extra na alternação
+#
+# Lista de janelas
+#
+# Observação: a opção CurrentAtEnd suprime um Tab extra na alternação
 # entre duas janelas, lembrando um certo ambiente gráfico.
-Key Tab         A       M       WindowList Root c c NoHotKeys, Icons, NoGeometryWithInfo, CurrentAtEnd
-Key Tab         A       MS      WindowList Root c c NoHotKeys, Icons, NoGeometryWithInfo, CurrentAtEnd, ReverseOrder
+#
+# Combinação Alt + Tab
+Key Tab         A       M       WindowList Root c c \
+						NoHotKeys, \
+						Icons, \
+						NoDeskNum, \
+						CurrentDesk, \
+						NoCurrentDeskTitle, \
+						NoGeometryWithInfo, \
+						CurrentAtEnd
+Key Tab         A       MS      WindowList Root c c \
+						NoHotKeys, \
+						Icons, \
+						NoDeskNum, \
+						CurrentDesk, \
+						NoGeometryWithInfo, \
+						CurrentAtEnd, \
+						ReverseOrder
+# Combinação Super + Tab
+Key Tab         A       4       WindowList Root c c \
+						NoHotKeys, \
+						Icons, \
+						NoGeometryWithInfo, \
+						CurrentAtEnd
+Key Tab         A       MS      WindowList Root c c \
+						NoHotKeys, \
+						Icons, \
+						NoGeometryWithInfo, \
+						CurrentAtEnd, \
+						ReverseOrder
 
-Key Escape      A       C       Exec xterm -bg black -fg lightgray -geometry 165x55+0+0 -T Gerenciador\ de\ Processos -e htop
+# Control + Esc para abrir htop
+Key Escape      A       C       Exec xterm \
+				-bg black \
+				-fg lightgray \
+				-geometry 165x55+0+0 \
+				-T Gerenciador\ de\ Processos \
+				-e htop
+
+# Control + Shift + Esc para abrir xkill
 Key Escape      A       CM      Exec xkill
-Key Escape	A	4	Exec play "$[KeySound]" > /dev/null ; pkill -USR1 redshift
 
-# Notas:
-# O modificador "4" (Mod4), equivale a tecla Super
+# Super + Esc para ligar/desligar Redshift
+Key Escape	A	4	Exec play "$[KeySound]" > /dev/null ; \
+				pkill -USR1 redshift
 
 echo key_bind.rc: Processamento terminado.
 #=====================================================================#
