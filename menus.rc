@@ -380,7 +380,7 @@ DestroyMenu Office
 AddToMenu Office
 + "" TearMenuOff
 test (x textmaker)	+ "SoftMaker Office"		Popup SoftMaker
-test (x textmaker16free)\
+test (x textmaker18free)\
 			+ "SoftMaker FreeOffice"	Popup FreeOffice
 test (x wps)		+ "Kingsoft WPS Office"		Popup Kingsoft
 Test (x tfwrite)	+ "ThinkFree Office"		Popup ThinkFree
@@ -460,18 +460,18 @@ Test (x epdfview) Test (f /opt/office2008/pr2008_en.pdf)\
 # 
 DestroyMenu FreeOffice
 AddToMenu FreeOffice
-Test (x textmaker16free)	+ "SoftMaker TextMaker Free"	Exec XIM_PROGRAM="" XMODIFIERS="" textmaker16free
-Test (x planmaker16free)	+ "SoftMaker PlanMaker Free"	Exec XIM_PROGRAM="" XMODIFIERS="" planmaker16free
-Test (x presentations16free) \
-		+ "SoftMaker Presentations Free"	Exec XIM_PROGRAM="" XMODIFIERS="" presentations16free
+Test (x textmaker18free)	+ "SoftMaker TextMaker Free"	Exec XIM_PROGRAM="" XMODIFIERS="" textmaker18free
+Test (x planmaker18free)	+ "SoftMaker PlanMaker Free"	Exec XIM_PROGRAM="" XMODIFIERS="" planmaker18free
+Test (x presentations18free) \
+		+ "SoftMaker Presentations Free"	Exec XIM_PROGRAM="" XMODIFIERS="" presentations18free
 + ""		Nop
-Test (x atril) Test (f /usr/share/freeoffice2016/tmfree_en.pdf)\
-			+ "SoftMaker TextMaker Manual"	Exec atril /usr/share/freeoffice2016/tmfree_en.pdf
-Test (x atril) Test (f /usr/share/freeoffice2016/pmfree_en.pdf)\
-			+ "SoftMaker PlanMaker Manual"	Exec atril /usr/share/freeoffice2016/pmfree_en.pdf
-Test (x atril) Test (f /usr/share/freeoffice2016/prfree_en.pdf)\
+Test (x atril) Test (f /usr/share/freeoffice2018/tmfree_en.pdf)\
+			+ "SoftMaker TextMaker Manual"	Exec atril /usr/share/freeoffice2018/tmfree_en.pdf
+Test (x atril) Test (f /usr/share/freeoffice2018/pmfree_en.pdf)\
+			+ "SoftMaker PlanMaker Manual"	Exec atril /usr/share/freeoffice2018/pmfree_en.pdf
+Test (x atril) Test (f /usr/share/freeoffice2018/prfree_en.pdf)\
 			+ "SoftMaker Presentations Manual"\
-							Exec atril /usr/share/freeoffice2016/prfree_en.pdf
+							Exec atril /usr/share/freeoffice2018/prfree_en.pdf
 
 # Produtividade => Kingsoft WPS Office
 # 
