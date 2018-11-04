@@ -362,6 +362,7 @@ Test (x R)		+ "R"				Exec xterm -bg black -fg lightgray -fa lucidatypewriter -fs
 Test (x rkward)		+ "RKWard"			Exec rkward
 Test (x rstudio)	+ "RStudio"			Exec rstudio
 Test (x gnuplot)	+ "Gnuplot"                     Exec xterm -T "Gnuplot" -name Gnuplot -fn 7x14 -e gnuplot
+Test (x geogebra)	+ "GeoGebra"                    Exec geogebra
 Test (x gretl)		+ "Gretl"                     	Exec gretl
 Test (x psppire)	+ "PSPP"                     	Exec psppire
 Test (x orange-canvas)\
