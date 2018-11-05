@@ -63,12 +63,17 @@ Test (EnvMatch Sky_Theme xp) \
 	Style * !EWMHMiniIconOverride
 	
 ### Se você, assim como eu, se sentia irritado por causa de ###
-### ícones de múltiplos tamamnhos na hora de restaurar as ###
+### ícones de múltiplos tamanhos na hora de restaurar as ###
 ### janelas minimizadas, então a seguinte declaração será ###
 ### muito apreciada e agora é um default para mim ###
 ###
 ### Sintaxe: IconSize [ width height [ maxwidth maxheight ] ] ###
 Style * IconSize 48 48 48 48
+
+### Estilo de ícone genérico, usado apenas para aplicativos ###
+### que não fornecem o próprio ícone ###
+###
+Style * Icon $[Fvwm_Icon_Theme]/48x48/apps/xapp.png
 
 ### Estilos para diversos aplicativos ###
 
