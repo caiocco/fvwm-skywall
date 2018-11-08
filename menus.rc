@@ -892,6 +892,7 @@ Test (x thunar)		+ "Thunar"	   	 	Exec thunar
 Test (x nautilus)	+ "Nautilus"	   	 	Exec nautilus --no-desktop
 Test (x caja)		+ "Caja"	   	 	Exec caja --no-desktop
 Test (x pcmanfm)	+ "PCMan F. M."	   		Exec pcmanfm
+Test (x spacefm)	+ "SpaceFM"			Exec spacefm
 Test (x gnome-commander) \
 			+ "GNOME Commander"   		Exec gnome-commander
 Test (x systemg)	+ "System G"	   		Exec systemg
