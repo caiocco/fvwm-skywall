@@ -263,7 +263,6 @@ Style "Notificação - ESET NOD32 Antivirus" \
 	StartsRaised, \
 	NeverFocus, \
 	EWMHIgnoreStateHints
-
 Style Comix \
 	IconOverride, \
 	Icon /usr/share/comix/images/comix.svg
@@ -337,6 +336,8 @@ Style Serna.bin \
 	Icon /opt/serna-free-4.2/icons/SernaIcon48.png
 Style skype \
 	!UsePPosition
+Style osmo \
+	Sticky
 
 # * Gráficos
 Style GrafX2 \
