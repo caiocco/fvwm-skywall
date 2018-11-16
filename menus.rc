@@ -369,6 +369,7 @@ Test (x orange-canvas)\
 			+ "Orange"                     	Exec orange-canvas
 Test (x xmaxima)	+ "Maxima"                     	Exec xmaxima
 Test (x wxmaxima)	+ "wxMaxima"                    Exec wxmaxima
+Test (x octave-gui)	+ "Octave" 			Exec octave-gui
 Test (x /opt/scilab/bin/scilab)\
 			+ "Scilab"                    	Exec GTK2_RC_FILES=$[FVWM_USERDIR]/fvwm-skywall/gtk/aurora-gtkrc-2.0 /opt/scilab/bin/scilab
 Test (x qgis)		+ "QGIS"                    	Exec qgis
@@ -841,6 +842,7 @@ Test (x ghb) 		+ "HandBrake"			Exec ghb
 Test (x aumix)		+ "Audio Mixer"			Exec aumix
 Test (x alsamixergui)	+ "ALSA Mixer"			Exec alsamixergui
 Test (x asunder)	+ "Asunder"			Exec asunder
+Test (x sound-juicer)	+ "Sound Juicer"		Exec sound-juicer
 Test (x grip)		+ "Grip"			Exec grip
 Test (x easytag)	+ "EasyTAG"			Exec easytag
 Test (x avidemux2_gtk)	+ "Avidemux (Gtk)"		Exec avidemux2_gtk
