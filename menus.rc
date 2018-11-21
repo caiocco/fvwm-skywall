@@ -162,6 +162,7 @@ Test (x leafpad)		+ "Leafpad"					Exec leafpad
 Test (x mousepad)		+ "Mousepad"				Exec mousepad
 Test (x gedit)			+ "GNOME Editor"			Exec gedit
 Test (x txt2tags)		+ "txt2tags"				Exec txt2tags --gui
+Test (x highlight-gui)		+ "Highlight"				Exec highlight-gui
 Test (x shutterbug)		+ "Shutterbug"				Exec shutterbug
 Test (x FBReader)		+ "FBReader"				Exec FBReader
 Test (x parcellite)		+ "Parcellite"				Exec parcellite
@@ -327,6 +328,7 @@ Test (x kbabel)		+ "KBabel"			Exec kbabel
 Test (x cervisia)	+ "Cervisia"			Exec cervisia
 Test (x umbrello)	+ "Umbrello"			Exec umbrello
 + ""		Nop
+Test (x dbeaver)	+ "DBeaver"			Exec dbeaver
 Test (x sqlitestudio)\
 			+ "SQLiteStudio"		Exec sqlitestudio
 Test (x mysql-workbench)\
@@ -854,7 +856,7 @@ Test (x cinelerra)	+ "Cinelerra"			Exec cinelerra
 Test (x lives)		+ "LiVES"			Exec lives
 Test (x lombard)	+ "Lombard"			Exec lombard
 Test (x devede)		+ "DeVeDe"			Exec devede
-Test (x dvdrip)		+ "dvd::rip"			Exec dvdrip
+Test (x dvdrip)	+ "dvd::rip"			Exec dvdrip
 Test (x mmg)		+ "mkvmerge GUI"		Exec mmg
 Test (x kdenlive)	+ "kdenlive"			Exec kdenlive
 Test (x kaudiocreator)	+ "KAudioCreator"		Exec kaudiocreator
