@@ -523,6 +523,7 @@ Test (x konqueror)	+ "Konqueror"			Exec konqueror
 Test (x epiphany)	+ "Epiphany"                  	Exec epiphany
 Test (x evolution)	+ "Evolution"                  	Exec evolution
 Test (x dillo)		+ "Dillo"                  	Exec dillo
+Test (x filezilla)	+ "FileZilla"                	Exec filezilla
 Test (x gftp)		+ "gFTP"                	Exec gftp
 Test (x vinagre)	+ "Vinagre"                	Exec vinagre
 Test (x sylpheed)	+ "Sylpheed"                 	Exec sylpheed
