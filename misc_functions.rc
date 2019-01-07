@@ -11,7 +11,7 @@ echo misc_functions.rc: Definindo funções diversas...
 # vezes, através da definição de um dos estados da janela enquanto ela
 # está sendo movida.
 #
-# Cada janela tem cerca de 30 estados definidos pelo usuário, quais
+# Cada janela tem cerca de 30 estados definidos pelo usuário, os quais
 # você pode testar em funções; os estados podem ser utilizados para
 # qualquer propósito.
 #
