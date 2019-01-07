@@ -100,6 +100,8 @@ Test (x drakon)		+ "Drakon Process Manager"	Exec drakon
 Test (x xscreensaver-demo)\
 			+ "XScreenSaver"		Exec xscreensaver-demo
 Test (x xvidcap)	+ "Xvidcap"			Exec xvidcap
+Test (x simplescreenrecorder)\
+			+ "SimpleScreenRecorder"	Exec simplescreenrecorder
 Test (x gtk-recordMyDesktop)\
 			+ "Record My Desktop (GTK)"	Exec gtk-recordMyDesktop
 Test (x qt-recordMyDesktop)\
