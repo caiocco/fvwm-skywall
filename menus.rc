@@ -333,12 +333,18 @@ Test (x umbrello)	+ "Umbrello"			Exec umbrello
 Test (x dbeaver)	+ "DBeaver"			Exec dbeaver
 Test (x sqlitestudio)\
 			+ "SQLiteStudio"		Exec sqlitestudio
+Test (x pgadmin3)\
+			+ "pgAdmin III"			Exec pgadmin3
 Test (x mysql-workbench)\
 			+ "MySQL Workbench"		Exec mysql-workbench
+Test (x /opt/datagrip/bin/datagrip.sh)\
+			+ "DataGrip"			Exec /opt/datagrip/bin/datagrip.sh
 + ""		Nop
-Test (x idle)		+ "IDLE"			Exec idle
 Test (x /opt/pycharm-community/bin/pycharm.sh)\
 			+ "PyCharm Community Edition"	Exec /opt/pycharm-community/bin/pycharm.sh
+Test (x /opt/pycharm/bin/pycharm.sh)\
+			+ "PyCharm"			Exec /opt/pycharm/bin/pycharm.sh
+Test (x idle)		+ "IDLE"			Exec idle
 Test (x qtcreator)	+ "Qt Creator"			Exec qtcreator
 Test (x anjuta)		+ "Anjuta"			Exec anjuta
 Test (x glade-2)	+ "Glade 2"			Exec glade-2
@@ -536,6 +542,7 @@ Test (x hexchat)	+ "HexChat"                 	Exec hexchat
 Test (x gwibber)	+ "Gwibber"                 	Exec gwibber
 Test (x /opt/soulseek/soulseek)\
 			+ "Soulseek"                 	Exec /opt/soulseek/soulseek
+Test (x megasync)	+ "MEGASync"                 	Exec megasync
 Test (x transmission-gtk)\
 			+ "Transmission (GTK)"		Exec transmission-gtk
 Test (x transmission-qt) \
@@ -543,7 +550,7 @@ Test (x transmission-qt) \
 Test (x deluge)		+ "Deluge"			Exec deluge
 Test (x liferea)	+ "Liferea"			Exec liferea
 Test (x gyachi)		+ "GYachE Improved"            	Exec gyachi
-Test (x skype)		+ "Skype"			Exec XIM_PROGRAM="" GTK_IM_MODULE="" QT_IM_MODULE="" XMODIFIERS="" skype
+Test (x skype)	+ "Skype"			Exec XIM_PROGRAM="" GTK_IM_MODULE="" QT_IM_MODULE="" XMODIFIERS="" skype
 Test (x /opt/skype)	+ "Skype (/opt)"		Exec XIM_PROGRAM="" GTK_IM_MODULE="" QT_IM_MODULE="" XMODIFIERS="" /opt/skype/skype
 Test (x ekiga)		+ "Ekiga"			Exec ekiga
 Test (x pidgin)		+ "Pidgin"                 	Exec pidgin
