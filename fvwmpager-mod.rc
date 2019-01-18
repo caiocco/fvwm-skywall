@@ -11,7 +11,7 @@ echo fvwmpager-mod.rc: Configurando módulo pager...
 
 # * Fontes
 *FvwmPager: Font "xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
-# SmallFont: Comente fora ou defina esta opção para nomes de janelas 
+# SmallFont: Comente ou defina esta opção para nomes de janelas 
 #            em janelas de pager.
 #            Tambem consulte sobre "WindowLabelFormat".
 #            Valor padrão: none
@@ -36,6 +36,7 @@ Test (EnvMatch Sky_Theme diamond) *FvwmPager: WindowColorsets 19 20
 Test (EnvMatch Sky_Theme diamond) *FvwmPager: Colorset * 14
 Test (EnvMatch Sky_Theme diamond) *FvwmPager: HilightColorset * 15
 Test (EnvMatch Sky_Theme diamond) *FvwmPager: BalloonColorset * 16
+Test (EnvMatch Sky_Theme diamond) Test (EnvMatch Sky_Theme_Diamond_Type Vector) *FvwmPager: BalloonFont "xft:Fira Sans Light:Regular:size=8:antialias=True:encoding=ISO10646-1"
 # - Tribal
 #Test (EnvMatch Sky_Theme tribal) *FvwmPager: Geometry 319x69+5000+5000
 Test (EnvMatch Sky_Theme tribal) *FvwmPager: Colorset * 14
