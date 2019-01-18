@@ -82,6 +82,7 @@ Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + ButtonStyle All Pixmap $[Sky_Dir
 Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + ButtonStyle All -- flat UseTitleStyle
 Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + ButtonStyle 1 - Clear MWMDecorMenu
 Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + ButtonStyle 2 - Clear
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + ButtonStyle 3 - Clear
 Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + ButtonStyle 4 - Clear MWMDecorMax
 Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + ButtonStyle 6 - Clear MWMDecorMin
 Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + ButtonStyle 8 - Clear MwmDecorShade
@@ -104,6 +105,7 @@ Test (EnvMatch Sky_Theme_Diamond_Type Vector) AddToDecor "diamond"
 # - Hintings
 Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 1 - Clear MWMDecorMenu
 Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 2 - Clear
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 3 - Clear
 Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 4 - Clear MWMDecorMax
 Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 6 - Clear MWMDecorMin
 Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 8 - Clear MwmDecorShade
