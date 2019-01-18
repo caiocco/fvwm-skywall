@@ -107,7 +107,7 @@ Style clearlooks HilightBorderColorset 4
 #
 # Fontes
 #
-Style clearlooks Style * Font shadow="1 1":"xft:Verdana:pixelsize=12:Bold"
+Style clearlooks Font "shadow=1 1:xft:Verdana:pixelsize=12:Bold"
 
 #
 # Menus
