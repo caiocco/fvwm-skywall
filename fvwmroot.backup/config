@@ -61,17 +61,7 @@ SetEnv Gtk_Icon_Theme /usr/share/icons/Faenza
 # Identificação da localização do arquivo de configuração definindo 
 # temas, ícones etc relacionados ao toolkit GTK+ 2.0
 #
-Test (f /etc/slackware-version) \
-	SetEnv GTK2_RC_FILES $[Sky_Dir]/gtk/murrina-gtkrc-2.0
-Test (f /etc/SuSE-release) \
-	SetEnv GTK2_RC_FILES $[Sky_Dir]/gtk/numix-gtkrc-2.0
-Test (EnvMatch Sky_Theme tribal) \
-	SetEnv GTK2_RC_FILES $[Sky_Dir]/gtk/bluecurve-gtkrc-2.0
-Test (EnvMatch Sky_Theme skywall) \
-	Test (EnvMatch Sky_Theme_Skywall_Sky93B Yes) \
-	SetEnv GTK2_RC_FILES $[Sky_Dir]/gtk/bluecurve-gtkrc-2.0
-Test (EnvMatch Sky_Theme clearlooks) \
-	SetEnv GTK2_RC_FILES $[Sky_Dir]/gtk/clearlooks-gtkrc-2.0
+SetEnv GTK2_RC_FILES $[Sky_Dir]/gtk/vertex-gtkrc-2.0
 	
 #
 # Para facilitar a utilização de software que não prevê o uso de
