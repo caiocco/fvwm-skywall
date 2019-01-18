@@ -592,14 +592,12 @@ Test (x mutt)		+ "Mutt"			Exec xterm -bg black -fg lightgray -fa lucidatypewrite
 							+sb -geometry 80x35 -e mutt
 Test (x elm)		+ "Elm"                     	Exec xterm -name Elm -T Elm -ls -fa lucidatypewriter -fs 16 -e elm
 Test (x ncftp)		+ "NcFTP"                       Exec xterm -name NcFtp -T FTP -ls -fa lucidatypewriter -fs 16 -e ncftp
-Test (x tmsnc)		+ "tMSNc"                       Exec xterm -bg black -fg lightgray -name tmsnc -T tMSNc \
-							+sb -ls -fn 7x14 -e tmsnc
 Test (x pebrot)		+ "Pebrot"                      Exec xterm -bg black -fg lightgray -name Pebrot -T Pebrot \
 							+sb -ls -fn 7x14 -e pebrot
-Test (x irssi)		+ "Irssi"			Exec xterm -geometry 100x40 -bg black -fg lightgray \
+Test (x irssi)		+ "Irssi"			Exec xterm -geometry 100x30 -bg black -fg lightgray \
 							-fa lucidatypewriter -fs 16 +sb -e irssi
-Test (x epic)		+ "Epic"			Exec xterm -geometry 100x40 -fa lucidatypewriter -fs 16 -e epic irc.rizon.net
-Test (x w3m)		+ "w3m"				Exec xterm -geometry 100x40 -bg blue4 -fg lightgray \
+Test (x epic)		+ "Epic"			Exec xterm -geometry 100x30 -fa lucidatypewriter -fs 16 -e epic irc.rizon.net
+Test (x w3m)		+ "w3m"				Exec xterm -geometry 100x30 -bg black -fg lightgray \
 							-fa lucidatypewriter -fs 16 +sb -e w3m -v
 Test (x elinks)		+ "Elinks"			Exec xterm -bg black -fg lightgray -font 7x14 \
 							+sb -geometry 130x40 -e elinks
