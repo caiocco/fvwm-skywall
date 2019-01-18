@@ -9,16 +9,22 @@ echo diamond-theme.rc: Processando tema Diamond...
 DestroyDecor "diamond"
 # Azul (Blue) ou Vermelho (Red)?
 SetEnv Sky_Theme_Diamond_Color Blue
+# Vector ou Pixmap?
+SetEnv Sky_Theme_Diamond_Type Vector
 
 #
 # Colorsets
 #
 # - Janela inativa
-Test (EnvMatch Sky_Theme_Diamond_Color Blue) Colorset 0 fg gray90, bg #6b8eb5, fgsh black, RootTransparent Buffer, Tint black 30
-Test (EnvMatch Sky_Theme_Diamond_Color Red) Colorset 0 fg gray90, bg #2D2020, fgsh black, RootTransparent Buffer, Tint black 30
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) Test (EnvMatch Sky_Theme_Diamond_Color Blue) Colorset 0 fg gray90, bg #6b8eb5, fgsh black, RootTransparent Buffer, Tint black 30
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) Test (EnvMatch Sky_Theme_Diamond_Color Red) Colorset 0 fg gray90, bg #2D2020, fgsh black, RootTransparent Buffer, Tint black 30
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) Test (EnvMatch Sky_Theme_Diamond_Color Blue) Colorset 0 fg gray90, bg #6b8eb5, fgsh black, RootTransparent Buffer, Tint black 70
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) Test (EnvMatch Sky_Theme_Diamond_Color Red) Colorset 0 fg gray90, bg #2D2020, fgsh black, RootTransparent Buffer, Tint black 70
 # - Janela ativa
-Test (EnvMatch Sky_Theme_Diamond_Color Blue) Colorset 1 fg white, bg #6b8eb5, fgsh black, RootTransparent Buffer, Tint #223476 65
-Test (EnvMatch Sky_Theme_Diamond_Color Red) Colorset 1 fg white, bg #724040, fgsh black, RootTransparent Buffer, Tint #762D2D 65
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) Test (EnvMatch Sky_Theme_Diamond_Color Blue) Colorset 1 fg white, bg #6b8eb5, fgsh black, RootTransparent Buffer, Tint #223476 65
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) Test (EnvMatch Sky_Theme_Diamond_Color Red) Colorset 1 fg white, bg #724040, fgsh black, RootTransparent Buffer, Tint #762D2D 65
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) Test (EnvMatch Sky_Theme_Diamond_Color Blue) Colorset 1 fg white, bg gray, fgsh gray10, RootTransparent Buffer, Tint #CCCCFF 70
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) Test (EnvMatch Sky_Theme_Diamond_Color Red) Colorset 1 fg white, bg #724040, fgsh black, RootTransparent Buffer, Tint #762D2D 35
 # - Menus
 Test (EnvMatch Sky_Theme_Diamond_Color Blue) Colorset 3 fg white, bg #6b8eb5, fgsh black, RootTransparent Buffer, Tint black 70
 Test (EnvMatch Sky_Theme_Diamond_Color Red) Colorset 3 fg white, bg #724040, fgsh black, RootTransparent Buffer, Tint #301717 70
@@ -48,6 +54,8 @@ Test (EnvMatch Sky_Theme_Diamond_Color Blue) Colorset 20 fg White, bg #2A5995
 Test (EnvMatch Sky_Theme_Diamond_Color Red) Colorset 20 fg White, bg #952A2A
 Colorset 21 fg White, bg black
 Colorset 22 fg Yellow2, bg black
+# - Botões
+Colorset 30 fg white, bg red
 
 #
 # Bordas e Título
@@ -55,37 +63,71 @@ Colorset 22 fg Yellow2, bg black
 AddToDecor "diamond" BorderStyle Active Colorset 1
 AddToDecor "diamond" BorderStyle Inactive Colorset 0
 AddToDecor "diamond" BorderStyle -- NoInset HiddenHandles
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) AddToDecor "diamond" BorderStyle -- Raised
 
 AddToDecor "diamond" TitleStyle Active Colorset 1
 AddToDecor "diamond" TitleStyle Inactive Colorset 0
 AddToDecor "diamond" TitleStyle -- flat
 AddToDecor "diamond" TitleStyle Centered
-AddToDecor "diamond" TitleStyle Height 21
+AddToDecor "diamond" TitleStyle Height MinHeight 21
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) AddToDecor "diamond" TitleStyle Height MinHeight 25
 
 #
 # Botões
 #
-AddToDecor "diamond" ButtonStyle Reset
-AddToDecor "diamond" ButtonStyle All Pixmap $[Sky_Dir]/imagens/empty.xpm
-AddToDecor "diamond" ButtonStyle All -- flat UseTitleStyle
-AddToDecor "diamond" ButtonStyle 1 - Clear MWMDecorMenu
-AddToDecor "diamond" ButtonStyle 2 - Clear
-AddToDecor "diamond" ButtonStyle 4 - Clear MWMDecorMax
-AddToDecor "diamond" ButtonStyle 6 - Clear MWMDecorMin
-AddToDecor "diamond" ButtonStyle 8 - Clear
+# - Pixmap
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) AddToDecor "diamond" 
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + ButtonStyle Reset
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + ButtonStyle All Pixmap $[Sky_Dir]/imagens/empty.xpm	
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + ButtonStyle All -- flat UseTitleStyle
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + ButtonStyle 1 - Clear MWMDecorMenu
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + ButtonStyle 2 - Clear
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + ButtonStyle 4 - Clear MWMDecorMax
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + ButtonStyle 6 - Clear MWMDecorMin
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + ButtonStyle 8 - Clear MwmDecorShade
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + AddButtonStyle 1 Active pixmap $[Sky_Dir]/imagens/diam_menu.png
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + AddButtonStyle 3 Active pixmap $[Sky_Dir]/imagens/diam_unknown.png
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + AddButtonStyle 2 Active pixmap $[Sky_Dir]/imagens/diam_close.png
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + AddButtonStyle 4 Active pixmap $[Sky_Dir]/imagens/diam_zoom.png
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + AddButtonStyle 6 Active pixmap $[Sky_Dir]/imagens/diam_iconify.png
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + AddButtonStyle 8 Active pixmap $[Sky_Dir]/imagens/diam_shade.png
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + AddButtonStyle 1 Inactive pixmap $[Sky_Dir]/imagens/gray_diam_menu.png
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + AddButtonStyle 3 Inactive pixmap $[Sky_Dir]/imagens/gray_diam_unknown.png
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + AddButtonStyle 2 Inactive pixmap $[Sky_Dir]/imagens/gray_diam_close.png
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + AddButtonStyle 4 Inactive pixmap $[Sky_Dir]/imagens/gray_diam_zoom.png
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + AddButtonStyle 6 Inactive pixmap $[Sky_Dir]/imagens/gray_diam_iconify.png
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + AddButtonStyle 8 Inactive pixmap $[Sky_Dir]/imagens/gray_diam_shade.png
 
-AddToDecor "diamond" AddButtonStyle 1 Active pixmap $[Sky_Dir]/imagens/diam_menu.png
-AddToDecor "diamond" AddButtonStyle 3 Active pixmap $[Sky_Dir]/imagens/diam_unknown.png
-AddToDecor "diamond" AddButtonStyle 2 Active pixmap $[Sky_Dir]/imagens/diam_close.png
-AddToDecor "diamond" AddButtonStyle 4 Active pixmap $[Sky_Dir]/imagens/diam_zoom.png
-AddToDecor "diamond" AddButtonStyle 6 Active pixmap $[Sky_Dir]/imagens/diam_iconify.png
-AddToDecor "diamond" AddButtonStyle 8 Active pixmap $[Sky_Dir]/imagens/diam_shade.png
-AddToDecor "diamond" AddButtonStyle 1 Inactive pixmap $[Sky_Dir]/imagens/gray_diam_menu.png
-AddToDecor "diamond" AddButtonStyle 3 Inactive pixmap $[Sky_Dir]/imagens/gray_diam_unknown.png
-AddToDecor "diamond" AddButtonStyle 2 Inactive pixmap $[Sky_Dir]/imagens/gray_diam_close.png
-AddToDecor "diamond" AddButtonStyle 4 Inactive pixmap $[Sky_Dir]/imagens/gray_diam_zoom.png
-AddToDecor "diamond" AddButtonStyle 6 Inactive pixmap $[Sky_Dir]/imagens/gray_diam_iconify.png
-AddToDecor "diamond" AddButtonStyle 8 Inactive pixmap $[Sky_Dir]/imagens/gray_diam_shade.png
+# - Vector
+#   Créditos a http://fvwmforums.org/wiki/Config/VectorButtons/ pelos vetores pré-desenhados disponíveis
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) AddToDecor "diamond" 
+# - Hintings
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 1 - Clear MWMDecorMenu
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 2 - Clear
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 4 - Clear MWMDecorMax
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 6 - Clear MWMDecorMin
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 8 - Clear MwmDecorShade
+# - Menu-controle
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 1 ActiveDown Vector 5 40x24@1 60x24@1 60x76@0 40x76@0 40x24@1
+# - Alternar-para
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 3 Vector 16 60x40@1 60x80@0 15x80@0 15x40@1 60x40@1 40x40@1 40x25@1 75x25@1 75x60@0 60x60@0 75x60@0 75x40@0 85x40@0 85x15@0 60x15@1 60x25@1
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 3 ActiveDown Vector 16 60x40@0 60x80@1 15x80@1 15x40@0 60x40@0 40x40@0 40x25@0 75x25@0 75x60@1 60x60@1 75x60@1 75x40@1 85x40@1 85x15@1 60x15@0 60x25@0
+# - Minimizar
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 6 Vector 5 40x40@1 60x40@1 60x60@0 40x60@0 40x40@1
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 6 ActiveDown 5 40x40@0 60x40@0 60x60@1 40x60@1 40x40@0
+# - Maximizar
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 4 Vector 5 25x25@1 25x75@1 75x75@0 75x25@0 25x25@1
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 4 ActiveDown Vector 5 25x25@0 25x75@0 75x75@1 75x25@1 25x25@0
+# - Sombrear
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 8 Vector 15 10x5@1 90x5@1 90x20@0 50x20@0 50x25@0 80x55@0 60x55@0 60x80@0 40x80@0 40x55@1 20x55@1 50x25@1 50x20@0 10x20@0 10x5@1
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 8 ActiveDown Vector 15 10x5@0 90x5@0 90x20@1 50x20@1 50x25@1 80x55@1 60x55@1 60x80@1 40x80@1 40x55@0 20x55@0 50x25@0 50x20@1 10x20@1 10x5@0
+# - Fechar
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 2 Vector 17 20x20@1 30x20@1 50x40@1 70x20@1 80x20@1 80x30@0 60x50@0 80x70@1 80x80@0 70x80@0 50x60@0 30x80@0 20x80@0 20x70@0 40x50@1 20x30@0 20x20@1
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 2 ActiveDown Vector 17 20x20@0 30x20@0 50x40@0 70x20@0 80x20@0 80x30@1 60x50@1 80x70@0 80x80@1 70x80@1 50x60@1 30x80@1 20x80@1 20x70@1 40x50@0 20x30@1 20x20@0
+# - Estilo geral
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle All -- flat UseTitleStyle
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AllInactive -- Raised
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AllActive -- Raised
 
 #
 # Estilos
@@ -96,17 +138,18 @@ Style * IconBackgroundColorset
 
 Style diamond Colorset 0
 Style diamond HilightColorset 1
-Style diamond BorderWidth 7, HandleWidth 7, FvwmBorder, !MwmButtons
+Style diamond BorderWidth 7, HandleWidth 7, FvwmBorder
 
 #
 # Fontes
 #
-Style diamond Font "Shadow=1 0 C:xft:Droid Sans:Bold:size=10:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) Style * Font "Shadow=1 0 C:xft:Droid Sans:Bold:size=10:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) Style * Font "Shadow=1 0 SE:xft:Fira Sans Book:Bold:size=11:encoding=ISO10646-1"
 
 #
 # Menus
 #
-MenuStyle * Font "Shadow=1 0 SE:xft:Sans:Medium:size=9:encoding=ISO10646-1"
+MenuStyle * Font "Shadow=1 0 SE:xft:Sans:Regular:size=10:encoding=ISO10646-1"
 MenuStyle * Hilight3DThick
 MenuStyle * Hilight3DThickness -1 -1
 MenuStyle * MenuColorset 3
