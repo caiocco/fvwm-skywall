@@ -1054,7 +1054,8 @@ AddToMenu "Window Org"
 # Descrição: Uma versão reduzida do menu "Window Ops", ideal para ser
 #            atrelada a decorações
 DestroyMenu "Window-Ops2" 
-AddToMenu "Window-Ops2" 
+AddToMenu "Window-Ops2"
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) ChangeMenuStyle "WindowList" "Window-Ops2"
 + "&Restaurar	Alt+F5"		Function DeIconify-or-UnMaximize
 + "&Mover	Alt+F7"		Move-or-Raise
 + "&Tamanho	Alt+F8"		Resize-or-Raise

@@ -28,6 +28,7 @@ Test (EnvMatch Sky_Theme_Diamond_Type Vector) Test (EnvMatch Sky_Theme_Diamond_C
 # - Menus
 Test (EnvMatch Sky_Theme_Diamond_Color Blue) Colorset 3 fg white, bg #6b8eb5, fgsh black, RootTransparent Buffer, Tint black 70
 Test (EnvMatch Sky_Theme_Diamond_Color Red) Colorset 3 fg white, bg #724040, fgsh black, RootTransparent Buffer, Tint #301717 70
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) Colorset 4 fg white, bg gray, fgsh gray10, RootTransparent Buffer, Tint #CCCCFF 40
 # - FvwmButtons
 #Colorset 10 bg gray fg back
 # - Alguns aplicativos embutidos
@@ -169,6 +170,25 @@ MenuStyle * PopupAsSubmenu
 MenuStyle * HoldSubmenus
 MenuStyle * SubmenusRight
 MenuStyle * BorderWidth 2
+
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) MenuStyle "WindowList" Font "Shadow=1 0 SE:xft:Sans:Regular:size=10:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) MenuStyle "WindowList" Hilight3DThick
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) MenuStyle "WindowList" Hilight3DThickness -1 -1
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) MenuStyle "WindowList" MenuColorset 4
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) MenuStyle "WindowList" !ActiveFore
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) MenuStyle "WindowList" !HilightBack
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) MenuStyle "WindowList" Animation
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) MenuStyle "WindowList" PopupOffset -4 100
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) MenuStyle "WindowList" TitleUnderlines2
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) MenuStyle "WindowList" SeparatorsLong
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) MenuStyle "WindowList" TrianglesRelief
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) MenuStyle "WindowList" PopupImmediately
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) MenuStyle "WindowList" PopdownDelayed
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) MenuStyle "WindowList" PopdownDelay 150
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) MenuStyle "WindowList" PopupAsSubmenu
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) MenuStyle "WindowList" HoldSubmenus
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) MenuStyle "WindowList" SubmenusRight
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) MenuStyle "WindowList" BorderWidth 2
 
 # Aplicando...
 Style * UseStyle diamond
