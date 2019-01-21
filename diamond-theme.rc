@@ -110,7 +110,7 @@ Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 4 - Clear MWMDecorMa
 Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 6 - Clear MWMDecorMin
 Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 8 - Clear MwmDecorShade
 # - Menu-controle
-Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 1 ActiveDown Vector 5 40x24@1 60x24@1 60x76@0 40x76@0 40x24@1
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 1 ActiveDown Vector 5 40x23@1 64x23@1 64x76@0 40x76@0 40x23@1
 # - Alternar-para
 Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 3 Vector 16 60x40@1 60x80@0 15x80@0 15x40@1 60x40@1 40x40@1 40x25@1 75x25@1 75x60@0 60x60@0 75x60@0 75x40@0 85x40@0 85x15@0 60x15@1 60x25@1
 Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 3 ActiveDown Vector 16 60x40@0 60x80@1 15x80@1 15x40@0 60x40@0 40x40@0 40x25@0 75x25@0 75x60@1 60x60@1 75x60@1 75x40@1 85x40@1 85x15@1 60x15@0 60x25@0
