@@ -28,7 +28,7 @@ Test (EnvMatch Sky_Theme_Diamond_Type Vector) Test (EnvMatch Sky_Theme_Diamond_C
 # - Menus
 Test (EnvMatch Sky_Theme_Diamond_Color Blue) Colorset 3 fg white, bg #6b8eb5, fgsh black, RootTransparent Buffer, Tint black 70
 Test (EnvMatch Sky_Theme_Diamond_Color Red) Colorset 3 fg white, bg #724040, fgsh black, RootTransparent Buffer, Tint #301717 70
-Test (EnvMatch Sky_Theme_Diamond_Type Vector) Colorset 4 fg white, bg gray, fgsh gray10, RootTransparent Buffer, Tint #CCCCFF 40
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) Colorset 4 fg white, bg #6b8eb5, fgsh black, RootTransparent Buffer, Tint black 70
 # - FvwmButtons
 #Colorset 10 bg gray fg back
 # - Alguns aplicativos embutidos
