@@ -558,6 +558,8 @@ Test (x kopete)		+ "Kopete"                 	Exec kopete
 Test (x instantbird)	+ "InstantBird"                	Exec instantbird
 Test (x /opt/Telegram/Telegram)\
 			+ "Telegram"                 	Exec /opt/Telegram/Telegram
+Test (x /opt/Discord/Discord)\
+			+ "Discord"                 	Exec /opt/Discord/Discord
 Test (x /opt/rssowl/RSSOwl)\
 			+ "RSS Owl"			Exec /opt/rssowl/RSSOwl
 Test (x /opt/jsms/launch.sh)\
@@ -605,6 +607,9 @@ Test (x links)		+ "Links"			Exec xterm -bg black -fg lightgray -font 7x14 \
 							+sb -geometry 130x40 -e links
 Test (x lynx)		+ "Lynx"			Exec xterm -bg black -fg lightgray -font 7x14 \
 							+sb -geometry 130x40 -e lynx
+Test (x nethogs)	+ "NetHogs"			Exec xterm -geometry 100x34 -bg blue -fg yellow \
+							-T NetHogs +sb -fn -*-lucidatypewriter-medium-r-normal-*-18-*-*-*-*-*-*-* \
+							-e su -c nethogs
 
 # Conectividade => Hosts Remotos
 # 
@@ -639,6 +644,7 @@ Test (x qmc2-sdlmame)	+ "QMC2"			Exec qmc2-sdlmame
 Test (x scummvm)	+ "ScummVM"			Exec scummvm
 Test (x pcsx)		+ "PCSX" 	      		Exec pcsx
 Test (x pcsxr)		+ "PCSX-Reloaded" 	      	Exec pcsxr
+Test (x ppsspp-qt)	+ "PPSSPP" 	  	    	Exec ppsspp-qt
 Test (x fs-uae-launcher)\
 			+ "FS-UAE Launcher"		Exec fs-uae-launcher
 Test (x sdlmame)	+ "SDL Mame"			Exec sdlmame
