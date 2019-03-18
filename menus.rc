@@ -517,70 +517,74 @@ Test (x xedplus)	+ "X Editor Plus"		Exec XIM_PROGRAM="" XMODIFIERS="" xedplus
 #
 DestroyMenu "Comm"
 AddToMenu "Comm"
-Test (x firefox)	+ "Mozilla Firefox"             Exec GDK_NATIVE_WINDOWS=1 firefox
-Test (x thunderbird)	+ "Mozilla Thunderbird"         Exec thunderbird
-Test (x seamonkey)	+ "SeaMonkey"                   Exec GDK_NATIVE_WINDOWS=1 seamonkey
-Test (x netscape)	+ "Netscape"			Exec netscape
-Test (x kazehakase)	+ "Kazehakase"			Exec kazehakase
-Test (x midori)		+ "Midori"			Exec midori
-Test (x opera)		+ "Opera"                    	Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" opera
-Test (x chromium)	+ "Chromium"			Exec chromium
-Test (x google-chrome)\
-			+ "Google Chrome"		Exec google-chrome
-Test (x konqueror)	+ "Konqueror"			Exec konqueror
-Test (x epiphany)	+ "Epiphany"                  	Exec epiphany
-Test (x evolution)	+ "Evolution"                  	Exec evolution
-Test (x dillo)		+ "Dillo"                  	Exec dillo
-Test (x filezilla)	+ "FileZilla"                	Exec filezilla
-Test (x gftp)		+ "gFTP"                	Exec gftp
-Test (x vinagre)	+ "Vinagre"                	Exec vinagre
-Test (x sylpheed)	+ "Sylpheed"                 	Exec sylpheed
-Test (x claws-mail)	+ "Claws Mail"                 	Exec claws-mail
-Test (x /opt/eudora/eudora)\
-			+ "Eudora"			Exec /opt/eudora/eudora
-Test (x hexchat)	+ "HexChat"                 	Exec hexchat
-Test (x gwibber)	+ "Gwibber"                 	Exec gwibber
-Test (x /opt/soulseek/soulseek)\
-			+ "Soulseek"                 	Exec /opt/soulseek/soulseek
-Test (x megasync)	+ "MEGASync"                 	Exec megasync
-Test (x transmission-gtk)\
-			+ "Transmission (GTK)"		Exec transmission-gtk
-Test (x transmission-qt) \
-			+ "Transmission (Qt)"		Exec transmission-qt
-Test (x deluge)		+ "Deluge"			Exec deluge
-Test (x liferea)	+ "Liferea"			Exec liferea
-Test (x gyachi)		+ "GYachE Improved"            	Exec gyachi
-Test (x skype)	+ "Skype"			Exec XIM_PROGRAM="" GTK_IM_MODULE="" QT_IM_MODULE="" XMODIFIERS="" skype
-Test (x /opt/skype)	+ "Skype (/opt)"		Exec XIM_PROGRAM="" GTK_IM_MODULE="" QT_IM_MODULE="" XMODIFIERS="" /opt/skype/skype
-Test (x ekiga)		+ "Ekiga"			Exec ekiga
-Test (x pidgin)		+ "Pidgin"                 	Exec pidgin
-Test (x kopete)		+ "Kopete"                 	Exec kopete
-Test (x instantbird)	+ "InstantBird"                	Exec instantbird
-Test (x /opt/Telegram/Telegram)\
-			+ "Telegram"                 	Exec /opt/Telegram/Telegram
-Test (x /opt/Discord/Discord)\
-			+ "Discord"                 	Exec /opt/Discord/Discord
-Test (x /opt/rssowl/RSSOwl)\
-			+ "RSS Owl"			Exec /opt/rssowl/RSSOwl
-Test (x /opt/jsms/launch.sh)\
-			+ "jSMS"			Exec /opt/jsms/launch.sh
-Test (x /opt/jUploadr-1.1.2-linuxGTK-i386/jUploadr)\
-			+ "jUploadr"			Exec /opt/jUploadr-1.1.2-linuxGTK-i386/jUploadr
-Test (x nicotine)	+ "Nicotine+"			Exec nicotine
-Test (x vuze)		+ "Vuze"			Exec vuze
-Test (x columba)	+ "Columba"			Exec columba
-Test (x google-earth)	+ "Google Earth"		Exec LC_NUMERIC=en_US.UTF-8 google-earth -style plastique
-Test (x google-earth-pro)	+ "Google Earth Pro"		Exec LC_NUMERIC=en_US.UTF-8 google-earth-pro -style plastique
-Test (x wireshark) Test (x gksu)\
-			+ "Wireshark"			Exec gksu wireshark
-Test (x firestarter) Test (x gksu)\
-			+ "Firestarter"			Exec gksu firestarter
-Test (x nxclient)	+ "NX Client"			Exec nxclient -admin
-Test (x x3270)		+ "x3270"			Exec x3270
+Test (x firefox)		+ "Mozilla Firefox"		Exec GDK_NATIVE_WINDOWS=1 firefox
+Test (x thunderbird)	+ "Mozilla Thunderbird"		Exec thunderbird
+Test (x seamonkey)	+ "SeaMonkey"				Exec GDK_NATIVE_WINDOWS=1 seamonkey
+Test (x kazehakase)		+ "Kazehakase"				Exec kazehakase
+Test (x midori)			+ "Midori"					Exec midori
+Test (x opera)		+ "Opera"                Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" opera
+Test (x chromium)		+ "Chromium"				Exec chromium
+Test (x google-chrome)	+ "Google Chrome"			Exec google-chrome
+Test (x torbrowser-launcher)\
+						+ "Tor Browser"				Exec LANG="C" torbrowser-launcher
+Test (x konqueror)		+ "Konqueror"				Exec konqueror
+Test (x epiphany)		+ "Epiphany"               	Exec epiphany
+Test (x dillo)			+ "Dillo"                  	Exec dillo
 + ""		Nop
-Test (x xterm)		+ "Em modo texto"		Popup Comm-Term
+Test (x filezilla)		+ "FileZilla"              	Exec filezilla
+Test (x gftp)			+ "gFTP"                	Exec gftp
++ ""		Nop
+Test (x vinagre)		+ "Vinagre"                	Exec vinagre
++ ""		Nop
+Test (x evolution)		+ "Evolution"              	Exec evolution
+Test (x sylpheed)		+ "Sylpheed"              	Exec sylpheed
+Test (x claws-mail)		+ "Claws Mail"             	Exec claws-mail
+Test (x columba)		+ "Columba"					Exec columba
++ ""		Nop
+Test (x hexchat)		+ "HexChat"               	Exec hexchat
+Test (x gwibber)		+ "Gwibber"               	Exec gwibber
++ ""		Nop
+Test (x /opt/soulseek/soulseek)\
+						+ "Soulseek"               	Exec /opt/soulseek/soulseek
+Test (x nicotine)		+ "Nicotine+"				Exec nicotine
+Test (x megasync)		+ "MEGASync"                Exec megasync
+Test (x transmission-gtk)\
+						+ "Transmission (GTK)"		Exec transmission-gtk
+Test (x transmission-qt) \
+						+ "Transmission (Qt)"		Exec transmission-qt
+Test (x vuze)			+ "Vuze"					Exec vuze
+Test (x deluge)			+ "Deluge"					Exec deluge
++ ""		Nop
+Test (x skype)		+ "Skype"					Exec XIM_PROGRAM="" GTK_IM_MODULE="" QT_IM_MODULE="" XMODIFIERS="" skype
+Test (x /opt/skype)	+ "Skype (/opt)"			Exec XIM_PROGRAM="" GTK_IM_MODULE="" QT_IM_MODULE="" XMODIFIERS="" /opt/skype/skype
+Test (x ekiga)			+ "Ekiga"					Exec ekiga
+Test (x pidgin)			+ "Pidgin"                 	Exec pidgin
+Test (x kopete)			+ "Kopete"                 	Exec kopete
+Test (x /opt/Telegram/Telegram)\
+						+ "Telegram"				Exec /opt/Telegram/Telegram
+Test (x /opt/Discord/Discord)\
+						+ "Discord"                 Exec /opt/Discord/Discord
++ ""		Nop
+Test (x liferea)		+ "Liferea"					Exec liferea
+Test (x /opt/rssowl/RSSOwl)\
+						+ "RSS Owl"					Exec /opt/rssowl/RSSOwl
+Test (x google-earth)	\
+						+ "Google Earth"			Exec LC_NUMERIC=en_US.UTF-8 google-earth -style plastique
+Test (x google-earth-pro)\
+						+ "Google Earth Pro" 		Exec LC_NUMERIC=en_US.UTF-8 google-earth-pro -style plastique
+Test (x wireshark-gtk)	+ "Wireshark (GTK)"			Exec wireshark-gtk
+Test (x wireshark-qt)	+ "Wireshark (QT)"			Exec wireshark-qt
+Test (x zenmap)			+ "Zenmap"				Exec LANG=C zenmap
+Test (x zenmap) Test (x xdg-su)\
+						+ "Zenmap como root"		Exec xdg-su -u root -c zenmap
+Test (x firestarter) Test (x xdg-su)\
+			+ "Firestarter"							Exec xdg-su -u root -c firestarter
+Test (x nxclient)		+ "NX Client"				Exec nxclient -admin
+Test (x x3270)			+ "x3270"					Exec x3270
++ ""		Nop
+Test (x xterm)			+ "Em modo texto"			Popup Comm-Term
 Test (x xterm) Test (x telnet)\
-			+ "Hosts Remotos"		Popup Comm-Hosts
+						+ "Hosts Remotos"			Popup Comm-Hosts
 
 # Conectividade => Em modo texto
 # 
