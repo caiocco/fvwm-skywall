@@ -576,7 +576,7 @@ Test (x wireshark-gtk)	+ "Wireshark (GTK)"			Exec wireshark-gtk
 Test (x wireshark-qt)	+ "Wireshark (QT)"			Exec wireshark-qt
 Test (x zenmap)			+ "Zenmap"				Exec LANG=C zenmap
 Test (x zenmap) Test (x xdg-su)\
-						+ "Zenmap como root"		Exec xdg-su -u root -c zenmap
+						+ "Zenmap como root"		Exec LANG=C xdg-su -u root -c zenmap
 Test (x firestarter) Test (x xdg-su)\
 			+ "Firestarter"							Exec xdg-su -u root -c firestarter
 Test (x nxclient)		+ "NX Client"				Exec nxclient -admin
