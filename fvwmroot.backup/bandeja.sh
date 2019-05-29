@@ -75,6 +75,13 @@ else
 	/opt/eset/esets/bin/esets_gui --autostart &
 fi
 
+if pgrep -x "qsynergy" > /dev/null
+then
+	killall qsynergy
+else
+	qsynergy &
+fi
+
 if pgrep -x "dropbox" > /dev/null
 then
 	dropbox stop
