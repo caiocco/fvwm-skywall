@@ -407,7 +407,8 @@ Test (x koshell)	+ "KOffice"			Exec XIM_PROGRAM="" XMODIFIERS="" koshell
 Test (x abiword)	+ "AbiWord"			Exec abiword
 Test (x gnumeric)	+ "Gnumeric"			Exec gnumeric
 Test (x nexs)		+ "NExS"			Exec nexs
-Test (x lyx)		+ "LyX"				Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" lyx
+Test (x fteapot)	+ "Teapot"			Exec fteapot
+Test (x lyx)		+ "LyX"			Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" lyx
 Test (x texmaker)	+ "Texmaker"			Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" texmaker
 Test (x texstudio)	+ "TeXstudio"			Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" texstudio
 Test (x homebank)	+ "HomeBank"			Exec homebank
