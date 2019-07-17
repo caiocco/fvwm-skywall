@@ -81,15 +81,15 @@ AddToFunc FuncAppAudtool
 # ------------------- FuncAppEMail
 DestroyFunc FuncAppEMail
 AddToFunc FuncAppEmail
++ I Test (x claws-mail) Exec exec claws-mail
++ I TestRc (Match) break
++ I Test (x sylpheed) Exec exec sylpheed
++ I TestRc (Match) break
 + I Test (x kontact) Exec exec kontact
 + I TestRc (Match) break
 + I Test (x thunderbird) Exec exec thunderbird
 + I TestRc (Match) break
 + I Test (x evolution) Exec exec evolution
-+ I TestRc (Match) break
-+ I Test (x sylpheed) Exec exec sylpheed
-+ I TestRc (Match) break
-+ I Test (x claws-mail) Exec exec claws-mail
 + I TestRc (Match) break
 
 # ------------------- FuncAppWWWBrowser
