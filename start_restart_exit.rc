@@ -92,10 +92,12 @@ AddToFunc "StartFunction"
 + I Test (Init) Test (f $[HOME]/.Xmodmap) exec xmodmap ~/.Xmodmap
 + I Test (Restart) Test (f $[HOME]/.Xmodmap) exec xmodmap ~/.Xmodmap
 + I Test (Init) Test (x /usr/lib/polkit-gnome-authentication-agent-1) \
-	/usr/lib/polkit-gnome-authentication-agent-1
+	exec /usr/lib/polkit-gnome-authentication-agent-1
 #+ I Test (Init) Test (x pk-update-icon) exec pk-update-icon
 + I Test (Init) Test (x redshift) exec redshift
 + I Test (Init) Test (x thunar) exec thunar --daemon
++ I Test (Init) Test (x /usr/lib/xfce4/notifyd/xfce4-notifyd) \
+	exec /usr/lib/xfce4/notifyd/xfce4-notifyd
 #+ I Test (Init) exec xmodmap -e "clear Lock"	# DESATIVA CAPSLOCK
 #+ I Test (Init) exec xmodmap -e "clear Mod2"	# DESATIVA NUMLOCK
 #+ I Test (Init) exec xmodmap -e "clear Mod5"	# DESATIVA SCRLOCK

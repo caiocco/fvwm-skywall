@@ -61,12 +61,13 @@ else
 	hp-systray -x &
 fi
 
-if pgrep -x "xfce4-power-manager" > /dev/null
-then
-	killall xfce4-power-manager
-else
-	xfce4-power-manager &
-fi
+# apresentando comportamento inadequado para controle do brilho no ThinkPad X200 com Leap 15.1
+#if pgrep -x "xfce4-power-manager" > /dev/null
+#then
+#	killall xfce4-power-manager
+#else
+#	xfce4-power-manager &
+#fi
 
 if pgrep -x "esets_gui" > /dev/null
 then
