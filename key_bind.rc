@@ -60,6 +60,7 @@ Key F7		W	M	Move
 Key F8		W	M	Resize
 Key F9		A	M	Iconify
 Key F10		W	M	Maximize True
+Key F10		W	SM	Maximize ewmhiwa
 
 # Lançadores de aplicativos com teclas de funções
 Key F1		A	S4	Exec xfce4-terminal

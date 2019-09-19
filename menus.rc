@@ -106,6 +106,7 @@ Test (x gtk-recordMyDesktop)\
 			+ "Record My Desktop (GTK)"	Exec gtk-recordMyDesktop
 Test (x qt-recordMyDesktop)\
 			+ "Record My Desktop (Qt)"	Exec qt-recordMyDesktop
+Test (x obs)		+ "OBS Studio"			Exec obs
 Test (x cheese)		+ "Cheese"			Exec cheese
 Test (x wxcam)		+ "wxCam"			Exec wxcam
 + ""		Nop

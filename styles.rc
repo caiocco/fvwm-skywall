@@ -543,6 +543,7 @@ Test (EnvMatch Sky_TwoMons_Type 3) Style xbmc.bin \
 Style openttd \
 	EWMHMaximizeIgnoreWorkingArea, \
 	ResizeOutline
+Style Pyre !Title, !Borders
 
 # * Emuladores de Terminal
 Style xterm \
