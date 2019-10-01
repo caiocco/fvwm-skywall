@@ -380,7 +380,7 @@ Test (x orange-canvas)\
 			+ "Orange"                     	Exec orange-canvas
 Test (x xmaxima)	+ "Maxima"                     	Exec xmaxima
 Test (x wxmaxima)	+ "wxMaxima"                    Exec wxmaxima
-Test (x octave-gui)	+ "Octave" 			Exec octave-gui
+Test (x octave)		+ "Octave" 			Exec octave --gui
 Test (x /opt/scilab/bin/scilab)\
 			+ "Scilab"                    	Exec GTK2_RC_FILES=$[FVWM_USERDIR]/fvwm-skywall/gtk/aurora-gtkrc-2.0 /opt/scilab/bin/scilab
 Test (x qgis)		+ "QGIS"                    	Exec qgis
