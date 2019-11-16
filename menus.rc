@@ -613,7 +613,8 @@ Test (x links)		+ "Links"			Exec xterm -bg black -fg lightgray -font 7x14 \
 							+sb -geometry 130x40 -e links
 Test (x lynx)		+ "Lynx"			Exec xterm -bg black -fg lightgray -font 7x14 \
 							+sb -geometry 130x40 -e lynx
-Test (x nethogs)	+ "NetHogs"			Exec xterm -geometry 100x34 -bg blue -fg yellow \
+Test (x /usr/sbin/nethogs) \
+			+ "NetHogs"			Exec xterm -geometry 100x34 -bg blue -fg yellow \
 							-T NetHogs +sb -fn -*-lucidatypewriter-medium-r-normal-*-18-*-*-*-*-*-*-* \
 							-e su -c nethogs
 
@@ -646,13 +647,14 @@ Test (x pysol.py)	+ "PySol FCE" 			Exec pysol.py
 Test (x zsnes)		+ "ZSNES"       		Exec zsnes
 Test (x snes9x-gtk)	+ "Snes9x"			Exec snes9x-gtk
 Test (x snes9express)	+ "Snes9express"		Exec snes9express
-Test (x qmc2-sdlmame)	+ "QMC2"			Exec qmc2-sdlmame
+Test (x qmc2-sdlmame)	+ "QMC2"			Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; qmc2-sdlmame
 Test (x scummvm)	+ "ScummVM"			Exec scummvm
 Test (x pcsx)		+ "PCSX" 	      		Exec pcsx
 Test (x pcsxr)		+ "PCSX-Reloaded" 	      	Exec pcsxr
 Test (x ppsspp-qt)	+ "PPSSPP" 	  	    	Exec ppsspp-qt
+Test (x retroarch)	+ "RetroArch"			Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; retroarch
 Test (x fs-uae-launcher)\
-			+ "FS-UAE Launcher"		Exec fs-uae-launcher
+			+ "FS-UAE Launcher"		Exec fs-uae-launchenr
 Test (x sdlmame)	+ "SDL Mame"			Exec sdlmame
 Test (x dosbox)		+ "DOSBox"			Exec dosbox
 Test (x sauerbraten-client)\
