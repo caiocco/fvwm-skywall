@@ -68,7 +68,7 @@ Test (EnvMatch Sky_Panels_Type 1.6) *FvwmShelf: (22x2, Title(Side) " Mousepad", 
 *FvwmShelf: (22x2, Title(Side) " Lente de Aumento", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-searchtool.png, Action(Mouse 1) `Exec "xmag" exec xmag`)
 *FvwmShelf: (22x2, Title(Side) " Executar...", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/actions/exec.png, Action(Mouse 1) `Exec "xfce4-appfinder" exec xfce4-appfinder -c`)
 *FvwmShelf: (22x1, Frame 0)
-*FvwmShelf: (22x2, Title(Side) " Mixer de Áudio", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-mixer.png, Action(Mouse 1) `Exec "xfce4-mixer" exec pavucontrol`)
+*FvwmShelf: (22x2, Title(Side) " Mixer de Áudio", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-mixer.png, Action(Mouse 1) `Exec "Pavucontrol" exec pavucontrol`)
 *FvwmShelf: (22x2, Title(Side) " Bloquear Sessão", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-lockscreen.png, Action(Mouse 1) `Exec exec xscreensaver-command --lock`)
 *FvwmShelf: (22x2, Title(Side) " Exibir Desktop", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-show-desktop.png, Action(Mouse 1) `All (AcceptsFocus, AnyScreen, CurrentPage, !Iconic, !Shaded) Iconify`)
 #*FvwmShelf: (22x2, Title(Side) " Anotações", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/actions/edit.png, Action(Mouse 1) `Exec "xpad" exec xpad`)
