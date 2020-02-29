@@ -92,6 +92,7 @@ Test (x BasiliskII)	+ "Basilisk II"			Exec BasiliskII
 Test (x executor)	+ "Executor"			Exec executor
 Test (x pose)		+ "Palm OS Emulator"		Exec pose
 Test (x bochs)		+ "Bochs"			Exec xterm -e bochs
+Test (x pcem)		+ "PCem"			Exec pcem
 Test (x eaglemode)	+ "Eagle Mode"			Exec eaglemode
 Test (x x48)		+ "x48 (HP 48GX)"		Exec x48 -terminal -serial
 Test (x sqlitebrowser)	+ "SQL Lite Browser"		Exec sqlitebrowser
@@ -121,9 +122,9 @@ Test (x xfce4-appfinder)\
 + ""		Nop
 Test (x /sbin/yast2) 	+ "YaST2"			Exec /usr/bin/xdg-su -c '/sbin/yast2 --qt'
 Test (x mcc)	 	+ "Mandriva Control Center"	Exec mcc
-+ ""		Nop
-Test (x gdmflexiserver) + "Nova sessão"			Exec gdmflexiserver
-Test (x gdmflexiserver) + "Nova sessão em uma janela"	Exec gdmflexiserver --xnest
+#+ ""		Nop
+#Test (x gdmflexiserver) + "Nova sessão"			Exec gdmflexiserver
+#Test (x gdmflexiserver) + "Nova sessão em uma janela"	Exec gdmflexiserver --xnest
 
 # Aplicativos => Wine
 #
@@ -251,8 +252,10 @@ Test (x ristretto)	+ "Ristretto"                   Exec ristretto
 Test (x gthumb)		+ "gThumb"                      Exec gthumb
 Test (x gv)		+ "Gv"				Exec gv
 Test (x inkscape)	+ "Inkscape"			Exec inkscape
+Test (x sk1)		+ "sk1"				Exec sk1
 Test (x synfigstudio)	+ "Synfig"			Exec synfigstudio
 Test (x darktable)	+ "darktable"			Exec darktable
+Test (x rawtherapee)	+ "RawTherapee"			Exec rawtherapee
 Test (x digikam)	+ "digiKam"			Exec digikam
 Test (x kcolorchooser)	+ "KSeletor de Cores"		Exec kcolorchooser
 Test (x kdvi)		+ "KDVI"			Exec kdvi
@@ -278,7 +281,8 @@ Test (f /opt/hfs13.0.509/houdini_master.sh)\
 Test (f /opt/hfs13.0.509/houdini_escape.sh)\
 			+ "Houdini Escape"		Exec /opt/hfs13.0.509/houdini_escape.sh
 Test (x qcad)		+ "QCad"			Exec qcad
-Test (x FreeCAD)	+ "FreeCAD"			Exec xterm -iconic -T FreeCAD\ Log -e FreeCAD
+Test (x FreeCAD)	+ "FreeCAD"			Exec xterm -name FreeCADLog -iconic -T FreeCAD\ Log -e FreeCAD
+Test (x librecad)	+ "LibreCAD"			Exec librecad
 Test (x scribus)	+ "Scribus"			Exec scribus
 Test (x skencil)	+ "Skencil"			Exec skencil
 Test (x tgif)		+ "Tgif"			Exec tgif
@@ -366,6 +370,11 @@ Test (x /opt/RevMedia/revolution_media)\
 #
 DestroyMenu "Science"
 AddToMenu "Science"
+Test (x lyx)		+ "LyX"			Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" lyx
+Test (x texmaker)	+ "Texmaker"			Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" texmaker
+Test (x texstudio)	+ "TeXstudio"			Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" texstudio
+Test (x texmacs)	+ "GNU TeXmacs"			Exec texmacs
++ ""		Nop
 Test (x leibnitz)	+ "Leibnitz"			Exec leibnitz
 Test (x glove)		+ "Glove"			Exec glove
 Test (x R)		+ "R"				Exec xterm -bg black -fg lightgray -fa lucidatypewriter -fs 16 \
@@ -373,16 +382,19 @@ Test (x R)		+ "R"				Exec xterm -bg black -fg lightgray -fa lucidatypewriter -fs
 Test (x rkward)		+ "RKWard"			Exec rkward
 Test (x rstudio)	+ "RStudio"			Exec rstudio
 Test (x gnuplot)	+ "Gnuplot"                     Exec xterm -T "Gnuplot" -name Gnuplot -fn 7x14 -e gnuplot
+Test (x viewsz)		+ "Viewsz"                     	Exec viewsz
 Test (x geogebra)	+ "GeoGebra"                    Exec geogebra
 Test (x gretl)		+ "Gretl"                     	Exec gretl
 Test (x psppire)	+ "PSPP"                     	Exec psppire
 Test (x orange-canvas)\
 			+ "Orange"                     	Exec orange-canvas
+			+ ""		Nop
 Test (x xmaxima)	+ "Maxima"                     	Exec xmaxima
 Test (x wxmaxima)	+ "wxMaxima"                    Exec wxmaxima
 Test (x octave)		+ "Octave" 			Exec octave --gui
 Test (x /opt/scilab/bin/scilab)\
 			+ "Scilab"                    	Exec GTK2_RC_FILES=$[FVWM_USERDIR]/fvwm-skywall/gtk/aurora-gtkrc-2.0 /opt/scilab/bin/scilab
++ ""		Nop
 Test (x qgis)		+ "QGIS"                    	Exec qgis
 Test (x saga_gui)	+ "SAGA GIS"                   	Exec saga_gui
 
@@ -409,9 +421,6 @@ Test (x abiword)	+ "AbiWord"			Exec abiword
 Test (x gnumeric)	+ "Gnumeric"			Exec gnumeric
 Test (x nexs)		+ "NExS"			Exec nexs
 Test (x fteapot)	+ "Teapot"			Exec fteapot
-Test (x lyx)		+ "LyX"			Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" lyx
-Test (x texmaker)	+ "Texmaker"			Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" texmaker
-Test (x texstudio)	+ "TeXstudio"			Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" texstudio
 Test (x homebank)	+ "HomeBank"			Exec homebank
 Test (x gnucash)	+ "GnuCash"			Exec gnucash
 Test (x stardict)	+ "StarDict"			Exec stardict
@@ -501,9 +510,9 @@ DestroyMenu ThinkFree
 AddToMenu ThinkFree
 Test (x tfoffice)	+ "ThinkFree Office 3.5"	Exec XIM_PROGRAM="" XMODIFIERS="" tfoffice
 Test (x tfmanager)	+ "ThinkFree Manager 3.5"	Exec XIM_PROGRAM="" XMODIFIERS="" tfmanager
-Test (x tfwrite)	+ "ThinkFree Write 3.5"		Exec XIM_PROGRAM="" XMODIFIERS="" tfwrite
-Test (x tfcalc)		+ "ThinkFree Calc 3.5"		Exec XIM_PROGRAM="" XMODIFIERS="" tfcalc
-Test (x tfshow)		+ "ThinkFree Show 3.5"		Exec XIM_PROGRAM="" XMODIFIERS="" tfshow
+Test (x tfwrite)	+ "ThinkFree Write 3.5"	Exec XIM_PROGRAM="" XMODIFIERS="" tfwrite
+Test (x tfcalc)	+ "ThinkFree Calc 3.5"	Exec XIM_PROGRAM="" XMODIFIERS="" tfcalc
+Test (x tfshow)	+ "ThinkFree Show 3.5"	Exec XIM_PROGRAM="" XMODIFIERS="" tfshow
 
 # Produtividade => SIAG Office
 # 
@@ -512,81 +521,83 @@ AddToMenu SIAG
 Test (x siag)		+ "Scheme In A Grid"		Exec XIM_PROGRAM="" XMODIFIERS="" siag
 Test (x pw)		+ "Pathetic Writer"		Exec XIM_PROGRAM="" XMODIFIERS="" pw
 Test (x egon)		+ "Egon Animator"		Exec XIM_PROGRAM="" XMODIFIERS="" egon
-Test (x xfiler)		+ "XFiler"			Exec XIM_PROGRAM="" XMODIFIERS="" xfiler
+Test (x xfiler)	+ "XFiler"			Exec XIM_PROGRAM="" XMODIFIERS="" xfiler
 Test (x xedplus)	+ "X Editor Plus"		Exec XIM_PROGRAM="" XMODIFIERS="" xedplus
 
 # Conectividade
 #
 DestroyMenu "Comm"
 AddToMenu "Comm"
-Test (x firefox)		+ "Mozilla Firefox"		Exec GDK_NATIVE_WINDOWS=1 firefox
-Test (x thunderbird)	+ "Mozilla Thunderbird"		Exec thunderbird
-Test (x seamonkey)	+ "SeaMonkey"				Exec GDK_NATIVE_WINDOWS=1 seamonkey
-Test (x kazehakase)		+ "Kazehakase"				Exec kazehakase
-Test (x midori)			+ "Midori"					Exec midori
-Test (x opera)		+ "Opera"                Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" opera
-Test (x chromium)		+ "Chromium"				Exec chromium
-Test (x google-chrome)	+ "Google Chrome"			Exec google-chrome
+Test (x firefox)		+ "Mozilla Firefox"	Exec GDK_NATIVE_WINDOWS=1 firefox
+Test (x thunderbird)		+ "Mozilla Thunderbird"	Exec thunderbird
+Test (x seamonkey)		+ "SeaMonkey"		Exec GDK_NATIVE_WINDOWS=1 seamonkey
+Test (x kazehakase)		+ "Kazehakase"		Exec kazehakase
+Test (x midori)			+ "Midori"		Exec midori
+Test (x opera)		+ "Opera"		Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" opera
+Test (x chromium)		+ "Chromium"		Exec chromium
+Test (x google-chrome)		+ "Google Chrome"	Exec google-chrome
 Test (x torbrowser-launcher)\
-						+ "Tor Browser"				Exec LANG="C" torbrowser-launcher
-Test (x konqueror)		+ "Konqueror"				Exec konqueror
-Test (x epiphany)		+ "Epiphany"               	Exec epiphany
-Test (x dillo)			+ "Dillo"                  	Exec dillo
+				+ "Tor Browser"		Exec LANG="C" torbrowser-launcher
+Test (x brave-browser)		+ "Brave"		Exec brave-browser
+Test (x vivaldi)		+ "Vivaldi"		Exec vivaldi
+Test (x konqueror)		+ "Konqueror"		Exec konqueror
+Test (x epiphany)		+ "Epiphany"            Exec epiphany
+Test (x dillo)			+ "Dillo"               Exec dillo
 + ""		Nop
-Test (x filezilla)		+ "FileZilla"              	Exec filezilla
-Test (x gftp)			+ "gFTP"                	Exec gftp
+Test (x filezilla)		+ "FileZilla"           Exec filezilla
+Test (x gftp)			+ "gFTP"                Exec gftp
 + ""		Nop
-Test (x vinagre)		+ "Vinagre"                	Exec vinagre
+Test (x vinagre)		+ "Vinagre"             Exec vinagre
+Test (x anydesk)		+ "AnyDesk"             Exec anydesk
 + ""		Nop
-Test (x evolution)		+ "Evolution"              	Exec evolution
-Test (x sylpheed)		+ "Sylpheed"              	Exec sylpheed
-Test (x claws-mail)		+ "Claws Mail"             	Exec claws-mail
-Test (x columba)		+ "Columba"					Exec columba
+Test (x evolution)		+ "Evolution"           Exec evolution
+Test (x sylpheed)		+ "Sylpheed"            Exec sylpheed
+Test (x claws-mail)		+ "Claws Mail"          Exec claws-mail
+Test (x columba)		+ "Columba"		Exec columba
 + ""		Nop
-Test (x hexchat)		+ "HexChat"               	Exec hexchat
-Test (x gwibber)		+ "Gwibber"               	Exec gwibber
+Test (x hexchat)		+ "HexChat"             Exec hexchat
+Test (x gwibber)		+ "Gwibber"             Exec gwibber
 + ""		Nop
 Test (x /opt/soulseek/soulseek)\
-						+ "Soulseek"               	Exec /opt/soulseek/soulseek
-Test (x nicotine)		+ "Nicotine+"				Exec nicotine
-Test (x megasync)		+ "MEGASync"                Exec megasync
+				+ "Soulseek"		Exec /opt/soulseek/soulseek
+Test (x nicotine)		+ "Nicotine+"		Exec nicotine
+Test (x megasync)		+ "MEGASync"		Exec megasync
 Test (x transmission-gtk)\
-						+ "Transmission (GTK)"		Exec transmission-gtk
+				+ "Transmission (GTK)"	Exec transmission-gtk
 Test (x transmission-qt) \
-						+ "Transmission (Qt)"		Exec transmission-qt
-Test (x vuze)			+ "Vuze"					Exec vuze
-Test (x deluge)			+ "Deluge"					Exec deluge
+				+ "Transmission (Qt)"	Exec transmission-qt
+Test (x vuze)			+ "Vuze"		Exec vuze
+Test (x deluge)			+ "Deluge"		Exec deluge
 + ""		Nop
-Test (x skype)		+ "Skype"					Exec XIM_PROGRAM="" GTK_IM_MODULE="" QT_IM_MODULE="" XMODIFIERS="" skype
-Test (x /opt/skype)	+ "Skype (/opt)"			Exec XIM_PROGRAM="" GTK_IM_MODULE="" QT_IM_MODULE="" XMODIFIERS="" /opt/skype/skype
-Test (x ekiga)			+ "Ekiga"					Exec ekiga
-Test (x pidgin)			+ "Pidgin"                 	Exec pidgin
-Test (x kopete)			+ "Kopete"                 	Exec kopete
+Test (x skype)		+ "Skype"		Exec XIM_PROGRAM="" GTK_IM_MODULE="" QT_IM_MODULE="" XMODIFIERS="" skype
+Test (x ekiga)			+ "Ekiga"		Exec ekiga
+Test (x pidgin)			+ "Pidgin"              Exec pidgin
+Test (x kopete)			+ "Kopete"              Exec kopete
 Test (x /opt/Telegram/Telegram)\
-						+ "Telegram"				Exec /opt/Telegram/Telegram
+				+ "Telegram"		Exec /opt/Telegram/Telegram
 Test (x /opt/Discord/Discord)\
-						+ "Discord"                 Exec /opt/Discord/Discord
+				+ "Discord"             Exec /opt/Discord/Discord
 + ""		Nop
-Test (x liferea)		+ "Liferea"					Exec liferea
+Test (x liferea)		+ "Liferea"		Exec liferea
 Test (x /opt/rssowl/RSSOwl)\
-						+ "RSS Owl"					Exec /opt/rssowl/RSSOwl
+				+ "RSS Owl"		Exec /opt/rssowl/RSSOwl
 Test (x google-earth)	\
-						+ "Google Earth"			Exec LC_NUMERIC=en_US.UTF-8 google-earth -style plastique
+				+ "Google Earth"	Exec LC_NUMERIC=en_US.UTF-8 google-earth -style plastique
 Test (x google-earth-pro)\
-						+ "Google Earth Pro" 		Exec LC_NUMERIC=en_US.UTF-8 google-earth-pro -style plastique
-Test (x wireshark-gtk)	+ "Wireshark (GTK)"			Exec wireshark-gtk
-Test (x wireshark-qt)	+ "Wireshark (QT)"			Exec wireshark-qt
-Test (x zenmap)			+ "Zenmap"				Exec LANG=C zenmap
+				+ "Google Earth Pro" 	Exec LC_NUMERIC=en_US.UTF-8 google-earth-pro -style plastique
+Test (x wireshark-gtk)	+ "Wireshark (GTK)"		Exec wireshark-gtk
+Test (x wireshark-qt)	+ "Wireshark (QT)"		Exec wireshark-qt
+Test (x zenmap)		+ "Zenmap"		Exec LANG=C zenmap
 Test (x zenmap) Test (x xdg-su)\
-						+ "Zenmap como root"		Exec LANG=C xdg-su -u root -c zenmap
+				+ "Zenmap como root"	Exec LANG=C xdg-su -u root -c zenmap
 Test (x firestarter) Test (x xdg-su)\
-			+ "Firestarter"							Exec xdg-su -u root -c firestarter
-Test (x nxclient)		+ "NX Client"				Exec nxclient -admin
-Test (x x3270)			+ "x3270"					Exec x3270
+			+ "Firestarter"			Exec xdg-su -u root -c firestarter
+Test (x nxclient)		+ "NX Client"		Exec nxclient -admin
+Test (x x3270)			+ "x3270"		Exec x3270
 + ""		Nop
-Test (x xterm)			+ "Em modo texto"			Popup Comm-Term
+Test (x xterm)			+ "Em modo texto"	Popup Comm-Term
 Test (x xterm) Test (x telnet)\
-						+ "Hosts Remotos"			Popup Comm-Hosts
+				+ "Hosts Remotos"	Popup Comm-Hosts
 
 # Conectividade => Em modo texto
 # 
@@ -654,7 +665,7 @@ Test (x pcsxr)		+ "PCSX-Reloaded" 	      	Exec pcsxr
 Test (x ppsspp-qt)	+ "PPSSPP" 	  	    	Exec ppsspp-qt
 Test (x retroarch)	+ "RetroArch"			Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; retroarch
 Test (x fs-uae-launcher)\
-			+ "FS-UAE Launcher"		Exec fs-uae-launchenr
+			+ "FS-UAE Launcher"		Exec fs-uae-launcher
 Test (x sdlmame)	+ "SDL Mame"			Exec sdlmame
 Test (x dosbox)		+ "DOSBox"			Exec dosbox
 Test (x sauerbraten-client)\
@@ -1009,6 +1020,8 @@ AddToMenu "Quit-Verify"
 + "" 		Nop
 + "Finalizar sessão"        	Quit
 + "Reiniciar Fvwm"		Restart
++ "Nova sessão"			Exec dm-tool switch-to-greeter
++ "Listar sessões"		Exec zenity --info --text="`dm-tool list-seats | sed 's/\n/\\n/g'`"
 + "" 		Nop
 #+ "Desligar..."		Exec $[HOME]/.fvwm/fvwmkdm.sh -h
 #+ "Reinicializar..."		Exec $[HOME]/.fvwm/fvwmkdm.sh -r
