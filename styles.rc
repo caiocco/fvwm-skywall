@@ -263,6 +263,12 @@ Style "Notificação - ESET NOD32 Antivirus" \
 	StartsRaised, \
 	NeverFocus, \
 	EWMHIgnoreStateHints
+Style "Notification - ESET NOD32 Antivirus" \
+	StaysOnTop, \
+	Sticky, \
+	StartsRaised, \
+	NeverFocus, \
+	EWMHIgnoreStateHints
 Style Comix \
 	IconOverride, \
 	Icon /usr/share/comix/images/comix.svg
@@ -609,9 +615,10 @@ Style Googleearth-bin \
 	UseTransientPPosition, \
 	EWMHDontDonateIcon, \
 	Icon /opt/google/earth/free/product_logo_48.png
-Style opera \
+Style vivaldi-stable \
 	EWMHDontDonateIcon, \
-	Icon opera_hicolor.png
+	IconOverride, \
+	Icon /opt/vivaldi/product_logo_48.png
 Style Google-chrome \
 	EWMHDontDonateIcon, \
 	IconOverride, \
