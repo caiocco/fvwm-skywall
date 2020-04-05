@@ -95,9 +95,9 @@ AddToFunc FuncAppEmail
 # ------------------- FuncAppWWWBrowser
 DestroyFunc FuncAppWWWBrowser
 AddToFunc FuncAppWWWBrowser
-+ I Test (x seamonkey) Exec GDK_NATIVE_WINDOWS=1 seamonkey
-+ I TestRc (Match) break
 + I Test (x firefox) Exec GDK_NATIVE_WINDOWS=1 firefox
++ I TestRc (Match) break
++ I Test (x seamonkey) Exec GDK_NATIVE_WINDOWS=1 seamonkey
 + I TestRc (Match) break
 + I Test (x opera) Exec exec opera
 + I TestRc (Match) break
