@@ -550,6 +550,13 @@ Style openttd \
 	EWMHMaximizeIgnoreWorkingArea, \
 	ResizeOutline
 Style Pyre !Title, !Borders
+Style alephone !Title, !Borders
+Style gzdoom \
+	Icon $[Fvwm_Icon_Theme]/48x48/apps/doom.png
+Style vkquake \
+	Icon $[Fvwm_Icon_Theme]/48x48/apps/quake.png
+Style quakespasm \
+	Icon $[Fvwm_Icon_Theme]/48x48/apps/quake.png
 
 # * Emuladores de Terminal
 Style xterm \
@@ -605,16 +612,15 @@ Style xchat \
 #Style Xchat FocusFollowsMouse
 Style emesene FocusFollowsMouse
 Style Pidgin FocusFollowsMouse
-Style Googleearth-bin \
+Style googleearth-bin \
 	EWMHMaximizeIgnoreWorkingArea, \
-	GNOMEIgnoreHints, \
 	EWMHIgnoreStackingOrderHints, \
 	EWMHIgnoreWindowType, \
 	EWMHIgnoreStateHints, \
 	EWMHPlacementIgnoreWorkingArea, \
 	UseTransientPPosition, \
 	EWMHDontDonateIcon, \
-	Icon /opt/google/earth/free/product_logo_48.png
+	Icon /opt/google/earth/pro/product_logo_48.png
 Style vivaldi-stable \
 	EWMHDontDonateIcon, \
 	IconOverride, \
@@ -643,6 +649,10 @@ Style darktable \
 	Icon /usr/share/icons/hicolor/48x48/apps/darktable.png
 Style xeyes !Title
 Style Firefox FixedPPosition
+Style soulseek EWMHDontDonateIcon, \
+	IconOverride, \
+	Icon $[Fvwm_Icon_Theme]/48x48/apps/slsk_bird.jpg.png
+Style qsynergy Icon  /usr/share/pixmaps/qsynergy.png
 
 # * Centrais de configuração
 Style Y2controlcenter \
