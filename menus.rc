@@ -566,6 +566,7 @@ Test (x transmission-gtk)\
 				+ "Transmission (GTK)"	Exec transmission-gtk
 Test (x transmission-qt) \
 				+ "Transmission (Qt)"	Exec transmission-qt
+Test (x qbittorrent)		+ "qBittorrent"		Exec qbittorrent
 Test (x vuze)			+ "Vuze"		Exec vuze
 Test (x deluge)			+ "Deluge"		Exec deluge
 + ""		Nop
@@ -582,9 +583,9 @@ Test (x liferea)		+ "Liferea"		Exec liferea
 Test (x /opt/rssowl/RSSOwl)\
 				+ "RSS Owl"		Exec /opt/rssowl/RSSOwl
 Test (x google-earth)	\
-				+ "Google Earth"	Exec LC_NUMERIC=en_US.UTF-8 google-earth -style plastique
+				+ "Google Earth"	Exec LC_NUMERIC=en_US.UTF-8 google-earth
 Test (x google-earth-pro)\
-				+ "Google Earth Pro" 	Exec LC_NUMERIC=en_US.UTF-8 google-earth-pro -style plastique
+				+ "Google Earth Pro" 	Exec LC_NUMERIC=en_US.UTF-8 google-earth-pro
 Test (x wireshark-gtk)	+ "Wireshark (GTK)"		Exec wireshark-gtk
 Test (x wireshark-qt)	+ "Wireshark (QT)"		Exec wireshark-qt
 Test (x zenmap)		+ "Zenmap"		Exec LANG=C zenmap
@@ -695,6 +696,8 @@ Test (x opentyrian)	+ "OpenTyrian"			Exec opentyrian
 Test (x /opt/PokerTH/pokerth.sh)\
 			+ "PokerTH"			Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" /opt/PokerTH/pokerth.sh
 Test (x gzdoom)		+ "GZDOOM"			Exec gzdoom
+Test (x vkquake)	+ "Quake (Vulkan)"		Exec vkquake
+Test (x quakespasm)	+ "Quake (OpenGL)"		Exec quakespasm
 Test (x alephone)	+ "Aleph One"			Popup Games-alephone
 Test (x mednafen)	+ "Mednafen"			Popup Games-mednafen
 Test (x xbill)		+ "XBill"			Exec xbill
@@ -742,14 +745,14 @@ AddToMenu Games-mednafen-help
 #
 DestroyMenu "Games-alephone"
 AddToMenu "Games-alephone"
-Test (f /usr/share/AlephOne/Marathon/) \
-			+ "Marathon"			Exec alephone /usr/share/AlephOne/Marathon/
-Test (f /usr/share/AlephOne/Marathon\ 2/) \
-			+ "Marathon 2: Durandal"		Exec alephone /usr/share/AlephOne/Marathon\ 2/
-Test (f /usr/share/AlephOne/Marathon\ Infinity/) \
-			+ "Marathon: Infinity"		Exec alephone /usr/share/AlephOne/Marathon\ Infinity/
-Test (f /usr/share/AlephOne/Eternal\ X/) \
-			+ "Marathon: Eternal X"		Exec alephone /usr/share/AlephOne/Eternal\ X/
+Test (f /usr/share/alephone-marathon/) \
+			+ "Marathon"			Exec alephone /usr/share/alephone-marathon/
+Test (f /usr/share/alephone-marathon2/) \
+			+ "Marathon 2: Durandal"	Exec alephone /usr/share/alephone-marathon2/
+Test (f //usr/share/alephone-marathon-infinity) \
+			+ "Marathon: Infinity"		Exec alephone usr/share/alephone-marathon-infinity
+Test (f /usr/share/alephone-eternalx/) \
+			+ "Marathon: Eternal X"		Exec alephone /usr/share/alephone-eternalx/
 Test (f /usr/share/AlephOne/Rubicon\ X/) \
 			+ "Marathon: Rubicon X"		Exec alephone /usr/share/AlephOne/Rubicon\ X/
 
