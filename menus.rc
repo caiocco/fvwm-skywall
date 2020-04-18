@@ -84,7 +84,7 @@ DestroyMenu Applications
 AddToMenu Applications
 + "" TearMenuOff
 Test (x VirtualBox) 	+ "Oracle VM VirtualBox Manager" \
-							Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" VirtualBox
+							Exec VirtualBox
 Test (x vmware)		+ "VMware Server"		Exec vmware
 Test (x vmplayer)	+ "VMware Player"		Exec vmplayer
 Test (x SheepShaver)	+ "SheepShaver"			Exec SheepShaver
@@ -123,7 +123,7 @@ Test (x xfce4-appfinder)\
 Test (x /sbin/yast2) 	+ "YaST2"			Exec /usr/bin/xdg-su -c '/sbin/yast2 --qt'
 Test (x mcc)	 	+ "Mandriva Control Center"	Exec mcc
 #+ ""		Nop
-#Test (x gdmflexiserver) + "Nova sessão"			Exec gdmflexiserver
+#Test (x gdmflexiserver) + "Nova sessão"		Exec gdmflexiserver
 #Test (x gdmflexiserver) + "Nova sessão em uma janela"	Exec gdmflexiserver --xnest
 
 # Aplicativos => Wine
@@ -151,71 +151,70 @@ Test (x /opt/cxoffice/bin/cxrun)\
 #
 DestroyMenu "Accessories"
 AddToMenu "Accessories"
-Test (x xedit)			+ "X Editor"				Exec xedit
-Test (x xcalc)			+ "X Calculator (TI-30)"	Exec xcalc
-Test (x xcalc)			+ "X Calculator (HP-10C)"	Exec xcalc -rpn
-Test (x calculator)		+ "FOX Calculator"			Exec calculator
-Test (x galculator)		+ "Galculator"				Exec galculator
-Test (x gcalctool)		+ "GNOME Calculator"		Exec gcalctool
-Test (x speedcrunch)	+ "SpeedCrunch"				Exec speedcrunch
-Test (x kcalc)			+ "KCalc"					Exec kcalc
-Test (x kedit)			+ "KEdit"					Exec kedit
-Test (x kwrite)			+ "KWrite"					Exec kwrite
-Test (x kregexpeditor)	+ "KRegExpEditor"			Exec kregexpeditor
-Test (x leafpad)		+ "Leafpad"					Exec leafpad
-Test (x mousepad)		+ "Mousepad"				Exec mousepad
-Test (x gedit)			+ "GNOME Editor"			Exec gedit
-Test (x txt2tags)		+ "txt2tags"				Exec txt2tags --gui
-Test (x highlight-gui)		+ "Highlight"				Exec highlight-gui
-Test (x shutterbug)		+ "Shutterbug"				Exec shutterbug
-Test (x FBReader)		+ "FBReader"				Exec FBReader
-Test (x parcellite)		+ "Parcellite"				Exec parcellite
-Test (x cellwriter)		+ "CellWriter"				Exec cellwriter
-Test (x xvkbd)			+ "Virtual Keyboard"		Exec xvkbd
-Test (x gucharmap)		+ "Mapa de Caracteres"		Exec gucharmap
+Test (x xedit)		+ "X Editor"			Exec xedit
+Test (x xcalc)		+ "X Calculator (TI-30)"	Exec xcalc
+Test (x xcalc)		+ "X Calculator (HP-10C)"	Exec xcalc -rpn
+Test (x calculator)	+ "FOX Calculator"		Exec calculator
+Test (x galculator)	+ "Galculator"			Exec galculator
+Test (x gcalctool)	+ "GNOME Calculator"		Exec gcalctool
+Test (x speedcrunch)	+ "SpeedCrunch"			Exec speedcrunch
+Test (x kcalc)		+ "KCalc"			Exec kcalc
+Test (x kedit)		+ "KEdit"			Exec kedit
+Test (x kwrite)		+ "KWrite"			Exec kwrite
+Test (x kregexpeditor)	+ "KRegExpEditor"		Exec kregexpeditor
+Test (x leafpad)	+ "Leafpad"			Exec leafpad
+Test (x mousepad)	+ "Mousepad"			Exec mousepad
+Test (x gedit)		+ "GNOME Editor"		Exec gedit
+Test (x txt2tags)	+ "txt2tags"			Exec txt2tags --gui
+Test (x highlight-gui)	+ "Highlight"			Exec highlight-gui
+Test (x shutterbug)	+ "Shutterbug"			Exec shutterbug
+Test (x FBReader)	+ "FBReader"			Exec FBReader
+Test (x parcellite)	+ "Parcellite"			Exec parcellite
+Test (x cellwriter)	+ "CellWriter"			Exec cellwriter
+Test (x xvkbd)		+ "Virtual Keyboard"		Exec xvkbd
+Test (x gucharmap)	+ "Mapa de Caracteres"		Exec gucharmap
 Test (x kcharselect)	+ "Seletor de caracteres"	Exec kcharselect
-Test (x kworldclock)	+ "KWorldClock"				Exec kworldclock
-Test (x gpa)			+ "GNU Privacy Assistant"	Exec gpa
-Test (x kgpg)			+ "KGpg"					Exec kgpg
-Test (x ktimer)			+ "KTimer"					Exec ktimer
+Test (x kworldclock)	+ "KWorldClock"			Exec kworldclock
+Test (x gpa)		+ "GNU Privacy Assistant"	Exec gpa
+Test (x kgpg)		+ "KGpg"			Exec kgpg
+Test (x ktimer)		+ "KTimer"			Exec ktimer
 Test (x kcolorchooser)	+ "KSeletor de Cores"		Exec kcolorchooser
-Test (x gcolor2)		+ "gcolor2"					Exec gcolor2
-Test (x clamtk)			+ "ClamTk Anti-vírus" 		Exec clamtk
-Test (x bdgui)			+ "BitDefender for Unices" 	Exec bdgui
+Test (x gcolor2)	+ "gcolor2"			Exec gcolor2
+Test (x clamtk)		+ "ClamTk Anti-vírus" 		Exec clamtk
 Test (x fortune) Test (x xmessage)\
-						+ "Fortune" 				Exec xmessage "`fortune`"
-Test (x hot-babe)		+ "Hot-babe"				Exec hot-babe
+			+ "Fortune" 			Exec xmessage "`fortune`"
+Test (x hot-babe)	+ "Hot-babe"			Exec hot-babe
 + ""		Nop
-Test (x fwbuilder)	+ "Firewall Builder"		Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" fwbuilder
+Test (x fwbuilder)	+ "Firewall Builder"		Exec fwbuilder
 + ""		Nop
 Test (x gtklp)		+ "GtkLP - Imprimir (Local)"	Exec gtklp "Remova-me da lista e adicione os arquivos desejados"
 Test (x gtklp)		+ "GtkLP - Imprimir (Esther)"	Exec gtklp -P canon -S esther "Remova-me da lista e adicione os arquivos desejados"
-Test (x gtklpq)		+ "GtkLP - Fila (Local)"		Exec gtklpq
-Test (x gtklpq)		+ "GtkLP - Fila (Esther)"		Exec gtklpq -P canon -S esther
+Test (x gtklpq)		+ "GtkLP - Fila (Local)"	Exec gtklpq
+Test (x gtklpq)		+ "GtkLP - Fila (Esther)"	Exec gtklpq -P canon -S esther
 Test (x system-config-printer)\
-			+ "Gerenciador de Impressão"			Exec system-config-printer
-Test (x hp-toolbox)	+ "Ferramentas da HP"			Exec hp-toolbox
+			+ "Gerenciador de Impressão"	Exec system-config-printer
+Test (x hp-toolbox)	+ "Ferramentas da HP"		Exec hp-toolbox
 Test (x dillo) Test (f /usr/sbin/cupsd)\
-			+ "Administrador CUPS"					Exec dillo -g 1024x768 -f http://localhost:631
+			+ "Administrador CUPS"		Exec dillo -g 1024x768 -f http://localhost:631
 Test (x qink)		+ "QInk (Tível de tinta)"	Exec qink
 + ""		Nop
-Test (x parcellite)	+ "Ligar clipboard"				Exec parcellite
-Test (x parcellite)	+ "Desligar clipboard"			Exec killall parcellite
-Test (x parcellite)	+ ""							Nop
-Test (x k3b)		+ "K3B"							Exec k3b
-Test (x graveman)	+ "Graveman"					Exec graveman
-Test (x brasero)	+ "Brasero"						Exec brasero
-Test (x xfburn)		+ "Xfburn"						Exec xfburn
-Test (x xcdroast)	+ "XCDRoast"					Exec xcdroast
+Test (x parcellite)	+ "Ligar clipboard"		Exec parcellite
+Test (x parcellite)	+ "Desligar clipboard"		Exec killall parcellite
+Test (x parcellite)	+ ""				Nop
+Test (x k3b)		+ "K3B"				Exec k3b
+Test (x graveman)	+ "Graveman"			Exec graveman
+Test (x brasero)	+ "Brasero"			Exec brasero
+Test (x xfburn)		+ "Xfburn"			Exec xfburn
+Test (x xcdroast)	+ "XCDRoast"			Exec xcdroast
 + ""		Nop
-Test (x lxappearance)	+ "LXAppearance"			Exec lxappearance
+Test (x lxappearance)	+ "LXAppearance"		Exec lxappearance
 Test (x gtk-chtheme)	+ "GTK Change Theme"		Exec gtk-chtheme
 + ""		Nop
 Test (x hardinfo)	+ "Informações do Hardware" 	Exec hardinfo
-Test (x xmessage)	+ "Informações da Janela" 		Exec xmessage "`xwininfo`"
-Test (x treesize)	+ "Informações de Espaço"		Exec treesize
+Test (x xmessage)	+ "Informações da Janela" 	Exec xmessage "`xwininfo`"
+Test (x treesize)	+ "Informações de Espaço"	Exec treesize
 Test (x gsmartcontrol-root)\
-			+ "Informações do SMART"		Exec gsmartcontrol-root
+			+ "Informações do SMART"	Exec gsmartcontrol-root
 Test (x gksu)\
 	Test (x gnome-system-log)\
 			+ "Visualizador de registros"	Exec gksu gnome-system-log
@@ -244,8 +243,8 @@ Test (x pdfedit)	+ "PDFedit"			Exec pdfedit
 Test (x fontforge)	+ "FontForge"			Exec fontforge
 Test (x fontmatrix)	+ "Fontmatrix"			Exec fontmatrix
 Test (x gimp)		+ "GIMP"                        Exec gimp
-Test (x cinepaint)	+ "CinePaint"                   Exec LC_ALL=C cinepaint
-Test (x grafx2)		+ "GrafX2"                      Exec XIM_PROGRAM="" XMODIFIERS="" grafx2
+Test (x cinepaint)	+ "CinePaint"			Exec LC_ALL=C cinepaint
+Test (x grafx2)		+ "GrafX2"                      Exec grafx2
 Test (x gqview)		+ "GQview"                      Exec gqview
 Test (x geeqie)		+ "Geeqie"                      Exec geeqie
 Test (x ristretto)	+ "Ristretto"                   Exec ristretto
@@ -263,7 +262,7 @@ Test (x kfax)		+ "KFax"			Exec kfax
 Test (x kfaxview)	+ "KFaxView"			Exec kfaxview
 Test (x kghostview)	+ "KGhostView"			Exec kghostview
 Test (x kiconedit)	+ "KEditor de Ícone"		Exec kiconedit
-# comentado devido crashes no openSUSE --- Test (x kolourpaint)	+ "KolourPaint"			Exec kolourpaint
+Test (x kolourpaint)	+ "KolourPaint"			Exec kolourpaint
 Test (x kooka)		+ "Kooka"			Exec kooka
 Test (x kpdf)		+ "KPDF"			Exec kpdf
 Test (x krita)		+ "Krita"			Exec krita
@@ -314,7 +313,7 @@ Test (x code_crusader)	+ "Code Crusader"		Exec code_crusader
 Test (x medic)		+ "Code Medic"			Exec medic
 Test (x meld)		+ "Meld"			Exec meld
 Test (x /opt/smartgit/bin/smartgit.sh) \
-			+ "SmartGit"		Exec /opt/smartgit/bin/smartgit.sh
+			+ "SmartGit"			Exec /opt/smartgit/bin/smartgit.sh
 Test (x /opt/sublime_text_3/sublime_text)\
 			+ "Sublime Text"		Exec /opt/sublime_text_3/sublime_text
 Test (x retext)		+ "ReText"			Exec retext
@@ -364,15 +363,15 @@ Test (x netbeans)	+ "NetBeans"			Exec netbeans --laf Nimbus
 Test (x /opt/REALStudio2010r1/REAL\ Studio\ 2010)\
 			+ "REAL Studio"			Exec /opt/REALStudio2010r1/REAL\ Studio\ 2010
 Test (x /opt/RevMedia/revolution_media)\
-			+ "Revolution Media"		Exec XIM_PROGRAM="" XMODIFIERS="" GTK_IM_MODULE="" /opt/RevMedia/revolution_media
+			+ "Revolution Media"		Exec /opt/RevMedia/revolution_media
 
 # Científico
 #
 DestroyMenu "Science"
 AddToMenu "Science"
-Test (x lyx)		+ "LyX"			Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" lyx
-Test (x texmaker)	+ "Texmaker"			Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" texmaker
-Test (x texstudio)	+ "TeXstudio"			Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" texstudio
+Test (x lyx)		+ "LyX"			Exec lyx
+Test (x texmaker)	+ "Texmaker"			Exec texmaker
+Test (x texstudio)	+ "TeXstudio"			Exec texstudio
 Test (x texmacs)	+ "GNU TeXmacs"			Exec texmacs
 + ""		Nop
 Test (x leibnitz)	+ "Leibnitz"			Exec leibnitz
@@ -416,7 +415,7 @@ Test (x broffice.org)	+ "BrOffice.org"		Exec broffice.org
 Test (x openoffice.org)	+ "OpenOffice.org"		Exec openoffice.org
 Test (x libreoffice)	+ "LibreOffice"			Exec libreoffice
 Test (x symphony)	+ "IBM Lotus Symphony"		Exec symphony
-Test (x koshell)	+ "KOffice"			Exec XIM_PROGRAM="" XMODIFIERS="" koshell
+Test (x koshell)	+ "KOffice"			Exec koshell
 Test (x abiword)	+ "AbiWord"			Exec abiword
 Test (x gnumeric)	+ "Gnumeric"			Exec gnumeric
 Test (x nexs)		+ "NExS"			Exec nexs
@@ -441,21 +440,21 @@ Test (x zim)		+ "Zim"				Exec zim
 Test (x xpad)		+ "XPad"			Exec xpad
 Test (x tomboy)		+ "Tomboy"			Exec tomboy
 Test (x gnote)		+ "Gnote"			Exec gnote
-Test (x serna)		+ "Syntext Serna Free"		Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" serna
+Test (x serna)		+ "Syntext Serna Free"		Exec serna
 Test (x planner)	+ "Planner"			Exec planner
 Test (x xournal)	+ "Xournal"			Exec xournal
 Test (x /opt/jarnal/jarnal.sh)\
-			+ "Jarnal"			Exec XIM_PROGRAM="" XMODIFIERS="" /opt/jarnal/jarnal.sh
+			+ "Jarnal"			Exec /opt/jarnal/jarnal.sh
 Test (x /opt/ganttproject/ganttproject.sh)\
-			+ "GanttProject"		Exec XIM_PROGRAM="" XMODIFIERS="" /opt/ganttproject/ganttproject.sh
+			+ "GanttProject"		Exec /opt/ganttproject/ganttproject.sh
 Test (x /opt/freemind/freemind.sh)\
-			+ "FreeMind"			Exec XIM_PROGRAM="" XMODIFIERS="" /opt/freemind/freemind.sh
+			+ "FreeMind"			Exec /opt/freemind/freemind.sh
 Test (x /opt/yed/yed.sh)\
-			+ "yEd"				Exec XIM_PROGRAM="" XMODIFIERS="" /opt/yed/yed.sh
+			+ "yEd"				Exec /opt/yed/yed.sh
 Test (x /home/caio/XMind/XMind_Linux_64bit/xmind.sh)\
 			+ "XMind"			Exec /home/caio/XMind/XMind_Linux_64bit/xmind.sh
 Test (x /opt/tr/bin/tr.sh)\
-			+ "ThinkingRock"		Exec XIM_PROGRAM="" XMODIFIERS="" /opt/tr/bin/tr.sh
+			+ "ThinkingRock"		Exec /opt/tr/bin/tr.sh
 Test (x /opt/IHMC_CmapTools/CmapTools)\
 			+ "IHMC CmapTools"		Exec /opt/IHMC_CmapTools/CmapTools
 Test (x /opt/docear/docear.sh)\
@@ -467,9 +466,9 @@ Test (x /opt/jabref/jabref.sh)\
 # 
 DestroyMenu SoftMaker
 AddToMenu SoftMaker
-Test (x textmaker)	+ "SoftMaker TextMaker"		Exec XIM_PROGRAM="" XMODIFIERS="" textmaker
-Test (x planmaker)	+ "SoftMaker PlanMaker"		Exec XIM_PROGRAM="" XMODIFIERS="" planmaker
-Test (x presentations)	+ "SoftMaker Presentations"	Exec XIM_PROGRAM="" XMODIFIERS="" presentations
+Test (x textmaker)	+ "SoftMaker TextMaker"		Exec textmaker
+Test (x planmaker)	+ "SoftMaker PlanMaker"		Exec planmaker
+Test (x presentations)	+ "SoftMaker Presentations"	Exec presentations
 + ""		Nop
 Test (x epdfview) Test (f /opt/office2008/tm2008_en.pdf)\
 			+ "SoftMaker TextMaker Manual"	Exec epdfview /opt/office2008/tm2008_en.pdf
@@ -483,10 +482,10 @@ Test (x epdfview) Test (f /opt/office2008/pr2008_en.pdf)\
 # 
 DestroyMenu FreeOffice
 AddToMenu FreeOffice
-Test (x textmaker18free)	+ "SoftMaker TextMaker Free"	Exec XIM_PROGRAM="" XMODIFIERS="" textmaker18free
-Test (x planmaker18free)	+ "SoftMaker PlanMaker Free"	Exec XIM_PROGRAM="" XMODIFIERS="" planmaker18free
+Test (x textmaker18free)	+ "SoftMaker TextMaker Free"	Exec textmaker18free
+Test (x planmaker18free)	+ "SoftMaker PlanMaker Free"	Exec planmaker18free
 Test (x presentations18free) \
-		+ "SoftMaker Presentations Free"	Exec XIM_PROGRAM="" XMODIFIERS="" presentations18free
+		+ "SoftMaker Presentations Free"	Exec presentations18free
 + ""		Nop
 Test (x atril) Test (f /usr/share/freeoffice2018/tmfree_en.pdf)\
 			+ "SoftMaker TextMaker Manual"	Exec atril /usr/share/freeoffice2018/tmfree_en.pdf
@@ -500,29 +499,29 @@ Test (x atril) Test (f /usr/share/freeoffice2018/prfree_en.pdf)\
 # 
 DestroyMenu Kingsoft
 AddToMenu Kingsoft
-Test (x wps)		+ "Kingsoft Writer"		Exec XIM_PROGRAM="" XMODIFIERS="" wps
-Test (x et)		+ "Kingsoft Spreadsheet"	Exec XIM_PROGRAM="" XMODIFIERS="" et
-Test (x wpp)		+ "Kingsoft Presentations"	Exec XIM_PROGRAM="" XMODIFIERS="" wpp
+Test (x wps)		+ "Kingsoft Writer"		Exec wps
+Test (x et)		+ "Kingsoft Spreadsheet"	Exec et
+Test (x wpp)		+ "Kingsoft Presentations"	Exec wpp
 
 # Produtividade => ThinkFree Office
 # 
 DestroyMenu ThinkFree
 AddToMenu ThinkFree
-Test (x tfoffice)	+ "ThinkFree Office 3.5"	Exec XIM_PROGRAM="" XMODIFIERS="" tfoffice
-Test (x tfmanager)	+ "ThinkFree Manager 3.5"	Exec XIM_PROGRAM="" XMODIFIERS="" tfmanager
-Test (x tfwrite)	+ "ThinkFree Write 3.5"	Exec XIM_PROGRAM="" XMODIFIERS="" tfwrite
-Test (x tfcalc)	+ "ThinkFree Calc 3.5"	Exec XIM_PROGRAM="" XMODIFIERS="" tfcalc
-Test (x tfshow)	+ "ThinkFree Show 3.5"	Exec XIM_PROGRAM="" XMODIFIERS="" tfshow
+Test (x tfoffice)	+ "ThinkFree Office 3.5"	Exec tfoffice
+Test (x tfmanager)	+ "ThinkFree Manager 3.5"	Exec tfmanager
+Test (x tfwrite)	+ "ThinkFree Write 3.5"	Exec tfwrite
+Test (x tfcalc)	+ "ThinkFree Calc 3.5"	Exec tfcalc
+Test (x tfshow)	+ "ThinkFree Show 3.5"	Exec tfshow
 
 # Produtividade => SIAG Office
 # 
 DestroyMenu SIAG
 AddToMenu SIAG
-Test (x siag)		+ "Scheme In A Grid"		Exec XIM_PROGRAM="" XMODIFIERS="" siag
-Test (x pw)		+ "Pathetic Writer"		Exec XIM_PROGRAM="" XMODIFIERS="" pw
-Test (x egon)		+ "Egon Animator"		Exec XIM_PROGRAM="" XMODIFIERS="" egon
-Test (x xfiler)	+ "XFiler"			Exec XIM_PROGRAM="" XMODIFIERS="" xfiler
-Test (x xedplus)	+ "X Editor Plus"		Exec XIM_PROGRAM="" XMODIFIERS="" xedplus
+Test (x siag)		+ "Scheme In A Grid"		Exec siag
+Test (x pw)		+ "Pathetic Writer"		Exec pw
+Test (x egon)		+ "Egon Animator"		Exec egon
+Test (x xfiler)	+ "XFiler"			Exec xfiler
+Test (x xedplus)	+ "X Editor Plus"		Exec xedplus
 
 # Conectividade
 #
@@ -533,7 +532,7 @@ Test (x thunderbird)		+ "Mozilla Thunderbird"	Exec thunderbird
 Test (x seamonkey)		+ "SeaMonkey"		Exec GDK_NATIVE_WINDOWS=1 seamonkey
 Test (x kazehakase)		+ "Kazehakase"		Exec kazehakase
 Test (x midori)			+ "Midori"		Exec midori
-Test (x opera)		+ "Opera"		Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" opera
+Test (x opera)		+ "Opera"		Exec opera
 Test (x chromium)		+ "Chromium"		Exec chromium
 Test (x google-chrome)		+ "Google Chrome"	Exec google-chrome
 Test (x torbrowser-launcher)\
@@ -549,6 +548,7 @@ Test (x gftp)			+ "gFTP"                Exec gftp
 + ""		Nop
 Test (x vinagre)		+ "Vinagre"             Exec vinagre
 Test (x anydesk)		+ "AnyDesk"             Exec anydesk
+Test (x NX)			+ "NoMachine"           Exec NX
 + ""		Nop
 Test (x evolution)		+ "Evolution"           Exec evolution
 Test (x sylpheed)		+ "Sylpheed"            Exec sylpheed
@@ -570,7 +570,7 @@ Test (x qbittorrent)		+ "qBittorrent"		Exec qbittorrent
 Test (x vuze)			+ "Vuze"		Exec vuze
 Test (x deluge)			+ "Deluge"		Exec deluge
 + ""		Nop
-Test (x skype)		+ "Skype"		Exec XIM_PROGRAM="" GTK_IM_MODULE="" QT_IM_MODULE="" XMODIFIERS="" skype
+Test (x skypeforlinux)		+ "Skype"		Exec skypeforlinux
 Test (x ekiga)			+ "Ekiga"		Exec ekiga
 Test (x pidgin)			+ "Pidgin"              Exec pidgin
 Test (x kopete)			+ "Kopete"              Exec kopete
@@ -694,7 +694,7 @@ Test (x /opt/tibia/play.sh)\
 Test (x blobwars)	+ "Metal Blob Solid"		Exec blobwars
 Test (x opentyrian)	+ "OpenTyrian"			Exec opentyrian
 Test (x /opt/PokerTH/pokerth.sh)\
-			+ "PokerTH"			Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" /opt/PokerTH/pokerth.sh
+			+ "PokerTH"			Exec /opt/PokerTH/pokerth.sh
 Test (x gzdoom)		+ "GZDOOM"			Exec gzdoom
 Test (x vkquake)	+ "Quake (Vulkan)"		Exec vkquake
 Test (x quakespasm)	+ "Quake (OpenGL)"		Exec quakespasm
@@ -958,7 +958,7 @@ Test (f /usr/lib/ThunarBulkRename)\
 Test (x gnome-search-tool)\
 			+ "Localizar arquivos"	   	Exec gnome-search-tool
 Test (x catfish)	+ "Catfish"	   		Exec catfish
-Test (x recoll)		+ "Recoll"	   		Exec XIM_PROGRAM="" QT_IM_MODULE="" XMODIFIERS="" recoll
+Test (x recoll)		+ "Recoll"	   		Exec recoll
 + "" 		Nop
 Test (x unison)		+ "Unison"	   		Exec unison
 
