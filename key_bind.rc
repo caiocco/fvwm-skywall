@@ -45,10 +45,10 @@ Key F4		A	4	GotoDeskAndPage 3 0 0
 # Aceleradores de teclado para as teclas de funções
 Key F1		A	M	Popup "Utilities"
 Key F1		R	N	Nop
+Test (x albert) \
+	Key F2		A	M	Exec albert show
 Test (x xfce4-appfinder) \
-	Key F2		A	M	Exec xfce4-appfinder -c --disable-server
-Test (x gmrun) \
-	Key F2		A	M	Exec gmrun
+	Key F2		A	SM	Exec xfce4-appfinder -c --disable-server
 
 # Aceleradores de teclado para operações com janelas (padrão Motif)
 Key F3		W	M	Popup "Window-Ops2" window +0 +0
