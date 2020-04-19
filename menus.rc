@@ -949,6 +949,7 @@ Test (x worker)		+ "Worker"			Exec worker
 + "" 		Nop
 Test (x xarchiver)	+ "XArchiver"			Exec xarchiver
 Test (x xarchive)	+ "XArchive"			Exec xarchive
+Test (x engrampa)	+ "Engrampa"			Exec engrampa
 Test (x file-roller)	+ "File Roller"			Exec file-roller
 Test (x 7zFM)		+ "7-Zip"			Exec 7zFM
 Test (x ark)		+ "Ark"				Exec ark
