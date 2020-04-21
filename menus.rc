@@ -87,8 +87,8 @@ Test (x VirtualBox) 	+ "Oracle VM VirtualBox Manager" \
 							Exec VirtualBox
 Test (x vmware)		+ "VMware Server"		Exec vmware
 Test (x vmplayer)	+ "VMware Player"		Exec vmplayer
-Test (x SheepShaver)	+ "SheepShaver"			Exec SheepShaver
-Test (x BasiliskII)	+ "Basilisk II"			Exec BasiliskII
+Test (x SheepShaver)	+ "SheepShaver"			Exec xterm -name SheepShaverLog -iconic -T SheepShaver\ Log -e padsp SheepShaver
+Test (x BasiliskII)	+ "Basilisk II"			Exec xterm -name BasiliskIILog -iconic -T Basilisk\ II\ Log -e BasiliskII
 Test (x executor)	+ "Executor"			Exec executor
 Test (x pose)		+ "Palm OS Emulator"		Exec pose
 Test (x bochs)		+ "Bochs"			Exec xterm -e bochs
