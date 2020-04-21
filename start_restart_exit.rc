@@ -114,7 +114,7 @@ AddToFunc "StartFunction"
 #
 #------ Aplicativos
 + I Test (Init) Test (x gkrellm) exec gkrellm
-+ I Test (Init) Test (x albert) exec albert -k Meta+R
++ I Test (Init) Test (x albert) exec albert -k Alt+F2
 + I Test (Init) Test (!EnvMatch Sky_Panels_Type 4) Test (x rox) exec rox -p=fvwm2
 + I Test (Init) Test (EnvMatch Sky_Panels_Type 4) Test (x rox) exec rox -p=fvwm2a1
 + I Test (Init) Recapture
