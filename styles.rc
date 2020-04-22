@@ -344,6 +344,7 @@ Style skype \
 	!UsePPosition
 Style osmo \
 	Sticky
+Style texmacs.bin Icon /usr/share/pixmaps/TeXmacs.xpm
 
 # * Gráficos
 Style GrafX2 \
