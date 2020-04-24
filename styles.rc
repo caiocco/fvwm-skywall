@@ -729,6 +729,10 @@ Style Squeak \
 	EWMHDontDonateIcon, \
     IconOverride, \
 	Icon /usr/share/pixmaps/squeak.png
+Style DBeaver ResizeOutline
+Style Dbeaver PositionPlacement Center
+Style jetbrains-datagrip PositionPlacement Center
+Style jetbrains-pycharm-ce PositionPlacement Center
 
 # * Sistemas de entrada
 Style "CellWriter" \
