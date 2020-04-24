@@ -341,13 +341,11 @@ Test (x pgadmin3)\
 			+ "pgAdmin III"			Exec pgadmin3
 Test (x mysql-workbench)\
 			+ "MySQL Workbench"		Exec mysql-workbench
-Test (x /opt/datagrip/bin/datagrip.sh)\
-			+ "DataGrip"			Exec /opt/datagrip/bin/datagrip.sh
+Test (x $[HOME]/bin/datagrip)\
+			+ "DataGrip"			Exec $[HOME]/bin/datagrip
 + ""		Nop
-Test (x /opt/pycharm-community/bin/pycharm.sh)\
-			+ "PyCharm Community Edition"	Exec /opt/pycharm-community/bin/pycharm.sh
-Test (x /opt/pycharm/bin/pycharm.sh)\
-			+ "PyCharm"			Exec /opt/pycharm/bin/pycharm.sh
+Test (x $[HOME]/bin/pycharm)\
+			+ "PyCharm"			Exec $[HOME]/bin/pycharm
 Test (x idle)		+ "IDLE"			Exec idle
 Test (x qtcreator)	+ "Qt Creator"			Exec qtcreator
 Test (x anjuta)		+ "Anjuta"			Exec anjuta
