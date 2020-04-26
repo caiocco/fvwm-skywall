@@ -47,6 +47,22 @@ Style FvwmWinList \
 	BorderWidth -1, \
 	CirculateSkip, \
 	ClickToFocus
+Style FvwmWindowFinder \
+	Title, \
+	!Iconifiable, \
+	!Maximizable, \
+	FixedSize, \
+	Sticky, \
+	WindowListSkip, \
+	CirculateSkip, \
+	ClickToFocus, \
+	PositionPlacement Center, \
+	GrabFocus, \
+	StaysOnTop, \
+	!Button 4, \
+	!Button 3, \
+	!Button 6, \
+	!Button 8
 
 ### Se você quer mini-ícones na lista de janelas, comente os ###
 ### estilos declarados abaixo ###

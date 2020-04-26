@@ -188,6 +188,7 @@ Key Tab         A       M       WindowList Root c c \
 						NoCurrentDeskTitle, \
 						NoGeometryWithInfo, \
 						CurrentAtEnd
+# Combinação Alt + Shift + Tab
 Key Tab         A       MS      WindowList Root c c \
 						NoHotKeys, \
 						Icons, \
@@ -202,7 +203,8 @@ Key Tab         A       4       WindowList Root c c \
 						Icons, \
 						NoGeometryWithInfo, \
 						CurrentAtEnd
-Key Tab         A       MS      WindowList Root c c \
+# Combinação Super + Shift + Tab
+Key Tab         A       4S      WindowList Root c c \
 						NoHotKeys, \
 						Icons, \
 						NoGeometryWithInfo, \
@@ -223,6 +225,15 @@ Key Escape      A       CM      Exec xkill
 # Super + Esc para ligar/desligar Redshift
 Key Escape	A	4	Exec play "$[KeySound]" > /dev/null ; \
 				pkill -USR1 redshift
+
+# Super + Enter para abrir o buscador de janelas
+Key Return	A	4	Exec xterm \
+				-fa "Droid Sans Mono:style=Regular" \
+				-fs 10 -bg grey10 \
+				-fg white \
+				+sb \
+				-name FvwmWindowFinder \
+				-e ~/.fvwm/window_finder.sh 
 
 echo key_bind.rc: Processamento terminado.
 #=====================================================================#
