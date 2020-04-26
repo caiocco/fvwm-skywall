@@ -749,6 +749,7 @@ Style DBeaver ResizeOutline
 Style Dbeaver PositionPlacement Center
 Style jetbrains-datagrip PositionPlacement Center
 Style jetbrains-pycharm-ce PositionPlacement Center
+Style Knime PositionPlacement Center
 
 # * Sistemas de entrada
 Style "CellWriter" \
