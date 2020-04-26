@@ -6,7 +6,7 @@
 random=`awk -v min=100009 -v max=999999 'BEGIN{srand(); print int(min+rand()*(max-min+1))}'`
 wmctrl -l | cat -n > /tmp/${random}_fvwm_window_list.txt
 selection=`cat /tmp/${random}_fvwm_window_list.txt | fzf -e`
-id=`echo $selection | cut -f 1 -d " "`
+id=`echo $selection | cut -f 2 -d " "`
 window_name=`wmctrl -l 2> /dev/null | grep $id | sed 's/  /_/g;s/ /_/g' | cut -d_ -f4,4- | sed 's/_/ /g'`
 wmctrl -a ${window_name}
 
