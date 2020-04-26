@@ -334,18 +334,16 @@ Test (x kbabel)		+ "KBabel"			Exec kbabel
 Test (x cervisia)	+ "Cervisia"			Exec cervisia
 Test (x umbrello)	+ "Umbrello"			Exec umbrello
 + ""		Nop
-Test (x dbeaver)	+ "DBeaver"			Exec dbeaver
 Test (x sqlitestudio)\
 			+ "SQLiteStudio"		Exec sqlitestudio
 Test (x pgadmin3)\
 			+ "pgAdmin III"			Exec pgadmin3
 Test (x mysql-workbench)\
 			+ "MySQL Workbench"		Exec mysql-workbench
-Test (x $[HOME]/bin/datagrip)\
-			+ "DataGrip"			Exec $[HOME]/bin/datagrip
+Test (x dbeaver)	+ "DBeaver"			Exec dbeaver
+Test (x datagrip)	+ "DataGrip"			Exec datagrip
 + ""		Nop
-Test (x $[HOME]/bin/pycharm)\
-			+ "PyCharm"			Exec $[HOME]/bin/pycharm
+Test (x pycharm)	+ "PyCharm"			Exec pycharm
 Test (x idle)		+ "IDLE"			Exec idle
 Test (x qtcreator)	+ "Qt Creator"			Exec qtcreator
 Test (x anjuta)		+ "Anjuta"			Exec anjuta
@@ -383,6 +381,7 @@ Test (x viewsz)		+ "Viewsz"                     	Exec viewsz
 Test (x geogebra)	+ "GeoGebra"                    Exec geogebra
 Test (x gretl)		+ "Gretl"                     	Exec gretl
 Test (x psppire)	+ "PSPP"                     	Exec psppire
+Test (x knime)		+ "KNIME Analytics Platform"    Exec knime
 Test (x orange-canvas)\
 			+ "Orange"                     	Exec orange-canvas
 			+ ""		Nop
@@ -447,16 +446,15 @@ Test (x /opt/ganttproject/ganttproject.sh)\
 			+ "GanttProject"		Exec /opt/ganttproject/ganttproject.sh
 Test (x /opt/freemind/freemind.sh)\
 			+ "FreeMind"			Exec /opt/freemind/freemind.sh
-Test (x /opt/yed/yed.sh)\
-			+ "yEd"				Exec /opt/yed/yed.sh
+Test (x $[HOME]/bin/yed)\
+			+ "yEd Graph Editor"		Exec $[HOME]/bin/yed
 Test (x /home/caio/XMind/XMind_Linux_64bit/xmind.sh)\
 			+ "XMind"			Exec /home/caio/XMind/XMind_Linux_64bit/xmind.sh
 Test (x /opt/tr/bin/tr.sh)\
 			+ "ThinkingRock"		Exec /opt/tr/bin/tr.sh
 Test (x /opt/IHMC_CmapTools/CmapTools)\
 			+ "IHMC CmapTools"		Exec /opt/IHMC_CmapTools/CmapTools
-Test (x /opt/docear/docear.sh)\
-			+ "Docear"			Exec /opt/docear/docear.sh
+Test (x docear)		+ "Docear"			Exec docear
 Test (x /opt/jabref/jabref.sh)\
 			+ "JabRef"			Exec /opt/jabref/jabref.sh
 
