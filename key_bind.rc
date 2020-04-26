@@ -233,6 +233,7 @@ Key Return	A	4	Exec xterm \
 				-fg white \
 				+sb \
 				-name FvwmWindowFinder \
+				-T Localizador\ de\ Janelas \
 				-e ~/.fvwm/window_finder.sh 
 
 echo key_bind.rc: Processamento terminado.
