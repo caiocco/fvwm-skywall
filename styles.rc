@@ -574,6 +574,7 @@ Style vkquake \
 	Icon $[Fvwm_Icon_Theme]/48x48/apps/quake.png
 Style quakespasm \
 	Icon $[Fvwm_Icon_Theme]/48x48/apps/quake.png
+Style Influent.x86 !Title, !Borders
 
 # * Emuladores de Terminal
 Style xterm \
@@ -747,9 +748,11 @@ Style Squeak \
 	Icon /usr/share/pixmaps/squeak.png
 Style DBeaver ResizeOutline
 Style Dbeaver PositionPlacement Center
-Style jetbrains-datagrip PositionPlacement Center
-Style jetbrains-pycharm-ce PositionPlacement Center
+Style jetbrains-datagrip PositionPlacement Center, SloppyFocus
+Style jetbrains-pycharm-ce PositionPlacement Center, SloppyFocus
 Style Knime PositionPlacement Center
+Style KNIME SloppyFocus
+Style sun-awt-X11-XFramePeer SloppyFocus
 
 # * Sistemas de entrada
 Style "CellWriter" \
