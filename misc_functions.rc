@@ -134,5 +134,28 @@ AddToFunc FuncSysHibernate
 + I Test (x xscreensaver-command) Exec xscreensaver-command --lock
 + I Exec systemctl hibernate
 
+# ------------------- FuncWinFinder
+DestroyFunc FuncWinFinder
+AddToFunc FuncWinFinder
+ I Test (x urxvt-256-color) Exec exec urxvt-256color \
+	-fn "xft:DejaVu Sans Mono:style=Regular:pixelsize=14" \
+	-bg grey10 \
+	-fg white \
+	+sb \
+	-name FvwmWindowFinder \
+	-T 'Localizador de Janelas' \
+	-e bash ~/.fvwm/window_finder.sh
++ I TestRc (Match) break
++ I Test (x xterm) Exec exec xterm \
+	-fa "Droid Sans Mono:style=Regular" \
+	-fs 10 \
+	-bg grey10 \
+	-fg white \
+	+sb \
+	-name FvwmWindowFinder \
+	-T Localizador\ de\ Janelas \
+	-e ~/.fvwm/window_finder.sh 
++ I TestRc (Match) break
+
 echo misc_functions.rc: Processamento terminado.
 #=====================================================================#

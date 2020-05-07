@@ -934,21 +934,68 @@ Test (x unison)		+ "Unison"	   		Exec unison
 #
 DestroyMenu "Shells"
 AddToMenu "Shells"
-Test (x xfce4-terminal)	+ "Terminal"			Exec xfce4-terminal
-Test (x gnome-terminal)	+ "Terminal do GNOME"		Exec gnome-terminal
-Test (x mate-terminal)	+ "Terminal do MATE"		Exec mate-terminal
-Test (x konsole)	+ "Konsole"			Exec konsole
-Test (x mrxvt)		+ "MRxvt"			Exec mrxvt +sb -fn 10x20 -pixmap \
-							$[Sky_ImageDir]/Texturas/nebula.jpg -fg lightgray -bg black \
-							-tbpixmap $[Sky_ImageDir]/Texturas/GreyArena.xpm
-Test (x aterm)		+ "ATerm"			Exec aterm
-Test (x urxvt)		+ "URxvt"			Exec urxvt
-+ ""		Nop
-Test (x xterm)		+ "XTerm	(fonte 7x14)" 	Exec xterm -sb -sl 500 -j -ls -fn 7x14 -fb 7x14bold &
-Test (x rxvt)		+ "XTerm Grande	(fonte 10x20)" 	Exec xterm -sb -sl 500 -j -ls -fn 10x20 &
-+ ""	 	Nop
-Test (x rxvt)		+ "Rxvt	(fonte 7x14)"		Exec rxvt -bg black -fg lightgreen -font 7x14 -ls
-Test (x rxvt)		+ "Rxvt Grande	(fonte 10x20)" 	Exec rxvt -bg black -fg lightgreen -font 10x20 -ls
+Test (x xfce4-terminal) + "Terminal" Exec xfce4-terminal
+Test (x gnome-terminal)	+ "Terminal do GNOME" Exec gnome-terminal
+Test (x mate-terminal) + "Terminal do MATE" Exec mate-terminal
+Test (x konsole) + "Konsole" Exec konsole
+Test (x mrxvt) + "MRxvt" Exec mrxvt \
+	+sb \
+	-fn 10x20 \
+	-pixmap $[Sky_ImageDir]/Texturas/nebula.jpg \
+	-fg lightgray \
+	-bg black \
+	-tbpixmap $[Sky_ImageDir]/Texturas/GreyArena.xpm
+Test (x aterm) + "ATerm" Exec aterm
++ "" Nop
+Test (x urxvt) + "URxvt (fonte 14 px)" Exec urxvt \
+	-bg black \
+	-fg lightgreen \
+	-fn "xft:Droid Sans Mono:pixelsize=14" \
+	-ls
+Test (x urxvt-256color) + "URxvt (256 cores, fonte 14 px)" \
+	Exec urxvt-256color \
+	-bg black \
+	-fg lightgray \
+	-fn "xft:Droid Sans Mono:pixelsize=14" \
+	-ls
+Test (x urxvt-256color) + "URxvt (256 cores, fonte 14 px, pixmap)" \
+	Exec urxvt-256color \
+	-pixmap $[Sky_ImageDir]/Texturas/nebula.jpg \
+	-bg black \
+	-fg lightgray \
+	-fn "xft:Droid Sans Mono:pixelsize=14" \
+	-ls
+Test (x urxvt-256color)	+ "URxvt (256 cores, fonte 24 px)" \
+	Exec urxvt-256color \
+	-bg black \
+	-fg lightgray \
+	-fn "xft:Droid Sans Mono:pixelsize=24" \
+	-ls
+Test (x rxvt) + "" Nop
+Test (x rxvt) + "Rxvt (fonte 7x14)" Exec rxvt \
+	-bg black \
+	-fg lightgreen \
+	-font 7x14 \
+	-ls
+Test (x rxvt) + "Rxvt (fonte 10x20)" Exec rxvt \
+	-bg black \
+	-fg lightgreen \
+	-font 10x20 \
+	-ls
+Test (x xterm) + "" Nop
+Test (x xterm) + "XTerm (fonte 7x14)" Exec xterm \
+	-sb \
+	-sl 500 \
+	-j \
+	-ls \
+	-fn 7x14 \
+	-fb 7x14bold
+Test (x xterm) + "XTerm (fonte 10x20)" Exec xterm \
+	-sb \
+	-sl 500 \
+	-j \
+	-ls \
+	-fn 10x20
 
 # Módulos
 # 
@@ -1014,26 +1061,26 @@ AddToMenu "Quit-Verify"
 #            dois do trackball ou mouse
 DestroyMenu "Window Ops"
 AddToMenu "Window Ops"
-+ "Ops. com Janelas"	Title
-+ "&Restaurar	Alt+F5"		Pick Function DeIconify-or-UnMaximize
-+ "&Mover	Alt+F7"		Function Move-or-Raise
-+ "&Tamanho	Alt+F8"		Function Resize-or-Raise
-+ "Mi&nimizar	Alt+F9"		Iconify True
-+ "Ma&ximizar	Alt+F10"	Maximize True
-+ "A&cima"			Raise
-+ "A&baixo"			Lower
-+ "(Des)&Pregar	Alt+F6"		Stick
++ "Ops. com Janelas" Title
++ "&Restaurar	Alt+F5" Pick Function DeIconify-or-UnMaximize
++ "&Mover	Alt+F7" Function Move-or-Raise
++ "&Tamanho	Alt+F8" Function Resize-or-Raise
++ "Mi&nimizar	Alt+F9" Iconify True
++ "Ma&ximizar	Alt+F10" Maximize True
++ "A&cima" Raise
++ "A&baixo" Lower
++ "(Des)&Pregar	Alt+F6" Stick
++ "" Nop
++ "Ampliar &Janela" Pick Exec exec xmag -source $[w.width]x$[w.height]+$[w.x]+$[w.y] -mag 2
++ "Barras de Rola&gem" Module FvwmScroll
++ "" Nop
++ "Mata&r" Destroy
++ "&Fechar	Alt+F4"	Delete
 + ""		Nop
-+ "Ampliar &Janela"		Pick Exec exec xmag -source $[w.width]x$[w.height]+$[w.x]+$[w.y] -mag 2
-+ "Barras de Rola&gem"		Module FvwmScroll
++ "&Alternar para..." WindowList
++ "Redesenhar &Tela" Refresh
 + ""		Nop
-+ "Mata&r"			Destroy
-+ "&Fechar	Alt+F4"		Delete
-+ ""		Nop
-+ "&Alternar para..."		WindowList
-+ "Redesenhar &Tela"		Refresh
-+ ""		Nop
-+ "&Organizar..."		Popup "Window Org"
++ "&Organizar..." Popup "Window Org"
 
 # Organizar Janelas
 # Descrição: é um menu que permite ao usuário organizar as janelas de
@@ -1054,28 +1101,29 @@ AddToMenu "Window Org"
 DestroyMenu "Window-Ops2" 
 AddToMenu "Window-Ops2"
 Test (EnvMatch Sky_Theme_Diamond_Type Vector) ChangeMenuStyle "WindowList" "Window-Ops2"
-+ "&Restaurar	Alt+F5"		Function DeIconify-or-UnMaximize
-+ "&Mover	Alt+F7"		Move-or-Raise
-+ "&Tamanho	Alt+F8"		Resize-or-Raise
-+ "Mi&nimizar	Alt+F9"		Iconify True
-+ "Ma&ximizar	Alt+F10"	Maximize True
-+ "&Pregar	Alt+F6"		Stick
++ "&Restaurar	Alt+F5" Function DeIconify-or-UnMaximize
++ "&Mover	Alt+F7" Move-or-Raise
++ "&Tamanho	Alt+F8" Resize-or-Raise
++ "Mi&nimizar	Alt+F9" Iconify True
++ "Ma&ximizar	Alt+F10" Maximize True
++ "&Pregar	Alt+F6" Stick
++ "" Nop
++ "Mata&r" Destroy
++ "&Fechar	Alt+F4" Delete
 + ""		Nop
-+ "Mata&r"			Destroy
-+ "&Fechar	Alt+F4"		Delete
-+ ""		Nop
-+ "&Alternar para..."		WindowList
++ "&Alternar para..." WindowList
++ "Pesquisar &janela..." Function FuncWinFinder
 
 # Menu de Troca da Disposição Lógica de Teclas do Teclado
 # Descrição: menu especialmente feito para facilitar a troca de layouts
 #            de teclado por meio do ".fvwm/keyb.sh"
 DestroyMenu Keyboard
 AddToMenu Keyboard
-+ "Layout ABNT-2"		Exec exec $[HOME]/.fvwm/keyb.sh br
-+ "Layout US International"	Exec exec $[HOME]/.fvwm/keyb.sh us
-+ "Layout US"			Exec exec $[HOME]/.fvwm/keyb.sh usnoint
-+ "Layout Russo"		Exec exec $[HOME]/.fvwm/keyb.sh ru
-+ "Layout Russo Fonético"	Exec exec $[HOME]/.fvwm/keyb.sh rufo
++ "Layout &ABNT-2" Exec exec $[HOME]/.fvwm/keyb.sh br
++ "Layout US &International" Exec exec $[HOME]/.fvwm/keyb.sh us
++ "Layout &US" Exec exec $[HOME]/.fvwm/keyb.sh usnoint
++ "Layout &Russo" Exec exec $[HOME]/.fvwm/keyb.sh ru
++ "Layout Russo &Fonético" Exec exec $[HOME]/.fvwm/keyb.sh rufo
 
 echo menus.rc: Processamento terminado.
 #=====================================================================#
