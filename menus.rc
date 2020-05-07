@@ -393,6 +393,9 @@ Test (x /opt/scilab/bin/scilab)\
 + ""		Nop
 Test (x qgis)		+ "QGIS"                    	Exec qgis
 Test (x saga_gui)	+ "SAGA GIS"                   	Exec saga_gui
++ ""		Nop
+Test (x google-earth-pro)\
+			+ "Google Earth Pro" 		Exec LC_NUMERIC=en_US.UTF-8 google-earth-pro
 
 
 # Produtividade
@@ -578,12 +581,8 @@ Test (x /opt/Discord/Discord)\
 Test (x liferea)		+ "Liferea"		Exec liferea
 Test (x /opt/rssowl/RSSOwl)\
 				+ "RSS Owl"		Exec /opt/rssowl/RSSOwl
-Test (x google-earth)	\
-				+ "Google Earth"	Exec LC_NUMERIC=en_US.UTF-8 google-earth
-Test (x google-earth-pro)\
-				+ "Google Earth Pro" 	Exec LC_NUMERIC=en_US.UTF-8 google-earth-pro
-Test (x wireshark-gtk)	+ "Wireshark (GTK)"		Exec wireshark-gtk
-Test (x wireshark-qt)	+ "Wireshark (QT)"		Exec wireshark-qt
++ ""		Nop
+Test (x wireshark)		+ "Wireshark"		Exec wireshark
 Test (x zenmap)		+ "Zenmap"		Exec LANG=C zenmap
 Test (x zenmap) Test (x xdg-su)\
 				+ "Zenmap como root"	Exec LANG=C xdg-su -u root -c zenmap
@@ -695,7 +694,6 @@ Test (x gzdoom)		+ "GZDOOM"			Exec gzdoom
 Test (x vkquake)	+ "Quake (Vulkan)"		Exec vkquake
 Test (x quakespasm)	+ "Quake (OpenGL)"		Exec quakespasm
 Test (x alephone)	+ "Aleph One"			Popup Games-alephone
-Test (x mednafen)	+ "Mednafen"			Popup Games-mednafen
 Test (x xbill)		+ "XBill"			Exec xbill
 Test (x xpenguins)	+ "XPenguins"			Exec xpeguins
 Test (x xpenguins)	+ "Matar XPenguins"		Exec killall xpeguins
@@ -709,33 +707,6 @@ Test (x steam)		+ "Steam"   			Exec steam
 Test (x /opt/fez/FEZ)\
 			+ "Humble Indie Bundle"		Popup Games-humble
 Test (x kpat)		+ "Jogos do KDE"  		Popup "KDE Games"
-
-# Jogos => Mednafen
-# 
-AddToFunc MakeMednafenMenu
-+ I DestroyMenu recreate Games-mednafen
-+ I AddToMenu Games-mednafen
-+ I PipeRead 'for i in $HOME/Arquivos/ROMs/_GameBoy/*.zip; \
-  do echo AddToMenu Games-mednafen "`basename $i | cut -d . -f 1`" Exec mednafen -sounddriver sdl $i; done'
-+ I AddToMenu Games-mednafen "" Nop
-+ I AddToMenu Games-mednafen "Ajuda" Popup Games-mednafen-help
-
-AddToMenu Games-mednafen
-
-+ ""		Nop
-+ DynamicPopupAction Function MakeMednafenMenu
-
-
-# Jogos => Mednafen => Ajuda
-# 
-AddToFunc MakeMednafenHelpMenu
-+ I DestroyMenu recreate Games-mednafen-help
-+ I AddToMenu Games-mednafen-help
-+ I PipeRead 'for i in /usr/share/doc/packages/mednafen/*.html; \
-  do echo AddToMenu Games-mednafen-help "`basename $i | cut -d . -f 1`" Exec dillo -f $i; done'
-
-AddToMenu Games-mednafen-help
-+ DynamicPopupAction Function MakeMednafenHelpMenu
 
 # Jogos => Aleph One
 #
