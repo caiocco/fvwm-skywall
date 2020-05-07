@@ -751,7 +751,7 @@ Style Dbeaver PositionPlacement Center
 Style jetbrains-datagrip PositionPlacement Center, SloppyFocus
 Style jetbrains-pycharm-ce PositionPlacement Center, SloppyFocus
 Style Knime PositionPlacement Center
-Style KNIME SloppyFocus
+Style KNIME SloppyFocus, ResizeOutline
 Style sun-awt-X11-XFramePeer SloppyFocus
 
 # * Sistemas de entrada
