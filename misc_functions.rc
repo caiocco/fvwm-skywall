@@ -137,7 +137,7 @@ AddToFunc FuncSysHibernate
 # ------------------- FuncWinFinder
 DestroyFunc FuncWinFinder
 AddToFunc FuncWinFinder
- I Test (x urxvt-256-color) Exec exec urxvt-256color \
++ I Test (x urxvt-256-color) Exec exec urxvt-256color \
 	-fn "xft:DejaVu Sans Mono:style=Regular:pixelsize=14" \
 	-bg grey10 \
 	-fg white \
