@@ -547,6 +547,7 @@ Test (x gftp)			+ "gFTP"                Exec gftp
 + ""		Nop
 Test (x vinagre)		+ "Vinagre"             Exec vinagre
 Test (x anydesk)		+ "AnyDesk"             Exec anydesk
+Test (x teamviewer)		+ "TeamViewer"          Exec teamviewer
 Test (x NX)			+ "NoMachine"           Exec NX
 + ""		Nop
 Test (x evolution)		+ "Evolution"           Exec evolution
@@ -1078,6 +1079,7 @@ AddToMenu "Window Ops"
 + "&Fechar	Alt+F4"	Delete
 + ""		Nop
 + "&Alternar para..." WindowList
++ "Pesquisar &janela..." Function FuncWinFinder
 + "Redesenhar &Tela" Refresh
 + ""		Nop
 + "&Organizar..." Popup "Window Org"
