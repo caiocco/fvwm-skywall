@@ -643,6 +643,7 @@ Style vivaldi-stable \
 	EWMHDontDonateIcon, \
 	IconOverride, \
 	Icon /opt/vivaldi/product_logo_48.png
+Style Picture-in-picture StaysOnTop Sticky
 Style Google-chrome \
 	EWMHDontDonateIcon, \
 	IconOverride, \
