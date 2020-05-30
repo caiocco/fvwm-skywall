@@ -714,15 +714,15 @@ Test (x kpat)		+ "Jogos do KDE"  		Popup "KDE Games"
 DestroyMenu "Games-alephone"
 AddToMenu "Games-alephone"
 Test (f /usr/share/alephone-marathon/) \
-			+ "Marathon"			Exec alephone /usr/share/alephone-marathon/
+			+ "Marathon"			Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; alephone /usr/share/alephone-marathon/
 Test (f /usr/share/alephone-marathon2/) \
-			+ "Marathon 2: Durandal"	Exec alephone /usr/share/alephone-marathon2/
+			+ "Marathon 2: Durandal"	Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; alephone /usr/share/alephone-marathon2/
 Test (f //usr/share/alephone-marathon-infinity) \
-			+ "Marathon: Infinity"		Exec alephone usr/share/alephone-marathon-infinity
+			+ "Marathon: Infinity"		Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; alephone usr/share/alephone-marathon-infinity
 Test (f /usr/share/alephone-eternalx/) \
-			+ "Marathon: Eternal X"		Exec alephone /usr/share/alephone-eternalx/
+			+ "Marathon: Eternal X"		Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; alephone /usr/share/alephone-eternalx/
 Test (f /usr/share/AlephOne/Rubicon\ X/) \
-			+ "Marathon: Rubicon X"		Exec alephone /usr/share/AlephOne/Rubicon\ X/
+			+ "Marathon: Rubicon X"		Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; alephone /usr/share/AlephOne/Rubicon\ X/
 
 # Jogos => Indie Bundle
 #
