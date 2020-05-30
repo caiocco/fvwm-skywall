@@ -9,20 +9,19 @@ AddToFunc "StartFunction"
 #
 #
 #------ Aplicativos prioritários
-+ I Test (Init) Test (Version < 2.6.6) exec xmessage -center -bg red -fg yellow "Sua versao do FVWM esta' desatualizada!"
-#+ I Test (Init) Test (x scim) Exec exec scim -d
-#+ I Test (Init) Test (x xrandr) Exec exec xrandr --output VGA1 --off
++ I Test (Init) Test (Version < 2.6.7) exec xmessage -center -bg red -fg yellow "Sua versao do FVWM esta' desatualizada!"
 + I Test (Init) Test (x xrandr) Test (x $[HOME]/.fvwm/xrandr.sh) Exec ~/.fvwm/xrandr.sh
 + I Test (Init) Test (x xset) Exec exec xset m 0 0
 + I Test (Init) Test (x xsetroot) Exec exec xsetroot -solid black
-+ I Test (Init) Test (EnvMatch Sky_Comp Yes) exec xcompmgr -c -d :0.0
++ I Test (Init) Test (x $[HOME]/.fvwm/keyb.sh) Exec exec $[HOME]/.fvwm/keyb.sh
++ I Test (Init) Test (EnvMatch Sky_Comp Yes) Test (x compton) \
+	Exec compton -bCGf -i 0.9 -D 5 --sw-opti
 + I Test (Init) Test (EnvMatch Sky_TwoMons Yes) \
 	Test (EnvMatch Sky_TwoMons_Type 1) \
 	Test (EnvMatch Sky_Comp Yes) exec xcompmgr -c -d :0.1
 #
 #
 #------ Módulos
-#+ I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Module FvwmButtons -g 129x$[vp.height]-0+0 FvwmShelf
 + I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView No) Module FvwmButtons -g 145x$[vp.height]-0+0 FvwmShelf
 + I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g 145x$[vp.height]+$$(($[vp.width]-145))+0 FvwmShelf"
 + I Test (Init) Test (EnvMatch Sky_Panels_Type 1.5) Module FvwmButtons -g 145x$[vp.height]-0+0 FvwmShelf
@@ -32,8 +31,6 @@ AddToFunc "StartFunction"
 + I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView No) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145))x28+0-0 FvwmBar"
 + I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145-1775))x28+0+0 FvwmBar"
 + I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145-1536))x28+$$(($[vp.width]-1920))+0 FvwmBar2"
-#+ I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) Wait FvwmShelf
-#+ I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) Wait FvwmPager
 + I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) Module FvwmButtons FvwmButtons-Pager3
 + I Test (Init) Test (EnvMatch Sky_Panels_Type 1.5) Test (EnvMatch Sky_TwinView No) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145))x55+0-0 FvwmBar"
 + I Test (Init) Test (EnvMatch Sky_Panels_Type 1.5) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145))x55+0+0 FvwmBar"
@@ -51,7 +48,6 @@ AddToFunc "StartFunction"
 + I Test (Init) Module FvwmAnimate
 + I Test (Init) Module FvwmCommandS
 + I Test (Init) Module FvwmBanner
-#+ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Module FvwmButtons -g 129x$[vp.height]-0+0 FvwmShelf
 + I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView No) Module FvwmButtons -g 145x$[vp.height]-0+0 FvwmShelf
 + I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g 145x$[vp.height]+$$(($[vp.width]-145))+0 FvwmShelf"
 + I Test (Restart) Test (EnvMatch Sky_Panels_Type 1.5) Module FvwmButtons -g 145x$[vp.height]-0+0 FvwmShelf
@@ -61,8 +57,6 @@ AddToFunc "StartFunction"
 + I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView No) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145))x28+0-0 FvwmBar"
 + I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145-1775))x28+0+0 FvwmBar"
 + I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145-1536))x28+$$(($[vp.width]-1920))+0 FvwmBar2"
-#+ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) Wait FvwmShelf
-#+ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) Wait FvwmPager
 + I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) Module FvwmButtons FvwmButtons-Pager3
 + I Test (Restart) Test (EnvMatch Sky_Panels_Type 1.5) Test (EnvMatch Sky_TwinView No) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145))x55+0-0 FvwmBar"
 + I Test (Restart) Test (EnvMatch Sky_Panels_Type 1.5) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g $$(($[vp.width]-145))x55+0+0 FvwmBar"
@@ -98,6 +92,7 @@ AddToFunc "StartFunction"
 + I Test (Init) Test (x thunar) exec thunar --daemon
 + I Test (Init) Test (x /usr/lib/xfce4/notifyd/xfce4-notifyd) \
 	exec /usr/lib/xfce4/notifyd/xfce4-notifyd
+
 #+ I Test (Init) exec xmodmap -e "clear Lock"	# DESATIVA CAPSLOCK
 #+ I Test (Init) exec xmodmap -e "clear Mod2"	# DESATIVA NUMLOCK
 #+ I Test (Init) exec xmodmap -e "clear Mod5"	# DESATIVA SCRLOCK
@@ -113,12 +108,13 @@ AddToFunc "StartFunction"
 #
 #
 #------ Aplicativos
-+ I Test (Init) Test (x gkrellm) exec gkrellm
 + I Test (Init) Test (x albert) exec albert -k Alt+F2
 + I Test (Init) Test (!EnvMatch Sky_Panels_Type 4) Test (x rox) exec rox -p=fvwm2
 + I Test (Init) Test (EnvMatch Sky_Panels_Type 4) Test (x rox) exec rox -p=fvwm2a1
-+ I Test (Init) Recapture
++ I Test (Init) Test (x gkrellm) exec gkrellm
++ I Test (Init) Test (x gkrellm) Wait gkrellm
 + I Test (Init) Restart
++ I Test (Restart) Recapture
 #
 # 
 #------ Monitor secundário
@@ -148,20 +144,14 @@ AddToFunc "StartFunction"
 	Test (EnvMatch Sky_TwoMons_Type 3) \
 	Test (x fvwm) \
 	exec DISPLAY=:0.0 fvwm -d :0.0 -f $HOME/.fvwm/config-syncmaster
-#
-#
-#------ Miscelânia
-+ I Test (Init) Test (f /usr/share/sounds/KDE_Beep_Connect.ogg) \
-	exec play /usr/share/sounds/KDE_Beep_Connect.ogg
 
-#------
+#------ Finalização do FVWM
 #
 #
 AddToFunc "ExitFunction"
-+ I Test (ToRestart) Test (f /usr/share/sounds/KDE_Beep.ogg) \
-	exec play /usr/share/sounds/KDE_Beep.ogg
 + I Test (Quit) KillModule FvwmAnimate
 + I Test (Exit) Test (x dropbox) exec dropbox stop
++ I Test (Quit) Test (x albert) exec killall -s TERM albert
 + I Test (Exit) Test (f $[HOME]/.config/gtk-3.0/gtk.css) exec mv ~/.config/gtk-3.0/gtk.css ~/.config/gtk-3.0/gtk.css.fvwm
 + I Test (Exit) exec sync
 
