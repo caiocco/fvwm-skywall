@@ -4,7 +4,8 @@ echo diamond-theme.rc: Processando tema Diamond...
 #
 # Configurações cosméticas
 # Tema Diamond
-# Baseado no original "SlateHorn_Blue, por WebRevenger" do Emerald
+# Versão pixmap baseada no original "SlateHorn_Blue, por WebRevenger"
+# do Emerald
 #
 DestroyDecor "diamond"
 # Azul (Blue) ou Vermelho (Red)?
@@ -101,7 +102,7 @@ Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + AddButtonStyle 6 Inactive pixmap
 Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + AddButtonStyle 8 Inactive pixmap $[Sky_Dir]/imagens/gray_diam_shade.png
 
 # - Vector
-#   Créditos a http://fvwmforums.org/wiki/Config/VectorButtons/ pelos vetores pré-desenhados disponíveis
+#   Créditos a http://www.fvwm.org/Wiki/Config/VectorButtons/ pelos vetores pré-desenhados disponíveis
 Test (EnvMatch Sky_Theme_Diamond_Type Vector) AddToDecor "diamond" 
 # - Hintings
 Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 1 - Clear MWMDecorMenu
@@ -112,25 +113,31 @@ Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 6 - Clear MWMDecorMi
 Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 8 - Clear MwmDecorShade
 # - Menu-controle
 Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 1 ActiveDown Vector 5 40x23@1 64x23@1 64x76@0 40x76@0 40x23@1
-# - Alternar-para
+# - Alternar para
 Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 3 Vector 16 60x40@1 60x80@0 15x80@0 15x40@1 60x40@1 40x40@1 40x25@1 75x25@1 75x60@0 60x60@0 75x60@0 75x40@0 85x40@0 85x15@0 60x15@1 60x25@1
 Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 3 ActiveDown Vector 16 60x40@0 60x80@1 15x80@1 15x40@0 60x40@0 40x40@0 40x25@0 75x25@0 75x60@1 60x60@1 75x60@1 75x40@1 85x40@1 85x15@1 60x15@0 60x25@0
 # - Minimizar
-Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 6 Vector 5 40x40@1 60x40@1 60x60@0 40x60@0 40x40@1
-Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 6 ActiveDown 5 40x40@0 60x40@0 60x60@1 40x60@1 40x40@0
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 6 Vector 5 40x40@1 60x40@1 60x60@0 40x60@0 40x40@1
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 6 ActiveDown 5 40x40@0 60x40@0 60x60@1 40x60@1 40x40@0
 # - Maximizar
-Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 4 Vector 5 25x25@1 25x75@1 75x75@0 75x25@0 25x25@1
-Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 4 ActiveDown Vector 5 25x25@0 25x75@0 75x75@1 75x25@1 25x25@0
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 4 ToggledActive Colorset 1 100
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 4 ToggledInactive Colorset 0 100
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 4 ToggledInactiveDown Colorset 1 100
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 4 Vector 5 25x25@1 25x75@1 75x75@0 75x25@0 25x25@1
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 4 ActiveDown Vector 5 25x25@0 25x75@0 75x75@1 75x25@1 25x25@0
 # - Sombrear
-Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 8 Vector 15 10x5@1 90x5@1 90x20@0 50x20@0 50x25@0 80x55@0 60x55@0 60x80@0 40x80@0 40x55@1 20x55@1 50x25@1 50x20@0 10x20@0 10x5@1
-Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 8 ActiveDown Vector 15 10x5@0 90x5@0 90x20@1 50x20@1 50x25@1 80x55@1 60x55@1 60x80@1 40x80@1 40x55@0 20x55@0 50x25@0 50x20@1 10x20@1 10x5@0
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 8 ToggledActive Colorset 1 100
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 8 ToggledInactive Colorset 0 100
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 8 Vector 15 10x5@1 90x5@1 90x20@0 50x20@0 50x25@0 80x55@0 60x55@0 60x80@0 40x80@0 40x55@1 20x55@1 50x25@1 50x20@0 10x20@0 10x5@1
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 8 ActiveDown Vector 15 10x5@0 90x5@0 90x20@1 50x20@1 50x25@1 80x55@1 60x55@1 60x80@1 40x80@1 40x55@0 20x55@0 50x25@0 50x20@1 10x20@1 10x5@0
 # - Fechar
-Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 2 Vector 17 20x20@1 30x20@1 50x40@1 70x20@1 80x20@1 80x30@0 60x50@0 80x70@1 80x80@0 70x80@0 50x60@0 30x80@0 20x80@0 20x70@0 40x50@1 20x30@0 20x20@1
-Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle 2 ActiveDown Vector 17 20x20@0 30x20@0 50x40@0 70x20@0 80x20@0 80x30@1 60x50@1 80x70@0 80x80@1 70x80@1 50x60@1 30x80@1 20x80@1 20x70@1 40x50@0 20x30@1 20x20@0
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 2 Vector 17 20x20@1 30x20@1 50x40@1 70x20@1 80x20@1 80x30@0 60x50@0 80x70@1 80x80@0 70x80@0 50x60@0 30x80@0 20x80@0 20x70@0 40x50@1 20x30@0 20x20@1
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AddButtonStyle 2 ActiveDown Vector 17 20x20@0 #6787AA30x20@0 50x40@0 70x20@0 80x20@0 80x30@1 60x50@1 80x70@0 80x80@1 70x80@1 50x60@1 30x80@1 20x80@1 20x70@1 40x50@0 20x30@1 20x20@0
 # - Estilo geral
 Test (EnvMatch Sky_Theme_Diamond_Type Vector) + ButtonStyle All -- flat UseTitleStyle
 Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AllInactive -- Raised
 Test (EnvMatch Sky_Theme_Diamond_Type Vector) + AllActive -- Raised
+Test (EnvMatch Sky_Theme_Diamond_Type Vector) Style * MwmButtons
 
 #
 # Estilos
