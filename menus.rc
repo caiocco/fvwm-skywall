@@ -225,77 +225,78 @@ Test (x gnome-disks)	+ "Utilitário de Unidades"	Exec gnome-disks
 #
 DestroyMenu "Graphics"
 AddToMenu "Graphics"
-Test (x acroread)	+ "Adobe Reader"		Exec acroread
-Test (x /opt/blender/blender)\
-			+ "Blender (/opt)"		Exec /opt/blender/blender -W
-Test (x blender)	+ "Blender (janela)"		Exec blender
-Test (x blender)	+ "Blender (tela cheia)"	Exec blender -W
-Test (x comix)		+ "Comix"                       Exec comix
-Test (x dia)		+ "Dia"				Exec dia
-Test (x display)	+ "ImageMagick"			Exec display
-Test (x display) Test (x dillo) \
-			+ "ImageMagick (exemplos)"	Exec dillo -g 1024x768 -f http://www.imagemagick.org/Usage/
-Test (x epdfview)	+ "ePDFView"			Exec epdfview
-Test (x atril)		+ "Atril"			Exec atril
-Test (x evince)		+ "Evince"			Exec evince
-Test (x okular)		+ "Okular"			Exec okular
-Test (x pdfedit)	+ "PDFedit"			Exec pdfedit
-Test (x fontforge)	+ "FontForge"			Exec fontforge
-Test (x fontmatrix)	+ "Fontmatrix"			Exec fontmatrix
-Test (x gimp)		+ "GIMP"                        Exec gimp
-Test (x cinepaint)	+ "CinePaint"			Exec LC_ALL=C cinepaint
-Test (x grafx2)		+ "GrafX2"                      Exec grafx2
-Test (x gqview)		+ "GQview"                      Exec gqview
-Test (x geeqie)		+ "Geeqie"                      Exec geeqie
-Test (x ristretto)	+ "Ristretto"                   Exec ristretto
-Test (x gthumb)		+ "gThumb"                      Exec gthumb
-Test (x gv)		+ "Gv"				Exec gv
-Test (x inkscape)	+ "Inkscape"			Exec inkscape
-Test (x sk1)		+ "sk1"				Exec sk1
-Test (x synfigstudio)	+ "Synfig"			Exec synfigstudio
-Test (x darktable)	+ "darktable"			Exec darktable
-Test (x rawtherapee)	+ "RawTherapee"			Exec rawtherapee
-Test (x digikam)	+ "digiKam"			Exec digikam
-Test (x kcolorchooser)	+ "KSeletor de Cores"		Exec kcolorchooser
-Test (x kdvi)		+ "KDVI"			Exec kdvi
-Test (x kfax)		+ "KFax"			Exec kfax
-Test (x kfaxview)	+ "KFaxView"			Exec kfaxview
-Test (x kghostview)	+ "KGhostView"			Exec kghostview
-Test (x kiconedit)	+ "KEditor de Ícone"		Exec kiconedit
-Test (x kolourpaint)	+ "KolourPaint"			Exec kolourpaint
-Test (x kooka)		+ "Kooka"			Exec kooka
-Test (x kpdf)		+ "KPDF"			Exec kpdf
-Test (x krita)		+ "Krita"			Exec krita
-Test (x ksnapshot)	+ "KSnapshot"			Exec ksnapshot
-Test (x kuickshow)	+ "KRápida Exibição"		Exec kuickshow
-Test (x kuler)		+ "KRégua"			Exec kruler
-Test (x kview)		+ "KVisualização"		Exec kview
-Test (x skanlite)	+ "Skanlite"			Exec skanlite
-Test (x mtpaint)	+ "mtPaint"                     Exec mtpaint
-Test (x mypaint)	+ "MyPaint"			Exec mypaint
-Test (x /opt/ArtOfIllusion/aoi.sh)\
-			+ "Art of Illusion"		Exec /opt/ArtOfIllusion/aoi.sh
-Test (f /opt/hfs13.0.509/houdini_master.sh)\
-			+ "Houdini Master"		Exec /opt/hfs13.0.509/houdini_master.sh
-Test (f /opt/hfs13.0.509/houdini_escape.sh)\
-			+ "Houdini Escape"		Exec /opt/hfs13.0.509/houdini_escape.sh
-Test (x qcad)		+ "QCad"			Exec qcad
-Test (x FreeCAD)	+ "FreeCAD"			Exec xterm -name FreeCADLog -iconic -T FreeCAD\ Log -e FreeCAD
-Test (x librecad)	+ "LibreCAD"			Exec librecad
-Test (x scribus)	+ "Scribus"			Exec scribus
-Test (x skencil)	+ "Skencil"			Exec skencil
-Test (x tgif)		+ "Tgif"			Exec tgif
-Test (x xdvi)		+ "Xdvi"			Exec xdvi
-Test (x xfig)		+ "Xfig"                        Exec xfig
-Test (x xaos)		+ "XaoS"                	Exec xaos
-Test (x xfractint)	+ "Xfractint"                	Exec xterm -font 7x14 -e xfractint
-Test (x xpaint)		+ "XPaint"                 	Exec xpaint
-Test (x xmorph)		+ "XMorph"                 	Exec xterm -iconic -T XMorph\ Log -e xmorph
-Test (x xpdf)		+ "Xpdf"			Exec xpdf
-Test (x xsane)		+ "Xsane"			exec xsane
-Test (x simple-scan)	+ "Simple Scan"			exec simple-scan
-Test (x ocrfeeder)	+ "OCRFeeder"			exec ocrfeeder
-Test (x xv)		+ "Xv"                 		Exec xv
+Test (x acroread) + "Adobe Reader" Exec acroread
+Test (x $[HOME]/bin/blender/blender) + "Blender (/home)" \
+	Exec $[HOME]/bin/blender/blender
+Test (x blender) + "Blender" Exec blender
+Test (x comix) + "Comix" Exec comix
+Test (x dia) + "Dia" Exec dia
+Test (x display) + "ImageMagick" Exec display
+Test (x display) Test (x dillo) + "ImageMagick (exemplos)" \
+	Exec dillo -g 1024x768 -f http://www.imagemagick.org/Usage/
+Test (x epdfview) + "ePDFView" Exec epdfview
+Test (x atril) + "Atril" Exec atril
+Test (x evince) + "Evince" Exec evince
+Test (x okular) + "Okular" Exec okular
+Test (x pdfedit) + "PDFedit" Exec pdfedit
+Test (x fontforge) + "FontForge" Exec fontforge
+Test (x fontmatrix) + "Fontmatrix" Exec fontmatrix
+Test (x gimp) + "GIMP" Exec gimp
+Test (x cinepaint) + "CinePaint" Exec LC_ALL=C cinepaint
+Test (x grafx2) + "GrafX2" Exec grafx2
+Test (x gqview) + "GQview" Exec gqview
+Test (x geeqie) + "Geeqie" Exec geeqie
+Test (x ristretto) + "Ristretto" Exec ristretto
+Test (x gthumb) + "gThumb" Exec gthumb
+Test (x gv) + "Gv" Exec gv
+Test (x inkscape) + "Inkscape" Exec inkscape
+Test (x sk1) + "sk1" Exec sk1
+Test (x synfigstudio) + "Synfig" Exec synfigstudio
+Test (x darktable) + "darktable" Exec darktable
+Test (x rawtherapee) + "RawTherapee" Exec rawtherapee
+Test (x digikam) + "digiKam" Exec digikam
+Test (x kcolorchooser) + "KSeletor de Cores" Exec kcolorchooser
+Test (x kdvi) + "KDVI" Exec kdvi
+Test (x kfax) + "KFax" Exec kfax
+Test (x kfaxview) + "KFaxView" Exec kfaxview
+Test (x kghostview) + "KGhostView" Exec kghostview
+Test (x kiconedit) + "KEditor de Ícone" Exec kiconedit
+Test (x kolourpaint) + "KolourPaint" Exec kolourpaint
+Test (x kooka) + "Kooka" Exec kooka
+Test (x kpdf) + "KPDF" Exec kpdf
+Test (x krita) + "Krita" Exec krita
+Test (x ksnapshot) + "KSnapshot" Exec ksnapshot
+Test (x kuickshow) + "KRápida Exibição" Exec kuickshow
+Test (x kuler) + "KRégua" Exec kruler
+Test (x kview) + "KVisualização" Exec kview
+Test (x skanlite) + "Skanlite" Exec skanlite
+Test (x mtpaint) + "mtPaint" Exec mtpaint
+Test (x mypaint) + "MyPaint" Exec mypaint
+Test (x qcad) + "QCad" Exec qcad
+Test (x FreeCAD) + "FreeCAD" Exec xterm \
+	-name FreeCADLog \
+	-iconic \
+	-T FreeCAD\ Log \
+	-e FreeCAD
+Test (x librecad) + "LibreCAD" Exec librecad
+Test (x scribus) + "Scribus" Exec scribus
+Test (x skencil) + "Skencil" Exec skencil
+Test (x tgif) + "Tgif" Exec tgif
+Test (x xdvi) + "Xdvi" Exec xdvi
+Test (x xfig) + "Xfig" Exec xfig
+Test (x xaos) + "XaoS" Exec xaos
+Test (x xfractint) + "Xfractint" Exec xterm -font 7x14 -e xfractint
+Test (x xpaint) + "XPaint" Exec xpaint
+Test (x xmorph) + "XMorph" Exec xterm \
+	-iconic \
+	-name XMorphLog \
+	-T XMorph\ Log \
+	-e xmorph
+Test (x xpdf) + "Xpdf" Exec xpdf
+Test (x xsane) + "Xsane" exec xsane
+Test (x simple-scan) + "Simple Scan" exec simple-scan
+Test (x ocrfeeder) + "OCRFeeder" exec ocrfeeder
+Test (x xv) + "Xv" Exec xv
 
 # Desenvolvimento
 #
@@ -780,85 +781,80 @@ Test (x seamonkey)	+ "Uncensored BBS (Web)"	Exec seamonkey http://uncensored.cit
 DestroyMenu "Games"
 AddToMenu "Games"
 + "" TearMenuOff
-Test (x neverball)	+ "Neverball"   		Exec neverball
-Test (x neverputt)	+ "Neverputt" 			Exec neverputt
-Test (x supertux)	+ "SuperTux"   	 		Exec supertux
-Test (x supertuxkart)	+ "SuperTuxKart"   	 	Exec supertuxkart
-Test (x frozen-bubble)	+ "Frozen Bubble"  	 	Exec frozen-bubble
-Test (x foobillard)	+ "Foo Billard" 		Exec foobillard
-Test (x pysol)		+ "PySol" 			Exec pysol
-Test (x pysol.py)	+ "PySol FCE" 			Exec pysol.py
-Test (x zsnes)		+ "ZSNES"       		Exec zsnes
-Test (x snes9x-gtk)	+ "Snes9x"			Exec snes9x-gtk
-Test (x snes9express)	+ "Snes9express"		Exec snes9express
-Test (x qmc2-sdlmame)	+ "QMC2"			Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; qmc2-sdlmame
-Test (x scummvm)	+ "ScummVM"			Exec scummvm
-Test (x pcsx)		+ "PCSX" 	      		Exec pcsx
-Test (x pcsxr)		+ "PCSX-Reloaded" 	      	Exec pcsxr
-Test (x ppsspp-qt)	+ "PPSSPP" 	  	    	Exec ppsspp-qt
-Test (x retroarch)	+ "RetroArch"			Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; retroarch
-Test (x fs-uae-launcher)\
-			+ "FS-UAE Launcher"		Exec fs-uae-launcher
-Test (x sdlmame)	+ "SDL Mame"			Exec sdlmame
-Test (x dosbox)		+ "DOSBox"			Exec dosbox
-Test (x sauerbraten-client)\
-			+ "Sauerbraten"   		Exec sauerbraten-client
-Test (x nexuiz)		+ "Nexuiz"			Exec nexuiz
-Test (x warsow)		+ "Warsow"			Exec warsow
-Test (x xgalaga++)	+ "XGalaga++"   		Exec xgalaga++
-Test (x xgalaga)	+ "XGalaga"   			Exec xgalaga -window
-Test (x xmoto)		+ "XMoto"   			Exec xmoto
-Test (x lbreakout)	+ "LBreakout"   		Exec lbreakout
-Test (x lbreakout2)	+ "LBreakout 2"   		Exec lbreakout2
-Test (x ltris)		+ "LTris"   			Exec ltris
-Test (x crack-attack)	+ "Crack Attack!" 		Exec crack-attack
-Test (x jools)		+ "Jools"			Exec jools
-Test (x eboard)		+ "eboard"       		Exec eboard
-Test (x lincity-ng)	+ "LinCity NG"			Exec lincity-ng
-Test (x micropolis)	+ "Micropolis"			Exec micropolis
-Test (x openttd)	+ "OpenTTD"			Exec openttd
-Test (x simutrans)	+ "Simutrans"			Exec simutrans
-Test (x tmw)		+ "The Mana World"		Exec tmw
-Test (x teeworlds)	+ "Teeworlds"			Exec teeworlds
-Test (x frogatto)	+ "Frogatto"			Exec frogatto
-Test (x /opt/tibia/play.sh)\
-			+ "Tibia"			Exec /opt/tibia/play.sh
-Test (x blobwars)	+ "Metal Blob Solid"		Exec blobwars
-Test (x opentyrian)	+ "OpenTyrian"			Exec opentyrian
-Test (x /opt/PokerTH/pokerth.sh)\
-			+ "PokerTH"			Exec /opt/PokerTH/pokerth.sh
-Test (x gzdoom)		+ "GZDOOM"			Exec gzdoom
-Test (x vkquake)	+ "Quake (Vulkan)"		Exec vkquake
-Test (x quakespasm)	+ "Quake (OpenGL)"		Exec quakespasm
-Test (x alephone)	+ "Aleph One"			Popup Games-alephone
-Test (x xbill)		+ "XBill"			Exec xbill
-Test (x xpenguins)	+ "XPenguins"			Exec xpeguins
-Test (x xpenguins)	+ "Matar XPenguins"		Exec killall xpeguins
-Test (x maze)		+ "Maze"        		Exec maze
-Test (x spider)		+ "Spider"     			Exec spider
-Test (x xboard)		+ "Xboard"       		Exec xboard
-Test (x xlander)	+ "Xlander"   			Exec xlander
-+ ""		Nop
-Test (x steam)		+ "Steam"   			Exec steam
-+ ""		Nop
-Test (x /opt/fez/FEZ)\
-			+ "Humble Indie Bundle"		Popup Games-humble
-Test (x kpat)		+ "Jogos do KDE"  		Popup "KDE Games"
+Test (x neverball) + "Neverball" Exec neverball
+Test (x neverputt) + "Neverputt" Exec neverputt
+Test (x supertux) + "SuperTux" Exec supertux
+Test (x supertuxkart) + "SuperTuxKart" Exec supertuxkart
+Test (x frozen-bubble) + "Frozen Bubble" Exec frozen-bubble
+Test (x foobillard) + "Foo Billard" Exec foobillard
+Test (x pysol) + "PySol" Exec pysol
+Test (x pysol.py) + "PySol FCE" Exec pysol.py
+Test (x zsnes) + "ZSNES" Exec zsnes
+Test (x snes9x-gtk) + "Snes9x" Exec snes9x-gtk
+Test (x snes9express) + "Snes9express" Exec snes9express
+Test (x qmc2-sdlmame) + "QMC2" Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; qmc2-sdlmame
+Test (x scummvm) + "ScummVM" Exec scummvm
+Test (x pcsx) + "PCSX" Exec pcsx
+Test (x pcsxr) + "PCSX-Reloaded" Exec pcsxr
+Test (x ppsspp-qt) + "PPSSPP" Exec ppsspp-qt
+Test (x retroarch) + "RetroArch" Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; retroarch
+Test (x fs-uae-launcher) + "FS-UAE Launcher" Exec fs-uae-launcher
+Test (x sdlmame) + "SDL Mame" Exec sdlmame
+Test (x dosbox) + "DOSBox" Exec dosbox
+Test (x sauerbraten-client) + "Sauerbraten" Exec sauerbraten-client
+Test (x nexuiz) + "Nexuiz" Exec nexuiz
+Test (x warsow) + "Warsow" Exec warsow
+Test (x xgalaga++) + "XGalaga++" Exec xgalaga++
+Test (x xgalaga) + "XGalaga" Exec xgalaga -window
+Test (x xmoto) + "XMoto" Exec xmoto
+Test (x lbreakout) + "LBreakout" Exec lbreakout
+Test (x lbreakout2) + "LBreakout 2" Exec lbreakout2
+Test (x ltris) + "LTris" Exec ltris
+Test (x crack-attack) + "Crack Attack!" Exec crack-attack
+Test (x jools) + "Jools" Exec jools
+Test (x eboard) + "eboard" Exec eboard
+Test (x lincity-ng) + "LinCity NG" Exec lincity-ng
+Test (x micropolis) + "Micropolis" Exec micropolis
+Test (x openttd) + "OpenTTD" Exec openttd
+Test (x simutrans) + "Simutrans" Exec simutrans
+Test (x tmw) + "The Mana World" Exec tmw
+Test (x teeworlds) + "Teeworlds" Exec teeworlds
+Test (x frogatto) + "Frogatto" Exec frogatto
+Test (x /opt/tibia/play.sh) + "Tibia" Exec /opt/tibia/play.sh
+Test (x blobwars) + "Metal Blob Solid" Exec blobwars
+Test (x opentyrian) + "OpenTyrian" Exec opentyrian
+Test (x /opt/PokerTH/pokerth.sh) + "PokerTH" Exec /opt/PokerTH/pokerth.sh
+Test (x gzdoom) + "GZDOOM" Exec gzdoom
+Test (x vkquake) + "Quake (Vulkan)" Exec vkquake
+Test (x quakespasm) + "Quake (OpenGL)" Exec quakespasm
+Test (x alephone) + "Aleph One" Popup Games-alephone
+Test (x xbill) + "XBill" Exec xbill
+Test (x xpenguins) + "XPenguins" Exec xpeguins
+Test (x xpenguins) + "Matar XPenguins" Exec killall xpeguins
+Test (x maze) + "Maze" Exec maze
+Test (x spider) + "Spider" Exec spider
+Test (x xboard) + "Xboard" Exec xboard
+Test (x xlander) + "Xlander" Exec xlander
++ "" Nop
+Test (x steam) + "Steam" Exec steam
++ "" Nop
+Test (x /opt/fez/FEZ) + "Humble Indie Bundle" Popup Games-humble
+Test (x kpat) + "Jogos do KDE" Popup "KDE Games"
 
 # Jogos => Aleph One
 #
 DestroyMenu "Games-alephone"
 AddToMenu "Games-alephone"
-Test (f /usr/share/alephone-marathon/) \
-			+ "Marathon"			Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; alephone /usr/share/alephone-marathon/
-Test (f /usr/share/alephone-marathon2/) \
-			+ "Marathon 2: Durandal"	Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; alephone /usr/share/alephone-marathon2/
-Test (f //usr/share/alephone-marathon-infinity) \
-			+ "Marathon: Infinity"		Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; alephone usr/share/alephone-marathon-infinity
-Test (f /usr/share/alephone-eternalx/) \
-			+ "Marathon: Eternal X"		Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; alephone /usr/share/alephone-eternalx/
-Test (f /usr/share/AlephOne/Rubicon\ X/) \
-			+ "Marathon: Rubicon X"		Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; alephone /usr/share/AlephOne/Rubicon\ X/
+Test (f /usr/share/alephone-marathon/) + "Marathon" \
+	Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; alephone /usr/share/alephone-marathon/
+Test (f /usr/share/alephone-marathon2/) + "Marathon 2: Durandal"	\
+	Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; alephone /usr/share/alephone-marathon2/
+Test (f //usr/share/alephone-marathon-infinity) + "Marathon: Infinity" \
+	Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; alephone usr/share/alephone-marathon-infinity
+Test (f /usr/share/alephone-eternalx/) + "Marathon: Eternal X" \
+	Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; alephone /usr/share/alephone-eternalx/
+Test (f /usr/share/AlephOne/Rubicon\ X/) + "Marathon: Rubicon X" \
+	Exec xdotool mousemove --window `xdotool search --name FvwmShelf` 0 0 ; xdotool click 1 ; alephone /usr/share/AlephOne/Rubicon\ X/
 
 # Jogos => Indie Bundle
 #
@@ -866,20 +862,19 @@ DestroyMenu "Games-humble"
 AddToMenu "Games-humble"
 + "" TearMenuOff
 + "Humble Indie Bundle" Title
-Test (x /opt/shank/bin/Shank)\
-			+ "Shank"   			Exec cd /opt/shank/bin ; /opt/shank/bin/Shank
-Test (x /opt/gaijin_games/runner2/runner2)\
-			+ "Runner2"   			Exec cd /opt/gaijin_games/runner2 ; /opt/gaijin_games/runner2/runner2
-Test (x /opt/crayon/launcher)\
-			+ "Crayon Physics Deluxe" 	Exec cd /opt/crayon ; /opt/crayon/launcher
-Test (x "/opt/Joe Danger 2 The Movie/BIN/JD2Launcher")\
-			+ "Joe Danger 2 - The Movie" 	Exec cd "/opt/Joe Danger 2 The Movie/BIN" ; "/opt/Joe Danger 2 The Movie/BIN/Joe Danger 2 The Movie"
-Test (x /opt/Bastion/Bastion.bin.x86_64)\
-			+ "Bastion" 			Exec cd /opt/Bastion ; /opt/Bastion/Bastion.bin.x86_64
-Test (x /opt/CaveStoryPlus/CaveStory+_64)\
-			+ "Cave Story+" 		Exec cd /opt/CaveStoryPlus ; /opt/CaveStoryPlus/CaveStory+_64
-Test (x /opt/fez/FEZ)	+ "FEZ" 			Exec cd /opt/fez ; /opt/fez/FEZ
-
+Test (x /opt/shank/bin/Shank) + "Shank" \
+	Exec cd /opt/shank/bin ; /opt/shank/bin/Shank
+Test (x /opt/gaijin_games/runner2/runner2) + "Runner2" \
+	Exec cd /opt/gaijin_games/runner2 ; /opt/gaijin_games/runner2/runner2
+Test (x /opt/crayon/launcher) + "Crayon Physics Deluxe" \
+	Exec cd /opt/crayon ; /opt/crayon/launcher
+Test (x "/opt/Joe Danger 2 The Movie/BIN/JD2Launcher") + "Joe Danger 2 - The Movie" \
+	Exec cd "/opt/Joe Danger 2 The Movie/BIN" ; "/opt/Joe Danger 2 The Movie/BIN/Joe Danger 2 The Movie"
+Test (x /opt/Bastion/Bastion.bin.x86_64) + "Bastion" \
+	Exec cd /opt/Bastion ; /opt/Bastion/Bastion.bin.x86_64
+Test (x /opt/CaveStoryPlus/CaveStory+_64) + "Cave Story+" \
+	Exec cd /opt/CaveStoryPlus ; /opt/CaveStoryPlus/CaveStory+_64
+Test (x /opt/fez/FEZ) + "FEZ" Exec cd /opt/fez ; /opt/fez/FEZ
 
 # Jogos => Jogos do KDE
 #
@@ -887,185 +882,190 @@ DestroyMenu "KDE Games"
 AddToMenu "KDE Games"
 + "" TearMenuOff
 + "Jogos" Title
-Test (x konquest)	+ "Konquest"			Exec konquest
-Test (x ktuberling)	+ "Homem-Batata"		Exec ktuberling
-Test (x kasteroids)	+ "KAsteróides"			Exec kasteroids
-Test (x katomic)	+ "KAtômico"			Exec katomic
-Test (x kbattleship)	+ "KBattleship"			Exec kbattleship
-Test (x kbounce)	+ "KBounce"			Exec kbounce
-Test (x kblackbox)	+ "KCaixa Preta"		Exec kblackbox
-Test (x ksnake)		+ "KCorrida de Cobras"		Exec ksnake
-Test (x kenolaba)	+ "Kenolaba"			Exec kenolaba
-Test (x kbackgammon)	+ "KGamão"			Exec kbackgammon
-Test (x kgoldrunner)	+ "KGoldRunner"			Exec kgoldrunner
-Test (x klickety)	+ "Klickety"			Exec klickety
-Test (x klines)		+ "KLinhas de Cores"		Exec klines
-Test (x kmahjongg)	+ "KMahjongg"			Exec kmahjongg
-Test (x kmines)		+ "KMinas"			Exec kmines
-Test (x kolf)		+ "Kolf"			Exec kolf
-Test (x kfouleggs)	+ "KOvos Sujos"			Exec kfouleggs
-Test (x kpoker)		+ "KPoker"			Exec kpoker
-Test (x kreversi)	+ "KReversi"			Exec kreversi
-Test (x kjumpingcube)	+ "KSaltandoCubo"		Exec kjumpingcube
-Test (x ksirtet)	+ "KSirtet"			Exec ksirtet
-Test (x ksokoban)	+ "KSokoban"			Exec ksokoban
-Test (x ksmiletris)	+ "KSorrisoTris"		Exec ksmiletris
-Test (x kspaceduel)	+ "KSpaceDuel"			Exec kspaceduel
-Test (x ktron)		+ "KTron"			Exec ktron
-Test (x kwin4)		+ "KWin4"			Exec kwin4
-Test (x ksame)		+ "Mesmo Jogo"			Exec ksame
-Test (x kpat)		+ "Paciência"			Exec kpat
-Test (x kshisen)	+ "Shisen-Sho"			Exec kshisen
-Test (x lskat)		+ "Tenente Skat"		Exec lskat
+Test (x konquest) + "Konquest" Exec konquest
+Test (x ktuberling) + "Homem-Batata" Exec ktuberling
+Test (x kasteroids) + "KAsteróides" Exec kasteroids
+Test (x katomic) + "KAtômico" Exec katomic
+Test (x kbattleship) + "KBattleship" Exec kbattleship
+Test (x kbounce) + "KBounce" Exec kbounce
+Test (x kblackbox) + "KCaixa Preta" Exec kblackbox
+Test (x ksnake) + "KCorrida de Cobras" Exec ksnake
+Test (x kenolaba) + "Kenolaba" Exec kenolaba
+Test (x kbackgammon) + "KGamão" Exec kbackgammon
+Test (x kgoldrunner) + "KGoldRunner" Exec kgoldrunner
+Test (x klickety) + "Klickety" Exec klickety
+Test (x klines) + "KLinhas de Cores" Exec klines
+Test (x kmahjongg) + "KMahjongg" Exec kmahjongg
+Test (x kmines) + "KMinas" Exec kmines
+Test (x kolf) + "Kolf" Exec kolf
+Test (x kfouleggs) + "KOvos Sujos" Exec kfouleggs
+Test (x kpoker) + "KPoker" Exec kpoker
+Test (x kreversi) + "KReversi" Exec kreversi
+Test (x kjumpingcube) + "KSaltandoCubo" Exec kjumpingcube
+Test (x ksirtet) + "KSirtet" Exec ksirtet
+Test (x ksokoban) + "KSokoban" Exec ksokoban
+Test (x ksmiletris) + "KSorrisoTris" Exec ksmiletris
+Test (x kspaceduel) + "KSpaceDuel" Exec kspaceduel
+Test (x ktron) + "KTron" Exec ktron
+Test (x kwin4) + "KWin4" Exec kwin4
+Test (x ksame) + "Mesmo Jogo" Exec ksame
+Test (x kpat) + "Paciência" Exec kpat
+Test (x kshisen) + "Shisen-Sho" Exec kshisen
+Test (x lskat) + "Tenente Skat" Exec lskat
 + "Educativos" Title
-Test (x blinken)	+ "blinKen"			Exec blinken
-Test (x keduca)		+ "KEduca"			Exec keduca
-Test (x keducabuilder)	+ "Editor do KEduca"		Exec keducabuilder
-Test (x kalzium)	+ "Kalzium"			Exec kalzium
-Test (x kanagram)	+ "Kanagram"			Exec kanagram
-Test (x kbruch)		+ "KBruch"			Exec kbruch
-Test (x kgeography)	+ "KGeography"			Exec kgeography
-Test (x khangman)	+ "KHangMan"			Exec khangman
-Test (x kig)		+ "Kig"				Exec kig
-Test (x kiten)		+ "Kiten"			Exec kiten
-Test (x klatin)		+ "KLatin"			Exec klatin
-Test (x klettres)	+ "KLettres"			Exec klettres
-Test (x kmplot)		+ "KmPlot"			Exec kmplot
-Test (x kpercentage)	+ "KPorcentagem"		Exec kpercentage
-Test (x kstars)		+ "KStars"			Exec kstars
-Test (x ktouch)		+ "KTouch"			Exec ktouch
-Test (x kturtle)	+ "KTurtle"			Exec kturtle
-Test (x kverbos)	+ "KVerbos"			Exec kverbos
-Test (x kvoctrain)	+ "KVocTrain"			Exec kvoctrain
-Test (x kwordquiz)	+ "KWordQuiz"			Exec kwordquiz
+Test (x blinken) + "blinKen" Exec blinken
+Test (x keduca) + "KEduca" Exec keduca
+Test (x keducabuilder) + "Editor do KEduca" Exec keducabuilder
+Test (x kalzium) + "Kalzium" Exec kalzium
+Test (x kanagram) + "Kanagram" Exec kanagram
+Test (x kbruch) + "KBruch" Exec kbruch
+Test (x kgeography) + "KGeography" Exec kgeography
+Test (x khangman) + "KHangMan" Exec khangman
+Test (x kig) + "Kig" Exec kig
+Test (x kiten) + "Kiten" Exec kiten
+Test (x klatin) + "KLatin" Exec klatin
+Test (x klettres) + "KLettres" Exec klettres
+Test (x kmplot) + "KmPlot" Exec kmplot
+Test (x kpercentage) + "KPorcentagem" Exec kpercentage
+Test (x kstars) + "KStars" Exec kstars
+Test (x ktouch) + "KTouch" Exec ktouch
+Test (x kturtle) + "KTurtle" Exec kturtle
+Test (x kverbos) + "KVerbos" Exec kverbos
+Test (x kvoctrain) + "KVocTrain" Exec kvoctrain
+Test (x kwordquiz) + "KWordQuiz" Exec kwordquiz
 
 # Multimídia
 #
 DestroyMenu "Multimedia"
 AddToMenu "Multimedia"
-Test (x pavucontrol)	+ "Mixer do PulseAudio"		Exec pavucontrol
-Test (x xfce4-mixer)	+ "Mixer do Xfce"		Exec xfce4-mixer
-+ ""		Nop
-Test (!x audacious2)\
-	Test (x audacious)\
-			+ "Audacious"			Exec audacious
-Test (x audacious2)	+ "Audacious 2"			Exec audacious2
-Test (x clementine)	+ "Clementine"			Exec clementine
-Test (x xmms)		+ "XMMS"			Exec xmms
-Test (x quodlibet)	+ "Quod Libet"			Exec quodlibet
-Test (x exaile)		+ "Exaile"			Exec exaile
-Test (x rhythmbox)	+ "Rhythmbox"			Exec rhythmbox
-Test (x sonata)		+ "Sonata"			Exec sonata
-Test (x timidity)	+ "TiMidity++ (Gtk)"		Exec timidity -ig
-#Test (x timidity)	+ "TiMidity++ (Motif)"		Exec timidity -im
-#Test (x timidity)	+ "TiMidity++ (Xaw)"		Exec timidity -ia
-Test (x streamtuner)	+ "Streamtuner"			Exec streamtuner
-Test (x soundtracker)	+ "Sound Tracker"		Exec soundtracker
-Test (x schismtracker)	+ "Schism Tracker"		Exec schismtracker
-Test (x milkytracker)	+ "MilkyTracker"		Exec milkytracker
-Test (x zynaddsubfx)	+ "ZynaddsubFX"			Exec zynaddsubfx
-Test (x rezound)	+ "ReZound"			Exec rezound
-Test (x audacity)	+ "Audacity"			Exec audacity
-Test (x freebirth)	+ "FreeBirth"			Exec freebirth
-Test (x ardour2)	+ "Ardour"			Exec ardour2
-Test (x hydrogen)	+ "Hydrogen"			Exec LANG=en_US.UTF-8 hydrogen
-Test (x jack-rack)	+ "Jack-Rack"			Exec jack-rack
-Test (x qjackctl)	+ "Qt Jack Control"		Exec qjackctl
-Test (x jack_mixer)	+ "Jack Mixer"			Exec jack_mixer
-Test (x gladish)	+ "LADI Session Handler"	Exec gladish
-Test (x gmplayer)	+ "MPlayer"			Exec gmplayer
-Test (x smplayer)	+ "SMPlayer"			Exec smplayer
-Test (x totem)		+ "Totem"			Exec totem
-Test (x parole)		+ "Parole"			Exec parole
-Test (x xine)		+ "Xine"			Exec xine -H --no-splash
-Test (x gxine)		+ "GXine"			Exec gxine
-Test (x vlc)		+ "VideoLAN Client"		Exec vlc
-Test (x ghb) 		+ "HandBrake"			Exec ghb
-Test (x aumix)		+ "Audio Mixer"			Exec aumix
-Test (x alsamixergui)	+ "ALSA Mixer"			Exec alsamixergui
-Test (x asunder)	+ "Asunder"			Exec asunder
-Test (x sound-juicer)	+ "Sound Juicer"		Exec sound-juicer
-Test (x grip)		+ "Grip"			Exec grip
-Test (x easytag)	+ "EasyTAG"			Exec easytag
-Test (x avidemux2_gtk)	+ "Avidemux (Gtk)"		Exec avidemux2_gtk
-Test (x avidemux2_qt4)	+ "Avidemux (Qt)"		Exec avidemux2_qt4
-Test (x pitivi)		+ "Pitivi"			Exec pitivi
-Test (x openshot-qt)	+ "OpenShot"			Exec openshot-qt
-Test (x lightworks)	+ "Lightworks"			Exec lightworks
-Test (x cinelerra)	+ "Cinelerra"			Exec cinelerra
-Test (x lives)		+ "LiVES"			Exec lives
-Test (x lombard)	+ "Lombard"			Exec lombard
-Test (x devede)		+ "DeVeDe"			Exec devede
-Test (x dvdrip)	+ "dvd::rip"			Exec dvdrip
-Test (x mmg)		+ "mkvmerge GUI"		Exec mmg
-Test (x kdenlive)	+ "kdenlive"			Exec kdenlive
-Test (x kaudiocreator)	+ "KAudioCreator"		Exec kaudiocreator
-Test (x k9copy)		+ "K9copy"			Exec k9copy
-Test (x kmid)		+ "KMid"			Exec kmid
-Test (x kscd)		+ "KsCD"			Exec kscd
-Test (x kaboodle)	+ "Kaboodle"			Exec kaboodle
-Test (x juk)		+ "JuK"				Exec juk
-Test (x noatun)		+ "Noatun"			Exec noatun
-Test (x amarok)		+ "Amarok"			Exec amarok
-Test (x cmus) Test (x xterm)\
-			+ "CMUS"			Exec xterm -bg black -fg lightgray -name cmus -T CMUS \
-							-ls -fn 7x14 -e cmus
-Test (x mp3blaster) Test (x xterm)\
-			+ "MP3 Blaster"			Exec xterm -bg black -fg lightgray -name mp3blaster \
-							-T MP3\ Blaster -ls -fn 7x14 -e mp3blaster
-Test (x flashplayer)	+ "Flash Player"		Exec flashplayer
-Test (x /opt/Nuke6.1v2/Nuke6.1)\
-			+ "Nuke 6.1v2"			Exec exec /opt/Nuke6.1v2/Nuke6.1 --ple -b
-+ ""		Nop
-Test (x xbmc)		+ "XBMC"			Exec xbmc
-Test (x mythfrontend)	+ "MythTV"			Exec mythfrontend
-Test (EnvMatch Sky_TwoMons Yes) Test (EnvMatch Sky_Myth No) Test (x mythfrontend)\
-			+ "MythTV (2º monitor)"		Exec mythfrontend -display :0.1
+Test (x pavucontrol) + "Mixer do PulseAudio" Exec pavucontrol
+Test (x xfce4-mixer) + "Mixer do Xfce" Exec xfce4-mixer
++ "" Nop
+Test (!x audacious2) Test (x audacious) + "Audacious" Exec audacious
+Test (x audacious2) + "Audacious 2" Exec audacious2
+Test (x clementine) + "Clementine" Exec clementine
+Test (x xmms) + "XMMS" Exec xmms
+Test (x quodlibet) + "Quod Libet" Exec quodlibet
+Test (x exaile) + "Exaile" Exec exaile
+Test (x rhythmbox) + "Rhythmbox" Exec rhythmbox
+Test (x sonata) + "Sonata" Exec sonata
+Test (x timidity) + "TiMidity++ (Gtk)" Exec timidity -ig
+#Test (x timidity) + "TiMidity++ (Motif)" Exec timidity -im
+#Test (x timidity) + "TiMidity++ (Xaw)" Exec timidity -ia
+Test (x streamtuner) + "Streamtuner" Exec streamtuner
+Test (x soundtracker) + "Sound Tracker" Exec soundtracker
+Test (x schismtracker) + "Schism Tracker" Exec schismtracker
+Test (x milkytracker) + "MilkyTracker" Exec milkytracker
+Test (x zynaddsubfx) + "ZynaddsubFX" Exec zynaddsubfx
+Test (x rezound) + "ReZound" Exec rezound
+Test (x audacity) + "Audacity" Exec audacity
+Test (x freebirth) + "FreeBirth" Exec freebirth
+Test (x ardour2) + "Ardour" Exec ardour2
+Test (x hydrogen) + "Hydrogen" Exec LANG=en_US.UTF-8 hydrogen
+Test (x jack-rack) + "Jack-Rack" Exec jack-rack
+Test (x qjackctl) + "Qt Jack Control" Exec qjackctl
+Test (x jack_mixer) + "Jack Mixer" Exec jack_mixer
+Test (x gladish) + "LADI Session Handler" Exec gladish
+Test (x gmplayer) + "MPlayer" Exec gmplayer
+Test (x smplayer) + "SMPlayer" Exec smplayer
+Test (x totem) + "Totem" Exec totem
+Test (x parole) + "Parole" Exec parole
+Test (x xine) + "Xine" Exec xine -H --no-splash
+Test (x gxine) + "GXine" Exec gxine
+Test (x vlc) + "VideoLAN Client" Exec vlc
+Test (x ghb)  + "HandBrake" Exec ghb
+Test (x aumix) + "Audio Mixer" Exec aumix
+Test (x alsamixergui) + "ALSA Mixer" Exec alsamixergui
+Test (x asunder) + "Asunder" Exec asunder
+Test (x sound-juicer) + "Sound Juicer" Exec sound-juicer
+Test (x grip) + "Grip" Exec grip
+Test (x easytag) + "EasyTAG" Exec easytag
+Test (x avidemux2_gtk) + "Avidemux (Gtk)" Exec avidemux2_gtk
+Test (x avidemux2_qt4) + "Avidemux (Qt)" Exec avidemux2_qt4
+Test (x pitivi) + "Pitivi" Exec pitivi
+Test (x openshot-qt) + "OpenShot" Exec openshot-qt
+Test (x lightworks) + "Lightworks" Exec lightworks
+Test (x cinelerra) + "Cinelerra" Exec cinelerra
+Test (x lives) + "LiVES" Exec lives
+Test (x lombard) + "Lombard" Exec lombard
+Test (x devede) + "DeVeDe" Exec devede
+Test (x dvdrip) + "dvd::rip" Exec dvdrip
+Test (x mmg) + "mkvmerge GUI" Exec mmg
+Test (x kdenlive) + "kdenlive" Exec kdenlive
+Test (x kaudiocreator) + "KAudioCreator" Exec kaudiocreator
+Test (x k9copy) + "K9copy" Exec k9copy
+Test (x kmid) + "KMid" Exec kmid
+Test (x kscd) + "KsCD" Exec kscd
+Test (x kaboodle) + "Kaboodle" Exec kaboodle
+Test (x juk) + "JuK" Exec juk
+Test (x noatun) + "Noatun" Exec noatun
+Test (x amarok) + "Amarok" Exec amarok
+Test (x cmus) Test (x xterm) + "CMUS" Exec xterm \
+	-bg black \
+	-fg lightgray \
+	-name cmus \
+	-T CMUS \
+	-ls \
+	-fn 7x14 \
+	-e cmus
+Test (x mp3blaster) Test (x xterm) + "MP3 Blaster" Exec xterm \
+	-bg black \
+	-fg lightgray \
+	-name mp3blaster \
+	-T MP3\ Blaster \
+	-ls \
+	-fn 7x14 \
+	-e mp3blaster
+#Test (x /opt/Nuke6.1v2/Nuke6.1) + "Nuke 6.1v2" \
+#	Exec exec /opt/Nuke6.1v2/Nuke6.1 --ple -b
++ "" Nop
+Test (x xbmc) + "XBMC" Exec xbmc
+Test (x mythfrontend) + "MythTV" Exec mythfrontend
+Test (EnvMatch Sky_TwoMons Yes) Test (EnvMatch Sky_Myth No) \
+	Test (x mythfrontend) + "MythTV (2º monitor)" \
+	Exec mythfrontend -display :0.1
 
 # Arquivos
 #
 DestroyMenu "Filemanagers"
 AddToMenu "Filemanagers"
-Test (x xfm)		+ "Xfm"		       		Exec xfm
-Test (x xfe)		+ "Xfe"		    	    	Exec xfe -m
-Test (x rox)		+ "ROX-Filer"			Exec rox
-Test (x rox-mime-editor)\
-			+ "ROX-MIME-Editor"		Exec rox-mime-editor
-Test (x emelfm2)	+ "Emelfm 2"			Exec emelfm2
-Test (x thunar)		+ "Thunar"	   	 	Exec thunar
-Test (x nautilus)	+ "Nautilus"	   	 	Exec nautilus --no-desktop
-Test (x caja)		+ "Caja"	   	 	Exec caja --no-desktop
-Test (x pcmanfm)	+ "PCMan F. M."	   		Exec pcmanfm
-Test (x spacefm)	+ "SpaceFM"			Exec spacefm
-Test (x gnome-commander) \
-			+ "GNOME Commander"   		Exec gnome-commander
-Test (x systemg)	+ "System G"	   		Exec systemg
-Test (x PathFinder)	+ "PathFinder"			Exec PathFinder
-Test (x dolphin)	+ "Dolphin"			Exec dolphin
-Test (x krusader)	+ "Krusader"			Exec krusader
-Test (x /opt/tuxcmd-0.5.103-bin/tuxcmd)\
-			+ "Tux Commander"		Exec /opt/tuxcmd-0.5.103-bin/tuxcmd
-Test (x /opt/muCommander/mucommander.sh)\
-			+ "muCommander"			Exec /opt/muCommander/mucommander.sh
-Test (x doublecmd)	+ "Double Commander"		Exec doublecmd
-Test (x gentoo)		+ "Gentoo"			Exec gentoo
-Test (x worker)		+ "Worker"			Exec worker
-+ "" 		Nop
-Test (x xarchiver)	+ "XArchiver"			Exec xarchiver
-Test (x xarchive)	+ "XArchive"			Exec xarchive
-Test (x engrampa)	+ "Engrampa"			Exec engrampa
-Test (x file-roller)	+ "File Roller"			Exec file-roller
-Test (x 7zFM)		+ "7-Zip"			Exec 7zFM
-Test (x ark)		+ "Ark"				Exec ark
-Test (x kfilereplace)	+ "KFileReplace"		Exec kfilereplace
-Test (f /usr/lib/ThunarBulkRename)\
-			+ "Renomear em Massa"		Exec /usr/lib/ThunarBulkRename
-Test (x gnome-search-tool)\
-			+ "Localizar arquivos"	   	Exec gnome-search-tool
-Test (x catfish)	+ "Catfish"	   		Exec catfish
-Test (x recoll)		+ "Recoll"	   		Exec recoll
-+ "" 		Nop
-Test (x unison)		+ "Unison"	   		Exec unison
+Test (x xfm) + "Xfm" Exec xfm
+Test (x xfe) + "Xfe" Exec xfe -m
+Test (x rox) + "ROX-Filer" Exec rox
+Test (x rox-mime-editor) + "ROX-MIME-Editor" Exec rox-mime-editor
+Test (x emelfm2) + "Emelfm 2" Exec emelfm2
+Test (x thunar) + "Thunar" Exec thunar
+Test (x nautilus) + "Nautilus" Exec nautilus --no-desktop
+Test (x caja) + "Caja" Exec caja --no-desktop
+Test (x pcmanfm) + "PCMan F. M." Exec pcmanfm
+Test (x spacefm) + "SpaceFM" Exec spacefm
+Test (x gnome-commander) + "GNOME Commander" Exec gnome-commander
+Test (x systemg) + "System G" Exec systemg
+Test (x PathFinder) + "PathFinder" Exec PathFinder
+Test (x dolphin) + "Dolphin" Exec dolphin
+Test (x krusader) + "Krusader" Exec krusader
+#Test (x /opt/tuxcmd-0.5.103-bin/tuxcmd) + "Tux Commander" \
+#	Exec /opt/tuxcmd-0.5.103-bin/tuxcmd
+#Test (x /opt/muCommander/mucommander.sh) + "muCommander" \
+#	Exec /opt/muCommander/mucommander.sh
+Test (x doublecmd) + "Double Commander" Exec doublecmd
+Test (x gentoo) + "Gentoo" Exec gentoo
+Test (x worker) + "Worker" Exec worker
++ "" Nop
+Test (x xarchiver) + "XArchiver" Exec xarchiver
+Test (x xarchive) + "XArchive" Exec xarchive
+Test (x engrampa) + "Engrampa" Exec engrampa
+Test (x file-roller) + "File Roller" Exec file-roller
+Test (x 7zFM) + "7-Zip" Exec 7zFM
+Test (x ark) + "Ark" Exec ark
+Test (x kfilereplace) + "KFileReplace" Exec kfilereplace
+Test (f /usr/lib/ThunarBulkRename) + "Renomear em Massa" \
+	Exec /usr/lib/ThunarBulkRename
+Test (x gnome-search-tool) + "Localizar arquivos" Exec gnome-search-tool
+Test (x catfish) + "Catfish" Exec catfish
+Test (x recoll) + "Recoll" Exec recoll
++ "" Nop
+Test (x unison) + "Unison" Exec unison
 
 # Shells
 #
@@ -1138,50 +1138,55 @@ Test (x xterm) + "XTerm (fonte 10x20)" Exec xterm \
 # 
 DestroyMenu "Module-Popup"
 AddToMenu "Module-Popup"
-+ "Módulos FVWM"			Title
-+ "Identify"			Module FvwmIdent
-+ "Talk"			Module FvwmTalk
-+ "Console"			Module FvwmConsole -g 40x10 -bg black -fg green3
-+ ""		Nop
-+ "FvwmShelf"			Module FvwmButtons FvwmShelf
-+ "FvwmBar"			Module FvwmButtons FvwmBar
-+ "FvwmToolbox"			Module FvwmButtons FvwmToolbox
-+ "FvwmCDE"			Module FvwmButtons FvwmCDE-PainelPrincipal
-+ "FvwmDeskMenu"		Module FvwmButtons FvwmDeskMenu
-+ "Pager"			Module FvwmPager 0 0
-+ "Pager (2 desks)"		Module FvwmPager 0 1
-+ "WinList"			Module FvwmWinList
-+ ""		Nop
-+ "Banner"			Module FvwmBanner
-+ "ScrollBar"			Module FvwmScroll 2 2
-+ "Background"			Module FvwmBacker
-+ "AutoRaise"			Module FvwmAuto 200 Raise Nop
-+ "Parar AutoRaise"		KillModule FvwmAuto
-+ ""		Nop
-+ "IconBox"			Module FvwmIconBox
-+ "IconMan"			Module FvwmIconMan
++ "Módulos FVWM" Title
++ "Identify" Module FvwmIdent
++ "Talk" Module FvwmTalk
++ "Console" Module FvwmConsole \
+	-g 40x10 \
+	-bg black \
+	-fg green3
++ "" Nop
++ "FvwmShelf" Module FvwmButtons FvwmShelf
++ "FvwmBar" Module FvwmButtons FvwmBar
++ "FvwmToolbox" Module FvwmButtons FvwmToolbox
++ "FvwmCDE" Module FvwmButtons FvwmCDE-PainelPrincipal
++ "FvwmDeskMenu" Module FvwmButtons FvwmDeskMenu
++ "Pager" Module FvwmPager 0 0
++ "Pager (2 desks)" Module FvwmPager 0 1
++ "WinList" Module FvwmWinList
++ "" Nop
++ "Banner" Module FvwmBanner
++ "ScrollBar" Module FvwmScroll 2 2
++ "Background" Module FvwmBacker
++ "AutoRaise" Module FvwmAuto 200 Raise Nop
++ "Parar AutoRaise" KillModule FvwmAuto
++ "" Nop
++ "IconBox" Module FvwmIconBox
++ "IconMan" Module FvwmIconMan
 + ""
-+ "Animate"			Module FvwmAnimate
-+ "Parar Animate"		KillModule FvwmAnimate
-+ ""		Nop
-+ "Reler Menus"			Read $[Sky_Dir]/menus.rc
++ "Animate" Module FvwmAnimate
++ "Parar Animate" KillModule FvwmAnimate
++ "" Nop
++ "Reler Menus" Read $[Sky_Dir]/menus.rc
 
 # O menu abaixo é invocado como um sub-menu - ele permite que você saia, 
 # reinicie, ou alterne para outro gerenciador de janelas.
 #
 DestroyMenu "Quit-Verify"
 AddToMenu "Quit-Verify"
-+ "Permanecer no Fvwm" 		Nop
-+ "" 		Nop
-+ "Finalizar sessão"        	Quit
-+ "Reiniciar Fvwm"		Restart
-+ "Nova sessão"			Exec dm-tool switch-to-greeter
-+ "Listar sessões"		Exec zenity --info --text="`dm-tool list-seats | sed 's/\n/\\n/g'`"
-+ "" 		Nop
-#+ "Desligar..."		Exec $[HOME]/.fvwm/fvwmkdm.sh -h
-#+ "Reinicializar..."		Exec $[HOME]/.fvwm/fvwmkdm.sh -r
-+ "Suspender"			Function FuncSysSuspend
-+ "Hibernar"			Function FuncSysHibernate
++ "Permanecer no Fvwm" Nop
++ "" Nop
++ "Finalizar sessão" Quit
++ "Reiniciar Fvwm" Restart
++ "Nova sessão" Exec dm-tool switch-to-greeter
++ "Listar sessões" Exec zenity \
+	--info \
+	--text="`dm-tool list-seats | sed 's/\n/\\n/g'`"
++ "" Nop
+#+ "Desligar..." Exec $[HOME]/.fvwm/fvwmkdm.sh -h
+#+ "Reinicializar..." Exec $[HOME]/.fvwm/fvwmkdm.sh -r
++ "Suspender" Function FuncSysSuspend
++ "Hibernar" Function FuncSysHibernate
 
 # =====================================================================
 # Menus Adicionais
@@ -1208,16 +1213,18 @@ AddToMenu "Window Ops"
 + "A&baixo" Lower
 + "(Des)&Pregar	Alt+F6" Stick
 + "" Nop
-+ "Ampliar &Janela" Pick Exec exec xmag -source $[w.width]x$[w.height]+$[w.x]+$[w.y] -mag 2
++ "Ampliar &Janela" Pick Exec exec xmag \
+	-source $[w.width]x$[w.height]+$[w.x]+$[w.y] \
+	-mag 2
 + "Barras de Rola&gem" Module FvwmScroll
 + "" Nop
 + "Mata&r" Destroy
 + "&Fechar	Alt+F4"	Delete
-+ ""		Nop
++ "" Nop
 + "&Alternar para..." WindowList
 + "Pesquisar &janela..." Function FuncWinFinder
 + "Redesenhar &Tela" Refresh
-+ ""		Nop
++ "" Nop
 + "&Organizar..." Popup "Window Org"
 
 # Organizar Janelas
