@@ -991,7 +991,7 @@ Test (x lombard) + "Lombard" Exec lombard
 Test (x devede) + "DeVeDe" Exec devede
 Test (x dvdrip) + "dvd::rip" Exec dvdrip
 Test (x mmg) + "mkvmerge GUI" Exec mmg
-Test (x kdenlive) + "kdenlive" Exec kdenlive
+Test (x kdenlive) + "Kdenlive" Exec kdenlive
 Test (x kaudiocreator) + "KAudioCreator" Exec kaudiocreator
 Test (x k9copy) + "K9copy" Exec k9copy
 Test (x kmid) + "KMid" Exec kmid
