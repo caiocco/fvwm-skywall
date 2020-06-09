@@ -290,11 +290,25 @@ Style Comix \
 	Icon /usr/share/comix/images/comix.svg
 Style MPlayer \
 	PositionPlacement Center, \
-	Icon $[Gtk_Icon_Theme]/48x48/apps/icon-media.png
+	IconOverride, \
+	Icon $[Gtk_Icon_Theme]/apps/48/mplayer.png
 Style galculator \
 	EWMHDontDonateIcon, \
-	Icon $[Gtk_Icon_Theme]/48x48/apps/gnome-calculator.png
-
+	IconOverride, \
+	Icon $[Gtk_Icon_Theme]/apps/48/gnome-calculator.png
+Style Pcmanfm \
+	EWMHDontDonateIcon, \
+	IconOverride, \
+	Icon $[Gtk_Icon_Theme]/apps/48/system-file-manager.png
+Style Thunar \
+	EWMHDontDonateIcon, \
+	IconOverride, \
+	Icon $[Gtk_Icon_Theme]/apps/48/thunar.png
+Style Caja \
+	EWMHDontDonateIcon, \
+	IconOverride, \
+	Icon $[Gtk_Icon_Theme]/apps/48/system-file-manager.png
+	
 # * Produtividade
 Read $[Sky_Dir]/applix-theme.rc
 Style tm \
@@ -392,7 +406,10 @@ Style xmms \
 Style audacious \
 	UsePPosition
 Style schismtracker \
-	ResizeOutline
+	ResizeOutline, \
+	IconOverride, \
+	EWMHDontDonateIcon, \
+	Icon /usr/share/icons/hicolor/48x48/apps/schismtracker.png
 Style milkytracker \
 	FixedSize, \
 	EWMHDontDonateIcon, \
