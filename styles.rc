@@ -253,15 +253,17 @@ Test (EnvMatch Sky_Theme tribal) \
 	!Button 6
 Style "lxappearance" \
 	EWMHDontDonateIcon, \
-	Icon $[Gtk_Icon_Theme]/48x48/apps/gnome-settings-theme.png
+	IconOverride, \
+	Icon $[Gtk_Icon_Theme]/apps/48/gnome-settings-theme.png
 Style xcalc \
 	EWMHDontDonateIcon, \
-	Icon $[Gtk_Icon_Theme]/48x48/apps/gnome-calculator.png
+	IconOverride, \
+	Icon $[Gtk_Icon_Theme]/apps/48/gnome-calculator.png
 Style xedit \
-	Icon $[Gtk_Icon_Theme]/48x48/apps/gedit-icon.png
+	Icon $[Gtk_Icon_Theme]/apps/48/text-editor.png
 Style xv \
 	IconOverride, \
-	Icon $[Gtk_Icon_Theme]/48x48/apps/applets-screenshooter.png
+	Icon $[Gtk_Icon_Theme]/apps/48/applets-screenshooter.png
 Style Display \
 	EWMHIgnoreWindowType, \
 	EWMHIgnoreStateHints, \
@@ -343,11 +345,6 @@ Style LibreOffice \
 	PositionPlacement Center
 Test (EnvMatch Sky_TwoMons_Type 3) Style LibreOffice \
 	StartsOnScreen 0
-Style libreoffice-writer \
-	IconOverride, \
-	EWMHDontDonateIcon, \
-	Icon /usr/share/icons/hicolor/48x48/apps/libreoffice-writer.png, \
-	ResizeOutline
 #Style Kontact !Closable, !Button 2
 Style KPilot !Maximizable, !Button 4, Sticky
 Style scribus \
@@ -366,10 +363,6 @@ Style "Caixa de ferramentas" \
 	!Button 4, \
 	Button 6, \
 	!Button 8
-Style Serna.bin \
-	EWMHDontDonateIcon, \
-	IconOverride, \
-	Icon /opt/serna-free-4.2/icons/SernaIcon48.png
 Style skype \
 	!UsePPosition
 Style osmo \
@@ -400,7 +393,7 @@ Style "Painel xine" \
 Style aumix \
 	IconOverride, \
 	EWMHDontDonateIcon, \
-	Icon $[Gtk_Icon_Theme]/48x48/apps/gnome-mixer.png
+	Icon $[Gtk_Icon_Theme]/apps/48/gnome-volume-control.png
 Style xmms \
 	UsePPosition
 Style audacious \
@@ -597,16 +590,23 @@ Style Influent.x86 !Title, !Borders
 Style xterm \
 	ResizeOutline, \
 	EWMHDontDonateIcon, \
-	Icon $[Gtk_Icon_Theme]/48x48/apps/gnome-terminal.png
+	IconOverride, \
+	Icon $[Gtk_Icon_Theme]/apps/48/xterm.png
 Style XTerm \
 	ResizeOutline, \
 	EWMHDontDonateIcon, \
-	Icon $[Gtk_Icon_Theme]/48x48/apps/gnome-terminal.png
+	IconOverride, \
+	Icon $[Gtk_Icon_Theme]/apps/48/xterm.png
 Style rxvt \
 	ResizeOutline, \
-	Icon $[Gtk_Icon_Theme]/48x48/apps/gnome-terminal.png
+	Icon $[Gtk_Icon_Theme]/apps/48/gnome-terminal.png
 Style mrxvt \
 	ResizeOutline
+Style URxvt \
+	ResizeOutline, \
+	Icon $[Gtk_Icon_Theme]/apps/48/gnome-terminal.png
+Style "Guake!" \
+	!Iconifiable
 Style Terminal \
 	ResizeOutline
 Test (EnvMatch Sky_TwoMons_Type 3) Style guake \
