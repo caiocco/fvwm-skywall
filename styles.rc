@@ -692,6 +692,7 @@ Style qsynergy Icon /usr/share/pixmaps/qsynergy.png
 Style Nxplayer.bin EWMHDontDonateIcon, \
 	IconOverride, \
 	Icon $[Fvwm_Icon_Theme]/48x48/apps/nm.png
+Style xpra-gui Icon /usr/share/xpra/icons/xpra.png
 
 # * Centrais de configuração
 Style Y2controlcenter \

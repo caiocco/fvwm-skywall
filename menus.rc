@@ -606,6 +606,7 @@ Test (x filezilla) + "FileZilla" Exec filezilla
 Test (x gftp) + "gFTP" Exec gftp
 + "" Nop
 Test (x vinagre) + "Vinagre" Exec vinagre
+Test (x xpra) + "Xpra" Exec xpra
 Test (x anydesk) + "AnyDesk" Exec anydesk
 Test (x teamviewer) + "TeamViewer" Exec teamviewer
 Test (x NX) + "NoMachine" Exec NX
