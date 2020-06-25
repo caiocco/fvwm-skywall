@@ -654,21 +654,21 @@ Test (x xterm) Test (x telnet) + "Hosts Remotos" Popup Comm-Hosts
 # 
 DestroyMenu "Comm-Term"
 AddToMenu "Comm-Term"
-Test (!x alpine) Test (x pine) + "Pine" Exec xterm \
+Test (!x alpine) Test (x pine) + "Pine" Exec urxvt-256color \
 	-name Pine \
 	-T Mail \
 	+sb \
 	-ls \
 	-fn 7x14 \
 	-e pine -i
-Test (x alpine) + "Alpine" Exec xterm \
+Test (x alpine) + "Alpine" Exec urxvt-256color \
 	-bg black \
 	-fg lightgray \
 	-fa lucidatypewriter \
 	-fs 16 \
 	+sb -geometry 80x35 \
 	-e alpine
-Test (x mutt) + "Mutt" Exec xterm \
+Test (x mutt) + "Mutt" Exec urxvt-256color \
 	-bg black \
 	-fg lightgray \
 	-fa lucidatypewriter \
@@ -676,21 +676,21 @@ Test (x mutt) + "Mutt" Exec xterm \
 	+sb \
 	-geometry 80x35 \
 	-e mutt
-Test (x elm) + "Elm" Exec xterm \
+Test (x elm) + "Elm" Exec urxvt-256color \
 	-name Elm \
 	-T Elm \
 	-ls \
 	-fa lucidatypewriter \
 	-fs 16 \
 	-e elm
-Test (x ncftp) + "NcFTP" Exec xterm \
+Test (x ncftp) + "NcFTP" Exec urxvt-256color \
 	-name NcFtp \
 	-T FTP \
 	-ls \
 	-fa lucidatypewriter \
 	-fs 16 \
 	-e ncftp
-Test (x pebrot) + "Pebrot" Exec xterm \
+Test (x pebrot) + "Pebrot" Exec urxvt-256color \
 	-bg black \
 	-fg lightgray \
 	-name Pebrot \
@@ -699,7 +699,7 @@ Test (x pebrot) + "Pebrot" Exec xterm \
 	-ls \
 	-fn 7x14 \
 	-e pebrot
-Test (x irssi) + "Irssi" Exec xterm \
+Test (x irssi) + "Irssi" Exec urxvt-256color \
 	-geometry 100x30 \
 	-bg black \
 	-fg lightgray \
@@ -707,12 +707,12 @@ Test (x irssi) + "Irssi" Exec xterm \
 	-fs 16 \
 	+sb \
 	-e irssi
-Test (x epic) + "Epic" Exec xterm \
+Test (x epic) + "Epic" Exec urxvt-256color \
 	-geometry 100x30 \
 	-fa lucidatypewriter \
 	-fs 16 \
 	-e epic irc.rizon.net
-Test (x w3m) + "w3m" Exec xterm \
+Test (x w3m) + "w3m" Exec urxvt-256color \
 	-geometry 100x30 \
 	-bg black \
 	-fg lightgray \
@@ -720,14 +720,14 @@ Test (x w3m) + "w3m" Exec xterm \
 	-fs 16 \
 	+sb \
 	-e w3m -v
-Test (x elinks) + "Elinks" Exec xterm \
+Test (x elinks) + "Elinks" Exec urxvt-256color \
 	-bg black \
 	-fg lightgray \
 	-font 7x14 \
 	+sb \
 	-geometry 130x40 \
 	-e elinks
-Test (x links) + "Links" Exec xterm \
+Test (x links) + "Links" Exec urxvt-256color \
 	-bg black \
 	-fg lightgray \
 	-font 7x14 \
@@ -748,14 +748,14 @@ Test (x newsboat) + "Newsboat" Exec xterm \
 	+sb \
 	-geometry 130x40 \
 	-e newsboat
-Test (x tuir) + "Terminal UI for Reddit" Exec xterm \
+Test (x tuir) + "Terminal UI for Reddit" Exec urxvt-256color \
 	-bg black \
 	-fg lightgray \
 	-font 7x14 \
 	+sb \
 	-geometry 130x40 \
 	-e tuir
-Test (x /usr/sbin/nethogs) + "NetHogs" Exec xterm \
+Test (x /usr/sbin/nethogs) + "NetHogs" Exec urxvt-256color \
 	-geometry 100x34 \
 	-bg blue \
 	-fg yellow \
