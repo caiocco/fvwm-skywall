@@ -15,10 +15,12 @@ AddToFunc "StartFunction"
 + I Test (Init) Test (x xsetroot) Exec exec xsetroot -solid black
 + I Test (Init) Test (x $[HOME]/.fvwm/keyb.sh) Exec exec $[HOME]/.fvwm/keyb.sh
 + I Test (Init) Test (EnvMatch Sky_Comp Yes) Test (x compton) \
-	Exec compton -bCGf -i 0.9 -D 5 --sw-opti
+	Exec compton $[Sky_Compton_Options]
 + I Test (Init) Test (EnvMatch Sky_TwoMons Yes) \
 	Test (EnvMatch Sky_TwoMons_Type 1) \
-	Test (EnvMatch Sky_Comp Yes) exec xcompmgr -c -d :0.1
+	Test (EnvMatch Sky_Comp Yes) \
+	Test (x compton) \
+	Exec compton $[Sky_Compton_Options]
 #
 #
 #------ Módulos

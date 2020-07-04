@@ -184,7 +184,7 @@ Test (x clamtk)		+ "ClamTk Anti-vírus" 		Exec clamtk
 Test (x fortune) Test (x xmessage)\
 			+ "Fortune" 			Exec xmessage "`fortune`"
 Test (x hot-babe)	+ "Hot-babe"			Exec hot-babe
-+ ""		Nop
+Test (x fwbuilder) + ""		Nop
 Test (x fwbuilder)	+ "Firewall Builder"		Exec fwbuilder
 + ""		Nop
 Test (x gtklp)		+ "GtkLP - Imprimir (Local)"	Exec gtklp "Remova-me da lista e adicione os arquivos desejados"
@@ -200,6 +200,8 @@ Test (x qink)		+ "QInk (Tível de tinta)"	Exec qink
 + ""		Nop
 Test (x parcellite)	+ "Ligar clipboard"		Exec parcellite
 Test (x parcellite)	+ "Desligar clipboard"		Exec killall parcellite
+Test (x compton)	+ "Ligar efeitos"		Exec compton $[Sky_Compton_Options]
+Test (x compton)	+ "Desligar efeitos"		Exec killall compton
 Test (x parcellite)	+ ""				Nop
 Test (x k3b)		+ "K3B"				Exec k3b
 Test (x graveman)	+ "Graveman"			Exec graveman

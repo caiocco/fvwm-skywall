@@ -48,6 +48,13 @@ SetEnv Sky_Theme diamond	# skywall, ecs, water, tribal, diamond
 SetEnv Sky_CDE_Painel No	# barra CDE-like?
 SetEnv Sky_RoundedCorners No	# caso possua o patch, declare Yes aqui
 SetEnv Sky_MiniIconSize	16x16	# tamanho dos mini-ícones
+SetEnv Sky_Compton_Options \
+	"-bCGf \
+	-i 0.9 \
+	-D 5 \
+	--sw-opti\
+	--detect-client-leader \
+	--detect-transient"	# opções do compositor
 
 #
 # Caminhos
