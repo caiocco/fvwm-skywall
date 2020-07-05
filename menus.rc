@@ -714,7 +714,7 @@ Test (x epic) + "Epic" Exec urxvt-256color \
 	-fa lucidatypewriter \
 	-fs 16 \
 	-e epic irc.rizon.net
-Test (x w3m) + "w3m" Exec urxvt-256color \
+Test (x w3m) + "w3m" Exec xterm \
 	-geometry 100x30 \
 	-bg black \
 	-fg lightgray \
