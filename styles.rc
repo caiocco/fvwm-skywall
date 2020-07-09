@@ -255,6 +255,9 @@ Style "lxappearance" \
 	EWMHDontDonateIcon, \
 	IconOverride, \
 	Icon $[Gtk_Icon_Theme]/apps/48/gnome-settings-theme.png
+Style lxpanel \
+	Sticky, \
+	StaysOnTop
 Style xcalc \
 	EWMHDontDonateIcon, \
 	IconOverride, \

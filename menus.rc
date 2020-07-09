@@ -202,6 +202,7 @@ Test (x parcellite)	+ "Ligar clipboard"		Exec parcellite
 Test (x parcellite)	+ "Desligar clipboard"		Exec killall parcellite
 Test (x compton)	+ "Ligar efeitos"		Exec compton $[Sky_Compton_Options]
 Test (x compton)	+ "Desligar efeitos"		Exec killall compton
+Test (x screenkey)	+ "ScreenKey"			Exec screenkey
 Test (x parcellite)	+ ""				Nop
 Test (x k3b)		+ "K3B"				Exec k3b
 Test (x graveman)	+ "Graveman"			Exec graveman
