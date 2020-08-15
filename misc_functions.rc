@@ -157,5 +157,180 @@ AddToFunc FuncWinFinder
 	-e ~/.fvwm/window_finder.sh 
 + I TestRc (Match) break
 
+# ------------------- FuncWorkday
+DestroyFunc FuncWorkday
+AddToFunc FuncWorkday
+# 
+# Máquina: desktop
+# Papel: dar boas-vindas e identificar o dia da semana
+#
++ I Test (EnvMatch HOSTNAME skywall.homenet) Exec play -q $Sky_Dir/sons/FuncWorkday_Begin.ogg
++ I Test (EnvMatch HOSTNAME skywall.homenet) Exec notify-send "`getent passwd $USER | cut -d ':' -f 5 | cut -d ' ' -f 1`, aguarde o carregamento dos programas." -i distributor-logo-opensuse.png -t 10000
++ I Test (EnvMatch HOSTNAME skywall.homenet) Exec FvwmCommand 'SetEnv Sky_Week '`LC_ALL=en_US.UTF-8 date +"%a"`
+#
+#
+# Máquina: desktop
+# Papel: iniciar perfil pessoal do Vivaldi e iniciar carga antecipada
+#        do Audacity (depois será movido para a área correta)
+#
+#   +-----+-----+-----+
+#   |  x  |     |     |
+#   +-----+-----+-----+
+#   |     |     |     |
+#   +-----+-----+-----+
+#   |     |     |     |
+#   +-----+-----+-----+
+#
++ I Test (EnvMatch HOSTNAME skywall.homenet) GotoDeskAndPage 0 0 0
++ I Test (EnvMatch HOSTNAME skywall.homenet) Exec vivaldi-stable --profile-directory="Default"
++ I Test (EnvMatch HOSTNAME skywall.homenet) Wait vivaldi-stable
++ I Test (EnvMatch HOSTNAME skywall.homenet) Next (CurrentPage,vivaldi-stable) Maximize True
++ I Test (EnvMatch HOSTNAME skywall.homenet) \
+	Test (!EnvMatch Sky_Week Sat) \
+	Test (!EnvMatch Sky_Week Sun) \
+		Exec audacity
++ I Test (EnvMatch HOSTNAME skywall.homenet) \
+	Test (!EnvMatch Sky_Week Sat) \
+	Test (!EnvMatch Sky_Week Sun) \
+		Wait Audacity
+#
+# Máquina: desktop
+# Papel: iniciar perfil corporativo do Vivaldi
+#
+#   +-----+-----+-----+
+#   |     |  x  |     |
+#   +-----+-----+-----+
+#   |     |     |     |
+#   +-----+-----+-----+
+#   |     |     |     |
+#   +-----+-----+-----+
+#
++ I Test (EnvMatch HOSTNAME skywall.homenet) GotoDeskAndPage 0 1 0
++ I Test (EnvMatch HOSTNAME skywall.homenet) \
+	Test (!EnvMatch Sky_Week Sat) \
+	Test (!EnvMatch Sky_Week Sun) \
+		Exec vivaldi-stable --profile-directory="Profile 1"
++ I Test (EnvMatch HOSTNAME skywall.homenet) \
+	Test (!EnvMatch Sky_Week Sat) \
+	Test (!EnvMatch Sky_Week Sun) \
+		Wait vivaldi-stable
++ I Test (EnvMatch HOSTNAME skywall.homenet) \
+	Test (!EnvMatch Sky_Week Sat) \
+	Test (!EnvMatch Sky_Week Sun) \
+		Next (CurrentPage,vivaldi-stable) Maximize True
+#
+# Máquina: desktop
+# Papel: iniciar Firefox
+#
+#   +-----+-----+-----+
+#   |     |     |     |
+#   +-----+-----+-----+
+#   |  x  |     |     |
+#   +-----+-----+-----+
+#   |     |     |     |
+#   +-----+-----+-----+
+#
++ I Test (EnvMatch HOSTNAME skywall.homenet) GotoDeskAndPage 0 0 1
++ I Test (EnvMatch HOSTNAME skywall.homenet) Exec firefox
++ I Test (EnvMatch HOSTNAME skywall.homenet) Wait Navigator
++ I Test (EnvMatch HOSTNAME skywall.homenet) Next (Navigator) Maximize True
+#
+# Máquina: desktop
+# Papel: iniciar Telegram, KeePassX e Skype
+#
+#   +-----+-----+-----+
+#   |     |     |     |
+#   +-----+-----+-----+
+#   |     |     |     |
+#   +-----+-----+-----+
+#   |  x  |     |     |
+#   +-----+-----+-----+
+#
++ I Test (EnvMatch HOSTNAME skywall.homenet) GotoDeskAndPage 0 0 2
++ I Test (EnvMatch HOSTNAME skywall.homenet) Exec /opt/Telegram/Telegram
++ I Test (EnvMatch HOSTNAME skywall.homenet) Wait Telegram
++ I Test (EnvMatch HOSTNAME skywall.homenet) Next (Telegram) Resize 664c 503c
++ I Test (EnvMatch HOSTNAME skywall.homenet) Next (Telegram) AnimatedMove 405p 0
++ I Test (EnvMatch HOSTNAME skywall.homenet) Exec keepassx
++ I Test (EnvMatch HOSTNAME skywall.homenet) Wait Keepassx
++ I Test (EnvMatch HOSTNAME skywall.homenet) Next (Keepassx) AnimatedMove 50-50w 50-50w
++ I Test (EnvMatch HOSTNAME skywall.homenet) Next (Keepassx) Iconify
++ I Test (EnvMatch HOSTNAME skywall.homenet) Exec skypeforlinux
++ I Test (EnvMatch HOSTNAME skywall.homenet) Wait Skype
++ I Test (EnvMatch HOSTNAME skywall.homenet) Next (Skype) AnimatedMove 0 0
++ I Test (EnvMatch HOSTNAME skywall.homenet) Next (Skype) Close
+#
+# Máquina: desktop
+# Papel: abrir desktop remoto do Windows 10
+#
+#   +-----+-----+-----+
+#   |     |     |     |
+#   +-----+-----+-----+
+#   |     |     |     |
+#   +-----+-----+-----+
+#   |     |  x  |     |
+#   +-----+-----+-----+
+#
++ I Test (EnvMatch HOSTNAME skywall.homenet) \
+	Test (!EnvMatch Sky_Week Sat) \
+	Test (!EnvMatch Sky_Week Sun) \
+		GotoDeskAndPage 0 1 3
++ I Test (EnvMatch HOSTNAME skywall.homenet) \
+	Test (!EnvMatch Sky_Week Sat) \
+	Test (!EnvMatch Sky_Week Sun) \
+		Exec /usr/NX/bin/nxplayer
++ I Test (EnvMatch HOSTNAME skywall.homenet) \
+	Test (!EnvMatch Sky_Week Sat) \
+	Test (!EnvMatch Sky_Week Sun) \
+		Wait Nxplayer.bin
++ I Test (EnvMatch HOSTNAME skywall.homenet) \
+	Test (!EnvMatch Sky_Week Sat) \
+	Test (!EnvMatch Sky_Week Sun) \
+		Next (Nxplayer.bin) Maximize
+#
+# Máquina: desktop
+# Papel: colocar Audacity na página correta e minimizá-lo
+#
+#   +-----+-----+-----+
+#   |     |  x  |     |
+#   +-----+-----+-----+
+#   |     |     |     |
+#   +-----+-----+-----+
+#   |     |     |     |
+#   +-----+-----+-----+
+#
++ I Test (EnvMatch HOSTNAME skywall.homenet) \
+	Test (!EnvMatch Sky_Week Sat) \
+	Test (!EnvMatch Sky_Week Sun) \
+		GotoDeskAndPage 0 1 0
++ I Test (EnvMatch HOSTNAME skywall.homenet) \
+	Test (!EnvMatch Sky_Week Sat) \
+	Test (!EnvMatch Sky_Week Sun) \
+		Next (Audacity) MoveToPage 1 0
++ I Test (EnvMatch HOSTNAME skywall.homenet) \
+	Test (!EnvMatch Sky_Week Sat) \
+	Test (!EnvMatch Sky_Week Sun) \
+		Next (Audacity) AnimatedMove 50-50w 50-50w
++ I Test (EnvMatch HOSTNAME skywall.homenet) \
+	Test (!EnvMatch Sky_Week Sat) \
+	Test (!EnvMatch Sky_Week Sun) \
+		Next (Audacity) Iconify
+#
+# Máquina: desktop
+# Papel: voltar para a primeira página
+#
+#   +-----+-----+-----+
+#   |  x  |     |     |
+#   +-----+-----+-----+
+#   |     |     |     |
+#   +-----+-----+-----+
+#   |     |     |     |
+#   +-----+-----+-----+
+#
++ I Test (EnvMatch HOSTNAME skywall.homenet) GotoDeskAndPage 0 0 0
++ I Test (EnvMatch HOSTNAME skywall.homenet) Exec play -q $Sky_Dir/sons/FuncWorkday_End.ogg
++ I Test (EnvMatch HOSTNAME skywall.homenet) Next (vivaldi-stable) Focus
++ I Test (EnvMatch HOSTNAME skywall.homenet) Exec notify-send "Inicialização concluída. Hoje é `date +"%A"`." -i clock -t 10000
+
 echo misc_functions.rc: Processamento terminado.
 #=====================================================================#

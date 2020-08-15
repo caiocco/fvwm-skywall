@@ -95,4 +95,13 @@ FvwmCommand Refresh
 
 }
 
+function workday {
+
+sleep 5
+
+FvwmCommand 'Function FuncWorkday'
+
+}
+
 launch
+workday
