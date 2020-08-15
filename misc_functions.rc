@@ -161,12 +161,38 @@ AddToFunc FuncWinFinder
 DestroyFunc FuncWorkday
 AddToFunc FuncWorkday
 # 
-# Máquina: desktop
+# Máquina: qualquer
 # Papel: dar boas-vindas e identificar o dia da semana
 #
 + I Test (EnvMatch HOSTNAME skywall.homenet) Exec play -q $Sky_Dir/sons/FuncWorkday_Begin.ogg
-+ I Test (EnvMatch HOSTNAME skywall.homenet) Exec notify-send "`getent passwd $USER | cut -d ':' -f 5 | cut -d ' ' -f 1`, aguarde o carregamento dos programas." -i distributor-logo-opensuse.png -t 10000
-+ I Test (EnvMatch HOSTNAME skywall.homenet) Exec FvwmCommand 'SetEnv Sky_Week '`LC_ALL=en_US.UTF-8 date +"%a"`
++ I Exec notify-send "`getent passwd $USER | cut -d ':' -f 5 | cut -d ' ' -f 1`, aguarde o carregamento dos programas." -i distributor-logo-opensuse.png -t 10000
++ I Exec FvwmCommand 'SetEnv Sky_Week '`LC_ALL=en_US.UTF-8 date +"%a"`
+#
+#
+# Máquina: notebook
+# Papel: iniciar navegador, instant messenger e cliente de e-mail
+#
+#   +-----+-----+-----+
+#   |  x  |     |     |
+#   +-----+-----+-----+
+#   |     |     |     |
+#   +-----+-----+-----+
+#   |     |     |     |
+#   +-----+-----+-----+
+#
++ I Test (EnvMatch HOSTNAME thinkpad.homenet) GotoDeskAndPage 0 0 0
++ I Test (EnvMatch HOSTNAME thinkpad.homenet) Exec firefox -P padrao_sem_exts
++ I Test (EnvMatch HOSTNAME thinkpad.homenet) Wait Navigator
++ I Test (EnvMatch HOSTNAME thinkpad.homenet) Next (Navigator) Resize 1311c 825c
++ I Test (EnvMatch HOSTNAME thinkpad.homenet) Next (Navigator) AnimatedMove 0 0
++ I Test (EnvMatch HOSTNAME thinkpad.homenet) Exec /opt/Telegram/Telegram
++ I Test (EnvMatch HOSTNAME thinkpad.homenet) Wait Telegram
++ I Test (EnvMatch HOSTNAME thinkpad.homenet) Next (Telegram) Resize 687c 480c
++ I Test (EnvMatch HOSTNAME thinkpad.homenet) Next (Telegram) AnimatedMove 622p 0
++ I Test (EnvMatch HOSTNAME thinkpad.homenet) Exec claws-mail
++ I Test (EnvMatch HOSTNAME thinkpad.homenet) Wait Claws-mail
++ I Test (EnvMatch HOSTNAME thinkpad.homenet) Next (!HasHandles, Claws-mail) AnimatedMove 0p 999p
++ I Test (EnvMatch HOSTNAME thinkpad.homenet) Next (HasHandles, Claws-mail) AnimatedMove 0p 0
 #
 #
 # Máquina: desktop
@@ -316,7 +342,7 @@ AddToFunc FuncWorkday
 	Test (!EnvMatch Sky_Week Sun) \
 		Next (Audacity) Iconify
 #
-# Máquina: desktop
+# Máquina: praticamente qualquer
 # Papel: voltar para a primeira página
 #
 #   +-----+-----+-----+
@@ -327,10 +353,10 @@ AddToFunc FuncWorkday
 #   |     |     |     |
 #   +-----+-----+-----+
 #
-+ I Test (EnvMatch HOSTNAME skywall.homenet) GotoDeskAndPage 0 0 0
++ I GotoDeskAndPage 0 0 0
 + I Test (EnvMatch HOSTNAME skywall.homenet) Exec play -q $Sky_Dir/sons/FuncWorkday_End.ogg
 + I Test (EnvMatch HOSTNAME skywall.homenet) Next (vivaldi-stable) Focus
-+ I Test (EnvMatch HOSTNAME skywall.homenet) Exec notify-send "Inicialização concluída. Hoje é `date +"%A"`." -i clock -t 10000
++ I Exec notify-send "Inicialização concluída. Hoje é `date +"%A"`." -i clock -t 10000
 
 echo misc_functions.rc: Processamento terminado.
 #=====================================================================#
