@@ -313,7 +313,11 @@ Style Caja \
 	EWMHDontDonateIcon, \
 	IconOverride, \
 	Icon $[Gtk_Icon_Theme]/apps/48/system-file-manager.png
-	
+Style albert StaysOnTop, Sticky
+Style SmallBlob UsePPosition, NoTitle, NoHandles, BorderWidth 1, NeverFocus, StaysOnTop, WindowListSkip
+Style Keepassx Sticky
+Style Gcr-prompter Sticky, StaysOnTop, PositionPlacement Center
+
 # * Produtividade
 Read $[Sky_Dir]/applix-theme.rc
 Style tm \
@@ -588,6 +592,10 @@ Style vkquake \
 Style quakespasm \
 	Icon $[Fvwm_Icon_Theme]/48x48/apps/quake.png
 Style Influent.x86 !Title, !Borders
+Style OpenTyrian \
+	!Maximizable, \
+	FixedSize, \
+	Icon /usr/share/icons/hicolor/48x48/apps/opentyrian.png
 
 # * Emuladores de Terminal
 Style xterm \
@@ -696,6 +704,7 @@ Style Nxplayer.bin EWMHDontDonateIcon, \
 	IconOverride, \
 	Icon $[Fvwm_Icon_Theme]/48x48/apps/nm.png
 Style xpra-gui Icon /usr/share/xpra/icons/xpra.png
+Style Skype Sticky, StaysOnTop
 
 # * Centrais de configuração
 Style Y2controlcenter \
@@ -770,11 +779,13 @@ Style Squeak \
 	Icon /usr/share/pixmaps/squeak.png
 Style DBeaver ResizeOutline
 Style Dbeaver PositionPlacement Center
-Style jetbrains-datagrip PositionPlacement Center, SloppyFocus
-Style jetbrains-pycharm-ce PositionPlacement Center, SloppyFocus
+Style jetbrains-datagrip PositionPlacement Center, Lenience
+Style jetbrains-pycharm-ce PositionPlacement Center, Lenience
 Style Knime PositionPlacement Center
-Style KNIME SloppyFocus, ResizeOutline
-Style sun-awt-X11-XFramePeer SloppyFocus
+Style KNIME Lenience, ResizeOutline
+Style sun-awt-X11-XFramePeer SloppyFocus, Lenience
+Style *Eclipse* Lenience
+Style *Java* Lenience
 
 # * Sistemas de entrada
 Style "CellWriter" \
