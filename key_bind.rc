@@ -229,5 +229,8 @@ Key Escape	A	4	Exec play "$[KeySound]" > /dev/null ; \
 # Super + Enter para abrir o buscador de janelas
 Key Return	A	4	Function FuncWinFinder
 
+# Shift + Super + Enter para localizar o cursor do mouse
+Key Return	A	S4	Exec xmessage -name "SmallBlob" -bg red -fg white -nearmouse -timeout 1 'Estou aqui!'
+
 echo key_bind.rc: Processamento terminado.
 #=====================================================================#
