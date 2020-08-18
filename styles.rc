@@ -315,7 +315,10 @@ Style Caja \
 	Icon $[Gtk_Icon_Theme]/apps/48/system-file-manager.png
 Style albert StaysOnTop, Sticky
 Style SmallBlob UsePPosition, NoTitle, NoHandles, BorderWidth 1, NeverFocus, StaysOnTop, WindowListSkip
-Style Keepassx Sticky
+Style Keepassx Sticky, !Closable
+Test (EnvMatch Sky_Theme diamond) \
+	Test (EnvMatch Sky_Theme_Diamond_Type Vector) \
+		Style Keepassx !Button 2
 Style Gcr-prompter Sticky, StaysOnTop, PositionPlacement Center
 
 # * Produtividade
@@ -370,8 +373,6 @@ Style "Caixa de ferramentas" \
 	!Button 4, \
 	Button 6, \
 	!Button 8
-Style skype \
-	!UsePPosition
 Style osmo \
 	Sticky
 Style texmacs.bin Icon /usr/share/pixmaps/TeXmacs.xpm
@@ -704,7 +705,10 @@ Style Nxplayer.bin EWMHDontDonateIcon, \
 	IconOverride, \
 	Icon $[Fvwm_Icon_Theme]/48x48/apps/nm.png
 Style xpra-gui Icon /usr/share/xpra/icons/xpra.png
-Style Skype Sticky, StaysOnTop
+Style Skype Sticky, StaysOnTop, !UsePPosition, !Iconifiable
+Test (EnvMatch Sky_Theme diamond) \
+	Test (EnvMatch Sky_Theme_Diamond_Type Vector) \
+		Style Skype !Button 6
 
 # * Centrais de configuração
 Style Y2controlcenter \
