@@ -248,6 +248,7 @@ Test (x fontmatrix) + "Fontmatrix" Exec fontmatrix
 Test (x gimp) + "GIMP" Exec gimp
 Test (x cinepaint) + "CinePaint" Exec LC_ALL=C cinepaint
 Test (x grafx2) + "GrafX2" Exec grafx2
+Test (x aseprite) + "Aseprite" Exec aseprite
 Test (x gqview) + "GQview" Exec gqview
 Test (x geeqie) + "Geeqie" Exec geeqie
 Test (x ristretto) + "Ristretto" Exec ristretto
@@ -447,6 +448,7 @@ Test (x gnote) + "Gnote" Exec gnote
 Test (x serna) + "Syntext Serna Free" Exec serna
 Test (x planner) + "Planner" Exec planner
 Test (x xournal) + "Xournal" Exec xournal
+Test (x openboard) + "OpenBoard" Exec openboard
 Test (x /opt/jarnal/jarnal.sh) + "Jarnal" \
 	Exec /opt/jarnal/jarnal.sh
 Test (x /opt/ganttproject/ganttproject.sh) + "GanttProject" \
@@ -1024,7 +1026,7 @@ Test (x mp3blaster) Test (x xterm) + "MP3 Blaster" Exec xterm \
 #Test (x /opt/Nuke6.1v2/Nuke6.1) + "Nuke 6.1v2" \
 #	Exec exec /opt/Nuke6.1v2/Nuke6.1 --ple -b
 + "" Nop
-Test (x xbmc) + "XBMC" Exec xbmc
+Test (x kodi) + "Kodi" Exec kodi
 Test (x mythfrontend) + "MythTV" Exec mythfrontend
 Test (EnvMatch Sky_TwoMons Yes) Test (EnvMatch Sky_Myth No) \
 	Test (x mythfrontend) + "MythTV (2º monitor)" \

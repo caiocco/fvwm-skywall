@@ -391,6 +391,17 @@ Style MuPDF \
 	IconOverride, \
 	EWMHDontDonateIcon, \
 	Icon $[Gtk_Icon_Theme]/mimetypes/48/application-pdf.png
+Style Aseprite* \
+	EWMHDontDonateIcon, \
+	IconOverride, \
+	!Maximizable, \
+	!Handles, \
+	Icon /usr/share/icons/hicolor/48x48/apps/aseprite.png
+Style OpenBoard \
+	IconOverride, \
+	Sticky, \
+	StaysOnTop, \
+	Icon /usr/share/icons/hicolor/scalable/apps/ch.openboard.OpenBoard.svg:48x48
 
 # * Jogos e Multimídia
 Style "Painel xine" \
