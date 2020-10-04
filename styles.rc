@@ -63,6 +63,12 @@ Style FvwmWindowFinder \
 	!Button 3, \
 	!Button 6, \
 	!Button 8
+Style FvwmForm-Bandeja \
+	!Iconifiable, \
+	!Maximizable, \
+	PositionPlacement Center, \
+	FixedSize, \
+	StaysOnTop
 
 ### Se você quer mini-ícones na lista de janelas, comente os ###
 ### estilos declarados abaixo ###
@@ -801,6 +807,7 @@ Style KNIME Lenience, ResizeOutline
 Style sun-awt-X11-XFramePeer SloppyFocus, Lenience
 Style *Eclipse* Lenience
 Style *Java* Lenience
+Style "Gephi 0.9.2" Lenience
 
 # * Sistemas de entrada
 Style "CellWriter" \

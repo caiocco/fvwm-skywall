@@ -1220,17 +1220,23 @@ AddToMenu "Window Ops"
 + "A&baixo" Lower
 + "(Des)&Pregar	Alt+F6" Stick
 + "" Nop
-+ "Ampliar &Janela" Pick Exec exec xmag \
++ "Sempre no topo"  Pick (CirculateHit) Layer 0 6
++ "Camada +1"  Pick (CirculateHit) Layer +1
++ "Sempre no meio"  Pick (CirculateHit) Layer 0 4
++ "Camada -1"  Pick (CirculateHit) Layer -1
++ "Sempre no fundo"  Pick (CirculateHit) Layer 0 2
++ "" Nop
++ "Ampliar &janela" Pick Exec exec xmag \
 	-source $[w.width]x$[w.height]+$[w.x]+$[w.y] \
 	-mag 2
-+ "Barras de Rola&gem" Module FvwmScroll
++ "Barras de rola&gem" Module FvwmScroll
 + "" Nop
 + "Mata&r" Destroy
 + "&Fechar	Alt+F4"	Delete
 + "" Nop
 + "&Alternar para..." WindowList
 + "Pesquisar &janela..." Function FuncWinFinder
-+ "Redesenhar &Tela" Refresh
++ "Redesenhar &tela" Refresh
 + "" Nop
 + "&Organizar..." Popup "Window Org"
 
@@ -1242,9 +1248,9 @@ DestroyMenu "Window Org"
 AddToMenu "Window Org"
 + "Em cascata" \
 	FvwmRearrange -cascade -incx 1 -resize 4 0 80 70
-+ "Lado-a-lado Horizontalmente" \
++ "Lado-a-lado horizontalmente" \
 	FvwmRearrange -tile -h 4 0 91 78
-+ "Lado-a-lado Verticalmente" \
++ "Lado-a-lado verticalmente" \
 	FvwmRearrange -tile 4 0 69 89
 
 # Operações com Janelas, versão reduzida
@@ -1276,6 +1282,44 @@ AddToMenu Keyboard
 + "Layout &US" Exec exec $[HOME]/.fvwm/keyb.sh usnoint
 + "Layout &Russo" Exec exec $[HOME]/.fvwm/keyb.sh ru
 + "Layout Russo &Fonético" Exec exec $[HOME]/.fvwm/keyb.sh rufo
+
+# Menu de Acesso Rápido, para ser usado com o quarto botão do trackball
+DestroyMenu "Quick Access"
+AddToMenu "Quick Access"
++ "Terminal%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-terminal.png%" exec xfce4-terminal
++ "ROX-Filer%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-home.png%" exec rox
++ "Thunar%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/file-manager.png%" exec thunar
++ "Geany%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/accessories-text-editor.png%" exec geany
++ "Navegador Web%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/mozilla.png%" Function FuncAppWWWBrowser
++ "Correio Eletrônico%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/email.png%" Function FuncAppEMail
++ "Clementine%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/xmms.png%" exec clementine
++ "HexChat%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/hexchat.png%" exec hexchat
++ "Pidgin%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/pidgin.png%" exec pidgin
++ "Transmission%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/transmission.png%" exec transmission-gtk
++ "" Nop
++ "GIMP%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-gimp.png%" exec gimp
++ "Geeqie%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gqview.png%" exec geeqie
++ "Inkscape%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/inkscape.png%" exec inkscape
++ "StarDict%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/accessories-dictionary.png%" exec stardict
++ "LibreOffice%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-applications.png%" exec libreoffice
++ "VirtualBox%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/vbox.png%" exec VirtualBox
++ "" Nop
++ "Geany%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/accessories-text-editor.png%" exec geany
++ "Mousepad%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/mousepad.png%" exec mousepad
++ "Calculadora%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-calculator.png%" Function FuncAppCalc
++ "Páginas de Manual%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-help.png%" exec xman
++ "Lente de Aumento%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-searchtool.png%" exec xmag
++ "Executar...%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/actions/exec.png%" exec xfce4-appfinder -c
++ "" Nop
++ "Mixer de Áudio%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-mixer.png%" exec pavucontrol
++ "Bloquear Sessão%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-lockscreen.png%" exec xscreensaver-command --lock
++ "Exibir Desktop%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-show-desktop.png%" All (AcceptsFocus, AnyScreen, CurrentPage, !Iconic, !Shaded) Iconify
++ "Anotações%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/actions/edit.png%" exec zim
++ "Matar%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/actions/gtk-cancel.png%" exec xkill
++ "" Nop
++ "Fvwm Console%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/terminal.png%" Module FvwmConsole -g 40x10 -bg black -fg green3
++ "Reiniciar%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/actions/view-refresh.png%" Restart
++ "Encerrar%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/actions/exit.png%" Popup Quit-Verify
 
 echo menus.rc: Processamento terminado.
 #=====================================================================#

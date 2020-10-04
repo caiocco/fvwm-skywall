@@ -57,7 +57,11 @@ AddToFunc WindowListFunc
 #
 AddToFunc "window_ops_func" "C" PopUp Window-Ops2
 +              "M" PopUp Window-Ops2
-+              "D" Delete  
++              "D" Delete
+
+AddToFunc "window_ops_func_quickaccess" "C" PopUp "Quick Access"
++              "M" PopUp "Quick Access"
++              "D" Delete
 
 #=====================================================================#
 
