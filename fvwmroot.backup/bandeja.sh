@@ -103,5 +103,23 @@ FvwmCommand 'Function FuncWorkday'
 
 }
 
-launch
-workday
+case "$1" in
+        "")
+        echo "Assumindo -o -t"
+        launch
+	workday
+        ;;
+
+	--onlytray | -o)
+	launch
+	;;
+	
+	--onlyworkday | -w)
+	workday
+	;;
+	
+	*)
+        echo "Opção inválida:" $1
+
+        ;;
+esac

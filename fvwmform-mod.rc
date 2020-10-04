@@ -25,11 +25,23 @@ echo fvwmform-mod.rc: Configurando módulo de formulários...
 #*FvwmForm-Bandeja: WarpPointer
 *FvwmForm-Bandeja: Command     Beep
 *FvwmForm-Bandeja: Line        center
-*FvwmForm-Bandeja: Text        "Iniciar aplicativos da bandeja?"
+*FvwmForm-Bandeja: Text        "Iniciar aplicativos?"
 *FvwmForm-Bandeja: Line        expand
-*FvwmForm-Bandeja: Button      quit "Sim" ^S
+*FvwmForm-Bandeja: Line        expand
+*FvwmForm-Bandeja: Line        expand
+*FvwmForm-Bandeja: Line        expand
+*FvwmForm-Bandeja: Line        expand
+*FvwmForm-Bandeja: Button      quit "Sim, programas e bandeja" ^S
 *FvwmForm-Bandeja: Command     Exec $[HOME]/.fvwm/bandeja.sh
-*FvwmForm-Bandeja: Button      quit "Não" ^X
+*FvwmForm-Bandeja: Line        expand
+*FvwmForm-Bandeja: Button      quit "Apenas bandeja" ^B
+*FvwmForm-Bandeja: Command     Exec $[HOME]/.fvwm/bandeja.sh -o
+*FvwmForm-Bandeja: Button      quit "Apenas programas" ^P
+*FvwmForm-Bandeja: Command     Exec $[HOME]/.fvwm/bandeja.sh -w
+*FvwmForm-Bandeja: Line        expand
+*FvwmForm-Bandeja: Line        expand
+*FvwmForm-Bandeja: Line        expand
+*FvwmForm-Bandeja: Button      quit "Abortar operação" ^X
 *FvwmForm-Bandeja: Command     Nop
 
 echo fvwmform-mod.rc: Processamento terminado.
