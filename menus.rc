@@ -998,6 +998,7 @@ Test (x lombard) + "Lombard" Exec lombard
 Test (x devede) + "DeVeDe" Exec devede
 Test (x dvdrip) + "dvd::rip" Exec dvdrip
 Test (x mmg) + "mkvmerge GUI" Exec mmg
+Test (x mkvtoolnix-gui) + "MKVToolNix GUI" Exec mkvtoolnix-gui
 Test (x kdenlive) + "Kdenlive" Exec kdenlive
 Test (x kaudiocreator) + "KAudioCreator" Exec kaudiocreator
 Test (x k9copy) + "K9copy" Exec k9copy
@@ -1247,11 +1248,14 @@ AddToMenu "Window Ops"
 DestroyMenu "Window Org"
 AddToMenu "Window Org"
 + "Em cascata" \
-	FvwmRearrange -cascade -incx 1 -resize 4 0 80 70
+	FvwmRearrange -cascade -incx 1 -resize 0 0 75 75
+#	FvwmRearrange -cascade -incx 1 -resize 4 0 80 70
 + "Lado-a-lado horizontalmente" \
-	FvwmRearrange -tile -h 4 0 91 78
+	FvwmRearrange -tile -h 0 0 91 97
+#	FvwmRearrange -tile -h 4 0 91 78
 + "Lado-a-lado verticalmente" \
-	FvwmRearrange -tile 4 0 69 89
+	FvwmRearrange -tile 0 0 91 97
+#	FvwmRearrange -tile 4 0 69 89
 
 # Operações com Janelas, versão reduzida
 # Descrição: Uma versão reduzida do menu "Window Ops", ideal para ser
