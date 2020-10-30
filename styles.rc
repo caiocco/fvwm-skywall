@@ -802,11 +802,11 @@ Style DBeaver ResizeOutline
 Style Dbeaver PositionPlacement Center
 Style jetbrains-datagrip PositionPlacement Center, Lenience
 Style jetbrains-pycharm-ce PositionPlacement Center, Lenience
-Style Knime PositionPlacement Center
-Style KNIME Lenience, ResizeOutline
-Style sun-awt-X11-XFramePeer SloppyFocus, Lenience
-Style *Eclipse* Lenience
-Style *Java* Lenience
+Style Knime PositionPlacement Center, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
+Style KNIME Lenience, ResizeOutline, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
+Style sun-awt-X11-XFramePeer Lenience, ResizeOutline, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
+Style *Eclipse* Lenience, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
+Style *Java* Lenience, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
 Style "Gephi 0.9.2" Lenience
 
 # * Sistemas de entrada
