@@ -765,6 +765,7 @@ Style qemu \
 Test (EnvMatch Sky_Theme skywall) \
 	 Style qemu \
 	Font "Shadow=1 0 SE:xft:Helvetica:Bold:size=12"
+Style VirtualBoxVM ResizeOutline
 Style SheepShaver \
 	BorderWidth 7, \
 	!Button 2, \
