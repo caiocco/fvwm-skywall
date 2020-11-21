@@ -809,6 +809,8 @@ Style sun-awt-X11-XFramePeer Lenience, ResizeOutline, MoveByProgramMethod, UsePP
 Style *Eclipse* Lenience, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
 Style *Java* Lenience, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
 Style "Gephi 0.9.2" Lenience
+Style St80 Lenience
+Style install4j-RV Lenience
 
 # * Sistemas de entrada
 Style "CellWriter" \
