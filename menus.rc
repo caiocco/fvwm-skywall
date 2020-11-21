@@ -166,6 +166,7 @@ Test (x kregexpeditor)	+ "KRegExpEditor"		Exec kregexpeditor
 Test (x leafpad)	+ "Leafpad"			Exec leafpad
 Test (x mousepad)	+ "Mousepad"			Exec mousepad
 Test (x gedit)		+ "GNOME Editor"		Exec gedit
+Test (x pluma)		+ "Pluma" 			Exec pluma
 Test (x txt2tags)	+ "txt2tags"			Exec txt2tags --gui
 Test (x highlight-gui)	+ "Highlight"			Exec highlight-gui
 Test (x shutterbug)	+ "Shutterbug"			Exec shutterbug
@@ -437,6 +438,7 @@ Test (x jpilot) + "J-Pilot" Exec jpilot
 Test (x sunbird) + "Mozilla Sunbird" Exec sunbird
 Test (x plan) + "Plan" Exec plan
 Test (x osmo) + "Osmo" Exec osmo
+Test (x tkremind) + "Remind" Exec tkremind
 Test (x keepassx) + "KeePassX" Exec keepassx
 Test (x treeline) + "TreeLine" Exec treeline
 Test (x notecase) + "NoteCase" Exec notecase
@@ -823,6 +825,7 @@ Test (x eboard) + "eboard" Exec eboard
 Test (x lincity-ng) + "LinCity NG" Exec lincity-ng
 Test (x micropolis) + "Micropolis" Exec micropolis
 Test (x openttd) + "OpenTTD" Exec openttd
+Test (x openrct2) + "OpenRCT2" Exec openttd
 Test (x simutrans) + "Simutrans" Exec simutrans
 Test (x tmw) + "The Mana World" Exec tmw
 Test (x teeworlds) + "Teeworlds" Exec teeworlds
