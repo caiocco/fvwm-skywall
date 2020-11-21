@@ -19,7 +19,7 @@ echo strokes.rc: Processando gestos de mouse...
 # common ones here.
 #
 # To try these out, hold down the Left mouse button and trace the
-# pattern on the Root # Window, the sequence is a pattern on the grid 
+# pattern on the Root Window, the sequence is a pattern on the grid 
 # above, so 14789 would be down then Right.
 ####
 
