@@ -811,6 +811,7 @@ Style *Java* Lenience, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHi
 Style "Gephi 0.9.2" Lenience
 Style St80 Lenience
 Style install4j-RV Lenience
+Style pharo-vm Icon $[HOME]/bin/pharolauncher/icons/pharo-launcher_48.png
 
 # * Sistemas de entrada
 Style "CellWriter" \
