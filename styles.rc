@@ -331,13 +331,16 @@ Style Gcr-prompter Sticky, StaysOnTop, PositionPlacement Center
 Read $[Sky_Dir]/applix-theme.rc
 Style tm \
 	!UsePPosition, \
-	NoIconPosition
+	NoIconPosition, \
+	ResizeOutline
 Style pm \
 	!UsePPosition, \
-	NoIconPosition
+	NoIconPosition, \
+	ResizeOutline
 Style pr \
 	!UsePPosition, \
-	NoIconPosition
+	NoIconPosition, \
+	ResizeOutline
 Style Notecase \
 	IconOverride, \
 	EWMHDontDonateIcon, \
@@ -676,6 +679,7 @@ Style xchat \
 #Style Xchat FocusFollowsMouse
 Style emesene FocusFollowsMouse
 Style Pidgin FocusFollowsMouse
+Style zoom_linux_float_video_window StaysOnTop, Sticky
 Style googleearth-bin \
 	EWMHMaximizeIgnoreWorkingArea, \
 	EWMHIgnoreStackingOrderHints, \
