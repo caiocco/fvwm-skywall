@@ -85,7 +85,8 @@ Test (EnvMatch Sky_Theme gentoo) *FvwmShelf: (22x2, Frame 0)
 Test (EnvMatch Sky_Theme skywall) *FvwmShelf: (22x2, Frame 0)
 Test (!EnvMatch Sky_Panels_Type 1.6) *FvwmShelf: (22x9, Swallow "Shelf-FvwmPager" "Module FvwmPager Shelf-FvwmPager *")
 Test (!EnvMatch Sky_Panels_Type 1.6) *FvwmShelf: (22x1, Frame 0)
-*FvwmShelf: (22x5, Frame 0, Swallow stalonetray `Exec exec stalonetray --geometry 8x2 --max-geometry 5x2 --grow-gravity=SE --icon-gravity=NW --icon-size=16 --no-shrink --parent-bg --kludges force_icons_size`)
+*FvwmShelf: (22x3, Frame -1, Colorset 11, Swallow stalonetray `Exec exec stalonetray --geometry 8x2 --max-geometry 8x2 --scrollbars vertical --scrollbars-highlight gray40 --scrollbars-step 16 --grow-gravity=SE --icon-gravity=NW --icon-size=16 --no-shrink --parent-bg --kludges force_icons_size`)
+*FvwmShelf: (22x1, Frame 0)
 *FvwmShelf: (22x2, Frame 0, Padding 36 0, Left, Swallow "FvwmClockApplet" `Module FvwmScript $[Sky_Dir]/fvwmscript.clockapplet-mod.rc`)
 
 
