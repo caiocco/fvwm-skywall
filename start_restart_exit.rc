@@ -115,6 +115,7 @@ AddToFunc "StartFunction"
 + I Test (Init) Test (EnvMatch Sky_Panels_Type 4) Test (x rox) exec rox -p=fvwm2a1
 + I Test (Init) Test (x gkrellm) exec gkrellm
 + I Test (Init) Test (x gkrellm) Wait gkrellm
++ I Test (Init) exec pkill -9 -o -f "FvwmButtons 7 4 none"
 + I Test (Init) Restart
 + I Test (Restart) Recapture
 #
@@ -156,6 +157,7 @@ AddToFunc "ExitFunction"
 + I Test (Quit) Test (x albert) exec killall -s TERM albert
 + I Test (Exit) Test (f $[HOME]/.config/gtk-3.0/gtk.css) exec mv ~/.config/gtk-3.0/gtk.css ~/.config/gtk-3.0/gtk.css.fvwm
 + I Test (Exit) exec sync
++ I Test (Exit) exec killall -9 FvwmButtons
 
 echo start_restart_exit.rc: Processamento terminado.
 #=====================================================================#
