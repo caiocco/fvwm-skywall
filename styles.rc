@@ -84,6 +84,13 @@ Test (EnvMatch Sky_Theme xp) \
 Test (EnvMatch Sky_Theme xp) \
 	Style * !EWMHMiniIconOverride
 	
+### Eu estava definindo por programa, mas a verdade é que os tempos
+### mudaram e programas Java, Electron e outras tecnologias menos
+### voltadas ao mundo GNU/Linux e BSD, infelizmente, não respeitam o
+### gerenciador de janelas. É mais fácil pedir ao FVWM para ser
+### leniente com todos os ofensores, pois são muitos
+Style * Lenience
+
 ### Se você, assim como eu, se sentia irritado por causa de ###
 ### ícones de múltiplos tamanhos na hora de restaurar as ###
 ### janelas minimizadas, então a seguinte declaração será ###
@@ -805,16 +812,13 @@ Style Squeak \
 	Icon /usr/share/pixmaps/squeak.png
 Style DBeaver ResizeOutline
 Style Dbeaver PositionPlacement Center
-Style jetbrains-datagrip PositionPlacement Center, Lenience
-Style jetbrains-pycharm-ce PositionPlacement Center, Lenience
+Style jetbrains-datagrip PositionPlacement Center
+Style jetbrains-pycharm-ce PositionPlacement Center
 Style Knime PositionPlacement Center, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
-Style KNIME Lenience, ResizeOutline, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
-Style sun-awt-X11-XFramePeer Lenience, ResizeOutline, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
-Style *Eclipse* Lenience, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
+Style KNIME ResizeOutline, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
+Style sun-awt-X11-XFramePeer ResizeOutline, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
+Style *Eclipse* MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
 Style *Java* Lenience, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
-Style "Gephi 0.9.2" Lenience
-Style St80 Lenience
-Style install4j-RV Lenience
 Style pharo-vm Icon $[HOME]/bin/pharolauncher/icons/pharo-launcher_48.png
 
 # * Sistemas de entrada
