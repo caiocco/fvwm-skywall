@@ -169,7 +169,7 @@ AddToFunc FuncWorkday
 # Papel: dar boas-vindas e identificar o dia da semana
 #
 + I Test (EnvMatch HOSTNAME skywall.homenet) Exec play -q $Sky_Dir/sons/FuncWorkday_Begin.ogg
-+ I Exec notify-send "`getent passwd $USER | cut -d ':' -f 5 | cut -d ' ' -f 1`, aguarde o carregamento dos programas." -i distributor-logo-opensuse.png -t 10000
++ I Exec notify-send "`getent passwd $USER | cut -d ':' -f 5 | cut -d ' ' -f 1`, aguarde o carregamento dos programas." -i distributor-logo.png -t 10000
 + I Exec FvwmCommand 'SetEnv Sky_Week '`LC_ALL=en_US.UTF-8 date +"%a"`
 #
 #
