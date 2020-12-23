@@ -83,6 +83,13 @@ else
 	qsynergy &
 fi
 
+if pgrep -x "flameshot" > /dev/null
+then
+	killall flameshot
+else
+	flameshot &
+fi
+
 if pgrep -x "dropbox" > /dev/null
 then
 	dropbox stop

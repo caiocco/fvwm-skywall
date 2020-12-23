@@ -75,8 +75,11 @@ Key F11		A	S4	Exec VirtualBox
 Key F12		A	S4	Exec loffice
 
 # Lançadores de aplicativos com teclas especiais
-SetEnv PrintKeySound /mnt/diversos/arquivos_comuns/Sons/camera.wav
-Key Print	A	N	Exec play "$[PrintKeySound]" > /dev/null ; shutterbug
+SetEnv PrintKeySound1 /home/caio/Diversos/arquivos_comuns/Sons/novos/camera-shutter-click-01.wav
+SetEnv PrintKeySound2 /home/caio/Diversos/arquivos_comuns/Sons/novos/camera-shutter-click-03.wav
+Key Print	A	N	Exec play "$[PrintKeySound2]" > /dev/null ; flameshot full -c
+Key Print	A	CS	Exec play "$[PrintKeySound1]" > /dev/null ; flameshot full -p $HOME
+Key Print	A	M	Exec play "$[PrintKeySound2]" > /dev/null ; flameshot gui
 
 # Aceleradores de teclado para as teclas especiais do HP Compaq dv6210br
 SetEnv KeySound /usr/share/sounds/KDE_Click.wav

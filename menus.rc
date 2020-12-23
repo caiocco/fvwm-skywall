@@ -170,6 +170,7 @@ Test (x pluma)		+ "Pluma" 			Exec pluma
 Test (x txt2tags)	+ "txt2tags"			Exec txt2tags --gui
 Test (x highlight-gui)	+ "Highlight"			Exec highlight-gui
 Test (x shutterbug)	+ "Shutterbug"			Exec shutterbug
+Test (x flameshot)	+ "Flameshot"			Exec flameshot gui
 Test (x FBReader)	+ "FBReader"			Exec FBReader
 Test (x parcellite)	+ "Parcellite"			Exec parcellite
 Test (x cellwriter)	+ "CellWriter"			Exec cellwriter
