@@ -41,6 +41,7 @@ Test (EnvMatch Sky_Theme_Diamond_Type Vector) Colorset 4 fg white, bg #6b8eb5, f
 Colorset 10 fg white, bg black, fgsh gray10, RootTransparent Buffer, Tint black 95
 # - Alguns aplicativos embutidos
 Colorset 11 fg white, bg black, fgsh gray10, RootTransparent Buffer, Tint black 85
+Colorset 12 fg white, bg black, fgsh gray10, RootTransparent Buffer, Tint white 30
 # - Pager
 #Colorset 14 fg gray60, bg #6b8eb5, fgsh gray10, RootTransparent Buffer, Tint black 70
 Test (EnvMatch Sky_Theme_Diamond_Color Blue) Colorset 14 fg gray60, bg #6b8eb5, fgsh gray10, RootTransparent Buffer, Tint black 100
