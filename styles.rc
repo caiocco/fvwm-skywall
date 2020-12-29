@@ -329,6 +329,7 @@ Style Caja \
 Style albert StaysOnTop, Sticky
 Style SmallBlob UsePPosition, NoTitle, NoHandles, BorderWidth 1, NeverFocus, StaysOnTop, WindowListSkip
 Style Keepassx Sticky, !Closable
+Style KeePassXC Sticky
 Test (EnvMatch Sky_Theme diamond) \
 	Test (EnvMatch Sky_Theme_Diamond_Type Vector) \
 		Style Keepassx !Button 2
