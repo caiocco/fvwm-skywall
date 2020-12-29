@@ -281,10 +281,10 @@ AddToFunc FuncWorkday
 + I Test (EnvMatch HOSTNAME skywall.homenet) Wait Telegram
 + I Test (EnvMatch HOSTNAME skywall.homenet) Next (Telegram) Resize 664c 503c
 + I Test (EnvMatch HOSTNAME skywall.homenet) Next (Telegram) AnimatedMove 405p 0
-+ I Test (EnvMatch HOSTNAME skywall.homenet) Exec keepassx
-+ I Test (EnvMatch HOSTNAME skywall.homenet) Wait Keepassx
-+ I Test (EnvMatch HOSTNAME skywall.homenet) Next (Keepassx) AnimatedMove 50-50w 50-50w
-+ I Test (EnvMatch HOSTNAME skywall.homenet) Next (Keepassx) Iconify
++ I Test (EnvMatch HOSTNAME skywall.homenet) Exec keepassxc
++ I Test (EnvMatch HOSTNAME skywall.homenet) Wait KeePassXC
++ I Test (EnvMatch HOSTNAME skywall.homenet) Next (KeePassXC) AnimatedMove 50-50w 50-50w
++ I Test (EnvMatch HOSTNAME skywall.homenet) Next (KeePassXC) Iconify
 + I Test (EnvMatch HOSTNAME skywall.homenet) Exec skypeforlinux
 + I Test (EnvMatch HOSTNAME skywall.homenet) Wait Skype
 + I Test (EnvMatch HOSTNAME skywall.homenet) Next (Skype) AnimatedMove 0 0
