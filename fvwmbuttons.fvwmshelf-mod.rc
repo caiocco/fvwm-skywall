@@ -41,7 +41,7 @@ Test (!EnvMatch Sky_Panels_Type 1.6) Test (EnvMatch Sky_Ani_Shelf Yes) *FvwmShel
 Test (!EnvMatch Sky_Panels_Type 1.6) Test (EnvMatch Sky_Ani_Shelf No) *FvwmShelf: (1x72, Action(Mouse 1) Nop)
 Test (EnvMatch Sky_Panels_Type 1.6) Test (EnvMatch Sky_Ani_Shelf Yes) *FvwmShelf: (1x74, Action(Mouse 1) Next (CirculateHit, FvwmShelf) PipeRead 'echo LockingSlide $$(test $$(($[w.x]+$[w.width])) -le $[vp.width] && echo w$$(($[w.width]-$width))p || echo w-$$(($[w.width]-$width))p) keep; echo Next \\(CirculateHit, FvwmBar\\) Maximize ewmhiwa growright 0')
 Test (EnvMatch Sky_Panels_Type 1.6) Test (EnvMatch Sky_Ani_Shelf No) *FvwmShelf: (1x74, Action(Mouse 1) Nop)
-*FvwmShelf: (22x2, Title(Side) " Terminal", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-terminal.png, Action(Mouse 1) `Exec "Terminal" exec xfce4-terminal`)
+*FvwmShelf: (22x2, Title(Side) " Terminal", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-terminal.png, Action(Mouse 1) `Exec "Xfce4-terminal" exec xfce4-terminal`)
 *FvwmShelf: (22x2, Title(Side) " ROX-Filer", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-home.png, Action(Mouse 1) `Exec "ROX-Filer" exec rox`)
 *FvwmShelf: (22x2, Title(Side) " Thunar", Left, Icon $[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/file-manager.png, Action(Mouse 1) `Exec "Thunar" exec thunar`)
 Test (EnvMatch Sky_Panels_Type 1.6) *FvwmShelf: (22x1, Frame 0)
