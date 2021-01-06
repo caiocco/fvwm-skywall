@@ -238,6 +238,7 @@ Test (x blender) + "Blender" Exec blender
 Test (x comix) + "Comix" Exec comix
 Test (x dia) + "Dia" Exec dia
 Test (x display) + "ImageMagick" Exec display
+Test (x gm) + "GraphicsMagick" Exec gm display
 Test (x display) Test (x dillo) + "ImageMagick (exemplos)" \
 	Exec dillo -g 1024x768 -f http://www.imagemagick.org/Usage/
 Test (x epdfview) + "ePDFView" Exec epdfview
@@ -460,6 +461,7 @@ Test (x /opt/freemind/freemind.sh) + "FreeMind" \
 	Exec /opt/freemind/freemind.sh
 Test (x $[HOME]/bin/yed) + "yEd Graph Editor" \
 	Exec $[HOME]/bin/yed
+Test (x vym) + "View Your Mind" Exec LANG=en_US.UTF-8 vym
 Test (x /home/caio/XMind/XMind_Linux_64bit/xmind.sh) + "XMind" \
 	Exec /home/caio/XMind/XMind_Linux_64bit/xmind.sh
 Test (x /opt/tr/bin/tr.sh) + "ThinkingRock" \
