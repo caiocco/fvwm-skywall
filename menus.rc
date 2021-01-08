@@ -28,204 +28,200 @@ AddToMenu Utilities
 + "Menu Principal" Title
 + "" TearMenuOff
 + "Terminal%$[Fvwm_Icon_Theme]/32x32/apps/gnome-term-linux.png%" \
-				Exec xfce4-terminal
+	Exec xfce4-terminal
 + "Monitor de Processos%$[Fvwm_Icon_Theme]/32x32/apps/gnome-monitor.png%" \
-				Exec xterm -geometry 140x50 -bg black -fg lightgray \
-				-font 7x14 -T htop -n htop -e htop
+	Exec xterm -geometry 140x50 -bg black -fg lightgray \
+  -font 7x14 -T htop -n htop -e htop
 + "Calculadora%$[Fvwm_Icon_Theme]/32x32/apps/gnome-calculator.png%" \
-				Exec galculator
+	Exec galculator
 + "Lente de Aumento%$[Fvwm_Icon_Theme]/32x32/apps/gnome-searchtool.png%" \
-				Exec xmag
+	Exec xmag
 + "Páginas de Manual%$[Fvwm_Icon_Theme]/32x32/apps/gnome-help.png%" \
-				Exec xman
-+ ""		Nop
+	Exec xman
++ "" Nop
 Test (x xdg_menu) \
-	+ "openSUSE (&XDG)%$[Fvwm_Icon_Theme]/32x32/places/start-here-branding.png%" \
-				Popup xdg_menu
+ + "openSUSE (&XDG)%$[Fvwm_Icon_Theme]/32x32/places/start-here-branding.png%" \
+	Popup xdg_menu
 + "&Aplicativos%$[Fvwm_Icon_Theme]/32x32/apps/programs.png%" \
-				Popup Applications
+	Popup Applications
 + "&Utilitários%$[Fvwm_Icon_Theme]/32x32/apps/accessories-calculator.png%" \
-				Popup Accessories
+	Popup Accessories
 + "&Gráficos%$[Fvwm_Icon_Theme]/32x32/apps/gnome-graphics.png%" \
-				Popup Graphics
+	Popup Graphics
 + "&Desenvolvimento%$[Fvwm_Icon_Theme]/32x32/apps/icon-install-software.png%" \
-				Popup Develop
+	Popup Develop
 + "C&ientífico%$[Fvwm_Icon_Theme]/32x32/apps/accessories-dictionary.png%" \
-				Popup Science
+	Popup Science
 + "&Produtividade%$[Fvwm_Icon_Theme]/32x32/apps/gnome-applications.png%" \
-				Popup Office
+	Popup Office
 + "&Conectividade%$[Fvwm_Icon_Theme]/32x32/apps/applications-internet.png%" \
-				Popup Comm
+	Popup Comm
 + "&Multimídia%$[Fvwm_Icon_Theme]/32x32/apps/gnome-multimedia.png%" \
-				Popup Multimedia
+	Popup Multimedia
 + "Ar&quivos%$[Fvwm_Icon_Theme]/32x32/apps/file-manager.png%" \
-				Popup Filemanagers
+	Popup Filemanagers
 + "&Jogos%$[Fvwm_Icon_Theme]/32x32/apps/applications-games.png%" \
-				Popup Games
+	Popup Games
 + "Sh&ells%$[Fvwm_Icon_Theme]/32x32/apps/gnome-terminal.png%" \
-				Popup Shells
-+ ""		Nop
+	Popup Shells
++ "" Nop
 + "Módulo&s%$[Fvwm_Icon_Theme]/32x32/apps/gnome-devel.png%" \
-				Popup Module-Popup
-+ ""		Nop
+	Popup Module-Popup
++ "" Nop
 + "Executa&r...%$[Fvwm_Icon_Theme]/32x32/apps/gnome-run.png%" \
-				Exec xfce4-appfinder -c --disable-server
+	Exec xfce4-appfinder -c --disable-server
 + "Redesen&har Tela%$[Fvwm_Icon_Theme]/32x32/apps/gnome-settings-background.png%" \
-				Refresh
+  Refresh
 + "&Organizar Ícones%$[Fvwm_Icon_Theme]/32x32/apps/gnome-window-manager.png%" \
-				All (CurrentPage, Iconic) PlaceAgain Icon
-+ ""		Nop
+  All (CurrentPage, Iconic) PlaceAgain Icon
++ "" Nop
 + "Sair%$[Fvwm_Icon_Theme]/32x32/actions/exit.png%" \
-				Popup Quit-Verify
+	Popup Quit-Verify
 
 # Aplicativos
 #
 DestroyMenu Applications
 AddToMenu Applications
 + "" TearMenuOff
-Test (x VirtualBox) 	+ "Oracle VM VirtualBox Manager" \
-							Exec VirtualBox
-Test (x vmware)		+ "VMware Server"		Exec vmware
-Test (x vmplayer)	+ "VMware Player"		Exec vmplayer
-Test (x SheepShaver)	+ "SheepShaver"			Exec xterm -name SheepShaverLog -iconic -T SheepShaver\ Log -e padsp SheepShaver
-Test (x BasiliskII)	+ "Basilisk II"			Exec xterm -name BasiliskIILog -iconic -T Basilisk\ II\ Log -e BasiliskII
-Test (x executor)	+ "Executor"			Exec executor
-Test (x pose)		+ "Palm OS Emulator"		Exec pose
-Test (x bochs)		+ "Bochs"			Exec xterm -e bochs
-Test (x pcem)		+ "PCem"			Exec pcem
-Test (x eaglemode)	+ "Eagle Mode"			Exec eaglemode
-Test (x x48)		+ "x48 (HP 48GX)"		Exec x48 -terminal -serial
-Test (x sqlitebrowser)	+ "SQL Lite Browser"		Exec sqlitebrowser
-Test (x ksysguard)	+ "KSysGuard"			Exec ksysguard
-Test (x drakon)		+ "Drakon Process Manager"	Exec drakon
-Test (x xscreensaver-demo)\
-			+ "XScreenSaver"		Exec xscreensaver-demo
-Test (x xvidcap)	+ "Xvidcap"			Exec xvidcap
-Test (x simplescreenrecorder)\
-			+ "SimpleScreenRecorder"	Exec simplescreenrecorder
-Test (x gtk-recordMyDesktop)\
-			+ "Record My Desktop (GTK)"	Exec gtk-recordMyDesktop
-Test (x qt-recordMyDesktop)\
-			+ "Record My Desktop (Qt)"	Exec qt-recordMyDesktop
-Test (x vokoscreenNG)	+ "vokoscreenNG"		Exec vokoscreenNG
-Test (x obs)		+ "OBS Studio"			Exec obs
-Test (x cheese)		+ "Cheese"			Exec cheese
-Test (x wxcam)		+ "wxCam"			Exec wxcam
-+ ""		Nop
-Test (x wine)		+ "Wine"			Popup Wine
-Test (x /opt/cxoffice/bin/cxsetup)\
-			+ "CrossOver Linux"		Popup CxOffice
-Test (f $[HOME]/.Xnest.sh) Test (x Xnest)\
-			+ "Xnest"			Exec ~/.fvwm/Xnest.sh
-+ ""		Nop
-Test (x xfce4-appfinder)\
-			+ "Localizador..."		Exec xfce4-appfinder --disable-server
-+ ""		Nop
-Test (x /sbin/yast2) 	+ "YaST2"			Exec /usr/bin/xdg-su -c '/sbin/yast2 --qt'
-Test (x mcc)	 	+ "Mandriva Control Center"	Exec mcc
-#+ ""		Nop
-#Test (x gdmflexiserver) + "Nova sessão"		Exec gdmflexiserver
-#Test (x gdmflexiserver) + "Nova sessão em uma janela"	Exec gdmflexiserver --xnest
+Test (x VirtualBox) + "Oracle VM VirtualBox Manager" Exec VirtualBox
+Test (x vmware) + "VMware Server" Exec vmware
+Test (x vmplayer) + "VMware Player" Exec vmplayer
+Test (x SheepShaver) + "SheepShaver" Exec xterm -name SheepShaverLog -iconic -T SheepShaver\ Log -e padsp SheepShaver
+Test (x BasiliskII) + "Basilisk II" Exec xterm -name BasiliskIILog -iconic -T Basilisk\ II\ Log -e BasiliskII
+Test (x executor) + "Executor" Exec executor
+Test (x pose) + "Palm OS Emulator" Exec pose
+Test (x bochs) + "Bochs" Exec xterm -e bochs
+Test (x pcem) + "PCem" Exec pcem
+Test (x eaglemode) + "Eagle Mode" Exec eaglemode
+Test (x x48) + "x48 (HP 48GX)" Exec x48 -terminal -serial
+Test (x sqlitebrowser) + "SQL Lite Browser"		Exec sqlitebrowser
+Test (x ksysguard) + "KSysGuard"			Exec ksysguard
+Test (x drakon) + "Drakon Process Manager" Exec drakon
+Test (x xscreensaver-demo) + "XScreenSaver" Exec xscreensaver-demo
+Test (x xvidcap) "Xvidcap" Exec xvidcap
+Test (x simplescreenrecorder) + "SimpleScreenRecorder" Exec simplescreenrecorder
+Test (x gtk-recordMyDesktop) + "Record My Desktop (GTK)" Exec gtk-recordMyDesktop
+Test (x qt-recordMyDesktop) + "Record My Desktop (Qt)" Exec qt-recordMyDesktop
+Test (x vokoscreenNG) + "vokoscreenNG" Exec vokoscreenNG
+Test (x obs) + "OBS Studio" Exec obs
+Test (x cheese)	+ "Cheese" Exec cheese
+Test (x wxcam) + "wxCam" Exec wxcam
++ "" Nop
+Test (x wine) + "Wine" Popup Wine
+Test (x /opt/cxoffice/bin/cxsetup) + "CrossOver Linux" Popup CxOffice
+Test (f $[HOME]/.fvwm/Xnest.sh) Test (x Xnest) + "Xnest" Exec ~/.fvwm/Xnest.sh
++ "" Nop
+Test (x xfce4-appfinder) + "Localizador..." Exec xfce4-appfinder --disable-server
++ "" Nop
+Test (x /sbin/yast2) + "YaST2" Exec /usr/bin/xdg-su -c '/sbin/yast2 --qt'
+Test (x zypper) Test (x urxvt) + "Zypper" Exec urxvt \
+	-geometry 120x30 \
+	-hold \
+	-T Zypper \
+	-e zypper shell
+Test (x zypper) Test (x urxvt) + "Zypper (como superusuário)" Exec urxvt \
+	-geometry 120x30 \
+	-hold \
+	-T Zypper\ \(como\ superusuário\) \
+	-e su -c 'zypper shell'
+Test (x mcc) + "Centro de Controle" Exec mcc
++ "" Nop
+Test (x dm-tool) + "Nova sessão" Exec switch-to-greeter
+Test (!x dm-tool) (x gdmflexiserver) + "Nova sessão" Exec gdmflexiserver
+Test (!x dm-tool) (x gdmflexiserver) + "Nova sessão em uma janela" Exec gdmflexiserver --xnest
 
 # Aplicativos => Wine
 #
 DestroyMenu Wine
 AddToMenu Wine
-#+ ""		Nop
-Test (x winecfg)	+ "Config. do Wine"		Exec winecfg
+#+ "" Nop
+Test (x winecfg) + "Config. do Wine" Exec winecfg
 
 # Aplicativos => CrossOver Linux
 #
 DestroyMenu CxOffice
 AddToMenu CxOffice
-Test (x /opt/cxoffice/bin/cxsetup)\
-			+ "Configurar CrossOver"	Exec /opt/cxoffice/bin/cxsetup
-Test (x /opt/cxoffice/bin/cxreset)\
-			+ "Resetar CrossOVer"		Exec /opt/cxoffice/bin/cxreset
-Test (x /opt/cxoffice/bin/locate_gui.sh)\
-			+ "Depurar Caminhos"		Exec xmessage "`/opt/cxoffice/bin/locate_gui.sh`"
-+ ""		Nop
-Test (x /opt/cxoffice/bin/cxrun)\
-			+ "Executar..."			Exec /opt/cxoffice/bin/cxrun
+Test (x /opt/cxoffice/bin/cxsetup) + "Configurar CrossOver" Exec /opt/cxoffice/bin/cxsetup
+Test (x /opt/cxoffice/bin/cxreset) + "Resetar CrossOVer" Exec /opt/cxoffice/bin/cxreset
+Test (x /opt/cxoffice/bin/locate_gui.sh) + "Depurar Caminhos" Exec xmessage "`/opt/cxoffice/bin/locate_gui.sh`"
++ "" Nop
+Test (x /opt/cxoffice/bin/cxrun) + "Executar..." Exec /opt/cxoffice/bin/cxrun
 
 # Utilitários
 #
 DestroyMenu "Accessories"
 AddToMenu "Accessories"
-Test (x xedit)		+ "X Editor"			Exec xedit
-Test (x xcalc)		+ "X Calculator (TI-30)"	Exec xcalc
-Test (x xcalc)		+ "X Calculator (HP-10C)"	Exec xcalc -rpn
-Test (x calculator)	+ "FOX Calculator"		Exec calculator
-Test (x galculator)	+ "Galculator"			Exec galculator
-Test (x gcalctool)	+ "GNOME Calculator"		Exec gcalctool
-Test (x speedcrunch)	+ "SpeedCrunch"			Exec speedcrunch
-Test (x kcalc)		+ "KCalc"			Exec kcalc
-Test (x kedit)		+ "KEdit"			Exec kedit
-Test (x kwrite)		+ "KWrite"			Exec kwrite
-Test (x kregexpeditor)	+ "KRegExpEditor"		Exec kregexpeditor
-Test (x leafpad)	+ "Leafpad"			Exec leafpad
-Test (x mousepad)	+ "Mousepad"			Exec mousepad
-Test (x gedit)		+ "GNOME Editor"		Exec gedit
-Test (x pluma)		+ "Pluma" 			Exec pluma
-Test (x txt2tags)	+ "txt2tags"			Exec txt2tags --gui
-Test (x highlight-gui)	+ "Highlight"			Exec highlight-gui
-Test (x shutterbug)	+ "Shutterbug"			Exec shutterbug
-Test (x flameshot)	+ "Flameshot"			Exec flameshot gui
-Test (x FBReader)	+ "FBReader"			Exec FBReader
-Test (x parcellite)	+ "Parcellite"			Exec parcellite
-Test (x cellwriter)	+ "CellWriter"			Exec cellwriter
-Test (x xvkbd)		+ "Virtual Keyboard"		Exec xvkbd
-Test (x gucharmap)	+ "Mapa de Caracteres"		Exec gucharmap
-Test (x kcharselect)	+ "Seletor de caracteres"	Exec kcharselect
-Test (x kworldclock)	+ "KWorldClock"			Exec kworldclock
-Test (x gpa)		+ "GNU Privacy Assistant"	Exec gpa
-Test (x kgpg)		+ "KGpg"			Exec kgpg
-Test (x ktimer)		+ "KTimer"			Exec ktimer
-Test (x kcolorchooser)	+ "KSeletor de Cores"		Exec kcolorchooser
-Test (x gcolor2)	+ "gcolor2"			Exec gcolor2
-Test (x clamtk)		+ "ClamTk Anti-vírus" 		Exec clamtk
-Test (x fortune) Test (x xmessage)\
-			+ "Fortune" 			Exec xmessage "`fortune`"
-Test (x hot-babe)	+ "Hot-babe"			Exec hot-babe
-Test (x fwbuilder) + ""		Nop
-Test (x fwbuilder)	+ "Firewall Builder"		Exec fwbuilder
-+ ""		Nop
-Test (x gtklp)		+ "GtkLP - Imprimir (Local)"	Exec gtklp "Remova-me da lista e adicione os arquivos desejados"
-Test (x gtklp)		+ "GtkLP - Imprimir (Esther)"	Exec gtklp -P canon -S esther "Remova-me da lista e adicione os arquivos desejados"
-Test (x gtklpq)		+ "GtkLP - Fila (Local)"	Exec gtklpq
-Test (x gtklpq)		+ "GtkLP - Fila (Esther)"	Exec gtklpq -P canon -S esther
-Test (x system-config-printer)\
-			+ "Gerenciador de Impressão"	Exec system-config-printer
-Test (x hp-toolbox)	+ "Ferramentas da HP"		Exec hp-toolbox
-Test (x dillo) Test (f /usr/sbin/cupsd)\
-			+ "Administrador CUPS"		Exec dillo -g 1024x768 -f http://localhost:631
-Test (x qink)		+ "QInk (Tível de tinta)"	Exec qink
-+ ""		Nop
-Test (x parcellite)	+ "Ligar clipboard"		Exec parcellite
-Test (x parcellite)	+ "Desligar clipboard"		Exec killall parcellite
-Test (x compton)	+ "Ligar efeitos"		Exec compton $[Sky_Compton_Options]
-Test (x compton)	+ "Desligar efeitos"		Exec killall compton
-Test (x screenkey)	+ "ScreenKey"			Exec screenkey
-Test (x parcellite)	+ ""				Nop
-Test (x k3b)		+ "K3B"				Exec k3b
-Test (x graveman)	+ "Graveman"			Exec graveman
-Test (x brasero)	+ "Brasero"			Exec brasero
-Test (x xfburn)		+ "Xfburn"			Exec xfburn
-Test (x xcdroast)	+ "XCDRoast"			Exec xcdroast
-+ ""		Nop
-Test (x lxappearance)	+ "LXAppearance"		Exec lxappearance
-Test (x gtk-chtheme)	+ "GTK Change Theme"		Exec gtk-chtheme
-+ ""		Nop
-Test (x hardinfo)	+ "Informações do Hardware" 	Exec hardinfo
-Test (x xmessage)	+ "Informações da Janela" 	Exec xmessage "`xwininfo`"
-Test (x treesize)	+ "Informações de Espaço"	Exec treesize
-Test (x gsmartcontrol-root)\
-			+ "Informações do SMART"	Exec gsmartcontrol-root
+Test (x xedit) + "X Editor" Exec xedit
+Test (x xcalc) + "X Calculator (TI-30)" Exec xcalc
+Test (x xcalc) + "X Calculator (HP-10C)" Exec xcalc -rpn
+Test (x calculator) + "FOX Calculator" Exec calculator
+Test (x galculator) + "Galculator" Exec galculator
+Test (x gcalctool) + "GNOME Calculator" Exec gcalctool
+Test (x speedcrunch) + "SpeedCrunch" Exec speedcrunch
+Test (x kcalc) + "KCalc" Exec kcalc
+Test (x kedit) + "KEdit" Exec kedit
+Test (x kwrite) + "KWrite" Exec kwrite
+Test (x kregexpeditor) + "KRegExpEditor" Exec kregexpeditor
+Test (x leafpad) + "Leafpad" Exec leafpad
+Test (x mousepad) + "Mousepad" Exec mousepad
+Test (x gedit) + "GNOME Editor" Exec gedit
+Test (x pluma) + "Pluma" Exec pluma
+Test (x txt2tags) + "txt2tags" Exec txt2tags --gui
+Test (x highlight-gui) + "Highlight" Exec highlight-gui
+Test (x shutterbug) + "Shutterbug" Exec shutterbug
+Test (x flameshot) + "Flameshot" Exec flameshot gui
+Test (x FBReader) + "FBReader" Exec FBReader
+Test (x parcellite) + "Parcellite" Exec parcellite
+Test (x cellwriter) + "CellWriter" Exec cellwriter
+Test (x xvkbd) + "Virtual Keyboard" Exec xvkbd
+Test (x gucharmap) + "Mapa de Caracteres" Exec gucharmap
+Test (x kcharselect) + "Seletor de caracteres" Exec kcharselect
+Test (x kworldclock) + "KWorldClock" Exec kworldclock
+Test (x gpa) + "GNU Privacy Assistant" Exec gpa
+Test (x kgpg) + "KGpg" Exec kgpg
+Test (x ktimer) + "KTimer" Exec ktimer
+Test (x kcolorchooser) + "KSeletor de Cores" Exec kcolorchooser
+Test (x gcolor2) + "gcolor2" Exec gcolor2
+Test (x clamtk) + "ClamTk Anti-vírus" Exec clamtk
+Test (x fortune) Test (x xmessage) + "Fortune" Exec xmessage "`fortune`"
+Test (x hot-babe) + "Hot-babe" Exec hot-babe
+Test (x fwbuilder) + "" Nop
+Test (x fwbuilder) + "Firewall Builder" Exec fwbuilder
++ "" Nop
+Test (x gtklp) + "GtkLP - Imprimir (Local)" Exec gtklp "Remova-me da lista e adicione os arquivos desejados"
+Test (x gtklp) + "GtkLP - Imprimir (Esther)" Exec gtklp -P canon -S esther "Remova-me da lista e adicione os arquivos desejados"
+Test (x gtklpq) + "GtkLP - Fila (Local)" Exec gtklpq
+Test (x gtklpq) + "GtkLP - Fila (Esther)" Exec gtklpq -P canon -S esther
+Test (x system-config-printer) + "Gerenciador de Impressão" \
+	Exec system-config-printer
+Test (x hp-toolbox) + "Ferramentas da HP" Exec hp-toolbox
+Test (x dillo) Test (f /usr/sbin/cupsd) + "Administrador CUPS" \
+	Exec dillo -g 1024x768 -f http://localhost:631
+Test (x qink) + "QInk (Tível de tinta)" Exec qink
++ "" Nop
+Test (x parcellite) + "Ligar clipboard" Exec parcellite
+Test (x parcellite) + "Desligar clipboard" Exec killall parcellite
+Test (x compton) + "Ligar efeitos" Exec compton $[Sky_Compton_Options]
+Test (x compton) + "Desligar efeitos" Exec killall compton
+Test (x screenkey) + "ScreenKey" Exec screenkey
+Test (x parcellite) + "" Nop
+Test (x k3b) + "K3B" Exec k3b
+Test (x graveman) + "Graveman" Exec graveman
+Test (x brasero) + "Brasero" Exec brasero
+Test (x xfburn) + "Xfburn" Exec xfburn
+Test (x xcdroast) + "XCDRoast" Exec xcdroast
++ "" Nop
+Test (x lxappearance) + "LXAppearance" Exec lxappearance
+Test (x gtk-chtheme) + "GTK Change Theme" Exec gtk-chtheme
++ "" Nop
+Test (x hardinfo) + "Informações do Hardware" Exec hardinfo
+Test (x xmessage) + "Informações da Janela" Exec xmessage "`xwininfo`"
+Test (x treesize) + "Informações de Espaço" Exec treesize
+Test (x gsmartcontrol-root) + "Informações do SMART" Exec gsmartcontrol-root
 Test (x gksu)\
-	Test (x gnome-system-log)\
-			+ "Visualizador de registros"	Exec gksu gnome-system-log
-Test (x gnome-disks)	+ "Utilitário de Unidades"	Exec gnome-disks
-
+ Test (x gnome-system-log)\
+ + "Visualizador de registros" Exec gksu gnome-system-log
+Test (x gnome-disks) + "Utilitário de Unidades" Exec gnome-disks
 
 # Gráficos
 #
@@ -310,101 +306,105 @@ Test (x xv) + "Xv" Exec xv
 #
 DestroyMenu "Develop"
 AddToMenu "Develop"
-Test (x geany)		+ "Geany"			Exec geany
-Test (x nedit)		+ "NEdit"			Exec nedit
-Test (x adie)		+ "Adie"			Exec adie
-Test (x emacs)		+ "Emacs"			Exec emacs
-Test (x xemacs)		+ "XEmacs"			Exec xemacs
-Test (x gvim)		+ "VI Improved"			Exec gvim
-Test (x fluid)		+ "FLUID"			Exec fluid
-Test (x git)		+ "Git Gui"			Exec git gui
-Test (x code_crusader)	+ "Code Crusader"		Exec code_crusader
-Test (x medic)		+ "Code Medic"			Exec medic
-Test (x meld)		+ "Meld"			Exec meld
-Test (x /opt/smartgit/bin/smartgit.sh) \
-			+ "SmartGit"			Exec /opt/smartgit/bin/smartgit.sh
-Test (x /opt/sublime_text_3/sublime_text)\
-			+ "Sublime Text"		Exec /opt/sublime_text_3/sublime_text
-Test (x retext)		+ "ReText"			Exec retext
-+ ""		Nop
-Test (x /opt/aptana_studio_3/AptanaStudio3.sh)\
-			+ "Aptana Studio 3"		Exec /opt/aptana_studio_3/AptanaStudio3.sh
-Test (x bluegriffon)	+ "BlueGriffon"			Exec bluegriffon
-Test (x /opt/komodo/bin/komodo)\
-			+ "Komodo Edit"			Exec /opt/komodo/bin/komodo
-Test (x bluefish)	+ "Bluefish"			Exec bluefish
-Test (x quanta)		+ "Quanta Plus"			Exec quanta
-+ ""		Nop
-Test (x kate)		+ "Kate"			Exec kate
-Test (x khexedit)	+ "KHexEdit"			Exec khexedit
-Test (x kdevelop)	+ "KDevelop"			Exec kdevelop
-Test (x kdevdesigner)	+ "KDevDesigner"		Exec kdevdesigner
-Test (x kbabel)		+ "KBabel"			Exec kbabel
-Test (x cervisia)	+ "Cervisia"			Exec cervisia
-Test (x umbrello)	+ "Umbrello"			Exec umbrello
-+ ""		Nop
-Test (x sqlitestudio)\
-			+ "SQLiteStudio"		Exec sqlitestudio
-Test (x pgadmin3)\
-			+ "pgAdmin III"			Exec pgadmin3
-Test (x mysql-workbench)\
-			+ "MySQL Workbench"		Exec mysql-workbench
-Test (x dbeaver)	+ "DBeaver"			Exec dbeaver
-Test (x datagrip)	+ "DataGrip"			Exec datagrip
-+ ""		Nop
-Test (x pycharm)	+ "PyCharm"			Exec pycharm
-Test (x idle)		+ "IDLE"			Exec idle
-Test (x qtcreator)	+ "Qt Creator"			Exec qtcreator
-Test (x anjuta)		+ "Anjuta"			Exec anjuta
-Test (x glade-2)	+ "Glade 2"			Exec glade-2
-Test (x glade-3)	+ "Glade 3"			Exec glade-3
-Test (x gambas2)	+ "Gambas 2"			Exec gambas2
-Test (x lazarus)	+ "Lazarus"			Exec lazarus
-Test (x squeak.sh) 	+ "Squeak"			Exec squeak.sh
-Test (x /opt/portugol/run.sh)\
-			+ "Portugol"			Exec /opt/portugol/run.sh
-Test (x eclipse)	+ "Eclipse"			Exec eclipse
-Test (x netbeans)	+ "NetBeans"			Exec netbeans --laf Nimbus
-Test (x /opt/REALStudio2010r1/REAL\ Studio\ 2010)\
-			+ "REAL Studio"			Exec /opt/REALStudio2010r1/REAL\ Studio\ 2010
-Test (x /opt/RevMedia/revolution_media)\
-			+ "Revolution Media"		Exec /opt/RevMedia/revolution_media
+Test (x geany) + "Geany" Exec geany
+Test (x nedit) + "NEdit" Exec nedit
+Test (x adie) + "Adie" Exec adie
+Test (x emacs) + "Emacs" Exec emacs
+Test (x xemacs) + "XEmacs" Exec xemacs
+Test (x gvim) + "VI Improved" Exec gvim
+Test (x fluid) + "FLUID" Exec fluid
+Test (x git) + "Git Gui" Exec git gui
+Test (x code_crusader) + "Code Crusader" Exec code_crusader
+Test (x medic) + "Code Medic" Exec medic
+Test (x meld) + "Meld" Exec meld
+Test (x /opt/smartgit/bin/smartgit.sh) + "SmartGit" \
+	Exec /opt/smartgit/bin/smartgit.sh
+Test (x /opt/sublime_text_3/sublime_text) + "Sublime Text" \
+	Exec /opt/sublime_text_3/sublime_text
+Test (x retext) + "ReText" Exec retext
++ "" Nop
+Test (x /opt/aptana_studio_3/AptanaStudio3.sh) + "Aptana Studio 3" \
+	Exec /opt/aptana_studio_3/AptanaStudio3.sh
+Test (x bluegriffon) + "BlueGriffon" Exec bluegriffon
+Test (x /opt/komodo/bin/komodo) + "Komodo Edit" \
+	Exec /opt/komodo/bin/komodo
+Test (x bluefish) + "Bluefish" Exec bluefish
+Test (x quanta) + "Quanta Plus" Exec quanta
++ "" Nop
+Test (x kate) + "Kate" Exec kate
+Test (x khexedit) + "KHexEdit" Exec khexedit
+Test (x kdevelop) + "KDevelop" Exec kdevelop
+Test (x kdevdesigner) + "KDevDesigner" Exec kdevdesigner
+Test (x kbabel) + "KBabel" Exec kbabel
+Test (x cervisia) + "Cervisia" Exec cervisia
+Test (x umbrello) + "Umbrello" Exec umbrello
++ "" Nop
+Test (x sqlitestudio) + "SQLiteStudio" Exec sqlitestudio
+Test (x pgadmin3) + "pgAdmin III" Exec pgadmin3
+Test (x mysql-workbench) + "MySQL Workbench" Exec mysql-workbench
+Test (x dbeaver) + "DBeaver" Exec dbeaver
+Test (x datagrip) + "DataGrip" Exec datagrip
++ "" Nop
+Test (x pycharm) + "PyCharm" Exec pycharm
+Test (x idle) + "IDLE" Exec idle
+Test (x qtcreator) + "Qt Creator" Exec qtcreator
+Test (x anjuta) + "Anjuta" Exec anjuta
+Test (x glade-2) + "Glade 2" Exec glade-2
+Test (x glade-3) + "Glade 3" Exec glade-3
+Test (x gambas2) + "Gambas 2" Exec gambas2
+Test (x lazarus) + "Lazarus" Exec lazarus
+Test (x squeak.sh) + "Squeak" Exec squeak.sh
+Test (x /opt/portugol/run.sh) + "Portugol" Exec /opt/portugol/run.sh
+Test (x eclipse) + "Eclipse" Exec eclipse
+Test (x netbeans) + "NetBeans" Exec netbeans --laf Nimbus
+Test (x /opt/RevMedia/revolution_media) + "Revolution Media" \
+	Exec /opt/RevMedia/revolution_media
 
 # Científico
 #
 DestroyMenu "Science"
 AddToMenu "Science"
-Test (x lyx)		+ "LyX"			Exec lyx
-Test (x texmaker)	+ "Texmaker"			Exec texmaker
-Test (x texstudio)	+ "TeXstudio"			Exec texstudio
-Test (x texmacs)	+ "GNU TeXmacs"			Exec texmacs
-+ ""		Nop
-Test (x leibnitz)	+ "Leibnitz"			Exec leibnitz
-Test (x glove)		+ "Glove"			Exec glove
-Test (x R)		+ "R"				Exec xterm -bg black -fg lightgray -fa lucidatypewriter -fs 16 \
-							+sb -geometry 80x25 -e R
-Test (x rkward)		+ "RKWard"			Exec rkward
-Test (x rstudio)	+ "RStudio"			Exec rstudio
-Test (x gnuplot)	+ "Gnuplot"                     Exec xterm -T "Gnuplot" -name Gnuplot -fn 7x14 -e gnuplot
-Test (x viewsz)		+ "Viewsz"                     	Exec viewsz
-Test (x geogebra)	+ "GeoGebra"                    Exec geogebra
-Test (x gretl)		+ "Gretl"                     	Exec gretl
-Test (x psppire)	+ "PSPP"                     	Exec psppire
-Test (x knime)		+ "KNIME Analytics Platform"    Exec knime
-Test (x orange-canvas)\
-			+ "Orange"                     	Exec orange-canvas
-			+ ""		Nop
-Test (x xmaxima)	+ "Maxima"                     	Exec xmaxima
-Test (x wxmaxima)	+ "wxMaxima"                    Exec wxmaxima
-Test (x octave)		+ "Octave" 			Exec octave --gui
-Test (x /opt/scilab/bin/scilab)\
-			+ "Scilab"                    	Exec GTK2_RC_FILES=$[FVWM_USERDIR]/fvwm-skywall/gtk/aurora-gtkrc-2.0 /opt/scilab/bin/scilab
-+ ""		Nop
-Test (x qgis)		+ "QGIS"                    	Exec qgis
-Test (x saga_gui)	+ "SAGA GIS"                   	Exec saga_gui
-+ ""		Nop
-Test (x google-earth-pro)\
-			+ "Google Earth Pro" 		Exec LC_NUMERIC=en_US.UTF-8 google-earth-pro
+Test (x lyx) + "LyX" Exec lyx
+Test (x texmaker) + "Texmaker" Exec texmaker
+Test (x texstudio) + "TeXstudio" Exec texstudio
+Test (x texmacs) + "GNU TeXmacs" Exec texmacs
++ "" Nop
+Test (x leibnitz) + "Leibnitz" Exec leibnitz
+Test (x glove) + "Glove" Exec glove
+Test (x R) + "R" \
+	Exec xterm \
+	-bg black \
+	-fg lightgray \
+	-fa lucidatypewriter \
+	-fs 16 \
+	+sb \
+	-geometry 80x25 \
+	-e R
+Test (x rkward) + "RKWard" Exec rkward
+Test (x rstudio) + "RStudio" Exec rstudio
+Test (x gnuplot) + "Gnuplot" \
+	Exec xterm \
+	-T "Gnuplot" \
+	-name Gnuplot \
+	-fn 7x14 \
+	-e gnuplot
+Test (x viewsz) + "Viewsz" Exec viewsz
+Test (x geogebra) + "GeoGebra" Exec geogebra
+Test (x gretl) + "Gretl" Exec gretl
+Test (x psppire) + "PSPP" Exec psppire
+Test (x knime) + "KNIME Analytics Platform" Exec knime
+Test (x orange-canvas) + "Orange" Exec orange-canvas
+ + "" Nop
+Test (x xmaxima) + "Maxima" Exec xmaxima
+Test (x wxmaxima) + "wxMaxima" Exec wxmaxima
+Test (x octave) + "Octave" Exec octave --gui
+Test (x /opt/scilab/bin/scilab) + "Scilab" /opt/scilab/bin/scilab
++ "" Nop
+Test (x qgis) + "QGIS" Exec qgis
+Test (x saga_gui) + "SAGA GIS" Exec saga_gui
++ "" Nop
+Test (x google-earth-pro) + "Google Earth Pro" \
+	Exec LC_NUMERIC=en_US.UTF-8 google-earth-pro
 
 
 # Produtividade
@@ -477,17 +477,19 @@ Test (x xterm) + "Em modo texto" Popup Office-Term
 # 
 DestroyMenu SoftMaker
 AddToMenu SoftMaker
-Test (x textmaker)	+ "SoftMaker TextMaker"		Exec textmaker
-Test (x planmaker)	+ "SoftMaker PlanMaker"		Exec planmaker
-Test (x presentations)	+ "SoftMaker Presentations"	Exec presentations
-+ ""		Nop
-Test (x epdfview) Test (f /opt/office2008/tm2008_en.pdf)\
-			+ "SoftMaker TextMaker Manual"	Exec epdfview /opt/office2008/tm2008_en.pdf
-Test (x epdfview) Test (f /opt/office2008/pm2008_en.pdf)\
-			+ "SoftMaker PlanMaker Manual"	Exec epdfview /opt/office2008/pm2008_en.pdf
-Test (x epdfview) Test (f /opt/office2008/pr2008_en.pdf)\
-			+ "SoftMaker Presentations Manual"\
-							Exec epdfview /opt/office2008/pr2008_en.pdf
+Test (x textmaker21) + "SoftMaker TextMaker" Exec textmaker21
+Test (x planmaker21) + "SoftMaker PlanMaker" Exec planmaker21
+Test (x presentations21) + "SoftMaker Presentations" Exec presentations21
++ "" Nop
+Test (x atril) Test (f /usr/share/office2021/tm2021_en.pdf) \
+	+ "SoftMaker TextMaker Manual" \
+	Exec atril /usr/share/office2021/tm2021_en.pdf
+Test (x atril) Test (f /usr/share/office2021/pm2021_en.pdf) \
+	+ "SoftMaker PlanMaker Manual" \
+	Exec atril /usr/share/office2021/pm2021_en.pdf
+Test (x atril) Test (f /usr/share/office2021/pr2021_en.pdf) \
+	+ "SoftMaker Presentations Manual" \
+	Exec atril /usr/share/office2021/pr2021_en.pdf
 							
 # Produtividade => SoftMaker FreeOffice
 # 
@@ -495,16 +497,17 @@ DestroyMenu FreeOffice
 AddToMenu FreeOffice
 Test (x textmaker18free) + "SoftMaker TextMaker Free" Exec textmaker18free
 Test (x planmaker18free) + "SoftMaker PlanMaker Free" Exec planmaker18free
-Test (x presentations18free) \
- + "SoftMaker Presentations Free" Exec presentations18free
+Test (x presentations18free) + "SoftMaker Presentations Free" Exec presentations18free
 + "" Nop
-Test (x atril) Test (f /usr/share/freeoffice2018/tmfree_en.pdf)\
- + "SoftMaker TextMaker Manual" Exec atril /usr/share/freeoffice2018/tmfree_en.pdf
-Test (x atril) Test (f /usr/share/freeoffice2018/pmfree_en.pdf)\
- + "SoftMaker PlanMaker Manual" Exec atril /usr/share/freeoffice2018/pmfree_en.pdf
-Test (x atril) Test (f /usr/share/freeoffice2018/prfree_en.pdf)\
- + "SoftMaker Presentations Manual"\
-  Exec atril /usr/share/freeoffice2018/prfree_en.pdf
+Test (x atril) Test (f /usr/share/freeoffice2018/tmfree_en.pdf) \
+	+ "SoftMaker TextMaker Manual" \
+	Exec atril /usr/share/freeoffice2018/tmfree_en.pdf
+Test (x atril) Test (f /usr/share/freeoffice2018/pmfree_en.pdf) \
+	+ "SoftMaker PlanMaker Manual" \
+	Exec atril /usr/share/freeoffice2018/pmfree_en.pdf
+Test (x atril) Test (f /usr/share/freeoffice2018/prfree_en.pdf) \
+	+ "SoftMaker Presentations Manual" \
+	Exec atril /usr/share/freeoffice2018/prfree_en.pdf
 
 # Produtividade => Kingsoft WPS Office
 # 
@@ -605,8 +608,8 @@ Test (x midori) + "Midori" Exec midori
 Test (x opera) + "Opera" Exec opera
 Test (x chromium) + "Chromium" Exec chromium
 Test (x google-chrome) + "Google Chrome" Exec google-chrome
-Test (x torbrowser-launcher)\
- + "Tor Browser" Exec LANG="C" torbrowser-launcher
+Test (x torbrowser-launcher) + "Tor Browser" \
+	Exec LANG="C" torbrowser-launcher
 Test (x brave-browser) + "Brave" Exec brave-browser
 Test (x vivaldi) + "Vivaldi" Exec vivaldi
 Test (x konqueror) + "Konqueror" Exec konqueror
@@ -780,13 +783,21 @@ Test (x /usr/sbin/nethogs) + "NetHogs" Exec urxvt-256color \
 DestroyMenu "Comm-Hosts"
 AddToMenu "Comm-Hosts"
 + "" TearMenuOff
-Test (x ssh)		+ "SDF Public Access"		Exec xterm -bg black -fg lightgray -font 10x20 \
-							-T SDF -e ssh caiocco@sdf.lonestar.org
-Test (x links)	+ "SDF Web Site"		Exec links -g https://sdf.org
-+ ""		Nop
-Test (x telnet)		+ "Uncensored BBS (Telnet)"	Exec xterm -bg black -fg lightgray -font 10x20 \
-							-T Uncensored -e telnet uncensored.citadel.org
-Test (x seamonkey)	+ "Uncensored BBS (Web)"	Exec seamonkey http://uncensored.citadel.org
+Test (x ssh) + "SDF Public Access" Exec xterm \
+	-bg black \
+	-fg lightgray \
+	-font 10x20 \
+	-T SDF \
+	-e ssh caiocco@sdf.lonestar.org
+Test (x links) + "SDF Web Site" Exec links -g https://sdf.org
++ "" Nop
+Test (x telnet) + "Uncensored BBS (Telnet)" Exec xterm \
+	-bg black \
+	-fg lightgray \
+	-font 10x20 \
+	-T Uncensored \
+	-e telnet uncensored.citadel.org
+Test (x xdg-open) + "Uncensored BBS (Web)" Exec xdg-open http://uncensored.citadel.org
 
 # Jogos
 #
