@@ -412,7 +412,7 @@ Test (x google-earth-pro) + "Google Earth Pro" \
 DestroyMenu Office
 AddToMenu Office
 + "" TearMenuOff
-test (x textmaker) + "SoftMaker Office" Popup SoftMaker
+test (x textmaker21) + "SoftMaker Office" Popup SoftMaker
 test (x textmaker18free) + "SoftMaker FreeOffice" Popup FreeOffice
 test (x wps) + "Kingsoft WPS Office" Popup Kingsoft
 Test (x tfwrite) + "ThinkFree Office" Popup ThinkFree
@@ -652,6 +652,7 @@ Test (x /opt/Discord/Discord) + "Discord" Exec /opt/Discord/Discord
 Test (x liferea) + "Liferea" Exec liferea
 Test (x /opt/rssowl/RSSOwl) + "RSS Owl" Exec /opt/rssowl/RSSOwl
 + "" Nop
+Test (x gnome-nettool) + "Ferramentas de Rede" Exec gnome-nettool
 Test (x wireshark) + "Wireshark" Exec wireshark
 Test (x zenmap) + "Zenmap" Exec LANG=C zenmap
 Test (x zenmap) Test (x xdg-su) + "Zenmap como root" \
@@ -1323,6 +1324,7 @@ Test (x geeqie) + "Geeqie%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gqview.png
 Test (x inkscape) + "Inkscape%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/inkscape.png%" exec inkscape
 Test (x stardict) + "StarDict%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/accessories-dictionary.png%" exec stardict
 Test (x libreoffice) + "LibreOffice%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/gnome-applications.png%" exec libreoffice
+Test (x textmaker21) + "SoftMaker Office%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/softmaker.png%" Popup SoftMaker
 Test (x VirtualBox) + "VirtualBox%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/vbox.png%" exec VirtualBox
 + "" Nop
 Test (x mousepad) + "Mousepad%$[Fvwm_Icon_Theme]/$[Sky_MiniIconSize]/apps/mousepad.png%" exec mousepad
