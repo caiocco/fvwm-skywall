@@ -24,8 +24,6 @@ Mouse 1		R   	A      	Menu "Utilities" Nop
 Mouse 1		R   	4      	Menu "Quick Access" Nop
 Mouse 2		R    	A      	Menu "Window Ops" Nop
 Mouse 3 	R       A      	WindowList
-Mouse 8 	R       A      	Menu "Quick Access" Nop
-Mouse 8 	W       4      	Menu "Quick Access" Nop
 #Mouse 3	R    	A	Module "winlist" FvwmWinList transient
 
 # Agora, os botões da barra de título
