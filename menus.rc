@@ -1005,6 +1005,7 @@ Test (x asunder) + "Asunder" Exec asunder
 Test (x sound-juicer) + "Sound Juicer" Exec sound-juicer
 Test (x grip) + "Grip" Exec grip
 Test (x easytag) + "EasyTAG" Exec easytag
+Test (x aegisub) + "Aegisub" Exec aegisub
 Test (x avidemux2_gtk) + "Avidemux (Gtk)" Exec avidemux2_gtk
 Test (x avidemux2_qt4) + "Avidemux (Qt)" Exec avidemux2_qt4
 Test (x pitivi) + "Pitivi" Exec pitivi
