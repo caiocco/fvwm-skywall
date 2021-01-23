@@ -21,6 +21,7 @@ AddToFunc "StartFunction"
 	Test (EnvMatch Sky_Comp Yes) \
 	Test (x compton) \
 	Exec compton $[Sky_Compton_Options]
++ I Test (Init) Test (x xbindkeys) Exec exec xbindkeys -f ~/.xbindkeysrc
 #
 #
 #------ Módulos
