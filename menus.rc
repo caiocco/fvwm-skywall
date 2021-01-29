@@ -1093,6 +1093,7 @@ Test (x catfish) + "Catfish" Exec catfish
 Test (x recoll) + "Recoll" Exec recoll
 + "" Nop
 Test (x unison) + "Unison" Exec unison
+Test (x backintime-qt4) + "Back In Time" Exec backintime-qt4
 
 # Shells
 #
@@ -1102,6 +1103,7 @@ Test (x xfce4-terminal) + "Terminal" Exec xfce4-terminal
 Test (x gnome-terminal)	+ "Terminal do GNOME" Exec gnome-terminal
 Test (x mate-terminal) + "Terminal do MATE" Exec mate-terminal
 Test (x konsole) + "Konsole" Exec konsole
+Test (x cool-retro-term) + "Cool Retro Term" Exec cool-retro-term
 Test (x mrxvt) + "MRxvt" Exec mrxvt \
 	+sb \
 	-fn 10x20 \
