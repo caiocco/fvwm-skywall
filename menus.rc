@@ -633,7 +633,7 @@ Test (x columba) + "Columba" Exec columba
 Test (x hexchat) + "HexChat" Exec hexchat
 Test (x gwibber) + "Gwibber" Exec gwibber
 + "" Nop
-Test (x /opt/soulseek/soulseek) + "Soulseek" Exec /opt/soulseek/soulseek
+Test (x $[HOME]/bin/SoulseekQt-2018-1-30-64bit.AppImage) + "Soulseek" Exec $[HOME]/bin/SoulseekQt-2018-1-30-64bit.AppImage
 Test (x nicotine) + "Nicotine+" Exec nicotine
 Test (x megasync) + "MEGASync" Exec megasync
 Test (x transmission-gtk) + "Transmission (GTK)" Exec transmission-gtk
