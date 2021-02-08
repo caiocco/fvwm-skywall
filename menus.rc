@@ -173,6 +173,7 @@ Test (x flameshot) + "Flameshot" Exec flameshot gui
 Test (x FBReader) + "FBReader" Exec FBReader
 Test (x parcellite) + "Parcellite" Exec parcellite
 Test (x cellwriter) + "CellWriter" Exec cellwriter
+Test (x onboard) + "Onboard" Exec onboard
 Test (x xvkbd) + "Virtual Keyboard" Exec xvkbd
 Test (x gucharmap) + "Mapa de Caracteres" Exec gucharmap
 Test (x kcharselect) + "Seletor de caracteres" Exec kcharselect
