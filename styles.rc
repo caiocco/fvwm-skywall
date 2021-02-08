@@ -831,8 +831,8 @@ Style "CellWriter" \
 	!Iconifiable, \
 	!Handles, \
 	UsePPosition, \
-	GNOMEUseHints, \
-	PositionPlacement
+	PositionPlacement, \
+	NeverFocus
 Test (EnvMatch Sky_Theme diamond) \
 	Style "CellWriter" \
 	Button 1, \
