@@ -187,7 +187,7 @@ AddToFunc FuncWorkday
 + I Test (EnvMatch HOSTNAME thinkpad.homenet) GotoDeskAndPage 0 0 0
 + I Test (EnvMatch HOSTNAME thinkpad.homenet) Exec firefox -P padrao_sem_exts
 + I Test (EnvMatch HOSTNAME thinkpad.homenet) Wait Navigator
-+ I Test (EnvMatch HOSTNAME thinkpad.homenet) Exec /opt/Telegram/Telegram
++ I Test (EnvMatch HOSTNAME thinkpad.homenet) Exec $HOME/bin/Telegram/Telegram
 + I Test (EnvMatch HOSTNAME thinkpad.homenet) Wait Telegram
 + I Test (EnvMatch HOSTNAME thinkpad.homenet) Next (Telegram) Resize 687c 480c
 + I Test (EnvMatch HOSTNAME thinkpad.homenet) Next (Telegram) AnimatedMove 622p 0
@@ -277,7 +277,7 @@ AddToFunc FuncWorkday
 #   +-----+-----+-----+
 #
 + I Test (EnvMatch HOSTNAME skywall.homenet) GotoDeskAndPage 0 0 2
-+ I Test (EnvMatch HOSTNAME skywall.homenet) Exec /opt/Telegram/Telegram
++ I Test (EnvMatch HOSTNAME skywall.homenet) Exec $HOME/bin/Telegram/Telegram
 + I Test (EnvMatch HOSTNAME skywall.homenet) Wait Telegram
 + I Test (EnvMatch HOSTNAME skywall.homenet) Next (Telegram) Resize 664c 503c
 + I Test (EnvMatch HOSTNAME skywall.homenet) Next (Telegram) AnimatedMove 405p 0
