@@ -647,7 +647,7 @@ Test (x skypeforlinux) + "Skype" Exec skypeforlinux
 Test (x ekiga) + "Ekiga" Exec ekiga
 Test (x pidgin) + "Pidgin" Exec pidgin
 Test (x kopete) + "Kopete" Exec kopete
-Test (x /opt/Telegram/Telegram) + "Telegram" Exec /opt/Telegram/Telegram
+Test (x $[HOME]/bin/Telegram/Telegram) + "Telegram" Exec $[HOME]/bin/Telegram/Telegram
 Test (x /opt/Discord/Discord) + "Discord" Exec /opt/Discord/Discord
 + "" Nop
 Test (x liferea) + "Liferea" Exec liferea
