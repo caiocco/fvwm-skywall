@@ -463,8 +463,8 @@ Test (x /opt/freemind/freemind.sh) + "FreeMind" \
 Test (x $[HOME]/bin/yed) + "yEd Graph Editor" \
 	Exec $[HOME]/bin/yed
 Test (x vym) + "View Your Mind" Exec LANG=en_US.UTF-8 vym
-Test (x /home/caio/XMind/XMind_Linux_64bit/xmind.sh) + "XMind" \
-	Exec /home/caio/XMind/XMind_Linux_64bit/xmind.sh
+Test (x $[HOME]/bin/xmind/XMind_amd64/XMind) + "XMind" \
+	Exec $[HOME]/bin/xmind/XMind_amd64/XMind	
 Test (x /opt/tr/bin/tr.sh) + "ThinkingRock" \
 	Exec /opt/tr/bin/tr.sh
 Test (x /opt/IHMC_CmapTools/CmapTools) + "IHMC CmapTools" \
@@ -616,6 +616,9 @@ Test (x vivaldi) + "Vivaldi" Exec vivaldi
 Test (x konqueror) + "Konqueror" Exec konqueror
 Test (x epiphany) + "Epiphany" Exec epiphany
 Test (x dillo) + "Dillo" Exec dillo
++ "" Nop
+Test (x lagrange) + "Lagrange" Exec lagrange
+Test (x kristall) + "Kristall Browser" Exec kristall
 + "" Nop
 Test (x filezilla) + "FileZilla" Exec filezilla
 Test (x gftp) + "gFTP" Exec gftp
@@ -814,6 +817,7 @@ Test (x frozen-bubble) + "Frozen Bubble" Exec frozen-bubble
 Test (x foobillard) + "Foo Billard" Exec foobillard
 Test (x pysol) + "PySol" Exec pysol
 Test (x pysol.py) + "PySol FCE" Exec pysol.py
+Test (x nestopia) + "Nestopia" Exec nestopia
 Test (x zsnes) + "ZSNES" Exec zsnes
 Test (x snes9x-gtk) + "Snes9x" Exec snes9x-gtk
 Test (x snes9express) + "Snes9express" Exec snes9express
