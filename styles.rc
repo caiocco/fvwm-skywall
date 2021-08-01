@@ -336,7 +336,8 @@ Test (EnvMatch Sky_Theme diamond) \
 Style Gcr-prompter Sticky, StaysOnTop, PositionPlacement Center
 
 # * Produtividade
-Read $[Sky_Dir]/applix-theme.rc
+Test (EnvMatch Sky_Theme diamond) \
+	Test (!EnvMatch Sky_Theme_Diamond_Type Vector) Read $[Sky_Dir]/applix-theme.rc
 Style tm \
 	!UsePPosition, \
 	NoIconPosition, \
@@ -815,8 +816,11 @@ Style DBeaver ResizeOutline
 Style Dbeaver PositionPlacement Center
 Style jetbrains-datagrip PositionPlacement Center
 Style jetbrains-pycharm-ce PositionPlacement Center
-Style Knime PositionPlacement Center, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
-Style KNIME ResizeOutline, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
+Style Knime !Lenience, PositionPlacement Center, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
+Style KNIME !Lenience, ResizeOutline, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
+Style Untitled !Lenience
+Style NoClass !Lenience
+Style NoResource !Lenience
 Style sun-awt-X11-XFramePeer ResizeOutline, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
 Style *Eclipse* MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
 Style *Java* Lenience, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHints, EWMHUseStateHints, ClickToFocus
