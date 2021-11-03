@@ -133,8 +133,8 @@ Mouse 2		FS	A	Function "Move-or-Raise"
 # Alt/Meta ou Diamond) aciona um Raise-Lower. Antigamente, era utilizado
 # Control aqui, mas isso interferia com o XTerm
 #Mouse 3         W       M       RaiseLower
-# Alterando modificadora para 4 (Super), pois Alt interferece com pro-
-# gramas mal portados do Windows ou acessados remotamente via NoMachine
+# Alterando modificadora para 4 (Super), pois Alt interfere com progra-
+# mas mal portados do Windows ou acessados remotamente via NoMachine
 Mouse 3         W       4       RaiseLower
 
 # Funções complexas da configuração atual
@@ -147,15 +147,15 @@ Mouse 8 	W       C	Resize-or-Raise
 # Mover janela com botão 1 + ALT/Mouse dentro da janela/Clique dentro da
 # janela
 #Mouse 1 	W       M	Move-or-Raise
-# Alterando modificadora para 4 (Super), pois Alt interferece com pro-
-# gramas mal portados do Windows ou acessados remotamente via NoMachine
+# Alterando modificadora para 4 (Super), pois Alt interfere com progra-
+# mas mal portados do Windows ou acessados remotamente via NoMachine
 Mouse 1 	W       4	Move-or-Raise
 
 # Mover janela com botão 1 + ALT/Mouse e Clique nas laterais ou no
 # rodapé
 #Mouse 1 	FS	M	Move-or-Raise
-# Alterando modificadora para 4 (Super), pois Alt interferece com pro-
-# gramas mal portados do Windows ou acessados remotamente via NoMachine
+# Alterando modificadora para 4 (Super), pois Alt interfere com progra-
+# mas mal portados do Windows ou acessados remotamente via NoMachine
 Mouse 1 	FS	4	Move-or-Raise
 
 # "Rodinha" do mouse na barra de título sombreia/desombreia
