@@ -316,7 +316,7 @@ AddToFunc FuncWorkday
 + I Test (EnvMatch HOSTNAME skywall.homenet) \
 	Test (!EnvMatch Sky_Week Sat) \
 	Test (!EnvMatch Sky_Week Sun) \
-		Next (Nxplayer.bin) Maximize
+		Next (Nxplayer.bin) Maximize ewmhiwa
 #
 # Máquina: desktop
 # Papel: colocar Audacity na página correta e minimizá-lo
