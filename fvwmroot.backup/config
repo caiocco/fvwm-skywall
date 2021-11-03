@@ -1,7 +1,7 @@
 #######################################################################
 ################## Recurso de configuração do FVWM 2 ##################
 #######################################################################
-# Caio César, 2007-2017
+# Caio César, 2007-2021
 #
 # Algumas partes do conjunto de configurações são derivadas ou 
 # inspiradas no trabalho de outros grupos, pessoas e/ou empresas.
@@ -10,9 +10,9 @@
 # seguintes distribuições Linux: openSUSE e Slackware.
 #
 # $ fvwm -version
-# fvwm 2.6.6
-# with support for: ReadLine, Stroke, XPM, PNG, SVG, Shape, XShm, SM, 
-# Bidi text, Xinerama, XRender, XCursor, XFT, NLS
+# fvwm 2.6.7
+# with support for: ReadLine, Stroke, XPM, SVG, Shape, XShm, SM, Bidi 
+# text, Xinerama, XRender, XCursor, XFT, NLS
 #
 # fvwm comes with NO WARRANTY, to the extent permitted by law. You may
 # redistribute copies of fvwm under the terms of the GNU General Public 
