@@ -739,6 +739,7 @@ Style Skype Sticky, StaysOnTop, !UsePPosition, !Iconifiable
 Test (EnvMatch Sky_Theme diamond) \
 	Test (EnvMatch Sky_Theme_Diamond_Type Vector) \
 		Style Skype !Button 6
+Style Nxplayer.bin !Handles, !Title, !Borders
 
 # * Centrais de configuração
 Style Y2controlcenter \
