@@ -225,7 +225,7 @@ AddToFunc FuncWorkday
 		Wait Audacity
 #
 # Máquina: desktop
-# Papel: iniciar perfil corporativo do Vivaldi
+# Papel: iniciar perfil corporativo do Firefox
 #
 #   +-----+-----+-----+
 #   |     |  x  |     |
@@ -239,15 +239,15 @@ AddToFunc FuncWorkday
 + I Test (EnvMatch HOSTNAME skywall.homenet) \
 	Test (!EnvMatch Sky_Week Sat) \
 	Test (!EnvMatch Sky_Week Sun) \
-		Exec vivaldi-stable --profile-directory="Profile 1"
+		Exec firefox -P polo
 + I Test (EnvMatch HOSTNAME skywall.homenet) \
 	Test (!EnvMatch Sky_Week Sat) \
 	Test (!EnvMatch Sky_Week Sun) \
-		Wait vivaldi-stable
+		Wait Navigator
 + I Test (EnvMatch HOSTNAME skywall.homenet) \
 	Test (!EnvMatch Sky_Week Sat) \
 	Test (!EnvMatch Sky_Week Sun) \
-		Next (CurrentPage,vivaldi-stable) Maximize True
+		Next (CurrentPage,Navigator) Maximize True
 #
 # Máquina: desktop
 # Papel: iniciar Firefox
@@ -263,7 +263,7 @@ AddToFunc FuncWorkday
 + I Test (EnvMatch HOSTNAME skywall.homenet) GotoDeskAndPage 0 0 1
 + I Test (EnvMatch HOSTNAME skywall.homenet) Exec firefox
 + I Test (EnvMatch HOSTNAME skywall.homenet) Wait Navigator
-+ I Test (EnvMatch HOSTNAME skywall.homenet) Next (Navigator) Maximize True
++ I Test (EnvMatch HOSTNAME skywall.homenet) Next (CurrentPage,Navigator) Maximize True
 #
 # Máquina: desktop
 # Papel: iniciar Telegram, KeePassX e Skype
