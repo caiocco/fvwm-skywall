@@ -90,6 +90,14 @@ else
 	flameshot &
 fi
 
+if pgrep -f "x-tile" > /dev/null
+then
+	kill -s SIGTERM `pgrep -f "x-tile"`
+else
+	x-tile &
+fi
+
+
 if pgrep -x "dropbox" > /dev/null
 then
 	dropbox stop
