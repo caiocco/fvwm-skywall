@@ -453,6 +453,7 @@ Test (x gnote) + "Gnote" Exec gnote
 Test (x serna) + "Syntext Serna Free" Exec serna
 Test (x planner) + "Planner" Exec planner
 Test (x xournal) + "Xournal" Exec xournal
+Test (x xournalpp) + "Xournal++" Exec xournalpp
 Test (x openboard) + "OpenBoard" Exec openboard
 Test (x /opt/jarnal/jarnal.sh) + "Jarnal" \
 	Exec /opt/jarnal/jarnal.sh
