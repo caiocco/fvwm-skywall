@@ -104,7 +104,20 @@ Style * IconSize 48 48 48 48
 ###
 Style * Icon $[Fvwm_Icon_Theme]/48x48/apps/xapp.png
 
+
 ### Estilos para diversos aplicativos ###
+
+# Categorias
+# * Utilitários
+# * Produtividade
+# * Gráficos
+# * Jogos e Multimídia
+# * Emuladores de Terminal
+# * Outros
+# * Centrais de configuração
+# * Emulação e Virtualização
+# * Programação/Desenvolvimento
+# * Sistemas de entrada
 
 # * Utilitários
 Style "ROX-Pinboard" \
@@ -334,6 +347,7 @@ Test (EnvMatch Sky_Theme diamond) \
 	Test (EnvMatch Sky_Theme_Diamond_Type Vector) \
 		Style Keepassx !Button 2
 Style Gcr-prompter Sticky, StaysOnTop, PositionPlacement Center
+Style x-tile Sticky, StaysOnTop, PositionPlacement Center
 
 # * Produtividade
 Test (EnvMatch Sky_Theme diamond) \
@@ -727,9 +741,9 @@ Style darktable \
 	Icon /usr/share/icons/hicolor/48x48/apps/darktable.png
 Style xeyes !Title
 Style Firefox FixedPPosition
-Style soulseek EWMHDontDonateIcon, \
+Style "SoulseekQt*" EWMHDontDonateIcon, \
 	IconOverride, \
-	Icon $[Fvwm_Icon_Theme]/48x48/apps/slsk_bird.jpg.png
+	Icon $[Fvwm_Icon_Theme]/48x48/apps/soulseek.png
 Style qsynergy Icon /usr/share/pixmaps/qsynergy.png
 Style Nxplayer.bin EWMHDontDonateIcon, \
 	IconOverride, \
