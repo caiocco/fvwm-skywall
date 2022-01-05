@@ -2,7 +2,7 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 gtk-theme-name="Vertex-Light"
-gtk-icon-theme-name="Obsidian-Sand-Light"
+gtk-icon-theme-name="elementary-xfce-darker"
 gtk-font-name="Droid Sans 10"
 gtk-cursor-theme-name="Adwaita"
 gtk-cursor-theme-size=0
