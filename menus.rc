@@ -203,6 +203,8 @@ Test (x parcellite) + "Ligar clipboard" Exec parcellite
 Test (x parcellite) + "Desligar clipboard" Exec killall parcellite
 Test (x compton) + "Ligar efeitos" Exec compton $[Sky_Compton_Options]
 Test (x compton) + "Desligar efeitos" Exec killall compton
+Test (x buckle) + "Ligar sons do teclado" Exec buckle -f
+Test (x buckle) + "Desligar sons do teclado" Exec killall buckle
 Test (x screenkey) + "ScreenKey" Exec screenkey
 Test (x parcellite) + "" Nop
 Test (x k3b) + "K3B" Exec k3b
@@ -625,9 +627,10 @@ Test (x gftp) + "gFTP" Exec gftp
 + "" Nop
 Test (x vinagre) + "Vinagre" Exec vinagre
 Test (x xpra) + "Xpra" Exec xpra
+Test (x x2goclient) + "X2Go Client" Exec x2goclient
 Test (x anydesk) + "AnyDesk" Exec anydesk
 Test (x teamviewer) + "TeamViewer" Exec teamviewer
-Test (x NX) + "NoMachine" Exec NX
+Test (x /usr/NX/bin/nxplayer) + "NoMachine" Exec /usr/NX/bin/nxplayer
 + "" Nop
 Test (x evolution) + "Evolution" Exec evolution
 Test (x sylpheed) + "Sylpheed" Exec sylpheed
