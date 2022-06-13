@@ -69,6 +69,13 @@ Test (EnvMatch Sky_Theme diamond) *Alpha-FvwmIconMan: IconButton flat
 Test (EnvMatch Sky_Theme diamond) *Alpha-FvwmIconMan: PlainButton flat
 Test (EnvMatch Sky_Theme diamond) *Alpha-FvwmIconMan: SelectButton down Black lightgray
 Test (EnvMatch Sky_TwinView Yes) *Alpha-FvwmIconMan: NumManagers 1
+Test (EnvMatch Sky_Theme amigalike) *Alpha-FvwmIconMan: Colorset 10
+Test (EnvMatch Sky_Theme amigalike) *Alpha-FvwmIconMan: Font "Shadow=0 0 SE:xft:DejaVu Sans:Medium:size=8"
+Test (EnvMatch Sky_Theme amigalike) *Alpha-FvwmIconMan: FocusAndSelectButton up
+Test (EnvMatch Sky_Theme amigalike) *Alpha-FvwmIconMan: FocusButton down Black Gray60
+Test (EnvMatch Sky_Theme amigalike) *Alpha-FvwmIconMan: IconButton flat
+Test (EnvMatch Sky_Theme amigalike) *Alpha-FvwmIconMan: PlainButton flat
+Test (EnvMatch Sky_Theme amigalike) *Alpha-FvwmIconMan: SelectButton down Black lightgray
 
 #------------------ FvwmIconMan
 # FvwmIconManager
@@ -139,5 +146,12 @@ Test (EnvMatch Sky_Theme diamond) *Beta-FvwmIconMan: IconButton flat
 Test (EnvMatch Sky_Theme diamond) *Beta-FvwmIconMan: PlainButton flat
 Test (EnvMatch Sky_Theme diamond) *Beta-FvwmIconMan: SelectButton down Black lightgray
 Test (EnvMatch Sky_TwinView Yes) *Beta-FvwmIconMan: NumManagers 1
+Test (EnvMatch Sky_Theme amigalike) *Beta-FvwmIconMan: Colorset 10
+Test (EnvMatch Sky_Theme amigalike) *Beta-FvwmIconMan: Font "Shadow=0 0 SE:xft:DejaVu Sans:Medium:size=8"
+Test (EnvMatch Sky_Theme amigalike) *Beta-FvwmIconMan: FocusAndSelectButton up
+Test (EnvMatch Sky_Theme amigalike) *Beta-FvwmIconMan: FocusButton down Black Gray60
+Test (EnvMatch Sky_Theme amigalike) *Beta-FvwmIconMan: IconButton flat
+Test (EnvMatch Sky_Theme amigalike) *Beta-FvwmIconMan: PlainButton flat
+Test (EnvMatch Sky_Theme amigalike) *Beta-FvwmIconMan: SelectButton down Black lightgray
 
 echo fvwmiconman-mod.rc: Processamento terminado.
