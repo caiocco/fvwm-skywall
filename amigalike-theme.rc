@@ -1,0 +1,126 @@
+#======================================================================#
+echo amigalike-theme.rc: Processando tema Amiga-like...
+#
+# Configurações cosméticas
+# Tema Amiga-like
+# Versão baseada no original por Tomas Åkesson em 
+# 	https://www.entropic.se/fvwm/fvwm-config.tgz
+# 
+
+# Cores
+CleanupColorsets
+# - Window title/border. Inactive (1), active (2)
+Colorset 01 VGradient 20 #6F6F71 #A2A2A2, fg "#ECECEC", bg #6F6F71, hi #A2A2A2, NoShape
+#Colorset 01 bg "#7e7e7e", fg "#ffffff"
+Colorset 02 VGradient 20 #4383FC #70A0FC, fg "#ffffff", bg #4383FC, hi #70A0FC, NoShape
+# - Special window border colors for marking security class or priority
+# -- 3 = insecure/important ... 6 = secure
+Colorset 3 bg "#aa2222", sh "#440000"
+# - Menu. Normal (7,27), Selected (8,28), greyed (9,29)
+Colorset 07 bg "#ffffff", fg "#000000"
+Colorset 08 bg "#5890FB", fg "#ffffff"
+Colorset 09 fg "#868686"
+# - FvwmButtons
+Colorset 10 fg white, bg black, fgsh gray10, RootTransparent Buffer, Tint black 95
+# - Alguns aplicativos embutidos
+Colorset 11 fg white, bg black, fgsh gray10, RootTransparent Buffer, Tint black 85
+Colorset 12 fg white, bg black, fgsh gray10, RootTransparent Buffer, Tint white 30
+# - Pager
+Colorset 14 fg gray60, bg #6b8eb5, fgsh gray10, RootTransparent Buffer, Tint black 100
+# - Outros
+Colorset 15 fg white, bg black, fgsh gray10, Plain, NoShape
+Colorset 16 fg lightgray, bg gray20, fgsh gray10, Plain, NoShape
+Colorset 17 fg white, bg black, fgsh black, RootTransparent
+Colorset 18 fg white, bg black, fgsh black, RootTransparent, Tint black 30
+Colorset 19 fg LightGray, bg #132E51
+Colorset 20 fg White, bg #2A5995
+Colorset 21 fg White, bg black
+Colorset 22 fg Yellow2, bg black
+# - Botões
+Colorset 30 fg white, bg red
+
+# Estilo geral
+Style "amigalike" TitleFormat %n (%t)
+Style "amigalike" DecorateTransient
+Style "amigalike" BorderWidth 5
+Style "amigalike" HandleWidth 5
+Style "amigalike" DepressableBorder
+Style "amigalike" Borders
+Style "amigalike" MwmBorder
+Style "amigalike" MwmFunctions, MwmDecor, MwmButtons
+Style "amigalike" Colorset 1
+Style "amigalike" HilightColorset 2
+Style "amigalike" BorderColorset 1
+Style "amigalike" HilightBorderColorset 2
+Style "amigalike" Font "Shadow=1 0:xft:Droid Sans:Bold:size=10:encoding=ISO10646-1"
+
+# Estilo das barras de título e seus botões
+AddToDecor "amigalike"
++ TitleStyle CenterJustified MinHeight 18
++ TitleStyle AllActive Colorset 02
++ TitleStyle AllInactive Colorset 01
++ ButtonStyle Reset
++ ButtonStyle All - Clear
+# - Menu
++ ButtonStyle 1 Inactive            Pixmap $[Sky_Dir]/imagens/amigalike/a-menu.png
++ ButtonStyle 1 ActiveUp            Pixmap $[Sky_Dir]/imagens/amigalike/a-menu.png
++ ButtonStyle 1 ActiveDown          Pixmap $[Sky_Dir]/imagens/amigalike/c-menu.png
++ ButtonStyle 1 - MwmDecorMenu
+# - Fechar
++ ButtonStyle 2 Inactive            Pixmap $[Sky_Dir]/imagens/amigalike/a-close.png
++ ButtonStyle 2 ActiveUp            Pixmap $[Sky_Dir]/imagens/amigalike/a-close.png
++ ButtonStyle 2 ActiveDown          Pixmap $[Sky_Dir]/imagens/amigalike/c-close.png
+# - Localizador de Janelas
++ ButtonStyle 3 Inactive            Pixmap $[Sky_Dir]/imagens/amigalike/a-wfinder.png
++ ButtonStyle 3 ActiveUp            Pixmap $[Sky_Dir]/imagens/amigalike/a-wfinder.png
++ ButtonStyle 3 ActiveDown          Pixmap $[Sky_Dir]/imagens/amigalike/c-wfinder.png
+# - Maximizar
++ ButtonStyle 4 Inactive            Pixmap $[Sky_Dir]/imagens/amigalike/a-max.png
++ ButtonStyle 4 ActiveUp            Pixmap $[Sky_Dir]/imagens/amigalike/a-max.png
++ ButtonStyle 4 ActiveDown          Pixmap $[Sky_Dir]/imagens/amigalike/c-max.png
++ ButtonStyle 4 ToggledInactive     Pixmap $[Sky_Dir]/imagens/amigalike/t-max.png
++ ButtonStyle 4 ToggledActiveUp     Pixmap $[Sky_Dir]/imagens/amigalike/t-max.png
++ ButtonStyle 4 ToggledActiveDown   Pixmap $[Sky_Dir]/imagens/amigalike/tc-max.png
++ ButtonStyle 4 - MwmDecorMax
+# - Minimizar
++ ButtonStyle 6 Inactive            Pixmap $[Sky_Dir]/imagens/amigalike/a-min.png
++ ButtonStyle 6 ActiveUp            Pixmap $[Sky_Dir]/imagens/amigalike/a-min.png
++ ButtonStyle 6 ActiveDown          Pixmap $[Sky_Dir]/imagens/amigalike/c-min.png
++ ButtonStyle 6 - MwmDecorMin
+# - Pregar
++ ButtonStyle 8 Inactive            Pixmap $[Sky_Dir]/imagens/amigalike/a-stick.png
++ ButtonStyle 8 ActiveUp            Pixmap $[Sky_Dir]/imagens/amigalike/a-stick.png
++ ButtonStyle 8 ActiveDown          Pixmap $[Sky_Dir]/imagens/amigalike/c-stick.png
++ ButtonStyle 8 ToggledInactive     Pixmap $[Sky_Dir]/imagens/amigalike/t-stick.png
++ ButtonStyle 8 ToggledActiveUp     Pixmap $[Sky_Dir]/imagens/amigalike/t-stick.png
++ ButtonStyle 8 ToggledActiveDown   Pixmap $[Sky_Dir]/imagens/amigalike/tc-stick.png
++ ButtonStyle 8 - MwmDecorStick
+# - Aplicar estilo do título aos botões
++ ButtonStyle All -- UseTitleStyle
+
+# Estilo dos menus
+MenuStyle * MenuColorset 7, ActiveColorset 8, GreyedColorset 9
+MenuStyle * Hilight3DThin, HilightBack
+MenuStyle * Hilight3DThickness 0 0
+MenuStyle * MenuFace, TrianglesSolid, TrianglesUseFore, SeparatorsShort
+MenuStyle * PopupOffset 0 100
+MenuStyle * BorderWidth 1
+MenuStyle * TitleUnderlines1
+MenuStyle * VerticalItemSpacing 3 3
+MenuStyle * VerticalTitleSpacing +3 +3
+MenuStyle * Font "Shadow=0 0 SE:xft:Droid Sans:Regular:size=10:encoding=ISO10646-1"
+MenuStyle * Animation
+MenuStyle * PopupOffset -4 100
+MenuStyle * PopupImmediately
+MenuStyle * PopdownDelayed
+MenuStyle * PopdownDelay 150
+MenuStyle * PopupAsSubmenu
+MenuStyle * HoldSubmenus
+MenuStyle * SubmenusRight
+
+# Aplicar de maneira generalizada
+Style * UseStyle amigalike
+Style * UseDecor amigalike
+
+echo amigalike-theme.rc: Processamento terminado.
+#=====================================================================#
