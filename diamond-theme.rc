@@ -79,7 +79,7 @@ Test (EnvMatch Sky_Theme_Diamond_Type Vector) AddToDecor "diamond" TitleStyle He
 # Botões
 #
 # - Pixmap
-Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) AddToDecor "diamond" 
+Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) AddToDecor "diamond"
 Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + ButtonStyle Reset
 Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + ButtonStyle All Pixmap $[Sky_Dir]/imagens/empty.xpm	
 Test (EnvMatch Sky_Theme_Diamond_Type Pixmap) + ButtonStyle All -- flat UseTitleStyle
