@@ -390,7 +390,9 @@ Test (x gnuplot) + "Gnuplot" \
 	-name Gnuplot \
 	-fn 7x14 \
 	-e gnuplot
-Test (x viewsz) + "Viewsz" Exec viewsz
+Test (x veusz) + "Veusz" Exec veusz
+Test (x scidavis) + "SciDAVis" Exec scidavis
+Test (x labplot2) + "LabPlot2" Exec labplot2
 Test (x geogebra) + "GeoGebra" Exec geogebra
 Test (x gretl) + "Gretl" Exec gretl
 Test (x psppire) + "PSPP" Exec psppire
