@@ -81,6 +81,15 @@ Test (EnvMatch Sky_Theme sgi) *FvwmPager: MoveThreshold 3
 Test (EnvMatch Sky_Theme sgi) *FvwmPager: BalloonStringFormat %c
 Test (EnvMatch Sky_Theme sgi) *FvwmPager: WindowBorderWidth 2
 Test (EnvMatch Sky_Theme sgi) *FvwmPager: NoMiniIcons
+# - Amiga-like
+Test (EnvMatch Sky_Theme amigalike) *FvwmPager: WindowColors black #6B8EB5 black #69819B
+Test (EnvMatch Sky_Theme amigalike) *FvwmPager: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme amigalike) *FvwmPager: Hilight white
+Test (EnvMatch Sky_Theme amigalike) *FvwmPager: Balloons Pager
+Test (EnvMatch Sky_Theme amigalike) *FvwmPager: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme amigalike) *FvwmPager: Colorset * 14
+Test (EnvMatch Sky_Theme amigalike) *FvwmPager: HilightColorset * 15
+Test (EnvMatch Sky_Theme amigalike) *FvwmPager: BalloonColorset * 16
 
 # * Etiquetas
 DesktopName 0 Visão Mundial
@@ -182,6 +191,15 @@ Test (EnvMatch Sky_Theme sgi) *Shelf-FvwmPager: MoveThreshold 3
 Test (EnvMatch Sky_Theme sgi) *Shelf-FvwmPager: BalloonStringFormat %c
 Test (EnvMatch Sky_Theme sgi) *Shelf-FvwmPager: WindowBorderWidth 2
 Test (EnvMatch Sky_Theme sgi) *Shelf-FvwmPager: NoMiniIcons
+# - Amiga-like
+Test (EnvMatch Sky_Theme amigalike) *Shelf-FvwmPager: WindowColors black #6B8EB5 black #69819B
+Test (EnvMatch Sky_Theme amigalike) *Shelf-FvwmPager: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme amigalike) *Shelf-FvwmPager: Hilight white
+Test (EnvMatch Sky_Theme amigalike) *Shelf-FvwmPager: Balloons Pager
+Test (EnvMatch Sky_Theme amigalike) *Shelf-FvwmPager: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme amigalike) *Shelf-FvwmPager: Colorset * 14
+Test (EnvMatch Sky_Theme amigalike) *Shelf-FvwmPager: HilightColorset * 15
+Test (EnvMatch Sky_Theme amigalike) *Shelf-FvwmPager: BalloonColorset * 16
 
 #--- Desker
 DestroyModuleConfig Desker-FvwmPager: *
@@ -226,6 +244,13 @@ Test (EnvMatch Sky_Theme diamond) *Desker2-FvwmPager: WindowColorsets 19 20
 Test (EnvMatch Sky_Theme diamond) *Desker2-FvwmPager: Colorset * 14
 Test (EnvMatch Sky_Theme diamond) *Desker2-FvwmPager: HilightColorset * 15
 Test (EnvMatch Sky_Theme diamond) *Desker2-FvwmPager: BalloonColorset * 16
+Test (EnvMatch Sky_Theme amigalike) *Desker2-FvwmPager: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme amigalike) *Desker2-FvwmPager: Hilight white
+Test (EnvMatch Sky_Theme amigalike) *Desker2-FvwmPager: Balloons Pager
+Test (EnvMatch Sky_Theme amigalike) *Desker2-FvwmPager: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme amigalike) *Desker2-FvwmPager: Colorset * 14
+Test (EnvMatch Sky_Theme amigalike) *Desker2-FvwmPager: HilightColorset * 15
+Test (EnvMatch Sky_Theme amigalike) *Desker2-FvwmPager: BalloonColorset * 16
 
 #--- Desker 3
 DestroyModuleConfig Desker3-FvwmPager: *
@@ -257,6 +282,13 @@ Test (EnvMatch Sky_Theme diamond) *Desker3-FvwmPager: WindowColorsets 19 20
 Test (EnvMatch Sky_Theme diamond) *Desker3-FvwmPager: Colorset * 14
 Test (EnvMatch Sky_Theme diamond) *Desker3-FvwmPager: HilightColorset * 15
 Test (EnvMatch Sky_Theme diamond) *Desker3-FvwmPager: BalloonColorset * 16
+Test (EnvMatch Sky_Theme amigalike) *Desker3-FvwmPager: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme amigalike) *Desker3-FvwmPager: Hilight white
+Test (EnvMatch Sky_Theme amigalike) *Desker3-FvwmPager: Balloons Pager
+Test (EnvMatch Sky_Theme amigalike) *Desker3-FvwmPager: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme amigalike) *Desker3-FvwmPager: Colorset * 14
+Test (EnvMatch Sky_Theme amigalike) *Desker3-FvwmPager: HilightColorset * 15
+Test (EnvMatch Sky_Theme amigalike) *Desker3-FvwmPager: BalloonColorset * 16
 
 #--- SyncMaster
 *Alpha: Geometry -3-27
