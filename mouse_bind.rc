@@ -88,6 +88,21 @@ Test (EnvMatch Sky_Theme nimbos) Mouse 1 6 A Iconify
 Test (EnvMatch Sky_Theme sgi) Mouse 1 1 A Function "window_ops_func"
 Test (EnvMatch Sky_Theme sgi) Mouse 1 2 A Maximize
 Test (EnvMatch Sky_Theme sgi) Mouse 1 4 A Iconify
+Test (EnvMatch Sky_Theme amigalike) Mouse 1 1 A Function "window_ops_func"
+Test (EnvMatch Sky_Theme amigalike) Mouse 2 1 A Stick
+Test (EnvMatch Sky_Theme amigalike) Mouse 1 2 A Close
+Test (EnvMatch Sky_Theme amigalike) Mouse 1 3 A WindowList NoGeometry 	NoDeskNum, NoLayer, NoCurrentDeskTitle, CurrentDesk, NoHotkeys	
+Test (EnvMatch Sky_Theme amigalike) Mouse 2 3 A Function FuncWinFinder
+Test (EnvMatch Sky_Theme amigalike) Mouse 3 3 A Function "window_ops_func_quickaccess"
+Test (EnvMatch Sky_Theme amigalike) Mouse 1 4 A Maximize
+Test (EnvMatch Sky_Theme amigalike) Mouse 2 4 A Maximize 0 100
+Test (EnvMatch Sky_Theme amigalike) Mouse 3 4 A Maximize ewmhiwa
+Test (EnvMatch Sky_Theme amigalike) Mouse 1 6 A Iconify
+Test (EnvMatch Sky_Theme amigalike) Mouse 1 8 A Stick
+
+# Move window when right clicking on buttons
+Mouse 3         12468   A       MoveWindow
+
 
 #
 # Agora o resto do quadro
