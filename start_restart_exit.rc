@@ -14,7 +14,7 @@ AddToFunc "StartFunction"
 + I Test (Init) Test (x xset) Exec exec xset m 0 0
 + I Test (Init) Test (x xsetroot) Exec exec xsetroot -solid black
 + I Test (Init) Test (x $[HOME]/.fvwm/keyb.sh) Exec exec $[HOME]/.fvwm/keyb.sh
-+ I Test (Init) Test (EnvMatch Sky_Comp Yes) Test (x compton) \
++ I Test (Init) Test (EnvMatch Sky_Comp Yes) Test (!EnvIsSet X2GO_SESSION) Test (x compton) \
 	Exec compton $[Sky_Compton_Options]
 + I Test (Init) Test (EnvMatch Sky_TwoMons Yes) \
 	Test (EnvMatch Sky_TwoMons_Type 1) \
@@ -119,6 +119,7 @@ AddToFunc "StartFunction"
 + I Test (Init) exec pkill -9 -o -f "FvwmButtons 7 4 none"
 + I Test (Init) Restart
 + I Test (Restart) Recapture
++ I Test (Restart) Test (!EnvIsSet X2GO_SESSION) exec xrefresh
 #
 # 
 #------ Monitor secundário
