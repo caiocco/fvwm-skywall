@@ -7,12 +7,16 @@ echo general-theme.rc: Processando configurações cosméticas gerais...
 #
 
 #
+# Títulos de janelas (afeta FvwmIconMan) e ícones
+#
+Style * TitleFormat %c: %n (%t)
+Style * IconTitleFormat %c: %n (%t)
+
+#
 # Fontes
 #
-#Style * Font "Shadow=1 0 SE:xft:Helvetica:Bold:size=12:encoding=ISO10646-1"
 Style * Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=12:encoding=ISO10646-1"
-#Style * IconFont "Shadow=1 0 SE:xft:文泉驛正黑:Bold:size=8:encoding=ISO10646-1"
-Style * IconFont "Shadow=1 0 SE:xft:Kedagei:Regular:size=8:encoding=ISO10646-1"
+Style * IconFont "Shadow=1 0 SE:xft:Liberation Sans:Regular:size=8:encoding=ISO10646-1"
 
 #
 # Cursores
