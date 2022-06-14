@@ -100,10 +100,6 @@ Test (EnvMatch Sky_Theme amigalike) Mouse 3 4 A Maximize ewmhiwa
 Test (EnvMatch Sky_Theme amigalike) Mouse 1 6 A Iconify
 Test (EnvMatch Sky_Theme amigalike) Mouse 1 8 A Stick
 
-# Move window when right clicking on buttons
-Mouse 3         12468   A       MoveWindow
-
-
 #
 # Agora o resto do quadro
 #
