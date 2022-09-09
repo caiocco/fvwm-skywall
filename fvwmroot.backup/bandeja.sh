@@ -47,12 +47,13 @@ else
 	parcellite &
 fi
 
-if pgrep -x "cellwriter" > /dev/null
-then
-	killall cellwriter
-else
-	cellwriter &
-fi
+# comentado porque tende a corromper o arquivo de configuracao
+#if pgrep -x "cellwriter" > /dev/null
+#then
+#	killall cellwriter
+#else
+#	cellwriter &
+#fi
 
 if pgrep -x "hp-systray" > /dev/null
 then
