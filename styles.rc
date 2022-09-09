@@ -1,4 +1,4 @@
-#=====================================================================#
+t#=====================================================================#
 echo styles.rc: Processando estilos...
 
 #
@@ -120,6 +120,7 @@ Style * Icon $[Fvwm_Icon_Theme]/48x48/apps/xapp.png
 # * Sistemas de entrada
 
 # * Utilitários
+Style Xnest FixedSize, !Maximizable
 Style "ROX-Pinboard" \
 	WindowListSkip
 Style "Xfce4-panel" \
@@ -668,9 +669,6 @@ Test (EnvMatch Sky_TwoMons_Type 3) Style guake \
 	StartsOnScreen 0
 
 # * Outros
-Style scim-panel-gtk \
-	PositionPlacement, \
-	UsePPosition
 Style geany \
 	UsePPosition
 Style sylpheed \
@@ -700,6 +698,7 @@ Style xchat \
 	DontStackTransientParent, \
 	GrabFocusTransientOff
 #Style Xchat FocusFollowsMouse
+Style TelegramDesktop Handles
 Style emesene FocusFollowsMouse
 Style Pidgin FocusFollowsMouse
 Style zoom_linux_float_video_window StaysOnTop, Sticky
@@ -754,6 +753,7 @@ Test (EnvMatch Sky_Theme diamond) \
 	Test (EnvMatch Sky_Theme_Diamond_Type Vector) \
 		Style Skype !Button 6
 Style Nxplayer.bin !Handles, !Title, !Borders
+Style Nyxt Icon nyxt.png
 
 # * Centrais de configuração
 Style Y2controlcenter \
@@ -842,6 +842,9 @@ Style *Java* Lenience, MoveByProgramMethod, UsePPosition, EWMHUseStackingOrderHi
 Style pharo-vm Icon $[HOME]/bin/pharolauncher/icons/pharo-launcher_48.png
 
 # * Sistemas de entrada
+Style scim-panel-gtk \
+	PositionPlacement, \
+	UsePPosition
 Style "CellWriter" \
 	!Button 6, \
 	!Button 4, \
