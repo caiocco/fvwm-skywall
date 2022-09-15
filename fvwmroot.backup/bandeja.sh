@@ -1,8 +1,11 @@
 #!/bin/sh
 function launch {
 
-if [ -b /dev/disk/by-label/ALSTOM ]; then
-	udisksctl power-off -b /dev/disk/by-label/ALSTOM
+if pgrep -x "aw-qt" > /dev/null
+then
+	killall aw-qt
+else
+	$HOME/bin/activitywatch/aw-qt &
 fi
 
 if pgrep -x "osmo" > /dev/null
