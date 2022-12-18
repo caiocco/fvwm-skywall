@@ -662,7 +662,9 @@ Style URxvt \
 	ResizeOutline, \
 	Icon $[Gtk_Icon_Theme]/apps/48/gnome-terminal.png
 Style "Guake!" \
-	!Iconifiable
+	!Iconifiable, \
+	FixedPPosition, \
+	PositionPlacement 0 0
 Style Terminal \
 	ResizeOutline
 Test (EnvMatch Sky_TwoMons_Type 3) Style guake \
