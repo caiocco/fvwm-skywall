@@ -346,7 +346,7 @@ Test (x umbrello) + "Umbrello" Exec umbrello
 Test (x sqlitestudio) + "SQLiteStudio" Exec sqlitestudio
 Test (x pgadmin3) + "pgAdmin III" Exec pgadmin3
 Test (x mysql-workbench) + "MySQL Workbench" Exec mysql-workbench
-Test (x dbeaver) + "DBeaver" Exec dbeaver
+Test (x $[HOME]/bin/dbeaver/dbeaver) + "DBeaver" Exec $[HOME]/bin/dbeaver/dbeaver
 Test (x datagrip) + "DataGrip" Exec datagrip
 + "" Nop
 Test (x pycharm) + "PyCharm" Exec pycharm
@@ -860,6 +860,7 @@ Test (x frogatto) + "Frogatto" Exec frogatto
 Test (x /opt/tibia/play.sh) + "Tibia" Exec /opt/tibia/play.sh
 Test (x blobwars) + "Metal Blob Solid" Exec blobwars
 Test (x opentyrian) + "OpenTyrian" Exec opentyrian
+Test (x openxcom) + "OpenXcom" Exec openxcom
 Test (x /opt/PokerTH/pokerth.sh) + "PokerTH" Exec /opt/PokerTH/pokerth.sh
 Test (x gzdoom) + "GZDOOM" Exec gzdoom
 Test (x vkquake) + "Quake (Vulkan)" Exec vkquake
@@ -1194,7 +1195,9 @@ AddToMenu "Module-Popup"
 + "FvwmCDE" Module FvwmButtons FvwmCDE-PainelPrincipal
 + "FvwmDeskMenu" Module FvwmButtons FvwmDeskMenu
 + "Pager" Module FvwmPager 0 0
-+ "Pager (2 desks)" Module FvwmPager 0 1
++ "Pager (2 áreas)" Module FvwmPager 0 1
++ "Pager (4 áreas)" Module FvwmPager 0 3
++ "Pager (5 áreas)" Module FvwmPager 0 4
 + "WinList" Module FvwmWinList
 + "" Nop
 + "Banner" Module FvwmBanner
