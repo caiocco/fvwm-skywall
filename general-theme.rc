@@ -9,8 +9,8 @@ echo general-theme.rc: Processando configurações cosméticas gerais...
 #
 # Títulos de janelas (afeta FvwmIconMan) e ícones
 #
-Style * TitleFormat %c: %n (%t)
-Style * IconTitleFormat %c: %n (%t)
+#Style * TitleFormat %c: %n (%t)
+#Style * IconTitleFormat %c: %n (%t)
 
 #
 # Fontes
