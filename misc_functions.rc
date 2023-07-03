@@ -362,5 +362,24 @@ AddToFunc FuncWorkday
 + I Test (EnvMatch HOSTNAME skywall.homenet) Next (vivaldi-stable) Focus
 + I Exec notify-send "Inicialização concluída. Hoje é `date +"%A"`." -i clock -t 10000
 
+#
+# As funções abaixo gerenciam notificações
+#
+DestroyFunc NotifyMgrOn
+AddToFunc NotifyMgrOn
++ I Test (x sind) Exec killall sind
++ I Test (x /usr/lib/xfce4/notifyd/xfce4-notifyd) \
+	Exec /usr/lib/xfce4/notifyd/xfce4-notifyd
++ I Exec sleep 3 ; notify-send Notificações\ ligadas
+
+DestroyFunc NotifyMgrOff
+AddToFunc NotifyMgrOff
++ I Test Exec killall xfce4-notifyd
++ I Test Test (x urxvt) Test (x sind) \
+	Exec urxvt -geometry 80x9+0-28 -depth 32 \
+	-bg rgba:0000/0000/0000/4444 -fg white +sb -n SiND -T SiND \
+	-e sind
++ I Exec sleep 3 ; notify-send Notificações\ desligadas
+
 echo misc_functions.rc: Processamento terminado.
 #=====================================================================#
