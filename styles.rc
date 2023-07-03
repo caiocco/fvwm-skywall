@@ -5,6 +5,10 @@ echo styles.rc: Processando estilos...
 # Estilos
 #
 
+########################################################################
+### Estilos universais e estilos para módulos do FVWM                ###
+########################################################################
+
 # - Defina os estilos de decoração e opções de janelas;
 # - A ordem *é* importante;
 # - Se estilos compatíveis são declarados para uma única janela em
@@ -12,9 +16,22 @@ echo styles.rc: Processando estilos...
 #   ordenados de acordo. Se estilos conflitantes forem declarados, o 
 #   último especificado levará vantagem.
 
-### Os comandos abaixo devem ser executados antes que qualquer ###
-### menus ou funções sejam definidos e antes que o Pager interno ###
-### seja inicializado ###
+# Testando forçar o respeito ao padrão EWMH, para ver se o FVWM se   ###
+# aproxima do Openbox e outros gerenciadores mais modernos           ###
+Style * \
+	EWMHDonateIcon, \
+	EWMHUseStackingOrderHints, \
+	EWMHUseStateHints, \
+	EWMHUseStrutHints, \
+	!EWMHIgnoreWindowType, \
+	EWMHMaximizeUseWorkingArea, \
+	EWMHMaximizeUseDynamicWorkingArea, \
+	EWMHPlacementUseWorkingArea, \
+	EWMHPlacementUseDynamicWorkingArea
+
+### Os comandos abaixo devem ser executados antes que qualquer       ###
+### menus ou funções sejam definidos e antes que o Pager interno     ###
+### seja inicializado                                                ###
 Style "Fvwm*" \
 	!Title, \
 	Sticky, \
@@ -70,8 +87,8 @@ Style FvwmForm-Bandeja \
 	FixedSize, \
 	StaysOnTop
 
-### Se você quer mini-ícones na lista de janelas, comente os ###
-### estilos declarados abaixo ###
+### Se você quer mini-ícones na lista de janelas, comente os estilos ###
+### declarados abaixo                                                ###
 Style * EWMHDontDonateMiniIcon
 Style * EWMHMiniIconOverride
 # * Os temas Clearlooks e XP devem mostrar mini-ícones
@@ -84,28 +101,28 @@ Test (EnvMatch Sky_Theme xp) \
 Test (EnvMatch Sky_Theme xp) \
 	Style * !EWMHMiniIconOverride
 	
-### Eu estava definindo por programa, mas a verdade é que os tempos
-### mudaram e programas Java, Electron e outras tecnologias menos
-### voltadas ao mundo GNU/Linux e BSD, infelizmente, não respeitam o
-### gerenciador de janelas. É mais fácil pedir ao FVWM para ser
-### leniente com todos os ofensores, pois são muitos
+### Eu estava definindo por programa, mas a verdade é que os tempos  ###
+### mudaram e programas Java, Electron e outras tecnologias menos    ###
+### voltadas ao mundo GNU/Linux e BSD, infelizmente, não respeitam o ###
+### gerenciador de janelas. É mais fácil pedir ao FVWM para ser      ###
+### leniente com todos os ofensores, pois são muitos                 ###
 Style * Lenience
 
-### Se você, assim como eu, se sentia irritado por causa de ###
-### ícones de múltiplos tamanhos na hora de restaurar as ###
-### janelas minimizadas, então a seguinte declaração será ###
-### muito apreciada e agora é um default para mim ###
-###
-### Sintaxe: IconSize [ width height [ maxwidth maxheight ] ] ###
+### Se você, assim como eu, se sentia irritado por causa de          ###
+### ícones de múltiplos tamanhos na hora de restaurar as             ###
+### janelas minimizadas, então a seguinte declaração será            ###
+### muito apreciada e agora é um default para mim                    ###
+###                                                                  ###
+### Sintaxe: IconSize [ width height [ maxwidth maxheight ] ]        ###
 Style * IconSize 48 48 48 48
 
-### Estilo de ícone genérico, usado apenas para aplicativos ###
-### que não fornecem o próprio ícone ###
-###
+### Estilo de ícone genérico, usado apenas para aplicativos          ###
+### que não fornecem o próprio ícone                                 ###
 Style * Icon $[Fvwm_Icon_Theme]/48x48/apps/xapp.png
 
-
-### Estilos para diversos aplicativos ###
+########################################################################
+### Estilos para diversos aplicativos                                ###
+########################################################################
 
 # Categorias
 # * Utilitários
@@ -120,6 +137,9 @@ Style * Icon $[Fvwm_Icon_Theme]/48x48/apps/xapp.png
 # * Sistemas de entrada
 
 # * Utilitários
+Style SiND !Title, !Handles, FixedSize, StaysOnBottom, WindowListSkip, \
+	Sticky, NeverFocus, !Iconifiable, !Maximizable, !Closable, \
+	BorderWidth 3
 Style Xnest FixedSize, !Maximizable
 Style "ROX-Pinboard" \
 	WindowListSkip
@@ -210,6 +230,10 @@ Style gdl_box \
 	StaysOnTop, \
 	PositionPlacement Center, \
 	!Iconifiable
+Style org-wellkord-globonote-Main \
+	StaysOnTop, \
+	FocusFollowsMouse, \
+	Sticky
 Style xpad \
 	Title, \
 	Borders, \
@@ -343,7 +367,7 @@ Style Caja \
 Style albert StaysOnTop, Sticky
 Style SmallBlob UsePPosition, NoTitle, NoHandles, BorderWidth 1, NeverFocus, StaysOnTop, WindowListSkip
 Style Keepassx Sticky, !Closable
-Style KeePassXC Sticky
+Style KeePassXC Sticky, PositionPlacement Center
 Test (EnvMatch Sky_Theme diamond) \
 	Test (EnvMatch Sky_Theme_Diamond_Type Vector) \
 		Style Keepassx !Button 2
@@ -407,7 +431,7 @@ Style "Caixa de ferramentas" \
 	Button 6, \
 	!Button 8
 Style osmo \
-	Sticky
+	Sticky, PositionPlacement -0 -0
 Style texmacs.bin Icon /usr/share/pixmaps/TeXmacs.xpm
 
 # * Gráficos
@@ -717,7 +741,11 @@ Style vivaldi-stable \
 	EWMHDontDonateIcon, \
 	IconOverride, \
 	Icon /opt/vivaldi/product_logo_48.png
-Style Picture-in-picture StaysOnTop Sticky
+Style Picture-in-Picture \
+	StaysOnTop, \
+	StickyAcrossPages, \
+	!Title, \
+	Borders
 Style Google-chrome \
 	EWMHDontDonateIcon, \
 	IconOverride, \
@@ -918,8 +946,12 @@ Test (EnvMatch Sky_Theme gentoo) \
 	UsePPosition, \
 	FixedSize, Sticky, TitleAtBottom
 
-# * É essencial definir os estilos a seguir, caso você costume usar
-#   TearMenuOff
+########################################################################
+### Outros estilos importantes                                       ###
+########################################################################
+
+### É essencial definir os estilos a seguir, caso você costume usar  ###
+### TearMenuOff                                                      ###
 Test (EnvMatch Sky_Theme skywall) \
 	Style fvwm_menu Font "Shadow=1 1 SE:xft:Helvetica:Bold:size=9"
 Test (EnvMatch Sky_Theme gentoo) \
@@ -939,8 +971,8 @@ Style fvwm_menu \
 	Title, \
 	HandleWidth 1
 
-### Se você nao quer ícones no desktop comente o estilo declarado a ###
-### seguir ###
+### Se você nao quer ícones no desktop comente o estilo declarado a  ###
+### seguir                                                           ###
 #Style * NoIcon
 Test (EnvMatch Sky_Panels_Type 4) Style * NoIcon
 
