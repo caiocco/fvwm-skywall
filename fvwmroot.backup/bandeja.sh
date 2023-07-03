@@ -80,11 +80,11 @@ else
 	/opt/eset/esets/bin/esets_gui --autostart &
 fi
 
-if pgrep -x "qsynergy" > /dev/null
+if pgrep -x "synergy" > /dev/null
 then
-	killall qsynergy
+	killall synergy
 else
-	qsynergy &
+	synergy &
 fi
 
 if pgrep -x "flameshot" > /dev/null
@@ -101,6 +101,12 @@ else
 	x-tile &
 fi
 
+if pgrep -f '^java.*GloboNote\.jar' > /dev/null
+then
+	kill -s SIGTERM `pgrep -f '^java.*GloboNote\.jar'`
+else
+	java -jar /mnt/arquivos/caio/Aplicativos/GloboNote/GloboNote.jar &
+fi
 
 if pgrep -x "dropbox" > /dev/null
 then
