@@ -15,6 +15,13 @@ echo key_bind.rc: Processando atalhos de teclado...
 # Legenda: L = Capitals Lock; 2 = Number Lock; 5 = Scrolling Lock
 IgnoreModifiers L25
 
+# Efeitos sonos
+#
+SetEnv KeySound $[HOME]/Diversos/arquivos_comuns/Sons/novos/button-30.wav
+SetEnv LockSound $[HOME]/Diversos/arquivos_comuns/Sons/novos/mixkit-door-key-in-door-lock-2842.wav
+SetEnv PrintKeySound1 $[HOME]/Diversos/arquivos_comuns/Sons/novos/camera-shutter-click-01.wav
+SetEnv PrintKeySound2 $[HOME]/Diversos/arquivos_comuns/Sons/novos/camera-shutter-click-03.wav
+
 # Associações/Bindings
 #
 # Síntaxe para definição dos bindings de teclado:
@@ -61,29 +68,26 @@ Key F10		W	M	Maximize True
 Key F10		W	SM	Maximize ewmhiwa
 
 # Lançadores de aplicativos com teclas de funções
-Key F1		A	S4	Exec xfce4-terminal
-Key F2		A	S4	Exec geany
-Key F3		A	S4	Exec galculator
-Key F4		A	S4	Exec audacious
-Key F5		A	S4	Exec leafpad
-Key F6		A	S4	Exec xterm +sb -bg black -fg lightgray -e screen
-Key F7		A	S4	Exec geeqie
-Key F8		A	S4	Exec gimp
-Key F9		A	S4	Exec cherrytree
-Key F10		A	S4	Exec dosbox
-Key F11		A	S4	Exec VirtualBox
-Key F12		A	S4	Exec loffice
+Key F1		A	S4	Exec play "$[KeySound]" > /dev/null ; xfce4-terminal
+Key F2		A	S4	Exec play "$[KeySound]" > /dev/null ; geany
+Key F3		A	S4	Exec play "$[KeySound]" > /dev/null ; galculator
+Key F4		A	S4	Exec play "$[KeySound]" > /dev/null ; audacious
+Key F5		A	S4	Exec play "$[KeySound]" > /dev/null ; pluma
+Key F6		A	S4	Exec play "$[KeySound]" > /dev/null ; xterm +sb -bg black -fg lightgray -e screen
+Key F7		A	S4	Exec play "$[KeySound]" > /dev/null ; geeqie
+Key F8		A	S4	Exec play "$[KeySound]" > /dev/null ; gimp
+Key F9		A	S4	Exec play "$[KeySound]" > /dev/null ; cherrytree
+Key F10		A	S4	Exec play "$[KeySound]" > /dev/null ; dosbox
+Key F11		A	S4	Exec play "$[KeySound]" > /dev/null ; VirtualBox
+Key F12		A	S4	Exec play "$[KeySound]" > /dev/null ; loffice
 
 # Lançadores de aplicativos com teclas especiais
-SetEnv PrintKeySound1 $[HOME]/Diversos/arquivos_comuns/Sons/novos/camera-shutter-click-01.wav
-SetEnv PrintKeySound2 $[HOME]/Diversos/arquivos_comuns/Sons/novos/camera-shutter-click-03.wav
 Key Print	A	N	Exec play "$[PrintKeySound2]" > /dev/null ; flameshot full -c
 Key Print	A	CS	Exec play "$[PrintKeySound1]" > /dev/null ; flameshot full -p $HOME
-Key Print	A	M	Exec play "$[PrintKeySound2]" > /dev/null ; flameshot gui
+Key Print	A	S4	Exec play "$[PrintKeySound2]" > /dev/null ; flameshot gui
+Key Print	A	M	Exec play "$[PrintKeySound2]" > /dev/null ; maim --hidecursor --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png -i
 
 # Aceleradores de teclado para as teclas especiais do HP Compaq dv6210br
-SetEnv KeySound $[HOME]/Diversos/arquivos_comuns/Sons/novos/button-30.wav
-
 #Key XF86AudioMute		A	N	Exec rexima vol 0
 #Key XF86AudioMute		A	M	Exec rexima vol 90
 #Key XF86AudioMute		A	C	Exec play "$[KeySound]" > /dev/null ; aumix
@@ -108,9 +112,6 @@ Test (x amixer) \
 
 # Aceleradores de teclado para as teclas especiais do teclado Philco 
 # NetVision/BTC 9019URF
-SetEnv KeySound /usr/share/sounds/KDE_Click_1.ogg
-SetEnv KeySound2 /usr/share/sounds/KDE_Keyboard_Key_1.ogg 
-
 Key XF86HomePage		A	N	Exec play "$[KeySound]" > /dev/null ; rox ~
 Key XF86HomePage		A	4	Exec play "$[KeySound]" > /dev/null ; DISPLAY=:0.1 rox ~
 Key XF86HomePage		A	M	Exec play "$[KeySound]" > /dev/null ; xfe
@@ -137,7 +138,7 @@ Key XF86Standby			A	C	Exec play "$[KeySound2]" > /dev/null ; ~/.fvwm/keyb.sh br
 Key XF86Standby			A	CM	Exec play "$[KeySound2]" > /dev/null ; ~/.fvwm/keyb.sh usnoint
 Key XF86Standby			A	4	Exec play "$[KeySound2]" > /dev/null ; ~/.fvwm/keyb.sh ru
 Key XF86Standby			A	S	Popup Keyboard
-Key Delete			A	CM	Exec xscreensaver-command --lock
+Key Delete			A	CM	Exec play "$[LockSound]" > /dev/null & xscreensaver-command --lock
 
 # Aceleradores de teclas especiais para o teclado ThinkPad X200
 Key XF86Launch1			A	N	Exec /usr/bin/xdg-su -c '/sbin/yast2 --qt'
@@ -226,14 +227,17 @@ Key Escape      A       C       Exec xterm \
 Key Escape      A       CM      Exec xkill
 
 # Super + Esc para ligar/desligar Redshift
-Key Escape	A	4	Exec play "$[KeySound]" > /dev/null ; \
-				pkill -USR1 redshift
+#Key Escape	A	4	Exec play "$[KeySound]" > /dev/null ; \
+#				pkill -USR1 redshift
 
 # Super + Enter para abrir o buscador de janelas
 Key Return	A	4	Function FuncWinFinder
 
 # Shift + Super + Enter para localizar o cursor do mouse
 Key Return	A	S4	Exec xmessage -name "SmallBlob" -bg red -fg white -nearmouse -timeout 1 'Estou aqui!'
+
+# Super + . para abrir o buscador de emojis
+Key Period	A	4	Exec splatmoji copy
 
 echo key_bind.rc: Processamento terminado.
 #=====================================================================#
