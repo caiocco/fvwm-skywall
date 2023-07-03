@@ -94,8 +94,8 @@ Test (x bochs) + "Bochs" Exec xterm -e bochs
 Test (x pcem) + "PCem" Exec pcem
 Test (x eaglemode) + "Eagle Mode" Exec eaglemode
 Test (x x48) + "x48 (HP 48GX)" Exec x48 -terminal -serial
-Test (x sqlitebrowser) + "SQL Lite Browser"		Exec sqlitebrowser
-Test (x ksysguard) + "KSysGuard"			Exec ksysguard
+Test (x sqlitebrowser) + "SQL Lite Browser" Exec sqlitebrowser
+Test (x ksysguard) + "KSysGuard" Exec ksysguard
 Test (x drakon) + "Drakon Process Manager" Exec drakon
 Test (x xscreensaver-demo) + "XScreenSaver" Exec xscreensaver-demo
 Test (x xvidcap) "Xvidcap" Exec xvidcap
@@ -105,13 +105,18 @@ Test (x qt-recordMyDesktop) + "Record My Desktop (Qt)" Exec qt-recordMyDesktop
 Test (x vokoscreenNG) + "vokoscreenNG" Exec vokoscreenNG
 Test (x obs) + "OBS Studio" Exec obs
 Test (x cheese)	+ "Cheese" Exec cheese
+Test (x guvcview) + "Guvcview" Exec guvcview
 Test (x wxcam) + "wxCam" Exec wxcam
+Test (x $[HOME]/bin/openbb/launch.sh) + "OpenBB Terminal" Exec xfce4-terminal -T OpenBB\ Terminal --hold --geometry 131x55 -e ~/bin/openbb/launch.sh
 + "" Nop
 Test (x wine) + "Wine" Popup Wine
 Test (x /opt/cxoffice/bin/cxsetup) + "CrossOver Linux" Popup CxOffice
 Test (f $[HOME]/.fvwm/Xnest.sh) Test (x Xnest) + "Xnest" Exec ~/.fvwm/Xnest.sh
 + "" Nop
 Test (x xfce4-appfinder) + "Localizador..." Exec xfce4-appfinder --disable-server
++ "" Nop
+Test (x keepassx) + "KeePassX" Exec keepassx
+Test (x keepassxc) + "KeePassXC" Exec keepassxc
 + "" Nop
 Test (x /sbin/yast2) + "YaST2" Exec /usr/bin/xdg-su -c '/sbin/yast2 --qt'
 Test (x zypper) Test (x urxvt) + "Zypper" Exec urxvt \
@@ -207,6 +212,8 @@ Test (x compton) + "Ligar efeitos" Exec compton $[Sky_Compton_Options]
 Test (x compton) + "Desligar efeitos" Exec killall compton
 Test (x buckle) + "Ligar sons do teclado" Exec buckle -f
 Test (x buckle) + "Desligar sons do teclado" Exec killall buckle
++ "Ligar notificações" Function NotifyMgrOn
++ "Desligar notificações" Function NotifyMgrOff
 Test (x screenkey) + "ScreenKey" Exec screenkey
 Test (x parcellite) + "" Nop
 Test (x k3b) + "K3B" Exec k3b
@@ -236,6 +243,7 @@ Test (x $[HOME]/bin/blender/blender) + "Blender (/home)" \
 	Exec $[HOME]/bin/blender/blender
 Test (x blender) + "Blender" Exec blender
 Test (x comix) + "Comix" Exec comix
+Test (x mcomix) + "MComix" Exec mcomix
 Test (x dia) + "Dia" Exec dia
 Test (x display) + "ImageMagick" Exec display
 Test (x gm) + "GraphicsMagick" Exec gm display
@@ -347,6 +355,7 @@ Test (x sqlitestudio) + "SQLiteStudio" Exec sqlitestudio
 Test (x pgadmin3) + "pgAdmin III" Exec pgadmin3
 Test (x mysql-workbench) + "MySQL Workbench" Exec mysql-workbench
 Test (x $[HOME]/bin/dbeaver/dbeaver) + "DBeaver" Exec $[HOME]/bin/dbeaver/dbeaver
+Test (x gtk-launch) Test (f /usr/share/applications/vstudio.desktop) + "Valentina Studio" Exec gtk-launch vstudio
 Test (x datagrip) + "DataGrip" Exec datagrip
 + "" Nop
 Test (x pycharm) + "PyCharm" Exec pycharm
@@ -398,7 +407,7 @@ Test (x labplot2) + "LabPlot2" Exec labplot2
 Test (x geogebra) + "GeoGebra" Exec geogebra
 Test (x gretl) + "Gretl" Exec gretl
 Test (x psppire) + "PSPP" Exec psppire
-Test (x knime) + "KNIME Analytics Platform" Exec knime
+Test (x knime) + "KNIME Analytics Platform" Exec unset GTK_IM_MODULE ; xterm -hold -T KNIME\ Log\ Console -iconic -e knime
 Test (x orange-canvas) + "Orange" Exec orange-canvas
  + "" Nop
 Test (x xmaxima) + "Maxima" Exec xmaxima
@@ -447,7 +456,6 @@ Test (x sunbird) + "Mozilla Sunbird" Exec sunbird
 Test (x plan) + "Plan" Exec plan
 Test (x osmo) + "Osmo" Exec osmo
 Test (x tkremind) + "Remind" Exec tkremind
-Test (x keepassx) + "KeePassX" Exec keepassx
 Test (x treeline) + "TreeLine" Exec treeline
 Test (x notecase) + "NoteCase" Exec notecase
 Test (x cherrytree) + "CherryTree" Exec cherrytree
@@ -455,6 +463,8 @@ Test (x zim) + "Zim" Exec zim
 Test (x xpad) + "XPad" Exec xpad
 Test (x tomboy) + "Tomboy" Exec tomboy
 Test (x gnote) + "Gnote" Exec gnote
+Test (x java) Test (f $[HOME]/bin/GloboNote/GloboNote.jar) \
+	+ "GloboNote" Exec java -jar $HOME/bin/GloboNote/GloboNote.jar
 Test (x serna) + "Syntext Serna Free" Exec serna
 Test (x planner) + "Planner" Exec planner
 Test (x xournal) + "Xournal" Exec xournal
@@ -859,7 +869,7 @@ Test (x teeworlds) + "Teeworlds" Exec teeworlds
 Test (x frogatto) + "Frogatto" Exec frogatto
 Test (x /opt/tibia/play.sh) + "Tibia" Exec /opt/tibia/play.sh
 Test (x blobwars) + "Metal Blob Solid" Exec blobwars
-Test (x opentyrian) + "OpenTyrian" Exec opentyrian
+Test (x opentyrian) + "OpenTyrian" Exec cd ~/.config/opentyrian ; opentyrian
 Test (x openxcom) + "OpenXcom" Exec openxcom
 Test (x /opt/PokerTH/pokerth.sh) + "PokerTH" Exec /opt/PokerTH/pokerth.sh
 Test (x gzdoom) + "GZDOOM" Exec gzdoom
@@ -1022,6 +1032,7 @@ Test (x aegisub) + "Aegisub" Exec aegisub
 Test (x avidemux2_gtk) + "Avidemux (Gtk)" Exec avidemux2_gtk
 Test (x avidemux2_qt4) + "Avidemux (Qt)" Exec avidemux2_qt4
 Test (x pitivi) + "Pitivi" Exec pitivi
+Test (x shotcut.sh) + "Shotcut" Exec shotcut.sh
 Test (x openshot-qt) + "OpenShot" Exec openshot-qt
 Test (x lightworks) + "Lightworks" Exec lightworks
 Test (x cinelerra) + "Cinelerra" Exec cinelerra
@@ -1118,6 +1129,7 @@ Test (x mate-terminal) + "Terminal do MATE" Exec mate-terminal
 Test (x konsole) + "Konsole" Exec konsole
 Test (x terminator) + "Terminator" Exec LC_ALL=en_US.UTF-8 terminator
 Test (x cool-retro-term) + "Cool Retro Term" Exec cool-retro-term
+Test (x wezterm) + "Wez's Terminal Emulator" Exec wezterm
 Test (x mrxvt) + "MRxvt" Exec mrxvt \
 	+sb \
 	-fn 10x20 \
