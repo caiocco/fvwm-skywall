@@ -35,7 +35,7 @@ SetEnv Sky_TwinView No		# usará dois monitores em TwinView?
 SetEnv Sky_MonTwoIsBig Yes	# o segundo monitor é grande?
 				# em caso afirmativo, assumiremos
 				# mínimo de 1680x1050
-SetEnv Sky_TwoMons_Type 3	# configuração a ser empregada para
+SetEnv Sky_TwoMons_Type 1	# configuração a ser empregada para
 				# uso em dois monitores
 SetEnv Sky_Comp Yes		# usará composite?
 SetEnv Sky_Myth No		# usará MythTV no segundo monitor?
