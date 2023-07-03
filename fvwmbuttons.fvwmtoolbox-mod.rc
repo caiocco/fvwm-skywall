@@ -65,7 +65,7 @@ DestroyModuleConfig FvwmButtons-Pager: *
 DestroyModuleConfig FvwmButtons-Pager: *
 
 Style FvwmButtons-Pager !Title, !Handles, Sticky, WindowListSkip, \
-	BorderWidth 0, NeverFocus, CirculateSkip
+	BorderWidth 0, NeverFocus, CirculateSkip, StaysOnTop
 
 *FvwmButtons-Pager: Colorset 10
 *FvwmButtons-Pager: Geometry 12x78
