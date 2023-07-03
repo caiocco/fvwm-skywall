@@ -133,6 +133,7 @@ Test (EnvMatch Sky_Panels_Type 4) *Shelf-FvwmPager: SmallFont "xft:Luxi Sans:siz
 *Shelf-FvwmPager: BalloonFont "xft:Bitstream Vera Sans:style=Roman:size=7:antialias=True:encoding=ISO10646-1"
 *Shelf-FvwmPager: BalloonYOffset +2
 *Shelf-FvwmPager: BalloonBorderWidth 1
+*Shelf-FvwmPager: WindowLabelFormat "%t"
 
 # * Janelas
 *Shelf-FvwmPager: UseSkipList
@@ -204,16 +205,28 @@ Test (EnvMatch Sky_Theme amigalike) *Shelf-FvwmPager: BalloonColorset * 16
 #--- Desker
 DestroyModuleConfig Desker-FvwmPager: *
 
-Style FvwmPager-Desker !Title, !Handles, Sticky, WindowListSkip, \
-	BorderWidth 0, NeverFocus, CirculateSkip
+Style Desker-FvwmPager !Title, !Handles, Sticky, WindowListSkip, \
+	BorderWidth 0, NeverFocus, CirculateSkip, StaysOnTop
 
 *Desker-FvwmPager: Colorset * 14
 *Desker-FvwmPager: HilightColorset * 15
 *Desker-FvwmPager: BalloonColorset * 16
 *Desker-FvwmPager: WindowColorsets 1 2
+*Desker-FvwmPager: Back grey60
+*Desker-FvwmPager: Fore black
+*Desker-FvwmPager: Hilight #c3c3c3
 *Desker-FvwmPager: Font "xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
-*Desker-FvwmPager: Geometry 319x79+5000+5000
+#*Desker-FvwmPager: Geometry 319x79+5000+5000
+*Desker-FvwmPager: Geometry 619x79+5000+5000
 *Desker-FvwmPager: Balloons Pager
+Test (EnvMatch Sky_Theme amigalike) *Desker-FvwmPager: WindowColors black #6B8EB5 black #69819B
+Test (EnvMatch Sky_Theme amigalike) *Desker-FvwmPager: Font "Shadow=1 0 SE:xft:Luxi Sans:Bold:size=8:encoding=ISO10646-1"
+Test (EnvMatch Sky_Theme amigalike) *Desker-FvwmPager: Hilight white
+Test (EnvMatch Sky_Theme amigalike) *Desker-FvwmPager: Balloons Pager
+Test (EnvMatch Sky_Theme amigalike) *Desker-FvwmPager: WindowColorsets 19 20
+Test (EnvMatch Sky_Theme amigalike) *Desker-FvwmPager: Colorset * 14
+Test (EnvMatch Sky_Theme amigalike) *Desker-FvwmPager: HilightColorset * 15
+Test (EnvMatch Sky_Theme amigalike) *Desker-FvwmPager: BalloonColorset * 16
 
 #--- Desker 2
 DestroyModuleConfig Desker2-FvwmPager: *
