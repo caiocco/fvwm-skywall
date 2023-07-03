@@ -27,6 +27,7 @@ AddToFunc "StartFunction"
 #------ Módulos
 + I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView No) Module FvwmButtons -g 145x$[vp.height]-0+0 FvwmShelf
 + I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g 145x$[vp.height]+$$(($[vp.width]-145))+0 FvwmShelf"
++ I Test (Init) Test (EnvMatch Sky_Panels_Type 1) Module Module FvwmButtons FvwmButtons-Pager
 + I Test (Init) Test (EnvMatch Sky_Panels_Type 1.5) Module FvwmButtons -g 145x$[vp.height]-0+0 FvwmShelf
 + I Test (Init) Test (EnvMatch Sky_Panels_Type 1.5) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g 145x$[vp.height]+$$(($[vp.width]-145))+0 FvwmShelf"
 + I Test (Init) Test (EnvMatch Sky_Panels_Type 1.6) Module FvwmButtons -g 145x$[vp.height]-0+0 FvwmShelf
@@ -53,6 +54,7 @@ AddToFunc "StartFunction"
 + I Test (Init) Module FvwmBanner
 + I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView No) Module FvwmButtons -g 145x$[vp.height]-0+0 FvwmShelf
 + I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g 145x$[vp.height]+$$(($[vp.width]-145))+0 FvwmShelf"
++ I Test (Restart) Test (EnvMatch Sky_Panels_Type 1) Module FvwmButtons FvwmButtons-Pager
 + I Test (Restart) Test (EnvMatch Sky_Panels_Type 1.5) Module FvwmButtons -g 145x$[vp.height]-0+0 FvwmShelf
 + I Test (Restart) Test (EnvMatch Sky_Panels_Type 1.5) Test (EnvMatch Sky_TwinView Yes) PipeRead "echo Module FvwmButtons -g 145x$[vp.height]+$$(($[vp.width]-145))+0 FvwmShelf"
 + I Test (Restart) Test (EnvMatch Sky_Panels_Type 1.6) Module FvwmButtons -g 145x$[vp.height]-0+0 FvwmShelf
@@ -91,10 +93,10 @@ AddToFunc "StartFunction"
 + I Test (Init) Test (x /usr/lib/polkit-gnome-authentication-agent-1) \
 	exec /usr/lib/polkit-gnome-authentication-agent-1
 #+ I Test (Init) Test (x pk-update-icon) exec pk-update-icon
-+ I Test (Init) Test (x redshift) exec redshift
 + I Test (Init) Test (x thunar) exec thunar --daemon
 + I Test (Init) Test (x /usr/lib/xfce4/notifyd/xfce4-notifyd) \
 	exec /usr/lib/xfce4/notifyd/xfce4-notifyd
++ I Test (Restart) Test (x redshift) exec killall redshift-gtk ; killall redshift ; redshift-gtk -l manual -l -23.5:-46.54 -m randr -t6500:2500
 
 #+ I Test (Init) exec xmodmap -e "clear Lock"	# DESATIVA CAPSLOCK
 #+ I Test (Init) exec xmodmap -e "clear Mod2"	# DESATIVA NUMLOCK
