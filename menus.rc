@@ -176,6 +176,8 @@ Test (x shutterbug) + "Shutterbug" Exec shutterbug
 Test (x flameshot) + "Flameshot" Exec flameshot gui
 Test (x FBReader) + "FBReader" Exec FBReader
 Test (x parcellite) + "Parcellite" Exec parcellite
+Test (x copyq) + "CopyQ" Exec copyq
+Test (x nix-shell) + "CopyQ" Exec nix-shell -p copyq --run "copyq"
 Test (x cellwriter) + "CellWriter" Exec cellwriter
 Test (x onboard) + "Onboard" Exec onboard
 Test (x xvkbd) + "Virtual Keyboard" Exec xvkbd
@@ -206,8 +208,8 @@ Test (x dillo) Test (f /usr/sbin/cupsd) + "Administrador CUPS" \
 	Exec dillo -g 1024x768 -f http://localhost:631
 Test (x qink) + "QInk (Tível de tinta)" Exec qink
 + "" Nop
-Test (x parcellite) + "Ligar clipboard" Exec parcellite
-Test (x parcellite) + "Desligar clipboard" Exec killall parcellite
+#Test (x parcellite) + "Ligar clipboard" Exec parcellite
+#Test (x parcellite) + "Desligar clipboard" Exec killall parcellite
 Test (x compton) + "Ligar efeitos" Exec compton $[Sky_Compton_Options]
 Test (x compton) + "Desligar efeitos" Exec killall compton
 Test (x buckle) + "Ligar sons do teclado" Exec buckle -f
@@ -436,7 +438,7 @@ Test (x /opt/applixware-6-homeuser/applix) + "Applixware" \
 	Exec /opt/applixware-6-homeuser/applix
 Test (x broffice.org) + "BrOffice.org" Exec broffice.org
 Test (x openoffice.org) + "OpenOffice.org" Exec openoffice.org
-Test (x libreoffice) + "LibreOffice" Exec libreoffice
+Test (x libreoffice) + "LibreOffice" Exec unset GTK_IM_MODULE ; libreoffice
 Test (x symphony) + "IBM Lotus Symphony" Exec symphony
 Test (x koshell) + "KOffice" Exec koshell
 Test (x abiword) + "AbiWord" Exec abiword
@@ -585,6 +587,16 @@ Test (x xterm) Test (x teapot) + "Teapot" \
 	+sb \
 	-geometry 80x35 \
 	-e teapot
+Test (x xterm) Test (x nix-shell) + "SpreadSheet Calculator Improvised" \
+	Exec xterm \
+	-bg black \
+	-fg lightgray \
+	-fa lucidatypewriter \
+	-fs 16 \
+	+sb \
+	-geometry 80x35 \
+	-T sc-im \
+	-e nix-shell -p sc-im --run sc-im
 Test (x xterm) Test (x abook) + "Abook" \
 	Exec xterm \
 	-bg gray \
@@ -631,7 +643,8 @@ Test (x brave-browser) + "Brave" Exec brave-browser
 Test (x vivaldi) + "Vivaldi" Exec vivaldi
 Test (x konqueror) + "Konqueror" Exec konqueror
 Test (x epiphany) + "Epiphany" Exec epiphany
-Test (x dillo) + "Dillo" Exec dillo
+Test (x nix-shell) + "Dillo" Exec nix-shell -p dillo --run "dillo"
+Test (x nix-shell) + "NetSurf" Exec nix-shell -p netsurf.browser --run "netsurf-gtk3"
 + "" Nop
 Test (x lagrange) + "Lagrange" Exec lagrange
 Test (x kristall) + "Kristall Browser" Exec kristall
@@ -783,8 +796,26 @@ Test (x newsboat) + "Newsboat" Exec xterm \
 	-font 7x14 \
 	+sb \
 	-geometry 130x40 \
+	-T Newsboat \
 	-e newsboat
-Test (x tuir) + "Terminal UI for Reddit" Exec urxvt-256color \
+Test (x nix-shell) + "Bombadillo" Exec xterm \
+	-bg black \
+	-fg lightgray \
+	-font 7x14 \
+	+sb \
+	-geometry 130x40 \
+	-T Bombadillo \
+	-e nix-shell -p bombadillo --run bombadillo
+Test (x nix-shell) + "Offpunk" Exec xterm \
+	-bg black \
+	-fg lightgray \
+	-font 7x14 \
+	+sb \
+	-geometry 130x40 \
+	-T Offpunk \
+	-e nix-shell -p offpunk --run offpunk
+Test (x urxvt-256color) \
+	Test (x tuir) + "Terminal UI for Reddit" Exec urxvt-256color \
 	-bg black \
 	-fg lightgray \
 	-font 7x14 \
