@@ -43,11 +43,11 @@ else
 	blueberry-tray &
 fi
 
-if pgrep -x "parcellite" > /dev/null
+if pgrep -x "copyq" > /dev/null
 then
-	killall parcellite
+	nix-shell -p copyq --run "copyq exit" &
 else
-	parcellite &
+	nix-shell -p copyq --run "copyq" &
 fi
 
 # comentado porque tende a corromper o arquivo de configuracao
