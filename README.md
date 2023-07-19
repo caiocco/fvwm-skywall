@@ -21,7 +21,7 @@ A configuração também espera o uso dos seguintes aplicativos: ZIM Desktop Wik
 
 # Instalação
 
-O diretório "fvwmroot.backup" é uma gambiarra para facilitar a carga dos *dotfiles*. O usuário deverá fazer ligações simbólicas dos arquivos do diretório em "~/.fvwm" (ou noutro diretório-raiz válido do FVWM). Similarmente, o conteúdo do repositório pode ser descarregado em "~/.fvwm". Ou seja, para a execução funcionar, o "~/.fvwm" deve apresentar:
+O diretório "fvwmroot.backup" é uma gambiarra para facilitar a carga dos *dotfiles*. O usuário deverá fazer ligações simbólicas dos arquivos do diretório em `~/.fvwm` (ou noutro diretório-raiz válido do FVWM). Similarmente, o conteúdo do repositório pode ser descarregado em `~/.fvwm`. Ou seja, para a execução funcionar, o `~/.fvwm` deve apresentar:
 
 ```
 fvwm-skywall/
